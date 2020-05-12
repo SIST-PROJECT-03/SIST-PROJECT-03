@@ -4,10 +4,11 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CastManager cm=new CastManager();
+		/*CastManager cm=new CastManager();
 		try{
 			cm.castAllData();
-		}catch (Exception ex) {}
+		}catch (Exception ex) {}*/
+		
 	}
 
 }
