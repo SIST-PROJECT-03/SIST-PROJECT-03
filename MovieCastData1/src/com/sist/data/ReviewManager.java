@@ -61,11 +61,11 @@ public class ReviewManager {
 			for(int i=0; i<linkStr.length; i++)
 			{
 				int totalpage=0;
-				if(movieCount[3]%20!=0)
-					totalpage=(movieCount[3]/20)+1;
+				if(movieCount[i]%20!=0)
+					totalpage=(movieCount[i]/20)+1;
 				else
-					totalpage=movieCount[3]/20;
-				System.out.println("totalpage : " +totalpage);
+					totalpage=movieCount[i]/20;
+				//System.out.println("totalpage : " +totalpage);
 				for(int j=1; j<=totalpage; j++)
 				{
 					Document doc2=Jsoup.connect("https://movie.naver.com/movie/sdb/browsing/"+linkStr[i]+"&page="+j).get();
@@ -75,6 +75,7 @@ public class ReviewManager {
 					{
 						mlink=doc2.select(".directory_list > li > a").get(k);
 						String temp=mlink.attr("href");
+						System.out.println("Movie Link Category("+i+") :"+temp);
 						list.add(Integer.parseInt(temp.substring(temp.indexOf("=")+1)));
 					}
 					
@@ -205,6 +206,7 @@ public class ReviewManager {
 		}
 		return res;
 	}
+	
 	public String getElementsAllString(Elements e,int count)
 	{
 		String res="";
