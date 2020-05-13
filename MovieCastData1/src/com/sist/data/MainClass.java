@@ -10,13 +10,14 @@ public class MainClass {
 		try{
 			/*cm.castAllData();*/
 			/*int[] result=rm.getMovieCount();*/
-			rm.reviewListData();
+			List<ReviewVO> list=rm.reviewListData();
 			
-			/*for(int i:result)
+			for(ReviewVO vo:list)
 			{
-				System.out.println(i);
-			}*/
+				System.out.println(vo.getUser_id());
+			}
 		}catch (Exception ex) {}
+		
 		
 	}
 

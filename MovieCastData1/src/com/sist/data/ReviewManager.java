@@ -1,6 +1,8 @@
 package com.sist.data;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -56,7 +58,7 @@ public class ReviewManager {
 				linkStr[i]=link.attr("href");
 			}
 			//linkStr.length
-			for(int i=0; i<1; i++)
+			for(int i=0; i<linkStr.length; i++)
 			{
 				int totalpage=0;
 				if(movieCount[3]%20!=0)
@@ -66,7 +68,7 @@ public class ReviewManager {
 				System.out.println("totalpage : " +totalpage);
 				for(int j=1; j<=totalpage; j++)
 				{
-					Document doc2=Jsoup.connect("https://movie.naver.com/movie/sdb/browsing/"+linkStr[3]+"&page="+j).get();
+					Document doc2=Jsoup.connect("https://movie.naver.com/movie/sdb/browsing/"+linkStr[i]+"&page="+j).get();
 					Elements mlinkSize=doc2.select(".directory_list > li > a");
 					Element mlink=null;
 					for(int k=0; k<mlinkSize.size(); k++)
@@ -119,16 +121,20 @@ public class ReviewManager {
 		
 		return res;
 	}
-	public void reviewListData()
+	public List<ReviewVO> reviewListData()
 	{
+		List<ReviewVO> list=new ArrayList<ReviewVO>();
 		List<Integer> movie_id=getMovieId();
-		Element e=null;
+		Element reviewElement=null;
+		Elements allElements=null;
+		SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+		Date regdate=new Date();
 		int count=0;
 		//movie_id.size()
 		try{
-			for(int i=0; i<1; i++)
+			for(int i=0; i<movie_id.size(); i++)
 			{
-				Document doc=Jsoup.connect("https://movie.naver.com/movie/bi/mi/point.nhn?code=39199").get();
+				Document doc=Jsoup.connect("https://movie.naver.com/movie/bi/mi/point.nhn?code="+movie_id.get(i)).get();
 				Element iframeUrl=doc.selectFirst("iframe");
 				String reviewUrl=iframeUrl.attr("src");
 				Document doc2=Jsoup.connect("https://movie.naver.com/"+reviewUrl).get();
@@ -143,16 +149,28 @@ public class ReviewManager {
 				{
 					doc2=Jsoup.connect("https://movie.naver.com/"+reviewUrl+"&page="+j).get();
 					Elements reviewSizePer=doc2.select(".score_reple");
-					System.out.println("hi");
 					for(int z=0; z<reviewSizePer.size(); z++)
 					{
-						e=doc2.selectFirst(".score_reple #_filtered_ment_"+z);
-						String review=getElementString(e);
-						System.out.println(review);
-						e=doc2.selectFirst(".star_score > em");
-						String score=getElementString(e);
-						System.out.println(score);
+						ReviewVO vo=new ReviewVO();
+						reviewElement=doc2.selectFirst(".score_reple #_filtered_ment_"+z);
+						vo.setContent(getElementString(reviewElement));
+						System.out.println(vo.getContent());
 						
+						allElements=doc2.select(".star_score > em");
+						vo.setRate(Integer.parseInt(getElementsAllString(allElements,z)));
+						System.out.println(vo.getRate());
+						
+						allElements=doc2.select(".score_reple > dl > dt");
+						String user_info=getElementsAllString(allElements, z);
+						StringTokenizer st=new StringTokenizer(user_info, " ");
+						String user_id=getUserIdSubstr(st.nextToken());
+						regdate=format.parse(st.nextToken());
+						
+						vo.setUser_id(user_id);
+						vo.setRegdate(regdate);
+						vo.setMovie_id(movie_id.get(i));
+						
+						list.add(vo);
 						
 					}
 					
@@ -162,6 +180,38 @@ public class ReviewManager {
 			ex.printStackTrace();
 		}
 		
+		return list;
+		
+	}
+	
+	public String getUserIdSubstr(String user_id)
+	{
+		String res="";
+		try{
+			if(user_id.indexOf("(")==-1)
+			{
+				//System.out.println(user_id);
+				res=user_id.replaceAll("\\*", "");
+				
+			}
+			else
+			{
+				//System.out.println(user_id);
+				res=user_id.substring(user_id.indexOf("(")+1,user_id.indexOf("*"));
+				
+			}
+		}catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return res;
+	}
+	public String getElementsAllString(Elements e,int count)
+	{
+		String res="";
+		try{
+			res=e.get(count).text();
+		}catch (Exception ex) {}
+		return res;
 		
 	}
 	
