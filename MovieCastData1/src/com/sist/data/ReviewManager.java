@@ -21,15 +21,19 @@ public class ReviewManager {
 		try{
 			Document doc=Jsoup.connect("https://movie.naver.com/movie/sdb/browsing/bmovie_form.nhn").get();
 			Elements countPer=doc.select("tbody td");
+			/*for(Element a : countPer){
+				System.out.println(a.text());
+			}*/
 			StringTokenizer st=new StringTokenizer(countPer.text()," ");
-
+			
 			while(st.hasMoreTokens())
 			{
 				String temp=st.nextToken();
-				temp=temp.replace("(", "");
-				temp=temp.replace(")", "");
+				System.out.println("temp : " + temp);
 				if(i%2==1)
 				{
+					temp=temp.replace("(", "");
+					temp=temp.replace(")", "");
 					result[count]=Integer.parseInt(temp);
 					count++;
 				}
@@ -76,6 +80,8 @@ public class ReviewManager {
 						mlink=doc2.select(".directory_list > li > a").get(k);
 						String temp=mlink.attr("href");
 						System.out.println("Movie Link Category("+i+") :"+temp);
+						
+						
 						list.add(Integer.parseInt(temp.substring(temp.indexOf("=")+1)));
 					}
 					
@@ -135,7 +141,8 @@ public class ReviewManager {
 		try{
 			for(int i=0; i<movie_id.size(); i++)
 			{
-				Document doc=Jsoup.connect("https://movie.naver.com/movie/bi/mi/point.nhn?code="+movie_id.get(i)).get();
+				//24239 movie_id.get(i)
+				Document doc=Jsoup.connect("https://movie.naver.com/movie/bi/mi/point.nhn?code=24239"+movie_id.get(i)).get();
 				Element iframeUrl=doc.selectFirst("iframe");
 				String reviewUrl=iframeUrl.attr("src");
 				Document doc2=Jsoup.connect("https://movie.naver.com/"+reviewUrl).get();

@@ -13,14 +13,18 @@ public class CastManager {
 		int count=1;
 		//438564
 		try{
-			for(int i=1; i<=20; i++)
+			for(int i=1; i<=438564; i++)
 			{
 					CastVO vo=new CastVO();
 					
 					Document doc=Jsoup.connect("https://movie.naver.com/movie/bi/pi/basic.nhn?code="+i).get();
 					
 					Element name=doc.select(".character > .h_movie").first();
-					vo.setName(name.text());
+					try{
+						vo.setName(name.text());
+					}catch (Exception ex) {
+						vo.setName("");
+					}
 					
 					Element birth=doc.select(".char_info> .char_born").first();
 					try{
@@ -31,17 +35,23 @@ public class CastManager {
 					
 					
 					Element thmbnail=doc.select(".poster > img").first();
-					String noimg=thmbnail.attr("alt");
-					System.out.println(noimg);
-					if(!noimg.equals("이미지가 존재하지 않습니다."))
-					{
-						String temp=thmbnail.attr("src");
-						vo.setThumbnail(temp.substring(0,temp.indexOf("&")));
+					try{
+						String img=thmbnail.attr("alt");
+						System.out.println(img);
+						
+						if(!img.equals("이미지가 존재하지 않습니다."))
+						{
+							String temp=thmbnail.attr("src");
+							vo.setThumbnail(temp.substring(0,temp.indexOf("&")));
+						}
+						else
+						{
+							vo.setThumbnail(thmbnail.attr("src"));
+						}
+					}catch (Exception ex) {
+						vo.setThumbnail("https://ssl.pstatic.net/static/movie/2012/06/dft_img77x96_1.png");
 					}
-					else
-					{
-						vo.setThumbnail(thmbnail.attr("src"));
-					}
+					
 					
 					Element profile=doc.select(".con_tx").first();
 					try{
@@ -62,22 +72,15 @@ public class CastManager {
 					vo.setCast_id(i);
 					
 					System.out.print(vo.getCast_id()+". ");
-					System.out.println(name.text());
+					
 					
 					try{
+						System.out.println(name.text());
 						System.out.println(birth.text());
-					}catch (Exception ex) {}
-					
-					try{
 						System.out.println(profile.text());
-					}catch (Exception ex) {}
-					
-					System.out.println(vo.getThumbnail());
-					
-					try{
+						System.out.println(vo.getThumbnail());
 						System.out.println(reward.text());
 					}catch (Exception ex) {}
-					
 					
 					System.out.println("============================================================================================================================================================================");
 					
