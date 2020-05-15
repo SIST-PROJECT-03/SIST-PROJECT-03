@@ -11,23 +11,33 @@
 $(function(){
 	$(document).ready(function(){
 		$('.mainDetailinfo').hide();
-		$('.mainDetail').click(function(){
-			$('.movieInner').show();
-			$('.mainSim').hide();
-		});
 	});
-	$('.viewall2').click(function(){
-		$('.amovie-items').hide();
-	});
-	
-	$('.info').click(function(){
-		$('.mainInfo').show();
+	/* 상세보기버튼 클릭이벤트 */
+	$('.hvr-inner').click(function(){
+		$('.mainDetailinfo').show();
+		$('.mainInnerDetail').show();
+		$('.mainNav').show();
+		$('.ing').css('background-color','#dd003f');
+		$('.ing2').css('background-color','');
 		$('.mainSim').hide();
 	});
-	
+	/* x버튼 클릭이벤트 */
+	$('.viewall2').click(function(){
+		$('.mainDetailinfo').hide();
+	});
+	/* 기본정보버튼 클릭이벤트 */
+	$('.info').click(function(){
+		$('.mainInnerDetail').show();
+		$('.mainSim').hide();
+		$('.ing').css('background-color','#dd003f');
+		$('.ing2').css('background-color','');
+	});
+	/* 비슷한 작품버튼 클릭이벤트 */
 	$('.similar').click(function(){
-		$('.mainInfo').hide();
+		$('.mainInnerDetail').hide();
 		$('.mainSim').show();
+		$('.ing2').css('background-color','#dd003f');
+		$('.ing').css('background-color','');
 	});
 })
 </script>
@@ -132,7 +142,7 @@ $(function(){
 	    </div>
 	</div>
 </div>
-<div class="movie-items  full-width">
+<div class="movie-items  full-width" style="padding-bottom: 0px;">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="title-hd">
@@ -172,45 +182,77 @@ $(function(){
 		</div>
 	</div>
 </div>
-<div class="movie-items mainDetailinfo">
+<div class="movie-items full-width mainDetailinfo"  style="padding-top: 0px;">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="mainInner">
+				<div class="title-hd">
+					<h2>제목</h2>
+					<a class="viewall2" style="font-size: 30px">x</a>
+				</div>
 				<div class="mainInfo">
-					<div class="title-hd">
-						<h2>제목</h2>
-						<a class="viewall2">x</a>
-					</div>
-					<div class="mainInnerDetail">
-						<p>관람객별점 | 기자/평론가 | 네티즌</p>
-						<p>줄거리</p>
-						<p>감독</p>
-						<p>출연</p>
-						<p>개요 | 장르 | 국가 | 개봉연도</p>		
-						<button>재생</button>
-						<button>상세정보</button>
-					</div>
-					<div class="mainInnerVideoRight">
-						<div class="videoPlayer"></div>
-					</div>
-				</div>		
-			<div class="mainSim">
-				<div style="padding: 0px 12px ">
-					<img style="height: 153px;  width: 15% ">
-					<div>
-						<p>개봉일 | 상영시간</p>
-						<div>줄거리</div>
+					<div class="title-in">
+						<div class="mainInnerDetail">					
+							<div class=" movie-item col-md-4" style="margin-right: 0px;">
+								<p>관람객별점 | 기자/평론가 | 네티즌</p>
+								<p>줄거리</p>
+								<p>감독</p>
+								<p>출연</p>
+								<p>개요 | 장르 | 국가 | 개봉연도</p>
+								<div class="social-btn" style="margin: 30px 0px">		
+									<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+									<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+								</div>					
+								<div class="btn-transform transform-vertical" style="width: 52%">
+									<a href="#" class="item item-1 redbtn">상세정보</a>
+									<a href= "#" class="item item-2 redbtn hvrbtn">상세정보</a>
+								</div>
+							</div>
+							<div class="mainInnerVideoRight col-md-8">
+								<div class="videoPlayer" style="border: 3px solid white; height:300px"></div>
+							</div>
+						</div>
+						<div class="mainSim">
+							<div class=" movie-item col-md-3" style="margin-right: 0px; margin-top: 50px;">
+								<div class="mainInnerVideoRight col-md-5">
+									<div class="videoPlayer" style="border: 3px solid white; height:150px"></div>
+								</div>
+								<div class="mainInnerVideoRight col-md-7">
+									<!-- <p>관람객별점 | 기자/평론가 | 네티즌</p> -->
+									<p>제목</p>
+									<p>줄거리</p>
+									<p>감독</p>
+									<p>출연</p>
+									<p>장르 | 개봉연도</p>
+									<!-- <div class="social-btn">		
+										<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+										<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+									</div> -->
+								</div>
+								<div class="btn-transform transform-vertical" style="width: 100%; padding-top: 10px;">
+									<a href="#" class="item item-1 redbtn">상세정보</a>
+									<a href= "#" class="item item-2 redbtn hvrbtn">상세정보</a>
+								</div>
+							</div>
+						</div>	
+						<div class="mainNav" style="padding-top: 400px">
+							<ul class="menu">
+								<li>
+									<a class="info">기본정보</a>
+									<span class="ing"></span>
+								</li>				
+								<li>
+									<a class="similar">비슷한 작품</a>
+									<span class="ing2"></span>
+								</li>		
+							</ul>
+						</div>		
 					</div>
 				</div>
 			</div>
-			<div class="text-center">
-				<a class="info">기본정보</a>
-				<a class="similar">비슷한 작품</a>
-			</div>
-			</div>
 		</div>
 	</div>
-</div>			            		      		
+</div>	            		      		
 <div class="movie-items  full-width">
 	<div class="row">
 		<div class="col-md-12">
@@ -915,129 +957,127 @@ $(function(){
 </div>
 
 <div class="trailers full-width">
-		<div class="row ipad-width">
-			<div class="col-md-9 col-sm-12 col-xs-12">
-				<div class="title-hd">
-					<h2>개봉예정작 예고편</h2>
-					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
-				</div>
-				<div class="videos">
-				 	<div class="slider-for-2 video-ft">
-					   <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/w0qQkSuWOS8"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/44LdLqgOpjo"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/gbug3zTm3Ws"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/e3Nl_TCQXuw"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
-					    </div>
-
+	<div class="row ipad-width">
+		<div class="col-md-9 col-sm-12 col-xs-12">
+			<div class="title-hd">
+				<h2>개봉예정작 예고편</h2>
+				<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
+			</div>
+			<div class="videos">
+				<div class="slider-for-2 video-ft">
+					<div>
+						<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
 					</div>
-					<div class="slider-nav-2 thumb-ft">
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Wonder Woman</h4>
-	                        	<p>2:30</p>
-	                        </div>
+					<div>
+					    <iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/w0qQkSuWOS8"></iframe>
+					</div>
+					<div>
+					    <iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/44LdLqgOpjo"></iframe>
+					</div>
+				    <div>
+				    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/gbug3zTm3Ws"></iframe>
+				    </div>
+				    <div>
+				    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/e3Nl_TCQXuw"></iframe>
+				    </div>
+				    <div>
+				    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
+				    </div>
+				</div>
+				<div class="slider-nav-2 thumb-ft">
+					<div class="item">
+						<div class="trailer-img">
+							<img src="../images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
 						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Oblivion: Official Teaser Trailer</h4>
-	                        	<p>2:37</p>
-	                        </div>
+						<div class="trailer-infor">
+                        	<h4 class="desc">Wonder Woman</h4>
+                        	<p>2:30</p>
+                        </div>
+					</div>
+					<div class="item">
+						<div class="trailer-img">
+							<img src="../images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
 						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Exclusive Interview:  Skull Island</h4>
-	                        	<p>2:44</p>
-	                        </div>
+						<div class="trailer-infor">
+                        	<h4 class="desc">Oblivion: Official Teaser Trailer</h4>
+                        	<p>2:37</p>
+                        </div>
+					</div>
+					<div class="item">
+						<div class="trailer-img">
+							<img src="../images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
 						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
-	                        	<p>2:43</p>
-	                        </div>
+						<div class="trailer-infor">
+                        	<h4 class="desc">Exclusive Interview:  Skull Island</h4>
+                        	<p>2:44</p>
+                        </div>
+					</div>
+					<div class="item">
+						<div class="trailer-img">
+							<img src="../images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
 						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
-	                        	<p>2: 32</p>
-	                        </div>	
+						<div class="trailer-infor">
+                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
+                        	<p>2:43</p>
+                        </div>
+					</div>
+					<div class="item">
+						<div class="trailer-img">
+							<img src="../images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
 						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Fast&Furious 8</h4>	
-	                        	<p>3:11</p>
-	                        </div>	
+						<div class="trailer-infor">
+                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
+                        	<p>2: 32</p>
+                        </div>	
+					</div>
+					<div class="item">
+						<div class="trailer-img">
+							<img src="../images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
 						</div>
+						<div class="trailer-infor">
+                        	<h4 class="desc">Fast&Furious 8</h4>	
+                        	<p>3:11</p>
+                        </div>	
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-12 col-xs-12">
-				<div class="sidebar">
-					<div class="celebrities">
-						<h4 class="sb-title">주목받는 영화인</h4>
-						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
-							<div class="celeb-author">
-								<h6><a href="#">Samuel N. Jack</a></h6>
-								<span>Actor</span>
-							</div>
+		</div>
+		<div class="col-md-3 col-sm-12 col-xs-12">
+			<div class="sidebar">
+				<div class="celebrities">
+					<h4 class="sb-title">주목받는 영화인</h4>
+					<div class="celeb-item">
+						<a href="#"><img src="../images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
+						<div class="celeb-author">
+							<h6><a href="#">Samuel N. Jack</a></h6>
+							<span>Actor</span>
 						</div>
-						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
-							<div class="celeb-author">
-								<h6><a href="#">Benjamin Carroll</a></h6>
-								<span>Actor</span>
-							</div>
+					</div>
+					<div class="celeb-item">
+						<a href="#"><img src="../images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
+						<div class="celeb-author">
+							<h6><a href="#">Benjamin Carroll</a></h6>
+							<span>Actor</span>
 						</div>
-						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
-							<div class="celeb-author">
-								<h6><a href="#">Beverly Griffin</a></h6>
-								<span>Actor</span>
-							</div>
+					</div>
+					<div class="celeb-item">
+						<a href="#"><img src="../images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
+						<div class="celeb-author">
+							<h6><a href="#">Beverly Griffin</a></h6>
+							<span>Actor</span>
 						</div>
-						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
-							<div class="celeb-author">
-								<h6><a href="#">Justin Weaver</a></h6>
-								<span>Actor</span>
-							</div>
+					</div>
+					<div class="celeb-item">
+						<a href="#"><img src="../images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
+						<div class="celeb-author">
+							<h6><a href="#">Justin Weaver</a></h6>
+							<span>Actor</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+	</div>
 </div>
 <!-- latest new v2 section-->
 <div class="latestnew full-width">
@@ -1107,6 +1147,5 @@ $(function(){
 	
 </div>
 <!--end of latest new v2 section-->
-
 </body>
 </html>

@@ -32,8 +32,8 @@
 					<li><a href="#">김지현</a></li>
 					<li><a href="#">김학민</a></li>
 					<li><a href="#">남준우</a></li>
-					<li><a href="#">심재혁</a></li>
 					<li><a href="#">신승호</a></li>
+					<li><a href="#">심재혁</a></li>				
 					<li><a href="#">조성빈</a></li>
 				</ul>
 			</div>
@@ -69,7 +69,7 @@
 			</div> -->
 		</div>
 	</div>
-	<div class="ft-copyright">
+	<div class="ft-copyright" style="padding: 20px 0px; padding-left:90%">
 		<!-- <div class="ft-left">
 			<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
 		</div> -->
