@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+.ion-android-star:before {
+    content: "\f2fc";
+    margin-left: 8px;
+    margin-bottom: 18px;
+}   
+
+
+.movie-single .movie-single-ct .movie-rate .rate p span {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.movie-single .movie-single-ct .movie-rate .rate p span.rv {
+    font-size: 22px;
+    color: #fffefe;
+}
+
+
+.movie-single .movie-single-ct .movie-rate .rate-star i.ion-ios-star {
+    color: #f5b50a;
+    margin-bottom: 8px;
+}
+
+.ion-ios-star-outline:before {
+    content: "\f4b2";
+     margin-bottom: 18px;
+}
+
+.bd-hd span {
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+    color: #fdfdfcd4;
+    font-weight: 300;
+    text-transform: uppercase;
+}

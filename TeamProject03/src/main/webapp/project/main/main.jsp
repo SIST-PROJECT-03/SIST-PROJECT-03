@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <!-- Basic need -->
-	<title>Open Pediatrics</title>
+	<title>BLOCK BUSTER</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -18,23 +18,22 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone-no">
 
-	<!-- CSS files -->
+	<!--STANDARD CSS Files -->
 	<link rel="stylesheet" href="../css/plugins.css">
 	<link rel="stylesheet" href="../css/style.css">
-
+	
 </head>
 <body>
 
-<!-- header -->
 	<%@ include file="./header.jsp"%>
 	
-<!-- home -->
 	<%-- <%@ include file="./home.jsp"%> --%>
 	<jsp:include page="${main_jsp }"></jsp:include>
 
-<!-- footer1 -->
 	<%@ include file="./footer.jsp"%>
 
+
+ <!-- jQuery, Bootstrap JS. -->
 <script src="../js/jquery.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/plugins2.js"></script>

@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+
 	<!-- react -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
@@ -33,6 +33,9 @@ $(function(){
 </script>
 </head>
 <body>
+
+<!-- =============================  HOME START  ============================== -->
+<!-- =============================  MAIN BIG SLIDER START  ============================== -->
 <div class="slider sliderv2">
 	<div class="container">
 		<div class="row">
@@ -132,12 +135,19 @@ $(function(){
 	    </div>
 	</div>
 </div>
+<!-- =============================  MAIN BIG SLIDER END  ============================== -->
+
+
+<!-- =============================  THEMA SLIDER AREA START  ============================== -->
 <div class="movie-items  full-width">
 	<div class="row">
 		<div class="col-md-12">
+		
+		
+		
 			<div class="title-hd">
 				<h2>in theater</h2>
-				<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+				<a href="../movieList/movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 			</div>
 			<div class="tabs">
 				<ul class="tab-links">
@@ -210,20 +220,24 @@ $(function(){
 			</div>
 		</div>
 	</div>
-</div>			            		      		
+</div>		
+
+	         		      		
 <div class="movie-items  full-width">
 	<div class="row">
 		<div class="col-md-12">
+		
+			<!-- ============================= IN THETER SLIDER START  ============================== -->
 			<div class="title-hd">
 				<h2>in theater</h2>
-				<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+				<a href="../movieList/movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 			</div>
 			<div class="tabs">
-				<ul class="tab-links">
-					<!-- <li class="active"><a href="#tab1-h2">#Popular</a></li>
-					<li><a href="#tab2-h2"> #Coming soon</a></li>
-					<li><a href="#tab3-h2">  #Top rated  </a></li>
-					<li><a href="#tab4-h2"> #Most reviewed</a></li>            -->             
+				<ul class="tab-links-2">
+					<li class="active"><a href="#tab21-h2">&nbsp;</a></li>
+					<li><a href="#tab22-h2">&nbsp;</a></li>
+					<li><a href="#tab23-h2">&nbsp;</a></li>
+					<li><a href="#tab24-h2">&nbsp;</a></li>                        
 				</ul>
 			    <div class="tab-content">
 			        <div id="tab1-h2" class="tab active">
@@ -344,225 +358,16 @@ $(function(){
 			            	</div>
 			            </div>
 			        </div>
-			        <div id="tab2-h2" class="tab">
-			           <div class="row">
-			            	<div class="slick-multiItem2">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it4.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">The walk</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it5.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it6.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it7.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it8.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            	</div>
-			            </div>
-			        </div>
-			        <div id="tab3-h2" class="tab">
-			        	<div class="row">
-			            	<div class="slick-multiItem2">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it1.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-								<div class="slide-it">
-									<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it2.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">The revenant</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-								</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it3.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it4.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">The walk</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it5.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            	</div>
-			            </div>
-		       	 	</div>
-		       	 	 <div id="tab4-h2" class="tab">
-			        	<div class="row">
-			            	<div class="slick-multiItem2">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it5.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it6.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it7.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it8.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            	</div>
-			            </div>
-		       	 	</div>
+			        
 			    </div>
 			</div>
+			<!-- ============================= IN THETER SLIDER END  ============================== -->
+			
+			
+			<!-- ============================= ON TV SLIDER START  ============================== -->
 			<div class="title-hd">
 				<h2>on tv</h2>
-				<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+				<a href="../movieList/movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 			</div>
 			<div class="tabs">
 				<ul class="tab-links-2">
@@ -690,232 +495,21 @@ $(function(){
 			            	</div>
 			            </div>
 			        </div>
-			        <div id="tab22-h2" class="tab">
-			           <div class="row">
-			            	<div class="slick-multiItem2">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            			<img src="../images/uploads/mv-it4.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">The walk</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it5.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it6.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it7.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it8.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            	</div>
-			            </div>
-			        </div>
-			        <div id="tab23-h2" class="tab">
-			        	<div class="row">
-			            	<div class="slick-multiItem2">
-			            		<div class="movie-item">
-			            			<div class="mv-img">
-			            				<img src="../images/uploads/mv-it1.jpg" alt="">
-			            			</div>
-			            			<div class="hvr-inner">
-			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-			            			</div>
-			            			<div class="title-in">
-			            				<h6><a href="#">Interstellar</a></h6>
-			            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-			            			</div>
-			            		</div>
-								<div class="movie-item">
-			            			<div class="mv-img">
-			            				<img src="../images/uploads/mv-it2.jpg" alt="">
-			            			</div>
-			            			<div class="hvr-inner">
-			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-			            			</div>
-			            			<div class="title-in">
-			            				<h6><a href="#">The revenant</a></h6>
-			            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-			            			</div>
-			            		</div>
-			            		<div class="movie-item">
-			            			<div class="mv-img">
-			            				<img src="../images/uploads/mv-it3.jpg" alt="">
-			            			</div>
-			            			<div class="hvr-inner">
-			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-			            			</div>
-			            			<div class="title-in">
-			            				<h6><a href="#">Die hard</a></h6>
-			            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-			            			</div>
-			            		</div>
-			            		<div class="movie-item">
-			            			<div class="mv-img">
-			            				<img src="../images/uploads/mv-it4.jpg" alt="">
-			            			</div>
-			            			<div class="hvr-inner">
-			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-			            			</div>
-			            			<div class="title-in">
-			            				<h6><a href="#">The walk</a></h6>
-			            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-			            			</div>
-			            		</div>
-			            		<div class="movie-item">
-			            			<div class="mv-img">
-			            				<img src="../images/uploads/mv-it3.jpg" alt="">
-			            			</div>
-			            			<div class="hvr-inner">
-			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-			            			</div>
-			            			<div class="title-in">
-			            				<h6><a href="#">Die hard</a></h6>
-			            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-			            			</div>
-			            		</div>
-			            	</div>
-			            </div>
-		       	 	</div>
-		       	 	 <div id="tab24-h2" class="tab">
-			        	<div class="row">
-			            	<div class="slick-multiItem2">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it4.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">The walk</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it5.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it6.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it7.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="../images/uploads/mv-it8.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            	</div>
-			            </div>
-		       	 	</div>
+			        
 			    </div>
 			</div>
+			<!-- ============================= ON TV SLIDER START  ============================== -->
 		</div>
 	</div>
 </div>
+<!-- =============================  THEMA SLIDER AREA START  ============================== -->
 
+
+<!-- =============================  TRAILER SLIDER & 영화인  AREA START  ============================== -->
 <div class="trailers full-width">
 		<div class="row ipad-width">
+		
+			<!-- =============================  TRAILER SLIDER AREA START  ============================== -->
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="title-hd">
 					<h2>개봉예정작 예고편</h2>
@@ -1001,33 +595,36 @@ $(function(){
 					</div>
 				</div>
 			</div>
+			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
+			
+			<!-- =============================  주목받는 영화인  AREA START  ============================== -->
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="celebrities">
 						<h4 class="sb-title">주목받는 영화인</h4>
 						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Samuel N. Jack</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Benjamin Carroll</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Beverly Griffin</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="#"><img src="../images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Justin Weaver</a></h6>
 								<span>Actor</span>
@@ -1036,50 +633,53 @@ $(function(){
 					</div>
 				</div>
 			</div>
+			<!-- =============================  주목받는 영화인  AREA END  ============================== -->
+			
 		</div>
-	
 </div>
-<!-- latest new v2 section-->
+<!-- =============================  TRAILER SLIDER & 영화인  AREA END  ============================== -->
+
+<!-- =============================  LATEST NEWS AREA START  ============================== -->
 <div class="latestnew full-width">
 		<div class="row">
 			<!-- <div class="col-md-9"> -->
 			<div>	
 				<div class="ads adsv2">
-					<img src="images/uploads/ads2.png" alt="">
+					<img src="../images/uploads/ads2.png" alt="">
 				</div>
 				<div class="title-hd">
 					<h2>최신 영화 뉴스</h2>
-					<a href="bloggrid.html" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+					<a href="../news/blogList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 				<div class="latestnewv2">
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="../images/uploads/blogv21.jpg" alt=""></a>
+						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv21.jpg" alt=""></a>
 						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">Godzilla: King Of The Monsters Adds O’Shea Jackson Jr</a></h3>
+							<h3><a href="../news/blogDetail.do">Godzilla: King Of The Monsters Adds O’Shea Jackson Jr</a></h3>
 							<span class="time">27 Mar 2017</span>
 							<p>Looks like Kong: Skull Island started a tradition with its casting of Straight ...</p>
 						</div>
 					</div>
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="../images/uploads/blogv22.jpg" alt=""></a>
+						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv22.jpg" alt=""></a>
 						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">First Official Images of Alicia Vikander As Tomb Raider’s Lara Croft</a></h3>
+							<h3><a href="../news/blogDetail.do">First Official Images of Alicia Vikander As Tomb Raider’s Lara Croft</a></h3>
 							<span class="time">27 Mar 2017</span>
 							<p>Aside from the her digital incarnation, the most recognisable image of Tomb ...</p>
 						</div>
 					</div>
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="../images/uploads/blogv23.jpg" alt=""></a>
+						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv23.jpg" alt=""></a>
 						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">New Spider-Man: Homecoming Poster Finds Peter Parker At Rest</a></h3>
+							<h3><a href="../news/blogDetail.do">New Spider-Man: Homecoming Poster Finds Peter Parker At Rest</a></h3>
 							<span class="time">27 Mar 2017</span>
 							<p>He might be a primary protector of New York City, but at heart, Peter Parker is ...</p>
 						</div>
 					</div>
 					<div class="blog-item-style-2">
-						<a href="blogdetail.html"><img src="../images/uploads/blogv24.jpg" alt=""></a>
+						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv24.jpg" alt=""></a>
 						<div class="blog-it-infor">
-							<h3><a href="blogdetail.html">Joseph Gordon-Levitt Directing Moive Musical Comedy Wingmen</a></h3>
+							<h3><a href="../news/blogDetail.do">Joseph Gordon-Levitt Directing Moive Musical Comedy Wingmen</a></h3>
 							<span class="time">27 Mar 2017</span>
 							<p>A little over a year ago, we learned that Joseph Gordon-Levitt and Channing ...</p>
 						</div>
@@ -1104,9 +704,8 @@ $(function(){
 				</div>
 			</div> -->
 		</div>
-	
 </div>
-<!--end of latest new v2 section-->
-
+<!-- =============================  LATEST NEWS AREA END  ============================== -->
+<!-- =============================  HOME END  ============================== -->
 </body>
 </html>

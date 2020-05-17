@@ -3,7 +3,8 @@
 <!DOCTYPE html >
 <html lang="ko">
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../css/userProfile.css">
 </head>
 <body>
 
@@ -14,10 +15,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1>Edward kennedy’s profile</h1>
+				<h1>범블비 님의 프로필</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="#">Home</a></li>
-						<li> <span class="ion-ios-arrow-right"></span>Profile</li>
+						<li class="active"><a href="../main/home.do">홈</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>프로필</li>
 					</ul>
 				</div>
 			</div>
@@ -30,22 +31,22 @@
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="user-information">
 					<div class="user-img">
-						<a href="#"><img src="images/uploads/user-img.png" alt=""><br></a>
-						<a href="#" class="redbtn">Change avatar</a>
+						<a href="#"><img src="../images/uploads/user-img.png" alt=""><br></a>
+						<a href="#" class="redbtn">프로필 사진 변경</a>
 					</div>
 					<div class="user-fav">
-						<p>Account Details</p>
+						<!-- <p>Account Details</p> -->
 						<ul>
-							<li  class="active"><a href="userprofile.html">Profile</a></li>
-							<li><a href="userfavoritelist.html">Favorite movies</a></li>
-							<li><a href="userrate.html">Rated movies</a></li>
+							<li><a href="userProfile.do">프로필</a></li>
+							<li class="active"><a href="userfavoriteGrid.do">컬렉션</a></li>
+							<li><a href="userRate.do">평점/리뷰</a></li>
 						</ul>
 					</div>
 					<div class="user-fav">
-						<p>Others</p>
+						<!-- <p>Others</p> -->
 						<ul>
-							<li><a href="#">Change password</a></li>
-							<li><a href="#">Log out</a></li>
+							<li><a href="#">비밀번호 변경</a></li>
+							<li><a href="#">로그아웃</a></li>
 						</ul>
 					</div>
 				</div>
@@ -53,29 +54,29 @@
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="form-style-1 user-pro" action="#">
 					<form action="#" class="user">
-						<h4>01. Profile details</h4>
+						<h4>프로필 정보</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>Username</label>
+								<label>아이디</label>
 								<input type="text" placeholder="edwardkennedy">
 							</div>
 							<div class="col-md-6 form-it">
-								<label>Email Address</label>
+								<label>이메일</label>
 								<input type="text" placeholder="edward@kennedy.com">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>First Name</label>
+								<label>성</label>
 								<input type="text" placeholder="Edward ">
 							</div>
 							<div class="col-md-6 form-it">
-								<label>Last Name</label>
+								<label>이름</label>
 								<input type="text" placeholder="Kennedy">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6 form-it">
+						<!-- 	<div class="col-md-6 form-it">
 								<label>Country</label>
 								<select>
 								  <option value="united">United States</option>
@@ -88,37 +89,37 @@
 								  <option value="united">New York</option>
 								  <option value="saab">Others</option>
 								</select>
-							</div>
+							</div> -->
 						</div>
 						<div class="row">
 							<div class="col-md-2">
-								<input class="submit" type="submit" value="save">
+								<input class="submit" type="submit" value="저장하기">
 							</div>
 						</div>	
 					</form>
 					<form action="#" class="password">
-						<h4>02. Change password</h4>
+						<h4>비밀번호 변경</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>Old Password</label>
+								<label>이전 비밀번호</label>
 								<input type="text" placeholder="**********">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>New Password</label>
+								<label>새 비밀번호</label>
 								<input type="text" placeholder="***************">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>Confirm New Password</label>
+								<label>새 비밀번호 확인</label>
 								<input type="text" placeholder="*************** ">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-2">
-								<input class="submit" type="submit" value="change">
+								<input class="submit" type="submit" value="변경완료">
 							</div>
 						</div>	
 					</form>
