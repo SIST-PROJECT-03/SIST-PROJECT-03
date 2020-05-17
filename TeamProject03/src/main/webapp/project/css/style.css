@@ -8284,7 +8284,13 @@ footer.full-width-ft .ft-copyright {
   font-family: 'Dosis', sans-serif;
   font-weight: 700;
 }
-<!-- 신승호 추가 css-->
+
+/* 신승호 추가 css */
+/* 전체 */
+.mainDetailInfo{
+	 padding-top: 0px;
+}
+/* x버튼 */
 .title-hd a.viewall2 {
   font-family: 'Dosis', sans-serif;
   font-size: 30px;
@@ -8299,6 +8305,78 @@ footer.full-width-ft .ft-copyright {
 .title-hd a.viewall2:hover {
   color: #dcf836;
 }
+
+/* 기본정보 영역 */
+.mainInfo .title-in  .mainInnerDetail .movie-item {
+  margin-right: 0px;
+}
+
+.mainInfo .title-in  .mainInnerDetail .movie-item .social-btn{
+  margin: 25px 0px;
+}
+
+.mainInfo .title-in  .mainInnerDetail .movie-item .btn-transform{
+  width: 100%;
+}
+.mainInfo .title-in  .mainInnerDetail .movie-item,.mainInnerImg{
+  min-height: 300px;	
+}
+
+.mainInfo .title-in  .mainInnerDetail .mainInnerImg{
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mainInfo .title-in  .mainInnerDetail .movie-item .detailImg{
+  background-size: auto;	
+}
+/* .mainInfo .mainInnerDetail .mainInnerVideoRight .videoPlayer{
+	position: relative;
+	padding-top: 200%;
+	padding-top: 65%;
+	overflow: hidden;	
+} 
+
+.mainInfo .mainInnerDetail .mainInnerVideoRight .videoPlayer img{
+	position: absolute;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: auto;	
+}*/  
+/*.mainInfo .mainInnerDetail .mainInnerVideoRight .videoPlayer img{
+	max-width: 100%;
+	height: auto;
+}*/
+
+/* 비슷한작품 영역 */
+.mainInfo .mainSim .movie-item{
+	 margin-right: 0px;
+	 margin-top: 50px;
+}
+
+.mainInfo .mainSim .movie-item .mainInnerVideoRight{
+	/* border: 3px solid white;  */
+	height:150px;
+}
+
+.mainInfo .mainSim .btn-transform{
+	  width: 100%;
+	  padding-top: 25px;
+}
+
+.mainInfo .mainSim .mainInnerVideoRight .videoPlayer img{
+	max-width: 100%;
+	height: auto;
+}
+
+/* 상세정보 하단 버튼(기본정보/비슷한작품) */
+.mainInner .mainNav {
+	padding-top: 400px
+}
+
 .mainInner .menu {
     position: absolute;
     bottom: 0;
@@ -8414,3 +8492,27 @@ footer.full-width-ft .ft-copyright {
     transform: translateY(0);
     background-color: #dd003f;
 }
+
+/* 리뷰작성 */
+#reviewWrite{
+	border-top: 1px solid #405266; 
+	border-bottom: 1px solid #405266;
+	margin-bottom: 25px;
+}
+
+#reviewWrite .div{
+	padding: 25px 0px;
+}
+
+#reviewWrite .div textarea{
+	height:100%;
+	background-color: #020D18;
+	border-color: #405266;
+	color:#abb7c4;
+}
+
+#reviewWrite .redbtn{
+	margin-right: 35px;
+}
+ 
+

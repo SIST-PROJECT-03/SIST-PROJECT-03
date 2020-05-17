@@ -22,4 +22,11 @@ public class MovieListController {
 		request.setAttribute("main_jsp", "../movieList/moviegrid.jsp");
 		return "project/main/main";
 	}
+	
+	@RequestMapping("project/movieList/SeriesSingle.do")
+	public String movie_series(HttpServletRequest request,HttpServletResponse response)
+	{
+		request.setAttribute("main_jsp", "../movieList/SeriesSingle.jsp");
+		return "project/main/main";
+	}
 }

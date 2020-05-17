@@ -10,8 +10,8 @@
 <script type="text/javascript">
 $(function(){
 	$(document).ready(function(){
-		$('.mainDetailinfo').hide();
-	});
+		$('.mainDetailinfo').hide();	
+	})
 	/* 상세보기버튼 클릭이벤트 */
 	$('.hvr-inner').click(function(){
 		$('.mainDetailinfo').show();
@@ -182,40 +182,46 @@ $(function(){
 		</div>
 	</div>
 </div>
-<div class="movie-items full-width mainDetailinfo"  style="padding-top: 0px;">
+<div class="movie-items full-width mainDetailinfo" >
 	<div class="row">
 		<div class="col-md-12">
 			<div class="mainInner">
 				<div class="title-hd">
 					<h2>제목</h2>
-					<a class="viewall2" style="font-size: 30px">x</a>
+					<a class="viewall2">x</a>
 				</div>
 				<div class="mainInfo">
 					<div class="title-in">
 						<div class="mainInnerDetail">					
-							<div class=" movie-item col-md-4" style="margin-right: 0px;">
+							<div class="movie-item col-md-8">
 								<p>관람객별점 | 기자/평론가 | 네티즌</p>
 								<p>줄거리</p>
 								<p>감독</p>
 								<p>출연</p>
 								<p>개요 | 장르 | 국가 | 개봉연도</p>
-								<div class="social-btn" style="margin: 30px 0px">		
+								<div class="social-btn">		
 									<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
 									<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
 								</div>					
-								<div class="btn-transform transform-vertical" style="width: 52%">
-									<a href="#" class="item item-1 redbtn">상세정보</a>
-									<a href= "#" class="item item-2 redbtn hvrbtn">상세정보</a>
+								<div class="btn-transform transform-vertical"> 
+									<a href="../movieList/SeriesSingle.do" class="item item-1 redbtn">상세정보</a>
+									<a href="../movieList/SeriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
 								</div>
 							</div>
-							<div class="mainInnerVideoRight col-md-8">
-								<div class="videoPlayer" style="border: 3px solid white; height:300px"></div>
+							<!-- <div class="mainInnerVideoRight col-md-4"> -->
+							<div class="mainInnerImg col-md-4" style="background-image:url('../images/uploads/mv-it1.jpg');">
+								<!-- <div class="videoPlayer">
+									<img src="../images/uploads/mv-it1.jpg">	
+								</div> -->
+								<div class="detailImg"></div>
 							</div>
 						</div>
 						<div class="mainSim">
-							<div class=" movie-item col-md-3" style="margin-right: 0px; margin-top: 50px;">
+							<div class=" movie-item col-md-3">
 								<div class="mainInnerVideoRight col-md-5">
-									<div class="videoPlayer" style="border: 3px solid white; height:150px"></div>
+									<div class="videoPlayer">
+										<img src="../images/uploads/mv-it1.jpg"/>
+									</div>
 								</div>
 								<div class="mainInnerVideoRight col-md-7">
 									<!-- <p>관람객별점 | 기자/평론가 | 네티즌</p> -->
@@ -229,20 +235,20 @@ $(function(){
 										<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
 									</div> -->
 								</div>
-								<div class="btn-transform transform-vertical" style="width: 100%; padding-top: 10px;">
-									<a href="#" class="item item-1 redbtn">상세정보</a>
-									<a href= "#" class="item item-2 redbtn hvrbtn">상세정보</a>
+								<div class="btn-transform transform-vertical">
+									<a href="../movieList/SeriesSingle.do" class="item item-1 redbtn">상세정보</a>
+									<a href="../movieList/SeriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
 								</div>
 							</div>
 						</div>	
-						<div class="mainNav" style="padding-top: 400px">
+						<div class="mainNav">
 							<ul class="menu">
-								<li>
-									<a class="info">기본정보</a>
+								<li class="info">
+									<a >기본정보</a>
 									<span class="ing"></span>
 								</li>				
-								<li>
-									<a class="similar">비슷한 작품</a>
+								<li  class="similar">
+									<a>비슷한 작품</a>
 									<span class="ing2"></span>
 								</li>		
 							</ul>
