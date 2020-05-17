@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+.topbar-filter.user p {
+    padding-right: 390px;
+}
+
+.page-single {
+    background-color: #020d18;
+    padding: 70px 0;
+}
+
+.user-hero .hero-ct h1 {
+    margin-left: -270px;
+}

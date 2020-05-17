@@ -7,14 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MainController {
+@RequestMapping("project/main/")
+public class HomeController {
 
-	@RequestMapping("project/main/main.do")
-	public String main_main(HttpServletRequest request, HttpServletResponse response)
-	{	
-		request.setAttribute("main_jsp", "../main/home.jsp");	
-		return "project/main/main";
+
+	@RequestMapping("home.do")
+	public String main_home(HttpServletRequest request, HttpServletResponse response)
+	{
+		return "redirect:main.do";
 	}
-	
 	
 }
