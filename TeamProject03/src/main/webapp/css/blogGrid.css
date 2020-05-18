@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+.topbar-filter p {
+    /* padding-right: 200px; */
+    margin-bottom: 0;
+    width: 570px;
+}
+
+.topbar-filter select {
+    width: 170px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(../images/uploads/drop-icon.png) no-repeat right 20px center;
+    border-left: 1px solid #405266;
+    border-right: 1px solid #405266;
+    border-top: none;
+    border-bottom: none;
+    color: #ffffff;
+    font-weight: 400;
+}
+

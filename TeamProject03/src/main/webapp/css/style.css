@@ -5935,7 +5935,7 @@ ul {
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
   border-right: 10px solid #dd003f;
-  /* Tam gi찼c ph梳즜 휃튼沼즓 휃沼� m횪u */
+  /* Tam giác phải được đổ màu */
 }
 .social-btn .hover-bnt:hover .hvr-item {
   -moz-opacity: 1;
@@ -7132,8 +7132,8 @@ p.ceb-single {
 }
 .sliderv2 {
   background: url('../images/uploads/slider-bg2.jpg') no-repeat;
-  padding-bottom: 20;
-  padding-top: 210px;
+  padding-bottom: 0;
+  padding-top: 180px;
   overflow: hidden;
 }
 .sliderv2 .movie-item .title-in {
@@ -8336,7 +8336,6 @@ footer.full-width-ft .ft-copyright {
 	padding-top: 65%;
 	overflow: hidden;	
 } 
-
 .mainInfo .mainInnerDetail .mainInnerVideoRight .videoPlayer img{
 	position: absolute;
 	top:0;
@@ -8514,5 +8513,3 @@ footer.full-width-ft .ft-copyright {
 #reviewWrite .redbtn{
 	margin-right: 35px;
 }
- 
-

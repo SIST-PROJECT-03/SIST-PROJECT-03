@@ -195,7 +195,18 @@
 				</div>
 			<!-- /.navbar-collapse -->
 	    </nav>
-		</div>	
+	    
+		<div class="top-search">
+			<select>
+				<option value="united">드라마제목</option>
+				<option value="saab">영화제목</option>
+				<option value="saab">뉴스</option>
+				<option value="saab">영화인</option>
+				<option value="saab">장르</option>
+			</select>
+			<input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
+		</div>
+	</div>	
 </header>
 <!-- END | Header -->
 </body>

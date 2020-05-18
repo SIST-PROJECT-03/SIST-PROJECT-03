@@ -44,16 +44,7 @@ $(function(){
 </head>
 <body>
 <!-- search form -->
-<div class="top-search">
-	<select>
-		<option value="united">드라마제목</option>
-		<option value="saab">영화제목</option>
-		<option value="saab">뉴스</option>
-		<option value="saab">영화인</option>
-		<option value="saab">장르</option>
-	</select>
-	<input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
-</div>
+
 <div class="slider sliderv2">
 	<div class="container">
 		<div class="row">
@@ -247,8 +238,8 @@ $(function(){
 									</div> -->
 								</div>
 								<div class="btn-transform transform-vertical">
-									<a href="SeriesSingle.do" class="item item-1 redbtn">상세정보</a>
-									<a href="SeriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
+									<a href="seriesSingle.do" class="item item-1 redbtn">상세정보</a>
+									<a href="seriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
 								</div>
 							</div>
 						</div>	

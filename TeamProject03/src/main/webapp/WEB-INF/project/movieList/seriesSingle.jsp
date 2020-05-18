@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -11,6 +11,7 @@ $(function(){
 	$(document).ready(function(){
 		$('#reviewWrite').hide();
 	})
+	
 	$('#review').click(function(){
 		$('#reviewWrite').show();
 	})
@@ -18,6 +19,7 @@ $(function(){
 </script>
 </head>
 <body>
+
 <div class="hero sr-single-hero sr-single">
 	<div class="container">
 		<div class="row">
@@ -265,15 +267,15 @@ $(function(){
 						        </div>
 						        <div id="reviews" class="tab review">
 						           <div class="row">
-						            	<div class="rv-hd" style="margin-bottom:25px;">
+						            	<div class="rv-hd">
 						            		<div class="div">
 							            		<h3>Related Movies To</h3>
 						       	 				<h2>Skyfall: Quantum of Spectre</h2>
 							            	</div>
-							            	<a id="review" class="redbtn" style="margin-right: 15px;">Write Review</a>
+							            	<a href="#" class="redbtn" id="review" style="margin-right: 15px;">Write Review</a>
 						            	</div>
 						            	
-						            	<!-- 리뷰 작성창 -->
+						            	<!--리뷰작성  -->
 						            	<div id="reviewWrite" class="rv-hd">
 						            		<div class="div">
 						            			<!-- maxlength를 넣어주면 글자수 제한도 가능하다. -->
@@ -289,7 +291,7 @@ $(function(){
 												<option value="range">-- Choose option --</option>
 												<option value="saab">-- Choose option 2--</option>
 											</select>
-										</div>				            	
+										</div>
 										<div class="mv-user-review-item">
 											<div class="user-infor">
 												<img src="images/uploads/userava1.jpg" alt="">
