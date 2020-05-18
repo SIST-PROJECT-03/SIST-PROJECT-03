@@ -21,15 +21,19 @@ public class ReviewManager {
 		try{
 			Document doc=Jsoup.connect("https://movie.naver.com/movie/sdb/browsing/bmovie_form.nhn").get();
 			Elements countPer=doc.select("tbody td");
+			/*for(Element a : countPer){
+				System.out.println(a.text());
+			}*/
 			StringTokenizer st=new StringTokenizer(countPer.text()," ");
-
+			
 			while(st.hasMoreTokens())
 			{
 				String temp=st.nextToken();
-				temp=temp.replace("(", "");
-				temp=temp.replace(")", "");
+				System.out.println("temp : " + temp);
 				if(i%2==1)
 				{
+					temp=temp.replace("(", "");
+					temp=temp.replace(")", "");
 					result[count]=Integer.parseInt(temp);
 					count++;
 				}
@@ -76,6 +80,8 @@ public class ReviewManager {
 						mlink=doc2.select(".directory_list > li > a").get(k);
 						String temp=mlink.attr("href");
 						System.out.println("Movie Link Category("+i+") :"+temp);
+						
+						
 						list.add(Integer.parseInt(temp.substring(temp.indexOf("=")+1)));
 					}
 					
@@ -126,15 +132,14 @@ public class ReviewManager {
 	{
 		List<ReviewVO> list=new ArrayList<ReviewVO>();
 		List<Integer> movie_id=getMovieId();
+		ReviewDAO dao=new ReviewDAO();
 		Element reviewElement=null;
 		Elements allElements=null;
-		SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
-		Date regdate=new Date();
-		int count=0;
 		//movie_id.size()
 		try{
 			for(int i=0; i<movie_id.size(); i++)
 			{
+				//24239 movie_id.get(i)
 				Document doc=Jsoup.connect("https://movie.naver.com/movie/bi/mi/point.nhn?code="+movie_id.get(i)).get();
 				Element iframeUrl=doc.selectFirst("iframe");
 				String reviewUrl=iframeUrl.attr("src");
@@ -155,23 +160,27 @@ public class ReviewManager {
 						ReviewVO vo=new ReviewVO();
 						reviewElement=doc2.selectFirst(".score_reple #_filtered_ment_"+z);
 						vo.setContent(getElementString(reviewElement));
-						System.out.println(vo.getContent());
+						
 						
 						allElements=doc2.select(".star_score > em");
 						vo.setRate(Integer.parseInt(getElementsAllString(allElements,z)));
-						System.out.println(vo.getRate());
 						
-						allElements=doc2.select(".score_reple > dl > dt");
-						String user_info=getElementsAllString(allElements, z);
-						StringTokenizer st=new StringTokenizer(user_info, " ");
-						String user_id=getUserIdSubstr(st.nextToken());
-						regdate=format.parse(st.nextToken());
 						
-						vo.setUser_id(user_id);
-						vo.setRegdate(regdate);
+						allElements=doc2.select(".score_reple > dl > dt > em");
+						String[] user_info=getUserInfo(allElements, z);
+						
+						vo.setUser_id(getUserIdSubstr(user_info[0]));
+						vo.setRegdate(user_info[1]);
 						vo.setMovie_id(movie_id.get(i));
 						
-						list.add(vo);
+						System.out.println(vo.getMovie_id());
+						System.out.println("user_id :" + vo.getUser_id());
+						System.out.println("regdate : "+ vo.getRegdate());
+						System.out.println(vo.getContent());
+						System.out.println(vo.getRate());
+						System.out.println("=================================================================");
+						
+						dao.reviewDataInsert(vo);
 						
 					}
 					
@@ -207,6 +216,18 @@ public class ReviewManager {
 		return res;
 	}
 	
+	public String[] getUserInfo(Elements e,int count)
+	{
+		String[] res=new String[2];
+		int even=count*2;
+		int odd=even+1;
+		try{
+			res[0]=e.get(even).text();
+			res[1]=e.get(odd).text();
+		}catch (Exception ex) {
+		}
+		return res;
+	}
 	public String getElementsAllString(Elements e,int count)
 	{
 		String res="";

@@ -20,7 +20,7 @@ public class CastManager {
 					
 					Element name=doc.select(".character > .h_movie").first();
 					try{
-						vo.setName(name.text());	
+						vo.setName(name.text());
 					}catch (Exception ex) {
 						vo.setName("");
 					}
@@ -37,7 +37,8 @@ public class CastManager {
 					
 					try{
 						String img=thmbnail.attr("alt");
-					
+						System.out.println(img);
+						
 						if(!img.equals("이미지가 존재하지 않습니다."))
 						{
 							String temp=thmbnail.attr("src");
@@ -50,6 +51,7 @@ public class CastManager {
 					}catch (Exception ex) {
 						vo.setThumbnail("https://ssl.pstatic.net/static/movie/2012/06/dft_img77x96_1.png");
 					}
+					
 					
 					Element profile=doc.select(".con_tx").first();
 					try{
@@ -71,6 +73,7 @@ public class CastManager {
 					
 					System.out.print(vo.getCast_id()+". ");
 					
+					
 					try{
 						System.out.println(name.text());
 						System.out.println(birth.text());
@@ -78,7 +81,6 @@ public class CastManager {
 						System.out.println(vo.getThumbnail());
 						System.out.println(reward.text());
 					}catch (Exception ex) {}
-
 					System.out.println("============================================================================================================================================================================");
 					
 					
