@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+
+.page-single {
+    background-color: #020d18;
+   	padding: 70px 0;
+}
+
+.user-hero .hero-ct h1 {
+    margin-left: -270px;
+}
+
+.user-pro input.submit {
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    border-radius: 50px !important;
+    margin-left: 675px;
+    margin-top: 15px;
+}

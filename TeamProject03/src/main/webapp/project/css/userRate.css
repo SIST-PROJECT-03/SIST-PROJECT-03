@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.movie-item-style-2 .mv-item-infor p {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.page-single {
+    background-color: #020d18;
+    padding: 70px 0;
+}
+
+.user-hero .hero-ct h1 {
+    margin-left: -210px;
+}
+
+.movie-item-style-2 .mv-item-infor h6 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}

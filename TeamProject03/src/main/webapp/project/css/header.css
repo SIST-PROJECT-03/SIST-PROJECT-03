@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+.navLi {	
+	border: solid 1px white;
+	width: 120px;
+	height: 35.5px;
+	display: inline-block;
+	margin-bottom: 10px;
+	padding-bottom: 0px;
+	margin-left: 20px;
+	text-align: left;
+	padding-left: -65px;
+}
+
+
+.navLi:hover {	
+	font-size: 22px;
+	color: blue;
+	text-decoration: underline;
+}
+
+
+header .navbar-default .navbar-nav .dropdown .dropdown-menu.level2 {
+  position: absolute;
+  top: -21px !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: 304px;
+  left: 177px;
+  padding-top: 20px ;
+  padding-bottom: 20px;
+  bottom: auto !important;
+}
+
+
+header .navbar-default .navbar-nav li a {
+    font-family: 'Dosis', sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
