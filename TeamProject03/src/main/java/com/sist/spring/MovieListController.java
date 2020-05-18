@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("project/movieList/")
 public class MovieListController {
 
+	
 	@RequestMapping("movieList.do")
 	public String movie_List(HttpServletRequest request, HttpServletResponse response)
 	{

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("project/main/")
 public class HomeController {
 
-
 	@RequestMapping("home.do")
 	public String main_home(HttpServletRequest request, HttpServletResponse response)
 	{

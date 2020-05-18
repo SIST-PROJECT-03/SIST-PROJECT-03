@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
+	
 	@RequestMapping("project/main/main.do")
 	public String main_main(HttpServletRequest request, HttpServletResponse response)
 	{	

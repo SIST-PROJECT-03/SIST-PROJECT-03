@@ -23,6 +23,7 @@ public class CelebController {
 		return "project/main/main";
 	}
 	
+	
 	@RequestMapping("project/celeb/celebdetail.do")
 	public String celeb_celebDetail(HttpServletRequest request, HttpServletResponse response)
 	{

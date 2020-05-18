@@ -18,6 +18,7 @@ public class MyMovieController {
 		return "project/main/main";
 	}
 	
+	
 	@RequestMapping("userFavoriteList.do")
 	public String myMovie_userFavoriteList(HttpServletRequest request, HttpServletResponse response)
 	{
