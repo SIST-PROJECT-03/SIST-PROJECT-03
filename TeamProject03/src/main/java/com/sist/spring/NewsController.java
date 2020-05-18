@@ -1,8 +1,5 @@
 package com.sist.spring;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class NewsController {
 
-	@RequestMapping("project/news/bloglist.do")
+	/*@RequestMapping("project/news/bloglist.do")
 	public String news_bloglist(HttpServletRequest request, HttpServletResponse response)
 	{
 		request.setAttribute("main_jsp", "../news/bloglist.jsp");
@@ -29,5 +26,5 @@ public class NewsController {
 	{
 		request.setAttribute("main_jsp", "../news/blogdetail.jsp");
 		return "project/main/main";
-	}
+	}*/
 }
