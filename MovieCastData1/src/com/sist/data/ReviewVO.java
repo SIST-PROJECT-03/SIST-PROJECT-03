@@ -2,13 +2,20 @@ package com.sist.data;
 import java.util.Date;
 
 public class ReviewVO {
+	private int review_id;
 	private int movie_id;
 	private String user_id;
 	private int rate;
 	private String content;
-	private Date regdate;
-	private int good_count;
-	private int bad_count;
+	private String regdate;
+	
+	
+	public int getReview_id() {
+		return review_id;
+	}
+	public void setReview_id(int review_id) {
+		this.review_id = review_id;
+	}
 	public int getMovie_id() {
 		return movie_id;
 	}
@@ -33,23 +40,11 @@ public class ReviewVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getRegdate() {
+	public String getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(Date regdate) {
+	public void setRegdate(String regdate) {
 		this.regdate = regdate;
-	}
-	public int getGood_count() {
-		return good_count;
-	}
-	public void setGood_count(int good_count) {
-		this.good_count = good_count;
-	}
-	public int getBad_count() {
-		return bad_count;
-	}
-	public void setBad_count(int bad_count) {
-		this.bad_count = bad_count;
 	}
 	
 }

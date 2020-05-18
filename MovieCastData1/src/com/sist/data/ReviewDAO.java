@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 public class ReviewDAO {
 	private Connection conn;
 	private PreparedStatement ps;
-	private final String URL="jdbc:oracle:thin:@localhost:1521:XE";
+	private final String URL="jdbc:oracle:thin:@211.238.142.210:1521:XE";
 	private static CastDAO dao;
 
 	public ReviewDAO(){
@@ -40,21 +40,27 @@ public class ReviewDAO {
 		}catch (Exception ex) {}
 
 	}
-	
-	public void castDataInsert(CastVO vo)
+	/*
+	 		REVIEW_ID NOT NULL NUMBER        
+			MOVIE_ID           NUMBER        
+			USER_ID            VARCHAR2(400) 
+			RATE               NUMBER        
+			CONTENT            CLOB          
+			REGDATE            VARCHAR2(300) 
+	 */
+	public void reviewDataInsert(ReviewVO vo)
 	{
 		try{
 			getConnection();
-			String sql="INSERT INTO cast "
-					+ "VALUES(?,?,?,?,?,?)";
+			String sql="INSERT INTO review "
+					+ "VALUES((SELECT NVL(MAX(review_id)+1,1) as review_id FROM review),?,?,?,?,?)";
 			ps=conn.prepareStatement(sql);
 			
-			ps.setInt(1, vo.getCast_id());
-			ps.setString(2, vo.getName());
-			ps.setString(3, vo.getBirth());
-			ps.setString(4, vo.getThumbnail());
-			ps.setString(5, vo.getProfile());
-			ps.setString(6, vo.getReward());
+			ps.setInt(1, vo.getMovie_id());
+			ps.setString(2, vo.getUser_id());
+			ps.setInt(3,vo.getRate());
+			ps.setString(4, vo.getContent());
+			ps.setString(5, vo.getRegdate());
 			
 			ps.executeUpdate();
 			

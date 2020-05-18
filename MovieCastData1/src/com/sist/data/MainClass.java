@@ -6,18 +6,17 @@ public class MainClass {
 		// TODO Auto-generated method stub
 
 		CastManager cm=new CastManager();
-		ReviewManager rm=new ReviewManager();
+		RevieManager2 rm=new RevieManager2();
 		try{
-			cm.castAllData();
+			/*cm.castAllData();*/
 			/*int[] result=rm.getMovieCount();*/
-			/*List<ReviewVO> list=rm.reviewListData();*/
+			rm.movieReviewAllData();
 			
 			/*for(ReviewVO vo:list)
 			{
 				System.out.println(vo.getUser_id());
 			}*/
 		}catch (Exception ex) {}
-		
 		
 	}
 
