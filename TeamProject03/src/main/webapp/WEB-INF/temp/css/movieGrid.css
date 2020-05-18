@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+p.pad-change {
+    padding-right: 0px;
+    width: 460px;
+}
+
+.topbar-filter select {
+    width: 190px;
+}      

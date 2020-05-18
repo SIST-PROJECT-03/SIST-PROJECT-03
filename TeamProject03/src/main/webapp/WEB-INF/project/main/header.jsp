@@ -188,7 +188,7 @@
 								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
 							</ul>
 						</li>                
-						<li><a href="#">Help</a></li> --> -->
+						<li><a href="#">Help</a></li> -->
 						<li class="loginLink"><a href="#">로그인</a></li>
 						<li class="btn signupLink"><a href="#">회원가입</a></li>
 					</ul>
