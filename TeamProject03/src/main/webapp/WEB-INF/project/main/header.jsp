@@ -127,7 +127,7 @@
 							<!-- <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a> -->
-							<a class="btn btn-default lv1" href="../main/main.do">홈</a>
+							<a class="btn btn-default lv1" href="main.do">홈</a>
 							<!-- <ul class="dropdown-menu level1">
 								<li><a href="index-2.html">Home 01</a></li>
 								<li><a href="homev2.html">Home 02</a></li>
