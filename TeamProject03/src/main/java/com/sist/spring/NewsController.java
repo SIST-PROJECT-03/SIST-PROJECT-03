@@ -9,8 +9,12 @@ public class NewsController {
 	@RequestMapping("newslist.do")
 	public String news_list()
 	{
-		System.out.println("hello");
 		return "project/news/blogList";
 	}
 	
+	@RequestMapping("newsDetail.do")
+	public String news_detail()
+	{
+		return "project/news/blogDetail";
+	}
 }

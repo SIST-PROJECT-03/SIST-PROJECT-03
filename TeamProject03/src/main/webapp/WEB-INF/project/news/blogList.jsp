@@ -45,7 +45,7 @@
 				<div class="blog-item-style-1 blog-item-style-3">
             		<img src="../images/uploads/bloglist-it1.jpg" alt="">
             		<div class="blog-it-infor">
-            			<h3><a href="blogDetail.do">Godzilla: King Of The Monsters Adds O’Shea Jackson Jr</a></h3>
+            			<h3><a href="newsDetail.do">Godzilla: King Of The Monsters Adds O’Shea Jackson Jr</a></h3>
             			<span class="time">27 Mar 2017</span>
             			<p>Africa's burgeoning animation scene got a boost this week with the announcement of an ambitious new partnership that will pair rising talents from across the continent ...</p>
             		</div>
