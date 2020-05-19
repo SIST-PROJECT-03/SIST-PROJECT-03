@@ -1,13 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="css/header.css">
 </head>
 <body>
-<!--login form popup-->
+
+<!-- =========================== PRELOADING SECTION START ============================-->
+<div id="preloader">
+    <img class="logo" src="images/logo1.png" alt="" width="119" height="58">
+    <div id="status">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!-- =========================== PRELOADING SECTION END ============================-->
+
+
+<!-- =========================== LOGIN FORM START ============================-->
 <div class="login-wrapper" id="login-content">
     <div class="login-content">
         <a href="#" class="close">x</a>
@@ -47,8 +59,10 @@
         </div> -->
     </div>
 </div>
-<!--end of login form popup-->
-<!--signup form popup-->
+<!-- =========================== LOGIN FORM END ============================-->
+
+
+<!-- =========================== SIGNUP FORM START ============================-->
 <div class="login-wrapper"  id="signup-content">
     <div class="login-content">
         <a href="#" class="close">x</a>
@@ -85,9 +99,9 @@
         </form>
     </div>
 </div>
-<!--end of signup form popup-->
+<!-- =========================== SIGNUP FORM END ============================-->
 
-<!-- BEGIN | Header -->
+<!-- =========================== HEADER SECTION START ============================-->
 <header class="ht-header full-width-hd">
 		<div class="row">
 			<nav id="mainNav" class="navbar navbar-default navbar-custom">
@@ -101,7 +115,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="main.do"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
+				    <a href="../main/main.do"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -113,7 +127,7 @@
 							<!-- <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a> -->
-							<a class="btn btn-default lv1" href="main.do">홈</a>
+							<a class="btn btn-default lv1" href="../main/main.do">홈</a>
 							<!-- <ul class="dropdown-menu level1">
 								<li><a href="index-2.html">Home 01</a></li>
 								<li><a href="homev2.html">Home 02</a></li>
@@ -125,60 +139,89 @@
 							영화탐색<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<!-- <li class="dropdown">
-									<a href="#">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-									<ul class="dropdown-menu level2">
-										<li><a href="aboutv1.html">About Us 01</a></li>
-										<li><a href="aboutv2.html">About Us 02</a></li>
+								<li class="dropdown">
+									<a href="javascript:void(0)" style="cursor: default;">장르<i class="fa fa-caret-right" aria-hidden="true" onclick="false"></i></a>
+									<ul class="dropdown-menu level2" style="list-style: none;">
+										<li class="navLi"><a href="../movieList/movieGrid.do">액션</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">드라마</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">애니메이션</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">코미디</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">멜로/로맨스</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">공포</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">SF</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">드라마</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">가족</a></li>
+										<li class="navLi"><a href="../movieList/movieGrid.do">스릴러</a></li>
 									</ul>
-								</li> -->
-								<li><a href="../movieList/movielist.do">Movie list</a></li>
-								<li><a href="../movieList/moviegrid.do">Movie grid</a></li>
-								<li><a href="../movieList/movielist.do">Movie list</a></li>
-								<li><a href="../movieList/movielist.do">Movie list</a></li></p>
-								<li><a href="../movieList/movielist.do">Movie list</a></li>
-								<li><a href="../movieList/movielist.do">Movie list</a></li>
-								<li><a href="../movieList/movielist.do">Movie list</a></li>
+								</li> 
+								<li class="dropdown">
+									<a href="../movieList/movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="dropdown-menu level2">
+										<li><a href="../movieList/movieGrid.do">About Us 01</a></li>
+										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
+										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
+									</ul>
+								</li> 
+								<li class="dropdown">
+									<a href="../movieList/movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="dropdown-menu level2">
+										<li><a href="../movieList/movieGrid.do">About Us 01</a></li>
+										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
+									</ul>
+								</li> 
+								<li class="dropdown">
+									<a href="../movieList/movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="dropdown-menu level2">
+										<li><a href="../movieList/movieGrid.do">About Us 01</a></li>
+										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
+									</ul>
+								</li> 
+								<!-- <li><a href="../movieList/movieList.do">Movie list</a></li>
+								<li><a href="../movieList/movieList.do">Movie list</a></li>
+								<li><a href="../movieList/movieList.do">Movie list</a></li> -->
 							<!-- 	<li><a href="moviegridfw.html">movie grid full width</a></li>  -->
 								
 							<!-- 	<li class="it-last"><a href="moviesingle.html">Movie single</a></li>  -->
 							</ul>
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							영화인<i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<!-- <li><a href="celebritygrid01.html">celebrity grid 01</a></li> -->
-								<li><a href="celebgrid.do">celebrity grid</a></li>
-								<li><a href="celeblist.do">celebrity list</a></li>
-								<!-- <li class="it-last"><a href="celebritysingle.html">celebrity single</a></li> -->
-							</ul>
-						</li>
+							<!-- <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
+							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
+							</a> -->
+							<a class="btn btn-default lv1" href="../celeb/celebGrid.do">
+							영화인</a>
+							<!-- <ul class="dropdown-menu level1">
+								<li><a href="index-2.html">Home 01</a></li>
+								<li><a href="homev2.html">Home 02</a></li>
+								<li><a href="homev3.html">Home 03</a></li>
+							</ul> -->
+						</li>	
+						<li class="dropdown first">
+							<!-- <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
+							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
+							</a> -->
+							<a class="btn btn-default lv1" href="../news/blogList.do">
+							영화 뉴스</a>
+						<!-- <ul class="dropdown-menu level1">
+								<li><a href="index-2.html">Home 01</a></li>
+								<li><a href="homev2.html">Home 02</a></li>
+								<li><a href="homev3.html">Home 03</a></li>
+							</ul> -->
+						</li>	
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							영화 뉴스<i class="fa fa-angle-down" aria-hidden="true"></i>
+							나의 영화<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="bloglist.do">blog List</a></li>
-								<li><a href="bloggrid.do">blog Grid</a></li>
-								<!-- <li class="it-last"><a href="blogdetail.html">blog Detail</a></li> -->
-							</ul>
-						</li>
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							마이페이지<i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="userFavoriteGrid.do">My Favorite Grid</a></li>
-								<li><a href="userFavoriteList.do">My Favorite List</a></li>
-								<li><a href="userProfile.do">My Profile</a></li>
-								<li class="it-last"><a href="userRate.do">My Rate</a></li>
+								<li><a href="../myMovie/userFavoriteGrid.do">컬렉션</a></li>
+								<li class="it-last"><a href="../myMovie/userRate.do">평점/리뷰</a></li>
+								<li><a href="../myMovie/userProfile.do">프로필</a></li>
+								
 							</ul>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
-						<!-- <!-- <li class="dropdown first">
+						<!--  <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							pages <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -188,26 +231,25 @@
 								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
 							</ul>
 						</li>                
-						<li><a href="#">Help</a></li> -->
+						<li><a href="#">Help</a></li> --> 
 						<li class="loginLink"><a href="#">로그인</a></li>
 						<li class="btn signupLink"><a href="#">회원가입</a></li>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->
 	    </nav>
-	    
-		<div class="top-search">
-			<select>
-				<option value="united">드라마제목</option>
-				<option value="saab">영화제목</option>
+	    <!-- search form -->
+	    <div class="top-search">
+	    	<select>
+				<option value="saab">영화 제목</option>
 				<option value="saab">뉴스</option>
 				<option value="saab">영화인</option>
 				<option value="saab">장르</option>
 			</select>
-			<input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
-		</div>
-	</div>	
+			<input type="text" placeholder="제목, 배우, 감독으로 검색">
+	    </div>
+		</div>	
 </header>
-<!-- END | Header -->
+<!-- =========================== HEADER SECTION END ============================-->
 </body>
 </html>

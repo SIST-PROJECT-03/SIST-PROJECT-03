@@ -16,10 +16,31 @@ $(function(){
 		$('#reviewWrite').show();
 	})
 })
+
+
+function showAllBtn(){
+	
+	//구현중..
+	var overView = $('#overviewceb');
+	var media = $('#mediaceb');
+	var showAllBtn = $('#showAllMedia');
+	
+	showAllBtn.on('click', function(e)  {
+		
+		// Show/Hide Tabs
+		overView.removeClass('active');
+		// Change/remove current tab to active
+		media.addClass('active');
+		e.preventDefault();
+		
+	});
+}
+
+
 </script>
 </head>
 <body>
-
+<!-- ============================= MOVIE DETAIL TOP AREA START  ============================== -->
 <div class="hero sr-single-hero sr-single">
 	<div class="container">
 		<div class="row">
@@ -33,15 +54,21 @@ $(function(){
 		</div>
 	</div>
 </div>
+<!-- ============================= MOVIE DETAIL TOP AREA END  ============================== -->
+
+
+<!-- ============================= MOVIE DETAIL BOTTOM AREA START  ============================== -->
 <div class="page-single movie-single movie_single">
 	<div class="container">
 		<div class="row ipad-width2">
+			
+			<!-- ============================= MOVIE DETAIL - LEFT POSTER AREA START  ============================== -->
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="movie-img sticky-sb">
-					<img src="images/uploads/series-img.jpg" alt="">
+					<img src="../images/uploads/series-img.jpg" alt="">
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
-							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
+							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> 예고편 보기</a></div>
 							<div><a href="https://www.youtube.com/embed/o-0hcF97wy0" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
 						</div>
 						<div class="btn-transform transform-vertical">
@@ -53,11 +80,11 @@ $(function(){
 			</div>
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="movie-single-ct main-content">
-					<h1 class="bd-hd">The Big Bang Theory <span> 2007 - current</span></h1>
+					<h1 class="bd-hd">The Big Bang Theory <span> 2007 </span></h1>
 					<div class="social-btn">
-						<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+						<a href="#" class="parent-btn"><i class="ion-heart"></i>컬렉션 담기</a>
 						<div class="hover-bnt">
-							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>공유하기</a>
 							<div class="hvr-item">
 								<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
 								<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
@@ -70,11 +97,12 @@ $(function(){
 						<div class="rate">
 							<i class="ion-android-star"></i>
 							<p><span>8.1</span> /10<br>
-								<span class="rv">56 Reviews</span>
+							</p>
+							<p><span class="rv">56 리뷰</span>
 							</p>
 						</div>
 						<div class="rate-star">
-							<p>Rate This Movie:  </p>
+							<p>내 평점 등록:  </p>
 							<i class="ion-ios-star"></i>
 							<i class="ion-ios-star"></i>
 							<i class="ion-ios-star"></i>
@@ -89,27 +117,29 @@ $(function(){
 					<div class="movie-tabs">
 						<div class="tabs">
 							<ul class="tab-links tabs-mv tabs-series">
-								<li class="active"><a href="#overview">Overview</a></li>
-								<li><a href="#reviews"> Reviews</a></li>
-								<li><a href="#cast">  Cast & Crew </a></li>
-								<li><a href="#media"> Media</a></li> 
-								<li><a href="#season"> Season</a></li> 
-								<li ><a href="#moviesrelated"> Related Shows</a></li>                        
+								<li class="active"><a href="#overview">주요정보</a></li>
+								<li><a href="#reviews">리뷰</a></li>
+								<li><a href="#cast">배우/제작진</a></li>
+								<li><a href="#media">포토/영상</a></li> 
+							<!-- 	<li><a href="#season"> Season</a></li>  -->
+								<li ><a href="#moviesrelated">관련 영화</a></li>                        
 							</ul>
-						    <div class="tab-content">
+							
+						    <div class="tab-content">	
+						    	<!-- ============================= MOVIE DETAIL -OVERVIEW 주요정보 TAB START  ============================== -->
 						        <div id="overview" class="tab active">
 						            <div class="row">
 						            	<div class="col-md-8 col-sm-12 col-xs-12">
 						            		<p>Leonard Hofstadter and Sheldon Cooper are both brilliant physicists working at Cal Tech in Pasadena, California. They are colleagues, best friends, and roommates, although in all capacities their relationship is always tested primarily by Sheldon's regimented, deeply eccentric, and non-conventional ways.</p>
-						            		<div class="title-hd-sm">
+						            		<!-- <div class="title-hd-sm">
 												<h4>Current Season</h4>
 												<a href="#" class="time">View All Seasons <i class="ion-ios-arrow-right"></i></a>
 											</div>
-											<!-- movie cast -->
+											movie cast
 											<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
+														<img src="../images/uploads/season.jpg" alt="">
 														<div>
 															<a href="#">Season 10</a>
 															<p>21 Episodes</p>
@@ -118,86 +148,86 @@ $(function(){
 														</div>	
 													</div>											
 												</div>	
-											</div>
+											</div> -->
 						            		<div class="title-hd-sm">
-												<h4>Videos & Photos</h4>
-												<a href="#" class="time">All 5 Videos & 245 Photos <i class="ion-ios-arrow-right"></i></a>
+												<h4>포토/영상</h4>
+												<a href="#" class="time">더보기 <i class="ion-ios-arrow-right"></i></a>
 											</div>
 											<div class="mvsingle-item ov-item">
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image41.jpg" ><img src="images/uploads/image4.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image51.jpg" ><img src="images/uploads/image5.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image61.jpg" ><img src="images/uploads/image6.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image41.jpg" ><img src="../images/uploads/image4.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image51.jpg" ><img src="../images/uploads/image5.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image61.jpg" ><img src="../images/uploads/image6.jpg" alt=""></a>
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/image7.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/image7.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 											</div>
 											<div class="title-hd-sm">
-												<h4>cast</h4>
-												<a href="#" class="time">Full Cast & Crew  <i class="ion-ios-arrow-right"></i></a>
+												<h4>배우</h4>
+												<a href="#" class="time">더보기  <i class="ion-ios-arrow-right"></i></a>
 											</div>
 											<!-- movie cast -->
 											<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast1.jpg" alt="">
+														<img src="../images/uploads/cast1.jpg" alt="">
 														<a href="#">Robert Downey Jr.</a>
 													</div>
 													<p>...  Robert Downey Jr.</p>
 												</div>
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast2.jpg" alt="">
-														<a href="#">Chris Hemsworth</a>
+														<img src="../images/uploads/cast2.jpg" alt="">
+														<a href="../celeb/celebDetail.do">Chris Hemsworth</a>
 													</div>
 													<p>...  Thor</p>
 												</div>
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast3.jpg" alt="">
-														<a href="#">Mark Ruffalo</a>
+														<img src="../images/uploads/cast3.jpg" alt="">
+														<a href="../celeb/celebDetail.do">Mark Ruffalo</a>
 													</div>
 													<p>...  Bruce Banner/ Hulk</p>
 												</div>
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast4.jpg" alt="">
-														<a href="#">Chris Evans</a>
+														<img src="../images/uploads/cast4.jpg" alt="">
+														<a href="../celeb/celebDetail.do">Chris Evans</a>
 													</div>
 													<p>...  Steve Rogers/ Captain America</p>
 												</div>
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast5.jpg" alt="">
-														<a href="#">Scarlett Johansson</a>
+														<img src="../images/uploads/cast5.jpg" alt="">
+														<a href="../celeb/celebDetail.do">Scarlett Johansson</a>
 													</div>
 													<p>...  Natasha Romanoff/ Black Widow</p>
 												</div>
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast6.jpg" alt="">
-														<a href="#">Jeremy Renner</a>
+														<img src="../images/uploads/cast6.jpg" alt="">
+														<a href="../celeb/celebDetail.do">Jeremy Renner</a>
 													</div>
 													<p>...  Clint Barton/ Hawkeye</p>
 												</div>
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast7.jpg" alt="">
-														<a href="#">James Spader</a>
+														<img src="../images/uploads/cast7.jpg" alt="">
+														<a href="../celeb/celebDetail.do">James Spader</a>
 													</div>
 													<p>...  Ultron</p>
 												</div>
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast9.jpg" alt="">
-														<a href="#">Don Cheadle</a>
+														<img src="../images/uploads/cast9.jpg" alt="">
+														<a href="../celeb/celebDetail.do">Don Cheadle</a>
 													</div>
 													<p>...  James Rhodes/ War Machine</p>
 												</div>
 											</div>
 											<div class="title-hd-sm">
-												<h4>User reviews</h4>
-												<a href="#" class="time">See All 56 Reviews <i class="ion-ios-arrow-right"></i></a>
+												<h4>관람객 리뷰</h4>
+												<a href="#" class="time">더보기 <i class="ion-ios-arrow-right"></i></a>
 											</div>
 											<!-- movie user review -->
 											<div class="mv-user-review-item">
@@ -222,35 +252,35 @@ $(function(){
 						            	</div>
 						            	<div class="col-md-4 col-xs-12 col-sm-12">
 						            		<div class="sb-it">
-						            			<h6>Director: </h6>
+						            			<h6>감독: </h6>
 						            			<p><a href="#">Mark Cendrowski</a></p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Writer: </h6>
+						            			<h6>극본: </h6>
 						            			<p><a href="#"> Chuck Lorre,</a> <a href="#">Bill Prady</a></p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Stars: </h6>
+						            			<h6>배우: </h6>
 						            			<p><a href="#">Robert Downey Jr,</a> <a href="#">Chris Evans,</a> <a href="#">Mark Ruffalo,</a><a href="#"> Scarlett Johansson</a></p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Genres:</h6>
+						            			<h6>장르:</h6>
 						            			<p><a href="#">Action, </a> <a href="#"> Sci-Fi,</a> <a href="#">Adventure</a></p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Release Date:</h6>
+						            			<h6>개봉일:</h6>
 						            			<p>1 May 2006 (U.S.A)</p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Run Time:</h6>
+						            			<h6>상영시간:</h6>
 						            			<p>22 min</p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>MMPA Rating:</h6>
+						            			<h6>등급:</h6>
 						            			<p>TV-14</p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Plot Keywords:</h6>
+						            			<h6>주요 키워드:</h6>
 						            			<p class="tags">
 						            				<span class="time"><a href="#">superhero</a></span>
 													<span class="time"><a href="#">marvel universe</a></span>
@@ -260,12 +290,15 @@ $(function(){
 						            			</p>
 						            		</div>
 						            		<div class="ads">
-												<img src="images/uploads/ads1.png" alt="">
+												<img src="../images/uploads/ads1.png" alt="">
 											</div>
 						            	</div>
 						            </div>
 						        </div>
-						        <div id="reviews" class="tab review">
+						        <!-- ============================= MOVIE DETAIL - OVERVIEW 주요정보 TAB END  ============================== -->
+					 	        
+					 	          <!-- ============================= MOVIE DETAIL - REVIEW 리뷰 TAB START  ============================== -->
+					 	        <div id="reviews" class="tab review">
 						           <div class="row">
 						            	<div class="rv-hd">
 						            		<div class="div">
@@ -450,13 +483,17 @@ $(function(){
 										</div>
 						            </div>
 						        </div>
+						      <!-- ============================= MOVIE DETAIL - REVIEW리뷰 TAB END  ============================== -->
+						        
+						        
+						        <!-- ============================= MOVIE DETAIL -  CAST 배우 제작진 TAB START  ============================== -->
 						        <div id="cast" class="tab">
 						        	<div class="row">
-						            	<h3>Cast & Crew of</h3>
-					       	 			<h2>Avengers: Age of Ultron</h2>
+						            	<!-- <h3>Cast & Crew of</h3>
+					       	 			<h2>Avengers: Age of Ultron</h2> -->
 										<!-- //== -->
 					       	 			<div class="title-hd-sm">
-											<h4>Directors & Credit Writers</h4>
+											<h4>감독</h4>
 										</div>
 										<div class="mvcast-item">											
 											<div class="cast-it">
@@ -469,7 +506,7 @@ $(function(){
 										</div>
 										<!-- //== -->
 										<div class="title-hd-sm">
-											<h4>Directors & Credit Writers</h4>
+											<h4>제작진</h4>
 										</div>
 										<div class="mvcast-item">											
 											<div class="cast-it">
@@ -517,61 +554,61 @@ $(function(){
 										</div>
 										<!-- //== -->
 										<div class="title-hd-sm">
-											<h4>Cast</h4>
+											<h4>배우</h4>
 										</div>
 										<div class="mvcast-item">											
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast1.jpg" alt="">
+													<img src="../images/uploads/cast1.jpg" alt="">
 													<a href="#">Robert Downey Jr.</a>
 												</div>
 												<p>...  Robert Downey Jr.</p>
 											</div>
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast2.jpg" alt="">
+													<img src="../images/uploads/cast2.jpg" alt="">
 													<a href="#">Chris Hemsworth</a>
 												</div>
 												<p>...  Thor</p>
 											</div>
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast3.jpg" alt="">
+													<img src="../images/uploads/cast3.jpg" alt="">
 													<a href="#">Mark Ruffalo</a>
 												</div>
 												<p>...  Bruce Banner/ Hulk</p>
 											</div>
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast4.jpg" alt="">
+													<img src="../images/uploads/cast4.jpg" alt="">
 													<a href="#">Chris Evans</a>
 												</div>
 												<p>...  Steve Rogers/ Captain America</p>
 											</div>
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast5.jpg" alt="">
+													<img src="../images/uploads/cast5.jpg" alt="">
 													<a href="#">Scarlett Johansson</a>
 												</div>
 												<p>...  Natasha Romanoff/ Black Widow</p>
 											</div>
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast6.jpg" alt="">
+													<img src="../images/uploads/cast6.jpg" alt="">
 													<a href="#">Jeremy Renner</a>
 												</div>
 												<p>...  Clint Barton/ Hawkeye</p>
 											</div>
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast7.jpg" alt="">
+													<img src="../images/uploads/cast7.jpg" alt="">
 													<a href="#">James Spader</a>
 												</div>
 												<p>...  Ultron</p>
 											</div>
 											<div class="cast-it">
 												<div class="cast-left">
-													<img src="images/uploads/cast9.jpg" alt="">
+													<img src="../images/uploads/cast9.jpg" alt="">
 													<a href="#">Don Cheadle</a>
 												</div>
 												<p>...  James Rhodes/ War Machine</p>
@@ -641,22 +678,25 @@ $(function(){
 										</div>
 						            </div>
 					       	 	</div>
+					       	 	<!-- ============================= MOVIE DETAIL -  CAST 배우 제작진 TAB END  ============================== -->
+					       	 	
+					       	 	<!-- ============================= MOVIE DETAIL -  포토/영상 TAB START  ============================== -->
 					       	 	<div id="media" class="tab">
 						        	<div class="row">
 						        		<div class="rv-hd">
 						            		<div>
-						            			<h3>Videos & Photos of</h3>
-					       	 					<h2>The Big Bang Theory</h2>
+						            			<!-- <h3>Videos & Photos of</h3>
+					       	 					<h2>The Big Bang Theory</h2> -->
 						            		</div>
 						            	</div>
 						            	<div class="title-hd-sm">
-											<h4>Videos <span>(8)</span></h4>
+											<h4>영상 <span>(8)</span></h4>
 										</div>
 										<div class="mvsingle-item media-item">
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
-													<a class="fancybox-media hvr-grow"  href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item1.jpg" alt="">
+													<a class="fancybox-media hvr-grow"  href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Trailer:  Watch New Scenes</a></h6>
@@ -665,8 +705,8 @@ $(function(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item2.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item2.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Featurette: “Avengers Re-Assembled</a></h6>
@@ -675,8 +715,8 @@ $(function(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item3.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item3.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Robert Downey Jr</a></h6>
@@ -685,8 +725,8 @@ $(function(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item4.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Scarlett Johansson</a></h6>
@@ -695,8 +735,8 @@ $(function(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item1.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Featurette: Meet Quicksilver & The Scarlet Witch</a></h6>
@@ -705,8 +745,8 @@ $(function(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item2.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item2.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Director Joss Whedon</a></h6>
@@ -715,8 +755,8 @@ $(function(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item3.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item3.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Mark Ruffalo</a></h6>
@@ -725,8 +765,8 @@ $(function(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/vd-item4.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Official Trailer #2</a></h6>
@@ -735,39 +775,42 @@ $(function(){
 											</div>
 										</div>
 										<div class="title-hd-sm">
-											<h4>Photos <span> (21)</span></h4>
+											<h4>포토 <span> (21)</span></h4>
 										</div>
 										<div class="mvsingle-item">
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image11.jpg" ><img src="images/uploads/image1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image21.jpg" ><img src="images/uploads/image2.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image31.jpg" ><img src="images/uploads/image3.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image41.jpg" ><img src="images/uploads/image4.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image51.jpg" ><img src="images/uploads/image5.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image61.jpg" ><img src="images/uploads/image6.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image71.jpg" ><img src="images/uploads/image7.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image81.jpg" ><img src="images/uploads/image8.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image91.jpg" ><img src="images/uploads/image9.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image101.jpg" ><img src="images/uploads/image10.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image111.jpg" ><img src="images/uploads/image1-1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image121.jpg" ><img src="images/uploads/image12.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image131.jpg" ><img src="images/uploads/image13.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image141.jpg" ><img src="images/uploads/image14.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image151.jpg" ><img src="images/uploads/image15.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image161.jpg" ><img src="images/uploads/image16.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image171.jpg" ><img src="images/uploads/image17.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image181.jpg" ><img src="images/uploads/image18.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image191.jpg" ><img src="images/uploads/image19.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image201.jpg" ><img src="images/uploads/image20.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image211.jpg" ><img src="images/uploads/image2-1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="../images/uploads/image1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image21.jpg" ><img src="../images/uploads/image2.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="../images/uploads/image3.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image41.jpg" ><img src="../images/uploads/image4.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image51.jpg" ><img src="../images/uploads/image5.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image61.jpg" ><img src="../images/uploads/image6.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image71.jpg" ><img src="../images/uploads/image7.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image81.jpg" ><img src="../images/uploads/image8.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image91.jpg" ><img src="../images/uploads/image9.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image101.jpg" ><img src="../images/uploads/image10.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image111.jpg" ><img src="../images/uploads/image1-1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image121.jpg" ><img src="../images/uploads/image12.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image131.jpg" ><img src="../images/uploads/image13.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image141.jpg" ><img src="../images/uploads/image14.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image151.jpg" ><img src="../images/uploads/image15.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image161.jpg" ><img src="../images/uploads/image16.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image171.jpg" ><img src="../images/uploads/image17.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image181.jpg" ><img src="../images/uploads/image18.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image191.jpg" ><img src="../images/uploads/image19.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image201.jpg" ><img src="../images/uploads/image20.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image211.jpg" ><img src="../images/uploads/image2-1.jpg" alt=""></a>
 										</div>
 						        	</div>
 					       	 	</div>
+					       	 	
+					       	 	
+					       	 	<!-- ============================= MOVIE DETAIL - 시즌정보  탭 - 현재 미사용중 START  ============================== -->
 					       	 	<div id="season" class="tab">
 					       	 		<div class="row">
 					       	 			<div class="mvcast-item">											
 											<div class="cast-it">
 												<div class="cast-left series-it">
-													<img src="images/uploads/season.jpg" alt="">
+													<img src="../images/uploads/season.jpg" alt="">
 													<div>
 														<a href="#">Season 10</a>
 														<p>21 Episodes</p>
@@ -780,7 +823,7 @@ $(function(){
 										<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
+														<img src="../images/uploads/season.jpg" alt="">
 														<div>
 															<a href="#">Season 10</a>
 															<p>21 Episodes</p>
@@ -793,7 +836,7 @@ $(function(){
 											<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
+														<img src="../images/uploads/season.jpg" alt="">
 														<div>
 															<a href="#">Season 10</a>
 															<p>21 Episodes</p>
@@ -806,7 +849,7 @@ $(function(){
 											<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
+														<img src="../images/uploads/season.jpg" alt="">
 														<div>
 															<a href="#">Season 10</a>
 															<p>21 Episodes</p>
@@ -819,7 +862,7 @@ $(function(){
 											<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
+														<img src="../images/uploads/season.jpg" alt="">
 														<div>
 															<a href="#">Season 10</a>
 															<p>21 Episodes</p>
@@ -832,7 +875,7 @@ $(function(){
 											<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
+														<img src="../images/uploads/season.jpg" alt="">
 														<div>
 															<a href="#">Season 10</a>
 															<p>21 Episodes</p>
@@ -844,24 +887,26 @@ $(function(){
 											</div>
 					       	 		</div>
 					       	 	</div>
+					       	 	<!-- ============================= MOVIE DETAIL - 시즌정보  탭 - 현재 미사용중 END  ============================== -->
+					       	 	
+					       	 	
+					       	 	<!-- ============================= MOVIE DETAIL -  RELATED MOVIE 관련영화 TAB START  ============================== -->
 					       	 	<div id="moviesrelated" class="tab">
 					       	 		<div class="row">
-					       	 			<h3>Related Movies To</h3>
-					       	 			<h2>Skyfall: Quantum of Spectre</h2>
+					       	 			<!-- <h3>Related Movies To</h3>
+					       	 			<h2>Skyfall: Quantum of Spectre</h2> -->
 					       	 			<div class="topbar-filter">
-											<p>Found <span>12 movies</span> in total</p>
-											<label>Sort by:</label>
+											<p class="pad-change"> '<span>해리포터</span>'와 관련된 영화 <span>50</span>건</p>
+											<!-- <label>Sort by:</label> -->
 											<select>
-												<option value="popularity">Popularity Descending</option>
-												<option value="popularity">Popularity Ascending</option>
-												<option value="rating">Rating Descending</option>
-												<option value="rating">Rating Ascending</option>
-												<option value="date">Release date Descending</option>
+												<option value="ranking">랭킹순</option>
+												<option value="rating">평점순</option>
+												<option value="date">최신작품순</option>
 												<option value="date">Release date Ascending</option>
 											</select>
 										</div>
 										<div class="movie-item-style-2">
-											<img src="images/uploads/mv1.jpg" alt="">
+											<img src="../images/uploads/mv1.jpg" alt="">
 											<div class="mv-item-infor">
 												<h6><a href="#">oblivion <span>(2012)</span></a></h6>
 												<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
@@ -872,7 +917,7 @@ $(function(){
 											</div>
 										</div>
 										<div class="movie-item-style-2">
-											<img src="images/uploads/mv2.jpg" alt="">
+											<img src="../images/uploads/mv2.jpg" alt="">
 											<div class="mv-item-infor">
 												<h6><a href="#">into the wild <span>(2014)</span></a></h6>
 												<p class="rate"><i class="ion-android-star"></i><span>7.8</span> /10</p>
@@ -883,7 +928,7 @@ $(function(){
 											</div>
 										</div>
 										<div class="movie-item-style-2">
-											<img src="images/uploads/mv3.jpg" alt="">
+											<img src="../images/uploads/mv3.jpg" alt="">
 											<div class="mv-item-infor">
 												<h6><a href="#">blade runner  <span>(2015)</span></a></h6>
 												<p class="rate"><i class="ion-android-star"></i><span>7.3</span> /10</p>
@@ -894,7 +939,7 @@ $(function(){
 											</div>
 										</div>
 										<div class="movie-item-style-2">
-											<img src="images/uploads/mv4.jpg" alt="">
+											<img src="../images/uploads/mv4.jpg" alt="">
 											<div class="mv-item-infor">
 												<h6><a href="#">Mulholland pride<span> (2013)  </span></a></h6>
 												<p class="rate"><i class="ion-android-star"></i><span>7.2</span> /10</p>
@@ -905,7 +950,7 @@ $(function(){
 											</div>
 										</div>
 										<div class="movie-item-style-2">
-											<img src="images/uploads/mv5.jpg" alt="">
+											<img src="../images/uploads/mv5.jpg" alt="">
 											<div class="mv-item-infor">
 												<h6><a href="#">skyfall: evil of boss<span> (2013)  </span></a></h6>
 												<p class="rate"><i class="ion-android-star"></i><span>7.0</span> /10</p>
@@ -930,13 +975,18 @@ $(function(){
 										</div>
 					       	 		</div>
 					       	 	</div>
+					       	 	<!-- ============================= MOVIE DETAIL -  RELATED MOVIE 관련영화 TAB END  ============================== -->
+					       	 	
 						    </div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- ============================= MOVIE DETAIL - RIGHT DETAIL INFO SIDE END  ============================== -->
 		</div>
 	</div>
 </div>
+<!-- ============================= MOVIE DETAIL BOTTOM AREA END  ============================== -->
+
 </body>
 </html>
