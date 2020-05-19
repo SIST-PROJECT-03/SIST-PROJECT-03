@@ -214,10 +214,9 @@
 							나의 영화<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="../myMovie/userFavoriteGrid.do">컬렉션</a></li>
-								<li class="it-last"><a href="../myMovie/userRate.do">평점/리뷰</a></li>
-								<li><a href="../myMovie/userProfile.do">프로필</a></li>
-								
+								<li><a href="userProfile.do">프로필</a></li>
+								<li><a href="userFavoriteGrid.do">컬렉션</a></li>
+								<li class="it-last"><a href="userRate.do">평점/리뷰</a></li>
 							</ul>
 						</li>
 					</ul>

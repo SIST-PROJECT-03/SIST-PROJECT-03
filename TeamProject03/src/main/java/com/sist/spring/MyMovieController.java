@@ -1,47 +1,32 @@
 package com.sist.spring;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("project/myMovie/")
 public class MyMovieController {
 
 	@RequestMapping("userFavoriteGrid.do")
-	public String myMovie_userFavoriteGrid(HttpServletRequest request, HttpServletResponse response)
+	public String user_favorite_grid()
 	{
-		request.setAttribute("main_jsp", "../myMovie/userFavoriteGrid.jsp");
-		
-		return "project/main/main";
+		return "project/myMovie/userFavoriteGrid";
 	}
-	
 	
 	@RequestMapping("userFavoriteList.do")
-	public String myMovie_userFavoriteList(HttpServletRequest request, HttpServletResponse response)
+	public String user_favorite_list()
 	{
-		request.setAttribute("main_jsp", "../myMovie/userFavoriteList.jsp");
-		
-		return "project/main/main";
+		return "project/myMovie/userFavoriteList";
 	}
-	
 	
 	@RequestMapping("userProfile.do")
-	public String myMovie_userProfile(HttpServletRequest request, HttpServletResponse response)
+	public String user_favorite_profile()
 	{
-		request.setAttribute("main_jsp", "../myMovie/userProfile.jsp");
-		
-		return "project/main/main";
+		return "project/myMovie/userProfile";
 	}
 	
-	
 	@RequestMapping("userRate.do")
-	public String myMovie_userRate(HttpServletRequest request, HttpServletResponse response)
+	public String user_favorite_Rate()
 	{
-		request.setAttribute("main_jsp", "../myMovie/userRate.jsp");
-		
-		return "project/main/main";
+		return "project/myMovie/userRate";
 	}
 }
