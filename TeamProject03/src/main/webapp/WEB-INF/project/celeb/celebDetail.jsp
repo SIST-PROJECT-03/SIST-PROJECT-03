@@ -1,12 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+//구현중
+function showAllBtn(){
+	
+	var overView = $('#overviewceb');
+	var media = $('#mediaceb');
+	var showAllBtn = $('#showAllMedia');
+	
+	showAllBtn.on('click', function(e)  {
+		
+		// Show/Hide Tabs
+		overView.removeClass('active');
+		// Change/remove current tab to active
+		media.addClass('active');
+		e.preventDefault();
+		
+	});
+}
+</script>
 </head>
 <body>
+<!-- ============================= CELEB DETAIL TOP AREA START  ============================== -->
 <div class="hero hero3">
 	<div class="container">
 		<div class="row">
@@ -20,20 +40,27 @@
 		</div>
 	</div>
 </div>
-<!-- celebrity single section-->
+<!-- ============================= CELEB DETAIL TOP AREA END  ============================== -->
 
+
+<!-- ============================= CELEB DETAIL BOTTOM AREA END  ============================== -->
 <div class="page-single movie-single cebleb-single">
 	<div class="container">
 		<div class="row ipad-width">
+		
+			<!-- ============================= POSTER AREA START  ============================== -->
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="mv-ceb">
 					<img src="../images/uploads/cebsingle2.png" alt="">
 				</div>
 			</div>
+			<!-- ============================= POSTER AREA END  ============================== -->
+			
+			<!-- ============================= CELEB INFO START  ============================== -->
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="movie-single-ct">
 					<h1 class="bd-hd">Hugh Jackman</h1>
-					<p class="ceb-single">Actor  |  Producer</p>
+					<p class="ceb-single">배우  |  프로듀서</p>
 					<div class="social-link cebsingle-socail">
 						<a href="#"><i class="ion-social-facebook"></i></a>
 						<a href="#"><i class="ion-social-twitter"></i></a>
@@ -43,10 +70,10 @@
 					<div class="movie-tabs">
 						<div class="tabs">
 							<ul class="tab-links tabs-mv">
-								<li class="active"><a href="#overviewceb">Overview</a></li>
-								<li><a href="#biography"> biography</a></li>
-								<li><a href="#mediaceb"> Media</a></li> 
-								<li><a href="#filmography">filmography</a></li>                        
+								<li class="active"><a href="#overviewceb">주요정보</a></li>
+								<li><a href="#biography"> 바이오그래피</a></li>
+								<li><a href="#mediaceb"> 포토/영상</a></li> 
+								<li><a href="#filmography">필모그래피</a></li>                        
 							</ul>
 						    <div class="tab-content">
 						        <div id="overviewceb" class="tab active">
@@ -57,21 +84,21 @@
 											He also has Greek (from a great-grandfather) and Scottish (from a grandmother) ancestry.</p>
 											<p>Hugh Michael Jackman is an Australian actor, singer, multi-instrumentalist, dancer and producer. Jackman has won international recognition for his roles in major films, notably as superhero, period, and romance characters. </p>
 											<p class="time"><a href="#">See full bio <i class="ion-ios-arrow-right"></i></a></p>
-						            		<div class="title-hd-sm">
-												<h4>Videos & Photos</h4>
-												<a href="#" class="time">All 5 Videos & 245 Photos <i class="ion-ios-arrow-right"></i></a>
+						            		<div class="title-hd-sm tabs">
+												<h4>포토/영상</h4>
+												<a href="#" class="time" id="showAllMedia">All 5 Videos & 245 Photos <i class="ion-ios-arrow-right"></i></a>
 											</div>
 											<div class="mvsingle-item ov-item">
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image11.jpg" ><img src="images/uploads/image1.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image21.jpg" ><img src="images/uploads/image2.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image31.jpg" ><img src="images/uploads/image3.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="../images/uploads/image1.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image21.jpg" ><img src="../images/uploads/image2.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="../images/uploads/image3.jpg" alt=""></a>
 												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/image4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="../images/uploads/image4.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
 												</div>
 											</div>
 											<div class="title-hd-sm">
-												<h4>filmography</h4>
+												<h4>필모그래피</h4>
 												<a href="#" class="time">Full Filmography<i class="ion-ios-arrow-right"></i></a>
 											</div>
 											<!-- movie cast -->
@@ -161,23 +188,23 @@
 						            	</div>
 						            	<div class="col-md-4 col-xs-12 col-sm-12">
 						            		<div class="sb-it">
-						            			<h6>Fullname:  </h6>
+						            			<h6>이름  </h6>
 						            			<p><a href="#">Hugh Jackman</a></p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Date of Birth: </h6>
+						            			<h6>생년월일: </h6>
 						            			<p>June 24, 1982</p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Country:  </h6>
+						            			<h6>국가:  </h6>
 						            			<p>Australian</p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Height:</h6>
+						            			<h6>키:</h6>
 						            			<p>186 cm/p>
 						            		</div>
 						            		<div class="sb-it">
-						            			<h6>Keywords:</h6>
+						            			<h6>키워드:</h6>
 						            			<p class="tags">
 						            				<span class="time"><a href="#">jackman</a></span>
 													<span class="time"><a href="#">wolverine</a></span>
@@ -196,7 +223,7 @@
 						           <div class="row">
 						            	<div class="rv-hd">
 											<div>
-												<h3>Biography of</h3>
+												<!-- <h3>Biography of</h3> -->
 						       	 				<h2>Hugh Jackman</h2>
 											</div>							            						
 						            	</div>
@@ -305,27 +332,27 @@
 											<h4>Photos <span> (21)</span></h4>
 										</div>
 										<div class="mvsingle-item">
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image11.jpg" ><img src="images/uploads/image1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery"  href="images/uploads/image21.jpg" ><img src="images/uploads/image2.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image31.jpg" ><img src="images/uploads/image3.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image41.jpg" ><img src="images/uploads/image4.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image51.jpg" ><img src="images/uploads/image5.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image61.jpg" ><img src="images/uploads/image6.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image71.jpg" ><img src="images/uploads/image7.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image81.jpg" ><img src="images/uploads/image8.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image91.jpg" ><img src="images/uploads/image9.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image101.jpg" ><img src="images/uploads/image10.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image111.jpg" ><img src="images/uploads/image1-1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image121.jpg" ><img src="images/uploads/image12.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image131.jpg" ><img src="images/uploads/image13.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image141.jpg" ><img src="images/uploads/image14.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image151.jpg" ><img src="images/uploads/image15.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image161.jpg" ><img src="images/uploads/image16.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image171.jpg" ><img src="images/uploads/image17.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image181.jpg" ><img src="images/uploads/image18.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image191.jpg" ><img src="images/uploads/image19.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image201.jpg" ><img src="images/uploads/image20.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="images/uploads/image211.jpg" ><img src="images/uploads/image2-1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="../images/uploads/image1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery"  href="../images/uploads/image21.jpg" ><img src="../images/uploads/image2.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="../images/uploads/image3.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image41.jpg" ><img src="../images/uploads/image4.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image51.jpg" ><img src="../images/uploads/image5.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image61.jpg" ><img src="../images/uploads/image6.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image71.jpg" ><img src="../images/uploads/image7.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image81.jpg" ><img src="../images/uploads/image8.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image91.jpg" ><img src="../images/uploads/image9.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image101.jpg" ><img src="../images/uploads/image10.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image111.jpg" ><img src="../images/uploads/image1-1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image121.jpg" ><img src="../images/uploads/image12.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image131.jpg" ><img src="../images/uploads/image13.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image141.jpg" ><img src="../images/uploads/image14.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image151.jpg" ><img src="../images/uploads/image15.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image161.jpg" ><img src="../images/uploads/image16.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image171.jpg" ><img src="../images/uploads/image17.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image181.jpg" ><img src="../images/uploads/image18.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image191.jpg" ><img src="../images/uploads/image19.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image201.jpg" ><img src="../images/uploads/image20.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image211.jpg" ><img src="../images/uploads/image2-1.jpg" alt=""></a>
 										</div>
 						        	</div>
 					       	 	</div>
@@ -441,10 +468,10 @@
 					</div>
 				</div>
 			</div>
+			<!-- ============================= CELEB INFO END  ============================== -->
 		</div>
 	</div>
-	</div>
 </div>
-<!-- celebrity single section-->
+<!-- ============================= CELEB DETAIL BOTTOM AREA END  ============================== -->
 </body>
 </html>
