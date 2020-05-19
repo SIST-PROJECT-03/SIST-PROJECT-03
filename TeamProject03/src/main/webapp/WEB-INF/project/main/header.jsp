@@ -160,7 +160,7 @@
 							영화 뉴스<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="bloglist.do">blog List</a></li>
+								<li><a href="newslist.do">뉴스 목록</a></li>
 								<li><a href="bloggrid.do">blog Grid</a></li>
 								<!-- <li class="it-last"><a href="blogdetail.html">blog Detail</a></li> -->
 							</ul>
