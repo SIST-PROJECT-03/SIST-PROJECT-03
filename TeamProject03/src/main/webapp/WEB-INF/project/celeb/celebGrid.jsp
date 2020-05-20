@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../css/celebGrid.css">
+<link rel="stylesheet" href="css/celebGrid.css">
 </head>
 <body>
 <!-- ============================= 영화인 정보 - TOP - TITLE AREA START  ============================== -->
@@ -15,7 +15,7 @@
 				<div class="hero-ct">
 					<h1>영화인 </h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="#">홈</a></li>
+						<li class="active"><a href="../main.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span> 영화인 목록</li>
 					</ul>
 				</div>
@@ -47,27 +47,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb21.jpg" alt="">
+							<img src="images/uploads/ceb21.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Leonardo DiCaprio</a></h2>
+								<h2><a href="celebDetail.do">Leonardo DiCaprio</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb22.jpg" alt="">
+							<img src="images/uploads/ceb22.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Meryl Streep</a></h2>
+								<h2><a href="celebDetail.do">Meryl Streep</a></h2>
 								<span>actor, Iran</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb23.jpg" alt="">
+							<img src="images/uploads/ceb23.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Tom Hanks</a></h2>
+								<h2><a href="celebDetail.do">Tom Hanks</a></h2>
 								<span>Director, Sweden</span>
 							</div>
 						</div>
@@ -76,27 +76,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb24.jpg" alt="">
+							<img src="images/uploads/ceb24.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb25.jpg" alt="">
+							<img src="images/uploads/ceb25.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb26.jpg" alt="">
+							<img src="images/uploads/ceb26.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -105,27 +105,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb27.jpg" alt="">
+							<img src="images/uploads/ceb27.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb28.jpg" alt="">
+							<img src="images/uploads/ceb28.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb29.jpg" alt="">
+							<img src="images/uploads/ceb29.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -134,27 +134,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb21.jpg" alt="">
+							<img src="images/uploads/ceb21.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Leonardo DiCaprio</a></h2>
+								<h2><a href="celebDetail.do">Leonardo DiCaprio</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb22.jpg" alt="">
+							<img src="images/uploads/ceb22.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Meryl Streep</a></h2>
+								<h2><a href="celebDetail.do">Meryl Streep</a></h2>
 								<span>actor, Iran</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb23.jpg" alt="">
+							<img src="images/uploads/ceb23.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Tom Hanks</a></h2>
+								<h2><a href="celebDetail.do">Tom Hanks</a></h2>
 								<span>Director, Sweden</span>
 							</div>
 						</div>
@@ -163,27 +163,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb24.jpg" alt="">
+							<img src="images/uploads/ceb24.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb25.jpg" alt="">
+							<img src="images/uploads/ceb25.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb26.jpg" alt="">
+							<img src="images/uploads/ceb26.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -192,27 +192,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb27.jpg" alt="">
+							<img src="images/uploads/ceb27.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb28.jpg" alt="">
+							<img src="images/uploads/ceb28.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb29.jpg" alt="">
+							<img src="images/uploads/ceb29.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -221,27 +221,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb21.jpg" alt="">
+							<img src="images/uploads/ceb21.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Leonardo DiCaprio</a></h2>
+								<h2><a href="celebDetail.do">Leonardo DiCaprio</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb22.jpg" alt="">
+							<img src="images/uploads/ceb22.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Meryl Streep</a></h2>
+								<h2><a href="celebDetail.do">Meryl Streep</a></h2>
 								<span>actor, Iran</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb23.jpg" alt="">
+							<img src="images/uploads/ceb23.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Tom Hanks</a></h2>
+								<h2><a href="celebDetail.do">Tom Hanks</a></h2>
 								<span>Director, Sweden</span>
 							</div>
 						</div>
@@ -250,27 +250,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb24.jpg" alt="">
+							<img src="images/uploads/ceb24.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb25.jpg" alt="">
+							<img src="images/uploads/ceb25.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb26.jpg" alt="">
+							<img src="images/uploads/ceb26.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -279,27 +279,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb27.jpg" alt="">
+							<img src="images/uploads/ceb27.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb28.jpg" alt="">
+							<img src="images/uploads/ceb28.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb29.jpg" alt="">
+							<img src="images/uploads/ceb29.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -308,27 +308,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb21.jpg" alt="">
+							<img src="images/uploads/ceb21.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Leonardo DiCaprio</a></h2>
+								<h2><a href="celebDetail.do">Leonardo DiCaprio</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb22.jpg" alt="">
+							<img src="images/uploads/ceb22.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Meryl Streep</a></h2>
+								<h2><a href="celebDetail.do">Meryl Streep</a></h2>
 								<span>actor, Iran</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb23.jpg" alt="">
+							<img src="images/uploads/ceb23.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Tom Hanks</a></h2>
+								<h2><a href="celebDetail.do">Tom Hanks</a></h2>
 								<span>Director, Sweden</span>
 							</div>
 						</div>
@@ -337,27 +337,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb24.jpg" alt="">
+							<img src="images/uploads/ceb24.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb25.jpg" alt="">
+							<img src="images/uploads/ceb25.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb26.jpg" alt="">
+							<img src="images/uploads/ceb26.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -366,27 +366,27 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb27.jpg" alt="">
+							<img src="images/uploads/ceb27.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Robert De Niro</a></h2>
+								<h2><a href="celebDetail.do">Robert De Niro</a></h2>
 								<span>actor, uk</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb28.jpg" alt="">
+							<img src="images/uploads/ceb28.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Kamal Haasan</a></h2>
+								<h2><a href="celebDetail.do">Kamal Haasan</a></h2>
 								<span>actress, usa</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="ceb-item-style-2">
-							<img src="../images/uploads/ceb29.jpg" alt="">
+							<img src="images/uploads/ceb29.jpg" alt="">
 							<div class="ceb-infor">
-								<h2><a href="./celebDetail.do">Anthony Hopkins</a></h2>
+								<h2><a href="celebDetail.do">Anthony Hopkins</a></h2>
 								<span>actress, France</span>
 							</div>
 						</div>
@@ -464,33 +464,33 @@
 						</form>
 					</div>
 					<div class="ads">
-						<img src="../images/uploads/ads1.png" alt="">
+						<img src="images/uploads/ads1.png" alt="">
 					</div>
 					<div class="celebrities">
 						<h4 class="sb-title">주목받는 영화인</h4>
 						<div class="celeb-item">
-							<a href="celebDetail.do"><img src="../images/uploads/ava1.jpg" alt=""></a>
+							<a href="celebDetail.do"><img src="images/uploads/ava1.jpg" alt=""></a>
 							<div class="celeb-author">
 								<h6><a href="celebDetail.do">Samuel N. Jack</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="celebDetail.do"><img src="../images/uploads/ava2.jpg" alt=""></a>
+							<a href="celebDetail.do"><img src="images/uploads/ava2.jpg" alt=""></a>
 							<div class="celeb-author">
 								<h6><a href="celebDetail.do">Benjamin Carroll</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="celebDetail.do"><img src="../images/uploads/ava3.jpg" alt=""></a>
+							<a href="celebDetail.do"><img src="images/uploads/ava3.jpg" alt=""></a>
 							<div class="celeb-author">
 								<h6><a href="celebDetail.do">Beverly Griffin</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="celebDetail.do"><img src="../images/uploads/ava4.jpg" alt=""></a>
+							<a href="celebDetail.do"><img src="images/uploads/ava4.jpg" alt=""></a>
 							<div class="celeb-author">
 								<h6><a href="celebDetail.do">Justin Weaver</a></h6>
 								<span>Actor</span>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../css/movieList.css">
+<link rel="stylesheet" href="css/movieList.css">
 </head>
 <body>
 <!-- ============================= INFO TITLE AREA START  ============================== -->
@@ -15,7 +15,7 @@
 				<div class="hero-ct">
 					<h1> 최고 인기 시리즈 </h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="../main/home.do">홈</a></li>
+						<li class="active"><a href="../main.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span> 영화 탐색</li>
 					</ul>
 				</div>
@@ -43,12 +43,12 @@
 						<option value="date">Release date Ascending</option>
 					</select>
 					<a href="movieList.jsp" class="list"><i class="ion-ios-list-outline active"></i></a>
-					<a  href="movieGrid.jsp" class="grid"><i class="ion-grid"></i></a>
+					<a href="movieGrid.jsp" class="grid"><i class="ion-grid"></i></a>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="../images/uploads/mv1.jpg" alt="">
+					<img src="images/uploads/mv1.jpg" alt="">
 					<div class="mv-item-infor">
-						<h6><a href="movieDetail.do">oblivion <span>(2012)</span></a></h6>
+						<h6><a href="seriesSingle.do">oblivion <span>(2012)</span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
 						<p class="describe">Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity...</p>
 						<p class="run-time"> 상영 시간 │ 2h21’         <span>등급 │ PG-13 </span>        <span>개봉날짜 │ 1 May 2015</span></p>
@@ -57,9 +57,9 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="../images/uploads/mv2.jpg" alt="">
+					<img src="images/uploads/mv2.jpg" alt="">
 					<div class="mv-item-infor">
-						<h6><a href="movieDetail.do">into the wild <span>(2014)</span></a></h6>
+						<h6><a href="seriesSingle.do">into the wild <span>(2014)</span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.8</span> /10</p>
 						<p class="describe">As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat...</p>
 						<p class="run-time"> 상영 시간 │ 2h21’         <span>등급 │ PG-13 </span>        <span>개봉날짜 │ 1 May 2015</span></p>
@@ -68,9 +68,9 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="../images/uploads/mv3.jpg" alt="">
+					<img src="images/uploads/mv3.jpg" alt="">
 					<div class="mv-item-infor">
-						<h6><a href="movieDetail.do">blade runner  <span>(2015)</span></a></h6>
+						<h6><a href="seriesSingle.do">blade runner  <span>(2015)</span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.3</span> /10</p>
 						<p class="describe">Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help...</p>
 						<p class="run-time"> 상영 시간 │ 2h21’         <span>등급 │ PG-13 </span>        <span>개봉날짜 │ 1 May 2015</span></p>
@@ -79,9 +79,9 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="../images/uploads/mv4.jpg" alt="">
+					<img src="images/uploads/mv4.jpg" alt="">
 					<div class="mv-item-infor">
-						<h6><a href="movieDetail.do">Mulholland pride<span> (2013)  </span></a></h6>
+						<h6><a href="seriesSingle.do">Mulholland pride<span> (2013)  </span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.2</span> /10</p>
 						<p class="describe">When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.</p>
 						<p class="run-time"> 상영 시간 │ 2h21’         <span>등급 │ PG-13 </span>        <span>개봉날짜 │ 1 May 2015</span></p>
@@ -90,9 +90,9 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2">
-					<img src="../images/uploads/mv5.jpg" alt="">
+					<img src="images/uploads/mv5.jpg" alt="">
 					<div class="mv-item-infor">
-						<h6><a href="movieDetail.do">skyfall: evil of boss<span> (2013)  </span></a></h6>
+						<h6><a href="seriesSingle.do">skyfall: evil of boss<span> (2013)  </span></a></h6>
 						<p class="rate"><i class="ion-android-star"></i><span>7.0</span> /10</p>
 						<p class="describe">When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.</p>
 						<p class="run-time"> 상영 시간 │ 2h21’         <span>등급 │ PG-13 </span>        <span>개봉날짜 │ 1 May 2015</span></p>
@@ -185,7 +185,7 @@
 						</form>
 					</div>
 					<div class="ads">
-						<img src="../images/uploads/ads1.png" alt="">
+						<img src="images/uploads/ads1.png" alt="">
 					</div>
 					<div class="sb-facebook sb-it">
 						<h4 class="sb-title">Find us on Facebook</h4>
