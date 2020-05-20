@@ -11,6 +11,23 @@ public class MovieListController {
 	{
 		return "project/movieList/seriesSingle";
 	}
+
+
+	@RequestMapping("movieList.do")
+	public String movie_List()
+	{
+		return "project/movieList/movieList";
+	}
+	
+	
+	@RequestMapping("movieGrid.do")
+	public String movie_Grid()
+	{	
+		return "project/movieList/movieGrid";
+	}
+	
+	
+	
 	
 }
 
