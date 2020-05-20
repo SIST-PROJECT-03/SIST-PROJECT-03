@@ -37,8 +37,8 @@
 					<div class="user-fav">
 						<!-- <p>Account Details</p> -->
 						<ul>
-							<li><a href="userProfile.do">프로필</a></li>
-							<li class="active"><a href="userfavoriteGrid.do">컬렉션</a></li>
+							<li class="active"><a href="userProfile.do">프로필</a></li>
+							<li><a href="userfavoriteGrid.do">컬렉션</a></li>
 							<li><a href="userRate.do">평점/리뷰</a></li>
 						</ul>
 					</div>

@@ -1,7 +1,6 @@
 package com.sist.spring;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,4 +16,5 @@ public class NewsController {
 	{
 		return "project/news/blogDetail";
 	}
+
 }
