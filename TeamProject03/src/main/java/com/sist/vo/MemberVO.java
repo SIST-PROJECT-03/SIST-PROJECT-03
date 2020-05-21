@@ -67,4 +67,5 @@ public class MemberVO {
 		this.actor = actor;
 	}
 
+
 }
