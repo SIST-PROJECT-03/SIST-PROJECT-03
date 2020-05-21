@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: daege
 Build-Jdk: 1.8.0_231
-=======
-Built-By: sbcho
-Build-Jdk: 1.8.0_241
->>>>>>> bce74781d693bb33c7e42b7155d6dcd0721fc652
 Created-By: Maven Integration for Eclipse
 

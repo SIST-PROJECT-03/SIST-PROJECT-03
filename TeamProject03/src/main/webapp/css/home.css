@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+
+.movie-items .movie-item .mv-img {
+
+	max-width:100%;
+	height:auto;
+	
+}
+
+
+.movie-items .movie-item .mv-img:hover {
+  	cursor:pointer;
+	transform:scale(1.8);
+	z-index:1;
+	-webkit-transform:scale(1.4);
+	transition: 450ms all;
+	transpare
+}
+
+.movie-items .slick-multiItem .slick-list, .movie-items .slick-multiItem2 .slick-list{
+    
+	padding: 20px 0;
+	
+}
+
