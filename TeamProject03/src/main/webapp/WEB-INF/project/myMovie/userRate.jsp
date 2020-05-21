@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../css/userRate.css">
+<link rel="stylesheet" href="css/userRate.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 				<div class="hero-ct">
 					<h1>범블비 님의 평점/리뷰</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="../main/home.do">홈</a></li>
+						<li class="active"><a href="main/home.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>평점/리뷰</li>
 					</ul>
 				</div>
@@ -31,14 +31,14 @@
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="user-information">
 					<div class="user-img">
-						<a href="#"><img src="../images/uploads/user-img.png" alt=""><br></a>
+						<a href="#"><img src="images/uploads/user-img.png" alt=""><br></a>
 						<a href="#" class="redbtn">프로필 사진 변경</a>
 					</div>
 					<div class="user-fav">
 						<!-- <p>Account Details</p> -->
 						<ul>
 							<li><a href="userProfile.do">프로필</a></li>
-							<li><a href="userfavoriteGrid.do">컬렉션</a></li>
+							<li><a href="userFavoriteGrid.do">컬렉션</a></li>
 							<li class="active"><a href="userRate.do">평점/리뷰</a></li>
 						</ul>
 					</div>
@@ -61,7 +61,7 @@
 					</select>
 				</div>
 				<div class="movie-item-style-2 userrate">
-					<img src="../images/uploads/mv1.jpg" alt="">
+					<img src="images/uploads/mv1.jpg" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="#">oblivion <span>(2012)</span></a></h6>
 						<p class="time sm-text">나의 평점</p>
@@ -73,7 +73,7 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2 userrate">
-					<img src="../images/uploads/mv2.jpg" alt="">
+					<img src="images/uploads/mv2.jpg" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="#">into the wild <span>(2014)</span></a></h6>
 						<p class="time sm-text">나의 평점</p>
@@ -81,7 +81,7 @@
 					</div>
 				</div>
 				<div class="movie-item-style-2 userrate last">
-					<img src="../images/uploads/mv3.jpg" alt="">
+					<img src="images/uploads/mv3.jpg" alt="">
 					<div class="mv-item-infor">
 						<h6><a href="#">blade runner<span>(2015)</span></a></h6>
 						<p class="time sm-text">나의 평점</p>
