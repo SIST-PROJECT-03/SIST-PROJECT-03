@@ -6,6 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 	<!-- react -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 	
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -44,6 +49,25 @@ $(function(){
 </head>
 <body>
 <!-- search form -->
+<div class="container" id="root"></div>
+<script type="text/babel">
+class App extends React.Component{
+	constructor(props){
+	}
+ 	render(){
+		return(
+		)
+	}
+}
+class MovieList extends React.Component{
+	render(){
+		return(
+		)
+	}
+}
+ReactDOM.render(<App/>,document.getElementByid('root'));
+
+</script>
 
 <div class="slider sliderv2">
 	<div class="container">
@@ -142,46 +166,6 @@ $(function(){
 	    		</div>
 	    	</div>
 	    </div>
-	</div>
-</div>
-<div class="movie-items  full-width" style="padding-bottom: 0px;">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="title-hd">
-				<h2>in theater</h2>
-				<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
-			</div>
-			<div class="tabs">
-				<ul class="tab-links">
-					<li class="active"><a href="#tab1-h2">#Popular</a></li>
-					<li><a href="#tab2-h2"> #Coming soon</a></li>
-					<li><a href="#tab3-h2">  #Top rated  </a></li>
-					<li><a href="#tab4-h2"> #Most reviewed</a></li>                        
-				</ul>
-			    <div class="tab-content">
-			        <div id="tab1-h2" class="tab active">
-			            <div class="row">
-			            	<div class="slick-multiItem2">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it1.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a class="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i></a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 <div class="movie-items full-width mainDetailinfo" >
@@ -977,10 +961,10 @@ $(function(){
 		<div class="row ipad-width">
 		
 			<!-- =============================  TRAILER SLIDER AREA START  ============================== -->
-			<div class="col-md-9 col-sm-12 col-xs-12">
+			<!-- <div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="title-hd">
 					<h2>개봉예정작 예고편</h2>
-					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
+					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 				<div class="videos">
 				 	<div class="slider-for-2 video-ft">
@@ -1062,9 +1046,9 @@ $(function(){
 					</div>
 				</div>
 			</div>
-			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
+			=============================  TRAILER SLIDER AREA END  ==============================
 			
-			<!-- =============================  주목받는 영화인  AREA START  ============================== -->
+			=============================  주목받는 영화인  AREA START  ==============================
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="celebrities">
@@ -1099,7 +1083,7 @@ $(function(){
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- =============================  주목받는 영화인  AREA END  ============================== -->
 			
 		</div>
