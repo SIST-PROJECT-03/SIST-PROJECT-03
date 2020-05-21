@@ -2,8 +2,6 @@ package com.sist.vo;
 
 public class MemberVO {
 
-<<<<<<< HEAD
-=======
 	private String email;
 	private String pwd;
 	private String nick;
@@ -69,5 +67,5 @@ public class MemberVO {
 		this.actor = actor;
 	}
 
->>>>>>> 15104c5b820935563ec1a6b02c4831e857f1354f
+
 }
