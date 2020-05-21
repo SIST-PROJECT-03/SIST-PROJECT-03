@@ -67,7 +67,7 @@
     <div class="login-content">
         <a href="#" class="close">x</a>
         <h3>회원가입</h3>
-        <form method="post" action="#">
+        <form method="post" action="signup.do">
             <!-- <div class="row">
                  <label for="username-2" class="col-sm-5">
                      닉네임:
@@ -95,45 +95,45 @@
             </div> -->
             <div class="row">
             	<label class="col-sm-5">이메일</label>
-          		<input type="text">
+          		<input type="text" name="email">
             </div>
             <div class="row">
             	<label class="col-sm-5">비밀번호</label>
-          		<input type="password">
+          		<input type="password" name="pwd">
             </div>
              <div class="row">
             	<label class="col-sm-5">닉네임</label>
-          		<input type="text">
+          		<input type="text" name="nick">
             </div>
             <div class="row">
             	<label class="col-sm-5">선호 장르</label>
-	          	<select>
-	          		<option>가족</option>
-	          		<option>공연실황</option>
-	          		<option>공포</option>
-	          		<option>느와르</option>
-	          		<option>다큐</option>
-	         		<option>드라마</option>
-	          		<option>멜로/로멘스</option>
-	          		<option>모험</option>
-	          		<option>무협</option>
-	          		<option>뮤지컬</option>
-	          		<option>미스터리</option>
-	          		<option>범죄</option>
-	          		<option>블랙코미디</option>
-	          		<option>서부</option>
-	          		<option>서사</option>
-	          		<option>서스펜스</option>
-	          		<option>스릴러</option>
-	          		<option>실험</option>
-	          		<option>애니메이션</option>
-	          		<option>액션</option>
-	          		<option>에로</option>
-	          		<option>전쟁</option>
-	          		<option>컬트</option>
-	          		<option>코미디</option>
-	          		<option>판타지</option>
-	          		<option>SF</option>
+	          	<select name="genre">
+	          		<option value="">가족</option>
+	          		<option value="">공연실황</option>
+	          		<option value="">공포</option>
+	          		<option value="">느와르</option>
+	          		<option value="">다큐</option>
+	         		<option value="">드라마</option>
+	          		<option value="">멜로/로멘스</option>
+	          		<option value="">모험</option>
+	          		<option value="">무협</option>
+	          		<option value="">뮤지컬</option>
+	          		<option value="">미스터리</option>
+	          		<option value="">범죄</option>
+	          		<option value="">블랙코미디</option>
+	          		<option value="">서부</option>
+	          		<option value="">서사</option>
+	          		<option value="">서스펜스</option>
+	          		<option value="">스릴러</option>
+	          		<option value="">실험</option>
+	          		<option value="">애니메이션</option>
+	          		<option value="">액션</option>
+	          		<option value="">에로</option>
+	          		<option value="">전쟁</option>
+	          		<option value="">컬트</option>
+	          		<option value="">코미디</option>
+	          		<option value="">판타지</option>
+	          		<option value="">SF</option>
 	          	</select>
             </div>
             <div class="row">
@@ -145,39 +145,39 @@
             </div>
             <div class="row">
             	<label class="col-sm-5">나이대</label>
-	          	<select>
-	          		<option>10대</option>
-	          		<option>20대</option>
-	          		<option>30대</option>
-	          		<option>40대</option>
-	          		<option>50대</option>
-	          		<option>그 외</option>
+	          	<select name="age">
+	          		<option value="">10대</option>
+	          		<option value="">20대</option>
+	          		<option value="">30대</option>
+	          		<option value="">40대</option>
+	          		<option value="">50대</option>
+	          		<option value="">그 외</option>
 	          	</select>
             </div>
             <div class="row">
             	<label class="col-sm-5">감상 포인트</label>
-	          	<select>
-	          		<option>연출</option>
-	          		<option>연기</option>
-	          		<option>스토리</option>
-	          		<option>영상미</option>
-	          		<option>OST</option>
+	          	<select name="point">
+	          		<option value="">연출</option>
+	          		<option value="">연기</option>
+	          		<option value="">스토리</option>
+	          		<option value="">영상미</option>
+	          		<option value="">OST</option>
 	          	</select>
             </div>
             <div class="row">
    				<label class="col-sm-5">선호제작지역</label>
-	          	<select>
-	          		<option>아시아</option>
-	          		<option>오세아니아</option>
-	          		<option>북미주</option>
-	        		<option>중남미</option>
-	        		<option>유럽</option>
-	          		<option>중동/아프리카</option>
+	          	<select name="loc">
+	          		<option value="">아시아</option>
+	          		<option value="">오세아니아</option>
+	          		<option value="">북미주</option>
+	        		<option value="">중남미</option>
+	        		<option value="">유럽</option>
+	          		<option value="">중동/아프리카</option>
 	          	</select>
             </div>
             <div class="row">
             	<label class="col-sm-5">선호 배우</label>
-          		<input type="text">
+          		<input type="text" name="actor">
             </div>
 	       	<div class="row">
 	        	<button type="submit">회원가입</button>

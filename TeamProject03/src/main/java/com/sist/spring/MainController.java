@@ -12,4 +12,10 @@ public class MainController {
 		return "main";
 	}
 	
+	@RequestMapping("signup.do")
+	public String main_signup()
+	{
+		
+		return "redirect:main";
+	}
 }
