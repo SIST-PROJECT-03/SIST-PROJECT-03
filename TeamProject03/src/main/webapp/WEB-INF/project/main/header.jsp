@@ -68,34 +68,120 @@
         <a href="#" class="close">x</a>
         <h3>회원가입</h3>
         <form method="post" action="#">
-            <div class="row">
-                 <label for="username-2">
-                    아이디:
+            <!-- <div class="row">
+                 <label for="username-2" class="col-sm-5">
+                     닉네임:
                     <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
             </div>
            
             <div class="row">
-                <label for="email-2">
+                <label for="email-2"  class="col-sm-5">
                     이메일:
                     <input type="password" name="email" id="email-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
                 </label>
             </div>
              <div class="row">
-                <label for="password-2">
+                <label for="password-2"  class="col-sm-5">
                     패스워드:
                     <input type="password" name="password" id="password-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
                 </label>
-            </div>
-             <div class="row">
-                <label for="repassword-2">
+            </div> -->
+             <!-- <div class="row">
+                <label for="repassword-2"  class="col-sm-5">
                     패스워드 재입력:
                     <input type="password" name="password" id="repassword-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
                 </label>
+            </div> -->
+            <div class="row">
+            	<label class="col-sm-5">이메일</label>
+          		<input type="text">
             </div>
-           <div class="row">
-             <button type="submit">회원가입</button>
-           </div>
+            <div class="row">
+            	<label class="col-sm-5">비밀번호</label>
+          		<input type="password">
+            </div>
+             <div class="row">
+            	<label class="col-sm-5">닉네임</label>
+          		<input type="text">
+            </div>
+            <div class="row">
+            	<label class="col-sm-5">선호 장르</label>
+	          	<select>
+	          		<option>가족</option>
+	          		<option>공연실황</option>
+	          		<option>공포</option>
+	          		<option>느와르</option>
+	          		<option>다큐</option>
+	         		<option>드라마</option>
+	          		<option>멜로/로멘스</option>
+	          		<option>모험</option>
+	          		<option>무협</option>
+	          		<option>뮤지컬</option>
+	          		<option>미스터리</option>
+	          		<option>범죄</option>
+	          		<option>블랙코미디</option>
+	          		<option>서부</option>
+	          		<option>서사</option>
+	          		<option>서스펜스</option>
+	          		<option>스릴러</option>
+	          		<option>실험</option>
+	          		<option>애니메이션</option>
+	          		<option>액션</option>
+	          		<option>에로</option>
+	          		<option>전쟁</option>
+	          		<option>컬트</option>
+	          		<option>코미디</option>
+	          		<option>판타지</option>
+	          		<option>SF</option>
+	          	</select>
+            </div>
+            <div class="row">
+            	<label class="col-sm-5">성별</label>
+            	<div class="genders text-center">
+            		<input type="radio" name="gender" id="man"><span for="man">남자</span>
+	          		<input type="radio" name="gender" id="woman"><span for="woman">여자</span>
+	          	</div>	
+            </div>
+            <div class="row">
+            	<label class="col-sm-5">나이대</label>
+	          	<select>
+	          		<option>10대</option>
+	          		<option>20대</option>
+	          		<option>30대</option>
+	          		<option>40대</option>
+	          		<option>50대</option>
+	          		<option>그 외</option>
+	          	</select>
+            </div>
+            <div class="row">
+            	<label class="col-sm-5">감상 포인트</label>
+	          	<select>
+	          		<option>연출</option>
+	          		<option>연기</option>
+	          		<option>스토리</option>
+	          		<option>영상미</option>
+	          		<option>OST</option>
+	          	</select>
+            </div>
+            <div class="row">
+   				<label class="col-sm-5">선호제작지역</label>
+	          	<select>
+	          		<option>아시아</option>
+	          		<option>오세아니아</option>
+	          		<option>북미주</option>
+	        		<option>중남미</option>
+	        		<option>유럽</option>
+	          		<option>중동/아프리카</option>
+	          	</select>
+            </div>
+            <div class="row">
+            	<label class="col-sm-5">선호 배우</label>
+          		<input type="text">
+            </div>
+	       	<div class="row">
+	        	<button type="submit">회원가입</button>
+	        </div>
         </form>
     </div>
 </div>
@@ -115,7 +201,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="../main/main.do"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
+				    <a href="main.do"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -188,7 +274,7 @@
 							<!-- <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a> -->
-							<a class="btn btn-default lv1" href="../celeb/celebGrid.do">
+							<a class="btn btn-default lv1" href="celebGrid.do">
 							영화인</a>
 							<!-- <ul class="dropdown-menu level1">
 								<li><a href="index-2.html">Home 01</a></li>
@@ -232,8 +318,8 @@
 							</ul>
 						</li>                
 						<li><a href="#">Help</a></li> --> 
-						<li class="loginLink"><a href="#">로그인</a></li>
-						<li class="btn signupLink"><a href="#">회원가입</a></li>
+						<li class="loginLink"><a href="signin">로그인</a></li>
+						<li class="btn signupLink"><a href="signup">회원가입</a></li>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->

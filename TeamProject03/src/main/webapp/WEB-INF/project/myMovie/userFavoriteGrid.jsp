@@ -40,7 +40,7 @@
 						<!-- <p>Account Details</p> -->
 						<ul>
 							<li><a href="userProfile.do">프로필</a></li>
-							<li class="active"><a href="userfavoriteGrid.do">컬렉션</a></li>
+							<li class="active"><a href="userFavoriteGrid.do">컬렉션</a></li>
 							<li><a href="userRate.do">평점/리뷰</a></li>
 						</ul>
 					</div>
@@ -61,8 +61,8 @@
 						<option value="range">저장순</option>
 						<option value="saab">가나다순</option>
 					</select>
-					<a href="userFavoriteList.do" class="list"><i class="ion-ios-list-outline active"></i></a>
-					<a href="userFavoriteGrid.do" class="grid"><i class="ion-grid "></i></a>
+					<a href="userFavoriteList.do" class="list"><i class="ion-ios-list-outline"></i></a>
+					<a href="userFavoriteGrid.do" class="grid"><i class="ion-grid active"></i></a>
 				</div>
 				<div class="flex-wrap-movielist grid-fav">
 						<div class="movie-item-style-2 movie-item-style-1 style-3">
