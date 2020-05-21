@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/home.css">
 	<!-- react -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script> 
@@ -190,8 +191,8 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 									<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
 								</div>					
 								<div class="btn-transform transform-vertical"> 
-									<a href="seriesSingle.do" class="item item-1 redbtn">상세정보</a>
-									<a href="seriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
+									<a href="seriesSingle.do?movie_id=35901" class="item item-1 redbtn">상세정보</a>
+									<a href="seriesSingle.do?movie_id=35901" class="item item-2 redbtn hvrbtn">상세정보</a>
 								</div>
 							</div>
 							<!-- <div class="mainInnerVideoRight col-md-4"> -->
@@ -966,85 +967,6 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 					<h2>개봉예정작 예고편</h2>
 					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
-				<div class="videos">
-				 	<div class="slider-for-2 video-ft">
-					   <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/w0qQkSuWOS8"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/44LdLqgOpjo"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/gbug3zTm3Ws"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/e3Nl_TCQXuw"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
-					    </div>
-
-					</div>
-					<div class="slider-nav-2 thumb-ft">
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Wonder Woman</h4>
-	                        	<p>2:30</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Oblivion: Official Teaser Trailer</h4>
-	                        	<p>2:37</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Exclusive Interview:  Skull Island</h4>
-	                        	<p>2:44</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
-	                        	<p>2:43</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
-	                        	<p>2: 32</p>
-	                        </div>	
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="../images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Fast&Furious 8</h4>	
-	                        	<p>3:11</p>
-	                        </div>	
-						</div>
-					</div>
-				</div>
 			</div>
 			=============================  TRAILER SLIDER AREA END  ==============================
 			
@@ -1106,7 +1028,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 					<div class="blog-item-style-2">
 						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv21.jpg" alt=""></a>
 						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do">Godzilla: King Of The Monsters Adds O’Shea Jackson Jr</a></h3>
+							<h3><a href="../news/blogDetail.do"></a></h3>
 							<span class="time">27 Mar 2017</span>
 							<p>Looks like Kong: Skull Island started a tradition with its casting of Straight ...</p>
 						</div>

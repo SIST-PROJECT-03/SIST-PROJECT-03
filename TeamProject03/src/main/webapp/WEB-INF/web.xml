@@ -10,7 +10,8 @@
 		<!-- 클래스 등록 경로 입력 -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/config/application-content.xml</param-value>
+			<param-value>/WEB-INF/config/application-*.xml</param-value>
+			
 		</init-param> 
 	</servlet>
 	

@@ -65,7 +65,7 @@ function showAllBtn(){
 			<!-- ============================= MOVIE DETAIL - LEFT POSTER AREA START  ============================== -->
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="movie-img sticky-sb">
-					<img src="images/uploads/series-img.jpg" alt="">
+					<img src="${vo.poster }" alt="">
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
 							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> 예고편 보기</a></div>
@@ -80,7 +80,7 @@ function showAllBtn(){
 			</div>
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="movie-single-ct main-content">
-					<h1 class="bd-hd">The Big Bang Theory <span> 2007 </span></h1>
+					<h1 class="bd-hd">${vo.title }<span>  </span></h1>
 					<div class="social-btn">
 						<a href="#" class="parent-btn"><i class="ion-heart"></i>컬렉션 담기</a>
 						<div class="hover-bnt">
@@ -976,7 +976,6 @@ function showAllBtn(){
 					       	 		</div>
 					       	 	</div>
 					       	 	<!-- ============================= MOVIE DETAIL -  RELATED MOVIE 관련영화 TAB END  ============================== -->
-					       	 	
 						    </div>
 						</div>
 					</div>
@@ -987,6 +986,10 @@ function showAllBtn(){
 	</div>
 </div>
 <!-- ============================= MOVIE DETAIL BOTTOM AREA END  ============================== -->
-
+<script type="text/javascript">
+	document.addEventListner('DOMContentLoaded',(e)=>{
+		console.log("");
+	})
+</script>
 </body>
 </html>
