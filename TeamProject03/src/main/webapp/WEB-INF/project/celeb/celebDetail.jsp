@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
+
 //구현중
 function showAllBtn(){
 	
@@ -51,7 +52,7 @@ function showAllBtn(){
 			<!-- ============================= POSTER AREA START  ============================== -->
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="mv-ceb">
-					<img src="../images/uploads/cebsingle2.png" alt="">
+					<img src="images/uploads/cebsingle2.png" alt="">
 				</div>
 			</div>
 			<!-- ============================= POSTER AREA END  ============================== -->
@@ -89,12 +90,12 @@ function showAllBtn(){
 												<a href="#" class="time" id="showAllMedia">All 5 Videos & 245 Photos <i class="ion-ios-arrow-right"></i></a>
 											</div>
 											<div class="mvsingle-item ov-item">
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="../images/uploads/image1.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image21.jpg" ><img src="../images/uploads/image2.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="../images/uploads/image3.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="images/uploads/image1.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image21.jpg" ><img src="images/uploads/image2.jpg" alt=""></a>
+												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="images/uploads/image3.jpg" alt=""></a>
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/image4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/image4.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 											</div>
 											<div class="title-hd-sm">
@@ -105,7 +106,7 @@ function showAllBtn(){
 											<div class="mvcast-item">											
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film1.jpg" alt="">
+														<img src="images/uploads/film1.jpg" alt="">
 														<div>
 															<a href="#">X-Men: Apocalypse </a>
 															<p class="time">Logan</p>
@@ -116,7 +117,7 @@ function showAllBtn(){
 												</div>
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film2.jpg" alt="">
+														<img src="images/uploads/film2.jpg" alt="">
 														<div>
 															<a href="#">Eddie the Eagle </a>
 															<p class="time">Bronson Peary</p>
@@ -126,7 +127,7 @@ function showAllBtn(){
 												</div>
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film3.jpg" alt="">
+														<img src="images/uploads/film3.jpg" alt="">
 														<div>
 															<a href="#">Me and Earl and the Dying Girl </a>
 															<p class="time">Hugh Jackman</p>
@@ -136,7 +137,7 @@ function showAllBtn(){
 												</div>
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film4.jpg" alt="">
+														<img src="images/uploads/film4.jpg" alt="">
 														<div>
 															<a href="#">Night at the Museum 3 </a>
 															<p class="time">Blackbeard</p>
@@ -146,7 +147,7 @@ function showAllBtn(){
 												</div>
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film5.jpg" alt="">
+														<img src="images/uploads/film5.jpg" alt="">
 														<div>
 															<a href="#">X-Men: Days of Future Past </a>
 															<p class="time">Wolverine</p>
@@ -156,7 +157,7 @@ function showAllBtn(){
 												</div>
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film6.jpg" alt="">
+														<img src="images/uploads/film6.jpg" alt="">
 														<div>
 															<a href="#">The Wolverine </a>
 															<p class="time">Logan</p>
@@ -166,7 +167,7 @@ function showAllBtn(){
 												</div>
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film7.jpg" alt="">
+														<img src="images/uploads/film7.jpg" alt="">
 														<div>
 															<a href="#">Rise of the Guardians </a>
 															<p class="time">Bunny</p>
@@ -176,7 +177,7 @@ function showAllBtn(){
 												</div>
 												<div class="cast-it">
 													<div class="cast-left cebleb-film">
-														<img src="../images/uploads/film8.jpg" alt="">
+														<img src="images/uploads/film8.jpg" alt="">
 														<div>
 															<a href="#">The Prestige </a>
 															<p class="time">Robert Angier</p>
@@ -214,7 +215,7 @@ function showAllBtn(){
 						            			</p>
 						            		</div>
 						            		<div class="ads">
-												<img src="../images/uploads/ads1.png" alt="">
+												<img src="images/uploads/ads1.png" alt="">
 											</div>
 						            	</div>
 						            </div>
@@ -249,8 +250,8 @@ function showAllBtn(){
 										<div class="mvsingle-item media-item">
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item1.jpg" alt="">
-													<a class="fancybox-media hvr-grow"  href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
+													<a class="fancybox-media hvr-grow"  href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Trailer:  Watch New Scenes</a></h6>
@@ -259,8 +260,8 @@ function showAllBtn(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item2.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item2.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Featurette: “Avengers Re-Assembled</a></h6>
@@ -269,8 +270,8 @@ function showAllBtn(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item3.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item3.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Robert Downey Jr</a></h6>
@@ -279,8 +280,8 @@ function showAllBtn(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item4.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Scarlett Johansson</a></h6>
@@ -289,8 +290,8 @@ function showAllBtn(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item1.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Featurette: Meet Quicksilver & The Scarlet Witch</a></h6>
@@ -299,8 +300,8 @@ function showAllBtn(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item2.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item2.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Director Joss Whedon</a></h6>
@@ -309,8 +310,8 @@ function showAllBtn(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item3.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item3.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Interview: Mark Ruffalo</a></h6>
@@ -319,8 +320,8 @@ function showAllBtn(){
 											</div>
 											<div class="vd-item">
 												<div class="vd-it">
-													<img class="vd-img" src="../images/uploads/vd-item4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="../images/uploads/play-vd.png" alt=""></a>
+													<img class="vd-img" src="images/uploads/vd-item4.jpg" alt="">
+													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
 												</div>
 												<div class="vd-infor">
 													<h6> <a href="#">Official Trailer #2</a></h6>
@@ -332,27 +333,27 @@ function showAllBtn(){
 											<h4>Photos <span> (21)</span></h4>
 										</div>
 										<div class="mvsingle-item">
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="../images/uploads/image1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery"  href="../images/uploads/image21.jpg" ><img src="../images/uploads/image2.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="../images/uploads/image3.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image41.jpg" ><img src="../images/uploads/image4.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image51.jpg" ><img src="../images/uploads/image5.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image61.jpg" ><img src="../images/uploads/image6.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image71.jpg" ><img src="../images/uploads/image7.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image81.jpg" ><img src="../images/uploads/image8.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image91.jpg" ><img src="../images/uploads/image9.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image101.jpg" ><img src="../images/uploads/image10.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image111.jpg" ><img src="../images/uploads/image1-1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image121.jpg" ><img src="../images/uploads/image12.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image131.jpg" ><img src="../images/uploads/image13.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image141.jpg" ><img src="../images/uploads/image14.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image151.jpg" ><img src="../images/uploads/image15.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image161.jpg" ><img src="../images/uploads/image16.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image171.jpg" ><img src="../images/uploads/image17.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image181.jpg" ><img src="../images/uploads/image18.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image191.jpg" ><img src="../images/uploads/image19.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image201.jpg" ><img src="../images/uploads/image20.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image211.jpg" ><img src="../images/uploads/image2-1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="images/uploads/image1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery"  href="../images/uploads/image21.jpg" ><img src="images/uploads/image2.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="images/uploads/image3.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image41.jpg" ><img src="images/uploads/image4.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image51.jpg" ><img src="images/uploads/image5.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image61.jpg" ><img src="images/uploads/image6.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image71.jpg" ><img src="images/uploads/image7.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image81.jpg" ><img src="images/uploads/image8.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image91.jpg" ><img src="images/uploads/image9.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image101.jpg" ><img src="images/uploads/image10.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image111.jpg" ><img src="images/uploads/image1-1.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image121.jpg" ><img src="images/uploads/image12.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image131.jpg" ><img src="images/uploads/image13.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image141.jpg" ><img src="images/uploads/image14.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image151.jpg" ><img src="images/uploads/image15.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image161.jpg" ><img src="images/uploads/image16.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image171.jpg" ><img src="images/uploads/image17.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image181.jpg" ><img src="images/uploads/image18.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image191.jpg" ><img src="images/uploads/image19.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image201.jpg" ><img src="images/uploads/image20.jpg" alt=""></a>
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image211.jpg" ><img src="images/uploads/image2-1.jpg" alt=""></a>
 										</div>
 						        	</div>
 					       	 	</div>
@@ -381,7 +382,7 @@ function showAllBtn(){
 										<div class="mvcast-item">											
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film1.jpg" alt="">
+													<img src="images/uploads/film1.jpg" alt="">
 													<div>
 														<a href="#">X-Men: Apocalypse </a>
 														<p class="time">Logan</p>
@@ -392,7 +393,7 @@ function showAllBtn(){
 											</div>
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film2.jpg" alt="">
+													<img src="images/uploads/film2.jpg" alt="">
 													<div>
 														<a href="#">Eddie the Eagle </a>
 														<p class="time">Bronson Peary</p>
@@ -402,7 +403,7 @@ function showAllBtn(){
 											</div>
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film3.jpg" alt="">
+													<img src="images/uploads/film3.jpg" alt="">
 													<div>
 														<a href="#">Me and Earl and the Dying Girl </a>
 														<p class="time">Hugh Jackman</p>
@@ -412,7 +413,7 @@ function showAllBtn(){
 											</div>
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film4.jpg" alt="">
+													<img src="images/uploads/film4.jpg" alt="">
 													<div>
 														<a href="#">Night at the Museum 3 </a>
 														<p class="time">Blackbeard</p>
@@ -422,7 +423,7 @@ function showAllBtn(){
 											</div>
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film5.jpg" alt="">
+													<img src="images/uploads/film5.jpg" alt="">
 													<div>
 														<a href="#">X-Men: Days of Future Past </a>
 														<p class="time">Wolverine</p>
@@ -432,7 +433,7 @@ function showAllBtn(){
 											</div>
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film6.jpg" alt="">
+													<img src="images/uploads/film6.jpg" alt="">
 													<div>
 														<a href="#">The Wolverine </a>
 														<p class="time">Logan</p>
@@ -442,7 +443,7 @@ function showAllBtn(){
 											</div>
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film7.jpg" alt="">
+													<img src="images/uploads/film7.jpg" alt="">
 													<div>
 														<a href="#">Rise of the Guardians </a>
 														<p class="time">Bunny</p>
@@ -452,7 +453,7 @@ function showAllBtn(){
 											</div>
 											<div class="cast-it">
 												<div class="cast-left cebleb-film">
-													<img src="../images/uploads/film8.jpg" alt="">
+													<img src="images/uploads/film8.jpg" alt="">
 													<div>
 														<a href="#">The Prestige </a>
 														<p class="time">Robert Angier</p>

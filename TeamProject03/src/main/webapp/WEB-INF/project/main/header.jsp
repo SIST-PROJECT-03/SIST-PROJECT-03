@@ -228,38 +228,38 @@
 								<li class="dropdown">
 									<a href="javascript:void(0)" style="cursor: default;">장르<i class="fa fa-caret-right" aria-hidden="true" onclick="false"></i></a>
 									<ul class="dropdown-menu level2" style="list-style: none;">
-										<li class="navLi"><a href="../movieList/movieGrid.do">액션</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">드라마</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">애니메이션</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">코미디</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">멜로/로맨스</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">공포</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">SF</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">드라마</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">가족</a></li>
-										<li class="navLi"><a href="../movieList/movieGrid.do">스릴러</a></li>
+										<li class="navLi"><a href="movieGrid.do">액션</a></li>
+										<li class="navLi"><a href="movieGrid.do">드라마</a></li>
+										<li class="navLi"><a href="movieGrid.do">애니메이션</a></li>
+										<li class="navLi"><a href="movieGrid.do">코미디</a></li>
+										<li class="navLi"><a href="movieGrid.do">멜로/로맨스</a></li>
+										<li class="navLi"><a href="movieGrid.do">공포</a></li>
+										<li class="navLi"><a href="movieGrid.do">SF</a></li>
+										<li class="navLi"><a href="movieGrid.do">드라마</a></li>
+										<li class="navLi"><a href="movieGrid.do">가족</a></li>
+										<li class="navLi"><a href="movieGrid.do">스릴러</a></li>
 									</ul>
 								</li> 
 								<li class="dropdown">
-									<a href="../movieList/movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<a href="movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="dropdown-menu level2">
-										<li><a href="../movieList/movieGrid.do">About Us 01</a></li>
-										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
-										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
+										<li><a href="movieGrid.do">About Us 01</a></li>
+										<li><a href="movieGrid.do">About Us 02</a></li>
+										<li><a href="movieGrid.do">About Us 02</a></li>
 									</ul>
 								</li> 
 								<li class="dropdown">
-									<a href="../movieList/movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<a href="movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="dropdown-menu level2">
-										<li><a href="../movieList/movieGrid.do">About Us 01</a></li>
-										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
+										<li><a href="movieGrid.do">About Us 01</a></li>
+										<li><a href="movieGrid.do">About Us 02</a></li>
 									</ul>
 								</li> 
 								<li class="dropdown">
-									<a href="../movieList/movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<a href="movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="dropdown-menu level2">
-										<li><a href="../movieList/movieGrid.do">About Us 01</a></li>
-										<li><a href="../movieList/movieGrid.do">About Us 02</a></li>
+										<li><a href="movieGrid.do">About Us 01</a></li>
+										<li><a href="movieGrid.do">About Us 02</a></li>
 									</ul>
 								</li> 
 								<!-- <li><a href="../movieList/movieList.do">Movie list</a></li>

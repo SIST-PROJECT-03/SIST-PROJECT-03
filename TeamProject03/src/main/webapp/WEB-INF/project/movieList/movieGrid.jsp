@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../css/movieGrid.css">
+<link rel="stylesheet" href="css/movieGrid.css">
 </head>
 <body>
 <!-- ============================= INFO TITLE AREA START  ============================== -->
@@ -15,7 +15,7 @@
 				<div class="hero-ct">
 					<h1>인기 액션 영화 Top 30</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="../main/home.do">홈</a></li>
+						<li class="active"><a href="../main.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span> 영화 탐색</li>
 					</ul>
 				</div>
@@ -45,206 +45,206 @@
 				</div>
 				<div class="flex-wrap-movielist">
 						<div class="movie-item-style-2 movie-item-style-1">
-							<img src="../images/uploads/mv1.jpg" alt="">
+							<img src="images/uploads/mv1.jpg" alt="">
 							<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 							<div class="mv-item-infor">
-								<h6><a href="movieDetail.do">oblivion</a></h6>
+								<h6><a href="seriesSingle.do">oblivion</a></h6>
 								<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
 							</div>
 						</div>					
 						<div class="movie-item-style-2 movie-item-style-1">
-							<img src="../images/uploads/mv2.jpg" alt="">
+							<img src="images/uploads/mv2.jpg" alt="">
 							<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 							<div class="mv-item-infor">
-								<h6><a href="movieDetail.do">into the wild</a></h6>
+								<h6><a href="seriesSingle.do">into the wild</a></h6>
 								<p class="rate"><i class="ion-android-star"></i><span>7.8</span> /10</p>
 							</div>
 						</div>
 					
 					
 						<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item3.jpg" alt="">
+	            			<img src="images/uploads/mv-item3.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">Die hard</a></h6>
+	            				<h6><a href="seriesSingle.do">Die hard</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 					
 					
 						<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item4.jpg" alt="">
+	            			<img src="images/uploads/mv-item4.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">The walk</a></h6>
+	            				<h6><a href="seriesSingle.do">The walk</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-							<img src="../images/uploads/mv3.jpg" alt="">
+							<img src="images/uploads/mv3.jpg" alt="">
 							<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 							<div class="mv-item-infor">
-								<h6><a href="movieDetail.do">blade runner  </a></h6>
+								<h6><a href="seriesSingle.do">blade runner  </a></h6>
 								<p class="rate"><i class="ion-android-star"></i><span>7.3</span> /10</p>
 							</div>
 						</div>
 						<div class="movie-item-style-2 movie-item-style-1">
-							<img src="../images/uploads/mv4.jpg" alt="">
+							<img src="images/uploads/mv4.jpg" alt="">
 							<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 							<div class="mv-item-infor">
-								<h6><a href="movieDetail.do">Mulholland pride</a></h6>
+								<h6><a href="seriesSingle.do">Mulholland pride</a></h6>
 								<p class="rate"><i class="ion-android-star"></i><span>7.2</span> /10</p>
 							</div>
 						</div>
 						<div class="movie-item-style-2 movie-item-style-1">
-							<img src="../images/uploads/mv5.jpg" alt="">
+							<img src="images/uploads/mv5.jpg" alt="">
 							<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 							<div class="mv-item-infor">
-								<h6><a href="movieDetail.do">skyfall: evil of boss</a></h6>
+								<h6><a href="seriesSingle.do">skyfall: evil of boss</a></h6>
 								<p class="rate"><i class="ion-android-star"></i><span>7.0</span> /10</p>
 							</div>
 						</div>
 						<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item1.jpg" alt="">
+	            			<img src="images/uploads/mv-item1.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">Interstellar</a></h6>
+	            				<h6><a href="seriesSingle.do">Interstellar</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item2.jpg" alt="">
+	            			<img src="images/uploads/mv-item2.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">The revenant</a></h6>
+	            				<h6><a href="seriesSingle.do">The revenant</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-it10.jpg" alt="">
+	            			<img src="images/uploads/mv-it10.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">harry potter</a></h6>
+	            				<h6><a href="seriesSingle.do">harry potter</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 						<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-it11.jpg" alt="">
+	            			<img src="images/uploads/mv-it11.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">guardians galaxy</a></h6>
+	            				<h6><a href="seriesSingle.do">guardians galaxy</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-it12.jpg" alt="">
+	            			<img src="images/uploads/mv-it12.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">the godfather</a></h6>
+	            				<h6><a href="seriesSingle.do">the godfather</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 						<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item6.jpg" alt="">
+	            			<img src="images/uploads/mv-item6.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">blue velvet</a></h6>
+	            				<h6><a href="seriesSingle.do">blue velvet</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item7.jpg" alt="">
+	            			<img src="images/uploads/mv-item7.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">gravity</a></h6>
+	            				<h6><a href="seriesSingle.do">gravity</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item8.jpg" alt="">
+	            			<img src="images/uploads/mv-item8.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">southpaw</a></h6>
+	            				<h6><a href="seriesSingle.do">southpaw</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-it9.jpg" alt="">
+	            			<img src="images/uploads/mv-it9.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">jurassic park</a></h6>
+	            				<h6><a href="seriesSingle.do">jurassic park</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item9.jpg" alt="">
+	            			<img src="images/uploads/mv-item9.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">the forest</a></h6>
+	            				<h6><a href="seriesSingle.do">the forest</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item10.jpg" alt="">
+	            			<img src="images/uploads/mv-item10.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">spectre</a></h6>
+	            				<h6><a href="seriesSingle.do">spectre</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item11.jpg" alt="">
+	            			<img src="images/uploads/mv-item11.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">strager things</a></h6>
+	            				<h6><a href="seriesSingle.do">strager things</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
 	            		<div class="movie-item-style-2 movie-item-style-1">
-	            			<img src="../images/uploads/mv-item12.jpg" alt="">
+	            			<img src="images/uploads/mv-item12.jpg" alt="">
 	            			<div class="hvr-inner">
-	            				<a  href="movieDetail.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+	            				<a  href="seriesSingle.do"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 	            			</div>
 	            			<div class="mv-item-infor">
-	            				<h6><a href="movieDetail.do">la la land</a></h6>
+	            				<h6><a href="seriesSingle.do">la la land</a></h6>
 	            				<p class="rate"><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	            			</div>
 	            		</div>
