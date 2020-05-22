@@ -207,8 +207,8 @@ $(function(){
 									<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
 								</div>					
 								<div class="btn-transform transform-vertical"> 
-									<a href="seriesSingle.do?movie_id=${vo.movie_id }" class="item item-1 redbtn">상세정보</a>
-									<a href="seriesSingle.do?movie_id=${vo.movie_id }" class="item item-2 redbtn hvrbtn">상세정보</a>
+									<a href="seriesSingle.do?movie_id=35901" class="item item-1 redbtn">상세정보</a>
+									<a href="seriesSingle.do?movie_id=35901" class="item item-2 redbtn hvrbtn">상세정보</a>
 								</div>
 							</div>
 							<!-- <div class="mainInnerVideoRight col-md-4"> -->
@@ -983,37 +983,121 @@ $(function(){
 					<h2>개봉예정작 예고편</h2>
 					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
 				</div>
+				<div class="videos">
+				 	<div class="slider-for-2 video-ft">
+					   <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/w0qQkSuWOS8"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/44LdLqgOpjo"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/gbug3zTm3Ws"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/e3Nl_TCQXuw"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
+					    </div>
+
+					</div>
+					<div class="slider-nav-2 thumb-ft">
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Wonder Woman</h4>
+	                        	<p>2:30</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Oblivion: Official Teaser Trailer</h4>
+	                        	<p>2:37</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Exclusive Interview:  Skull Island</h4>
+	                        	<p>2:44</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
+	                        	<p>2:43</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
+	                        	<p>2: 32</p>
+	                        </div>	
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Fast&Furious 8</h4>	
+	                        	<p>3:11</p>
+	                        </div>	
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
-			
+
 			<!-- =============================  주목받는 영화인  AREA START  ============================== -->
+
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="celebrities">
 						<h4 class="sb-title">주목받는 영화인</h4>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
+							<a href="celebDetail.do"><img
+								src="images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Samuel N. Jack</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img
+								src="images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Benjamin Carroll</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img
+								src="images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Beverly Griffin</a></h6>
 								<span>Actor</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img
+								src="images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6><a href="#">Justin Weaver</a></h6>
 								<span>Actor</span>
@@ -1032,13 +1116,16 @@ $(function(){
 <div class="latestnew full-width">
 		<div class="row">
 			<!-- <div class="col-md-9"> -->
-			<div>	
+			<div>
+				<div class="ads adsv2">
+					<img src="images/uploads/ads2.png" alt="">
+				</div>
 				<div class="title-hd">
 					<h2>최신 영화 뉴스</h2>
 					<a href="newsList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 				<div class="latestnewv2">
-					<c:forEach var="nvo" items="${newsList }">
+				<%-- 	<c:forEach var="nvo" items="${newsList }">
 					<div class="blog-item-style-2">
 						<a href="newsDetail.do?no=${nvo.news_id }"><img src="${nvo.thumbnail }" style="width: 300px; height: 200px;;"></a>
 						<div class="blog-it-infor">
@@ -1047,7 +1134,7 @@ $(function(){
 							<p>${nvo.subject }</p>
 						</div>
 					</div>
-					</c:forEach>
+					</c:forEach> --%>
 				</div>
 			</div>
 			<!-- <div class="col-md-3">

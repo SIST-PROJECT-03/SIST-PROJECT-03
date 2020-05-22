@@ -1,13 +1,13 @@
 @CHARSET "UTF-8";
 
 
-.movie-items .movie-item .mv-img {
+/* .movie-items .movie-item .mv-img {
 
 	max-width:100%;
 	height:auto;
 	
 }
-
+ */
 
 .movie-items .movie-item .mv-img:hover {
   	cursor:pointer;
