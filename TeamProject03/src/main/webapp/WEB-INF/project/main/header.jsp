@@ -240,7 +240,7 @@
 										<li class="navLi"><a href="movieGrid.do">스릴러</a></li>
 									</ul>
 								</li> 
-								<li class="dropdown">
+								<!-- <li class="dropdown">
 									<a href="movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="dropdown-menu level2">
 										<li><a href="movieGrid.do">About Us 01</a></li>
@@ -261,7 +261,7 @@
 										<li><a href="movieGrid.do">About Us 01</a></li>
 										<li><a href="movieGrid.do">About Us 02</a></li>
 									</ul>
-								</li> 
+								</li>  -->
 								<!-- <li><a href="../movieList/movieList.do">Movie list</a></li>
 								<li><a href="../movieList/movieList.do">Movie list</a></li>
 								<li><a href="../movieList/movieList.do">Movie list</a></li> -->
