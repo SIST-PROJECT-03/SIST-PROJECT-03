@@ -79,17 +79,17 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 	    				<div class="col-md-8 col-sm-12 col-xs-12">
 	    					<div class="title-in">
 			    				<div class="cate">
-			    					<span class="blue"><a href="#">Sci-fi</a></span>
-			    					<span class="yell"><a href="#">Action</a></span>
-			    					<span class="orange"><a href="#">advanture</a></span>
+			    					<span class="blue"><a href="#">액션</a></span>
+			    					<span class="yell"><a href="#">모험</a></span>
+			    					<span class="orange"><a href="#">범죄</a></span>
 			    				</div>
-			    				<h1><a href="#">guardians of the<br>
-								galaxy <span>2015</span></a></h1>
+			    				<h1><a href="#"><br>
+								월요일이 사라졌다<span>2018</span></a></h1>
 								<div class="social-btn">
-									<a href="#" class="parent-btn"><i class="ion-play"></i> Watch Trailer</a>
-									<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+									<a href="#" class="parent-btn"><i class="ion-play"></i>예고편 보기</a>
+									<a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>
 									<div class="hover-bnt">
-										<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+										<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>공유</a>
 										<div class="hvr-item">
 											<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
 											<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
@@ -99,22 +99,22 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 									</div>		
 								</div>
 			    				<div class="mv-details">
-			    					<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+			    					<p><i class="ion-android-star"></i><span>8.4</span> /10</p>
 			    					<ul class="mv-infor">
-			    						<li>  Run Time: 2h21’ </li>
-			    						<li>  Rated: PG-13  </li>
-			    						<li>  Release: 1 May 2015</li>
+			    						<li>  상영시간: 123분 </li>
+			    						<li>  상영등급: 12세 관람가</li>
+			    						<li>  개봉일: 18/02/22</li>
 			    					</ul>
 			    				</div>
 			    				<div class="btn-transform transform-vertical">
-									<div><a href="#" class="item item-1 redbtn">more detail</a></div>
-									<div><a href= "#" class="item item-2 redbtn hvrbtn">more detail</a></div>
+									<div><a href="#" class="item item-1 redbtn">더보기</a></div>
+									<div><a href= "#" class="item item-2 redbtn hvrbtn">더보기</a></div>
 								</div>		
 			    			</div>
 	    				</div>
 	    				<div class="col-md-4 col-sm-12 col-xs-12">
 		    				<div class="mv-img-2">
-			    				<a href="#"><img src="images/uploads/poster1.jpg" alt=""></a>
+			    				<a href="#"><img src="https://movie-phinf.pstatic.net/20180129_126/1517205484221qUvjL_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:270px; height:414px;"></a>
 			    			</div>
 		    			</div>
 	    			</div>	
@@ -124,17 +124,17 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 	    				<div class="col-md-8 col-sm-12 col-xs-12">
 	    					<div class="title-in">
 			    				<div class="cate">
-			    					<span class="blue"><a href="#">Sci-fi</a></span>
-			    					<span class="yell"><a href="#">Action</a></span>
-			    					<span class="orange"><a href="#">advanture</a></span>
+			    					<span class="blue"><a href="#">SF</a></span>
+			    					<span class="yell"><a href="#">액션</a></span>
+			    					<span class="orange"><a href="#">어드밴쳐</a></span>
 			    				</div>
-			    				<h1><a href="#">guardians of the<br>
-								galaxy <span>2015</span></a></h1>
+			    				<h1><a href="#"><br>
+								가디언즈 오브 갤럭시 VOL.2<span>2017</span></a></h1>
 								<div class="social-btn">
-									<a href="#" class="parent-btn"><i class="ion-play"></i> Watch Trailer</a>
-									<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+									<a href="#" class="parent-btn"><i class="ion-play"></i>예고편 보기</a>
+									<a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>
 									<div class="hover-bnt">
-										<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+										<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>공유</a>
 										<div class="hvr-item">
 											<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
 											<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
@@ -146,21 +146,21 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			    				<div class="mv-details">
 			    					<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
 			    					<ul class="mv-infor">
-			    						<li>  Run Time: 2h21’ </li>
-			    						<li>  Rated: PG-13  </li>
-			    						<li>  Release: 1 May 2015</li>
+			    						<li>  상영시간: 136분 </li>
+			    						<li>  상영등급: 12세 관람가</li>
+			    						<li>  개봉일: 17/05/03</li>
 			    					</ul>
 			    				</div>
 			    				<div class="btn-transform transform-vertical">
-									<div><a href="#" class="item item-1 redbtn">more detail</a></div>
-									<div><a href= "#" class="item item-2 redbtn hvrbtn">more detail</a></div>
+									<div><a href="#" class="item item-1 redbtn">더보기</a></div>
+									<div><a href= "#" class="item item-2 redbtn hvrbtn">더보기</a></div>
 								</div>
 			    				
 			    			</div>
 	    				</div>
 	    				<div class="col-md-4 col-sm-12 col-xs-12">
 		    				<div class="mv-img-2">
-			    				<a href="#"><img src="images/uploads/poster1.jpg" alt=""></a>
+			    				<a href="#"><img src="https://movie-phinf.pstatic.net/20170329_6/1490752948552vH5G8_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:270px; height:414px;"></a>
 			    			</div>
 		    			</div>
 	    			</div>	
@@ -250,7 +250,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 	<div class="row">
 		<div class="col-md-12">
 			<div class="title-hd">
-				<h2>in theater</h2>
+				<h2>#블록버스터 최고의 인기작</h2>
 				<a href="../movieList/movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 			</div>
 			<div class="tabs">
@@ -273,8 +273,8 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">오블리비언</a></h6>
+				            				<p><i class="ion-android-star"></i><span>8.9</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
@@ -287,49 +287,49 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">The revenant</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">인 투 더 와일드</a></h6>
+				            				<p><i class="ion-android-star"></i><span>9.4</span> /10</p>
 				            			</div>
 				            		</div>
 								</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it3.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20161123_188/1479862185516tYkKO_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">라라랜드</a></h6>
+				            				<p><i class="ion-android-star"></i><span>7.0</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20200310_91/1583805533463Yqyui_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">The walk</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">분노의 질주: 더 익스트림</a></h6>
+				            				<p><i class="ion-android-star"></i><span>7.8</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20200211_164/1581396524128hxWV1_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
+				            				<h6><a href="#">젠틀맨</a></h6>
 				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
 				            			</div>
 				            		</div>
@@ -343,7 +343,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
+				            				<h6><a href="#">007 스카이폴</a></h6>
 				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
 				            			</div>
 				            		</div>
@@ -357,8 +357,8 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">그것</a></h6>
+				            				<p><i class="ion-android-star"></i><span>9.0</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
@@ -371,8 +371,8 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">인셉션</a></h6>
+				            				<p><i class="ion-android-star"></i><span>8.5</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
@@ -600,7 +600,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			
 			<!-- ============================= ON TV SLIDER START  ============================== -->
 			<div class="title-hd">
-				<h2>on tv</h2>
+				<h2>할리우드 코미디... 어디까지 봤니? (이아린님 컬렉션)</h2>
 				<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 			</div>
 			<div class="tabs">
@@ -618,27 +618,27 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20160217_153/1455686083975zjajH_JPEG/movie_image.jpg?type=m203_290_2" alt=""style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">주토피아</a></h6>
+				            				<p><i class="ion-android-star"></i><span>8.9</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 								<div class="slide-it">
 									<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20140721_155/1405929648411y5t2g_JPEG/movie_image.jpg?type=m203_290_2" alt=""style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">The revenant</a></h6>
+				            				<h6><a href="#">비긴 어게인</a></h6>
 				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
 				            			</div>
 				            		</div>
@@ -646,84 +646,84 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it9.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20180510_219/1525934615322rulbv_JPEG/movie_image.jpg?type=m203_290_2" alt=""style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">데드풀 2</a></h6>
+				            				<p><i class="ion-android-star"></i><span>8.2</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20180601_276/1527835091787c3BdN_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">The walk</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">아이 필 프리티</a></h6>
+				            				<p><i class="ion-android-star"></i><span>8.8</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20111221_87/1324463812384jrIP3_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">어바웃 어 보이</a></h6>
+				            				<p><i class="ion-android-star"></i><span>7.0</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20180511_35/1525999995668PFOx3_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">스탠바이, 웬디</a></h6>
+				            				<p><i class="ion-android-star"></i><span>6.7</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20190805_203/15649916739090lNjN_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">마이펫의 이중생활2</a></h6>
+				            				<p><i class="ion-android-star"></i><span>8.7</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="https://movie-phinf.pstatic.net/20171016_232/1508134137061ayymY_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            				<h6><a href="#">킹스맨: 골든 서클</a></h6>
+				            				<p><i class="ion-android-star"></i><span>6.6</span> /10</p>
 				            			</div>
 				            		</div>
 			            		</div>
@@ -736,7 +736,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            			<img src="images/uploads/mv-it4.jpg" alt="">
+				            			<img src="" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -750,7 +750,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
+				            				<img src="" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -764,7 +764,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
+				            				<img src="" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -778,7 +778,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
+				            				<img src="" alt=""style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -792,7 +792,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -811,7 +811,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            	<div class="slick-multiItem2">
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it1.jpg" alt="">
+			            				<img src="" alt="" style="width:257px; height:394.84px;">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -823,7 +823,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		</div>
 								<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it2.jpg" alt="">
+			            				<img src="" alt="" style="width:257px; height:394.84px;">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -835,7 +835,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		</div>
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it3.jpg" alt="">
+			            				<img src="" alt="" style="width:257px; height:394.84px;">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -847,7 +847,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		</div>
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it4.jpg" alt="">
+			            				<img src="" alt="" style="width:257px; height:394.84px;">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -859,7 +859,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		</div>
 			            		<div class="movie-item">
 			            			<div class="mv-img">
-			            				<img src="images/uploads/mv-it3.jpg" alt="">
+			            				<img src="" alt="" style="width:257px; height:394.84px;">
 			            			</div>
 			            			<div class="hvr-inner">
 			            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -878,7 +878,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it4.jpg" alt="">
+				            				<img src="" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
@@ -892,49 +892,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it5.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Interstellar</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">Die hard</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it8.jpg" alt="">
+				            				<img src="" alt="" style="width:257px; height:394.84px;">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
