@@ -44,7 +44,6 @@ $(function(){
 </head>
 <body>
 <!-- search form -->
-
 <div class="slider sliderv2">
 	<div class="container">
 		<div class="row">
@@ -982,7 +981,7 @@ $(function(){
 					<h2>개봉예정작 예고편</h2>
 					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
 				</div>
-				<div class="videos">
+				<!-- <div class="videos">
 				 	<div class="slider-for-2 video-ft">
 					   <div>
 					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
@@ -1060,7 +1059,7 @@ $(function(){
 	                        </div>	
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
 			
