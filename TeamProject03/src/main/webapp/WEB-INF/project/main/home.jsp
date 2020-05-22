@@ -132,7 +132,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<div class="mv-img-2">
 									<a href="#"><img src="images/uploads/poster1.jpg" alt=""></a>
 								</div>
-<<<<<<< HEAD
+
 							</div>
 						</div>
 					</div>
@@ -1339,7 +1339,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Wonder Woman</h4>
+	                        	<h4 class="desc">위대한 쇼맨</h4>
 	                        	<p>2:30</p>
 	                        </div>
 						</div>
@@ -1348,7 +1348,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Oblivion: Official Teaser Trailer</h4>
+	                        	<h4 class="desc">베일리 어게인</h4>
 	                        	<p>2:37</p>
 	                        </div>
 						</div>
@@ -1357,7 +1357,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Exclusive Interview:  Skull Island</h4>
+	                        	<h4 class="desc">라라랜드</h4>
 	                        	<p>2:44</p>
 	                        </div>
 						</div>
@@ -1366,7 +1366,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
+	                        	<h4 class="desc">날씨의 아이</h4>	
 	                        	<p>2:43</p>
 	                        </div>
 						</div>
@@ -1375,7 +1375,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
+	                        	<h4 class="desc">초미의 관심사</h4>	
 	                        	<p>2: 32</p>
 	                        </div>	
 						</div>
@@ -1384,7 +1384,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Fast&Furious 8</h4>	
+	                        	<h4 class="desc">톰보이</h4>	
 	                        	<p>3:11</p>
 	                        </div>	
 						</div>
@@ -1407,9 +1407,9 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								src="images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
-									<a href="#">Samuel N. Jack</a>
+									<a href="#">우디엘런</a>
 								</h6>
-								<span>Actor</span>
+								<span>감독</span>
 							</div>
 						</div>
 						<div class="celeb-item">
@@ -1417,9 +1417,9 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								src="images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
-									<a href="#">Benjamin Carroll</a>
+									<a href="#">티모시 샬라메</a>
 								</h6>
-								<span>Actor</span>
+								<span>배우</span>
 							</div>
 						</div>
 						<div class="celeb-item">
@@ -1427,9 +1427,9 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								src="images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
-									<a href="#">Beverly Griffin</a>
+									<a href="#">앤 해서웨이</a>
 								</h6>
-								<span>Actor</span>
+								<span>배우</span>
 							</div>
 						</div>
 						<div class="celeb-item">
@@ -1437,14 +1437,14 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								src="images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
-									<a href="#">Justin Weaver</a>
+									<a href="#">조정석</a>
 								</h6>
-								<span>Actor</span>
+								<span>배우</span>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div> 
 			<!-- =============================  주목받는 영화인  AREA END  ============================== -->
 
 		</div>
