@@ -5,8 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<!-- react -->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="css/home.css">
+	<!-- react -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 	
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 
 <script type="text/javascript">
@@ -47,6 +52,25 @@
 <body>
 <script type="text/babel">
 	
+<!-- search form -->
+<div class="container" id="root"></div>
+<script type="text/babel">
+class App extends React.Component{
+	constructor(props){
+	}
+ 	render(){
+		return(
+		)
+	}
+}
+class MovieList extends React.Component{
+	render(){
+		return(
+		)
+	}
+}
+ReactDOM.render(<App/>,document.getElementByid('root'));
+
 </script>
 
 	<!-- search form -->
@@ -108,6 +132,7 @@
 								<div class="mv-img-2">
 									<a href="#"><img src="images/uploads/poster1.jpg" alt=""></a>
 								</div>
+<<<<<<< HEAD
 							</div>
 						</div>
 					</div>
@@ -1280,15 +1305,21 @@
 		<div class="row ipad-width">
 
 			<!-- =============================  TRAILER SLIDER AREA START  ============================== -->
-			<div class="col-md-9 col-sm-12 col-xs-12">
+			<!-- <div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="title-hd">
 					<h2>개봉예정작 예고편</h2>
-					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
+					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 			</div>
+<<<<<<< HEAD
 			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
 
 			<!-- =============================  주목받는 영화인  AREA START  ============================== -->
+=======
+			=============================  TRAILER SLIDER AREA END  ==============================
+			
+			=============================  주목받는 영화인  AREA START  ==============================
+>>>>>>> branch 'master' of https://github.com/SIST-PROJECT-03/SIST-PROJECT-03.git
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="celebrities">
@@ -1335,7 +1366,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- =============================  주목받는 영화인  AREA END  ============================== -->
 
 		</div>
