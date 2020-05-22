@@ -1300,33 +1300,111 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 	<!-- =============================  THEMA SLIDER AREA START  ============================== -->
 
 
-	<!-- =============================  TRAILER SLIDER & 영화인  AREA START  ============================== -->
-	<div class="trailers full-width">
-		<div class="row ipad-width">
 
+<!-- =============================  TRAILER SLIDER & 영화인  AREA START  ============================== -->
+<div class="trailers full-width">
+		<div class="row ipad-width">
+		
 			<!-- =============================  TRAILER SLIDER AREA START  ============================== -->
-			<!-- <div class="col-md-9 col-sm-12 col-xs-12">
+			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="title-hd">
 					<h2>개봉예정작 예고편</h2>
-					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
+				</div>
+				<div class="videos">
+				 	<div class="slider-for-2 video-ft">
+					   <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/w0qQkSuWOS8"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/44LdLqgOpjo"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/gbug3zTm3Ws"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/e3Nl_TCQXuw"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
+					    </div>
+
+					</div>
+					<div class="slider-nav-2 thumb-ft">
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Wonder Woman</h4>
+	                        	<p>2:30</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Oblivion: Official Teaser Trailer</h4>
+	                        	<p>2:37</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Exclusive Interview:  Skull Island</h4>
+	                        	<p>2:44</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
+	                        	<p>2:43</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
+	                        	<p>2: 32</p>
+	                        </div>	
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">Fast&Furious 8</h4>	
+	                        	<p>3:11</p>
+	                        </div>	
+						</div>
+					</div>
 				</div>
 			</div>
-<<<<<<< HEAD
 			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
+	
+
+
 
 			<!-- =============================  주목받는 영화인  AREA START  ============================== -->
-=======
-			=============================  TRAILER SLIDER AREA END  ==============================
-			
-			=============================  주목받는 영화인  AREA START  ==============================
->>>>>>> branch 'master' of https://github.com/SIST-PROJECT-03/SIST-PROJECT-03.git
+
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="celebrities">
 						<h4 class="sb-title">주목받는 영화인</h4>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img
-								src="../images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
+							<a href="celebDetail.do"><img
+								src="images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
 									<a href="#">Samuel N. Jack</a>
@@ -1336,7 +1414,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 						</div>
 						<div class="celeb-item">
 							<a href="../celeb/celebDetail.do"><img
-								src="../images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
+								src="images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
 									<a href="#">Benjamin Carroll</a>
@@ -1346,7 +1424,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 						</div>
 						<div class="celeb-item">
 							<a href="../celeb/celebDetail.do"><img
-								src="../images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
+								src="images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
 									<a href="#">Beverly Griffin</a>
@@ -1356,7 +1434,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 						</div>
 						<div class="celeb-item">
 							<a href="../celeb/celebDetail.do"><img
-								src="../images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
+								src="images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
 								<h6>
 									<a href="#">Justin Weaver</a>
@@ -1379,7 +1457,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			<!-- <div class="col-md-9"> -->
 			<div>
 				<div class="ads adsv2">
-					<img src="../images/uploads/ads2.png" alt="">
+					<img src="images/uploads/ads2.png" alt="">
 				</div>
 				<div class="title-hd">
 					<h2>최신 영화 뉴스</h2>
@@ -1389,7 +1467,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 				<div class="latestnewv2">
 					<div class="blog-item-style-2">
 						<a href="../news/blogDetail.do"><img
-							src="../images/uploads/blogv21.jpg" alt=""></a>
+							src="images/uploads/blogv21.jpg" alt=""></a>
 						<div class="blog-it-infor">
 							<h3>
 								<a href="../news/blogDetail.do"></a>
@@ -1401,7 +1479,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 					</div>
 					<div class="blog-item-style-2">
 						<a href="../news/blogDetail.do"><img
-							src="../images/uploads/blogv22.jpg" alt=""></a>
+							src="images/uploads/blogv22.jpg" alt=""></a>
 						<div class="blog-it-infor">
 							<h3>
 								<a href="../news/blogDetail.do">First Official Images of
@@ -1414,7 +1492,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 					</div>
 					<div class="blog-item-style-2">
 						<a href="../news/blogDetail.do"><img
-							src="../images/uploads/blogv23.jpg" alt=""></a>
+							src="images/uploads/blogv23.jpg" alt=""></a>
 						<div class="blog-it-infor">
 							<h3>
 								<a href="../news/blogDetail.do">New Spider-Man: Homecoming
@@ -1427,7 +1505,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 					</div>
 					<div class="blog-item-style-2">
 						<a href="../news/blogDetail.do"><img
-							src="../images/uploads/blogv24.jpg" alt=""></a>
+							src="images/uploads/blogv24.jpg" alt=""></a>
 						<div class="blog-it-infor">
 							<h3>
 								<a href="../news/blogDetail.do">Joseph Gordon-Levitt
