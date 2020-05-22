@@ -81,10 +81,11 @@ function showAllBtn(){
 
 </script>
    <style>
-        .box{margin:30px;}
+        .box{
+        margin:0px auto;
+        }
         .content{
-            width:400px;
-            padding:10px;
+            width:100%;
         }
     </style>
 </head>
@@ -256,7 +257,7 @@ function showAllBtn(){
 						            	<div class="col-md-4 col-xs-12 col-sm-12">
 						            		<div class="sb-it">
 						            			<h6>감독: </h6>
-						            			<p><a href="#">Mark Cendrowski</a></p>
+						            			<p><a href="#">봉준호</a></p>
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>극본: </h6>
