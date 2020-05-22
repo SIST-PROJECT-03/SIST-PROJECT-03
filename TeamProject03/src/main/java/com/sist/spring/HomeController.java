@@ -1,9 +1,7 @@
 package com.sist.spring;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -11,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 	@RequestMapping("home.do")
-	public String main_home(HttpServletRequest request, HttpServletResponse response)
+	public String main_home(Model model)
 	{
 		return "redirect:main.do";
 	}
-	
 }

@@ -18,7 +18,7 @@
 	<!-- Mobile specific meta -->
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone-no">
-
+	
 	<!-- CSS files -->
 	<link rel="stylesheet" href="css/plugins.css">
 	
@@ -50,6 +50,7 @@
 <script src="js/plugins.js"></script>
 <script src="js/plugins2.js"></script>
 <script src="js/custom.js"></script>
-
+<script src="js/ajax.js"></script>
+<script src="js/detailPrint.js"></script>
 </body>
 </html>

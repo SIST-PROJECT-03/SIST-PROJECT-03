@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1>범블비님의 컬렉션</h1>
+					<h1 class="userTitleInfo">범블비님의 컬렉션</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="home.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>컬렉션</li>
@@ -27,7 +27,7 @@
 <!-- ========================== userFavoriteGrid 컬렉션 타이틀 END ========================== -->
 
 <!-- ========================== userFavoriteGrid 컬렉션 목록 START ========================== -->
-<div class="page-single">
+<div class="page-single userPageSingle">
 	<div class="container">
 		<div class="row ipad-width2">
 			<div class="col-md-3 col-sm-12 col-xs-12">
@@ -40,7 +40,7 @@
 						<!-- <p>Account Details</p> -->
 						<ul>
 							<li><a href="userProfile.do">프로필</a></li>
-							<li class="active"><a href="userfavoriteGrid.do">컬렉션</a></li>
+							<li class="active"><a href="userFavoriteGrid.do">컬렉션</a></li>
 							<li><a href="userRate.do">평점/리뷰</a></li>
 						</ul>
 					</div>
@@ -55,14 +55,14 @@
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="topbar-filter user">
-					<p>총 <span>1,608 </span> 개의 영화</p>
+					<p class="searchTotal">총 <span>1,608 </span> 개의 영화</p>
 					<!-- <label>Sort by:</label> -->
 					<select>
 						<option value="range">저장순</option>
 						<option value="saab">가나다순</option>
 					</select>
-					<a href="userFavoriteList.do" class="list"><i class="ion-ios-list-outline active"></i></a>
-					<a href="userFavoriteGrid.do" class="grid"><i class="ion-grid "></i></a>
+					<a href="userFavoriteList.do" class="list"><i class="ion-ios-list-outline"></i></a>
+					<a href="userFavoriteGrid.do" class="grid"><i class="ion-grid active"></i></a>
 				</div>
 				<div class="flex-wrap-movielist grid-fav">
 						<div class="movie-item-style-2 movie-item-style-1 style-3">
