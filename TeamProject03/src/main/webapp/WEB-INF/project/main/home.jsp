@@ -1301,15 +1301,15 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 
 
 
-<!-- =============================  TRAILER SLIDER & 영화인  AREA START  ============================== -->
-<div class="trailers full-width">
+ <!-- =============================  TRAILER SLIDER & 영화인  AREA START  ============================== -->
+<!--<div class="trailers full-width">
 		<div class="row ipad-width">
 		
-			<!-- =============================  TRAILER SLIDER AREA START  ============================== -->
+			=============================  TRAILER SLIDER AREA START  ==============================
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="title-hd">
 					<h2>개봉예정작 예고편</h2>
-					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
+					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 				<div class="videos">
 				 	<div class="slider-for-2 video-ft">
@@ -1390,7 +1390,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
 	
 
