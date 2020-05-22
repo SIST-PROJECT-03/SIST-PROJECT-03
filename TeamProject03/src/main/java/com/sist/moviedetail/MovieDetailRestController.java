@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sist.dao.MovieDAO;
-import com.sist.dao.MovieDetailVO;
+import com.sist.vo.MovieDetailVO;
 
 @RestController
 public class MovieDetailRestController {
