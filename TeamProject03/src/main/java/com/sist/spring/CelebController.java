@@ -24,8 +24,4 @@ public class CelebController {
 	{
 		return "project/celeb/celebDetail";
 	}
-	
-	
-	
-	
 }

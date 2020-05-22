@@ -17,21 +17,57 @@ public class NewsManager {
 		try{
 			
 			for(int i=1; i<=11; i++){
-				Document doc=Jsoup.connect("https://movie.daum.net/magazine/new?tab=nws&regdate=20200519&page="+i).get();
+				Document doc=Jsoup.connect("https://movie.daum.net/magazine/new?tab=nws&regdate=20200520&page="+i).get();
 				Elements newsList=doc.select(".tit_line");
 				for(int j=0; j<newsList.size(); j++)
 				{
 					Element titleElement=doc.select(".tit_line").get(j);
-					String title=newsElementData(titleElement);
+					String title=newsElementTextData(titleElement);
+					
+					Element linkElement=doc.select(".tit_line a").get(j);
+					String link=newsElementAttrData(linkElement,"href");
 					
 					Element subjectElement=doc.select(".desc_line").get(j);
-					String subject=newsElementData(subjectElement);
+					String subject=newsElementTextData(subjectElement);
 					
 					Element thumbnailElement=doc.select(".thumb_img").get(j);
 					String thumbnail=newsTumbnailData(thumbnailElement);
+					
+					Document detailDoc=Jsoup.connect(link).get();
+					String info=detailDoc.html();
+					String temp="";
+					String author="";
+					String regdate="";
+					try{
+						
+						temp=info.substring(info.indexOf("pageMeta = {"),info.indexOf("pageMeta = {")+400);
+						int targetNum=temp.indexOf("author\":")+10;
+						temp=temp.substring(targetNum);
+						author=temp.substring(0,temp.indexOf("\""));
+						if(targetNum==9)
+						{
+							author="";
+						}
+						
+					}catch (Exception ex) {}
+					
+					try{
+						temp=info.substring(info.indexOf("pageMeta = {"),info.indexOf("pageMeta = {")+400);
+						int targetNum=temp.indexOf("regdate\":")+11;
+						temp=temp.substring(targetNum);
+						regdate=temp.substring(0,temp.indexOf(" "));
+					}catch (Exception ex) {}
+					
+					Element contentElement=detailDoc.selectFirst(".article_view");
+					String content=newsElementTextData(contentElement);
+					
 					System.out.println(title);
 					System.out.println(subject);
 					System.out.println(thumbnail);
+					System.out.println(regdate);
+					System.out.println(author);
+					System.out.println(link);
+					System.out.println(content);
 					System.out.println("===================================================");
 				}
 				
@@ -53,16 +89,27 @@ public class NewsManager {
 		}
 		return res;
 	}
-	public String newsElementData(Element e)
+	public String newsElementTextData(Element e)
 	{
 		String res="";
 		try{
 			res=e.text();
 		}catch (Exception ex) {
+			res="null";
+		}
+		return res;
+	}
+	public String newsElementAttrData(Element e,String key)
+	{
+		String res="";
+		try{
+			res=e.attr(key);
+		}catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		return res;
 	}
+	
 	public static void main(String[] args)
 	{
 		NewsManager nm=new NewsManager();
