@@ -7133,7 +7133,7 @@ p.ceb-single {
 .sliderv2 {
   background: url('../images/uploads/slider-bg2.jpg') no-repeat;
   padding-bottom: 0;
-  padding-top: 180px;
+  padding-top: 260px;
   overflow: hidden;
 }
 .sliderv2 .movie-item .title-in {
@@ -7150,7 +7150,7 @@ p.ceb-single {
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 60px;
+  line-height: 60px; 
 }
 .sliderv2 .movie-item .title-in h1 a span {
   font-family: 'Dosis', sans-serif;
