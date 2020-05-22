@@ -20,7 +20,7 @@
 }
 
 
-header .navbar-default .navbar-nav .dropdown .dropdown-menu.level2 {
+header .navbar-default .navbar-nav .dropdown .dropdown-menu.hearderLevel {
   position: absolute;
   top: -21px !important;
   margin-top: 0;
@@ -33,7 +33,7 @@ header .navbar-default .navbar-nav .dropdown .dropdown-menu.level2 {
 }
 
 
-header .navbar-default .navbar-nav li a {
+header .navbar-default .genrenavbar-nav li a {
     font-family: 'Dosis', sans-serif;
     font-size: 17px;
     color: #ffffff;
