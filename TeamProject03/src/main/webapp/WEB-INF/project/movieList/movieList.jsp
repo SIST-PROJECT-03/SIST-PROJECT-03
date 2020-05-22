@@ -25,6 +25,8 @@
 </div>
 <!-- ============================= INFO TITLE AREA END  ============================== -->
 
+
+
 <!-- ============================= BOTTOM WHOLE AREA START  ============================== -->
 <div class="page-single movie_list">
 	<div class="container">
