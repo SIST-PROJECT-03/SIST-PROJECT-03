@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class NewsVO {
+	private int news_id;
 	private String title;
 	private String subject;
 	private String thumbnail;

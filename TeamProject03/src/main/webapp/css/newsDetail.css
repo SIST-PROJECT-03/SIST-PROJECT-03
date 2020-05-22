@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-.blog-detail-ct .comment-form form input.submit {
+.newsDetailSubmit {
     background-color: #dd003f;
     padding: 0 45px;
     height: 46px;

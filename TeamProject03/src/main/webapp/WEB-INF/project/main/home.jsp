@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -1032,46 +1033,21 @@ $(function(){
 		<div class="row">
 			<!-- <div class="col-md-9"> -->
 			<div>	
-				<div class="ads adsv2">
-					<img src="../images/uploads/ads2.png" alt="">
-				</div>
 				<div class="title-hd">
 					<h2>최신 영화 뉴스</h2>
-					<a href="../news/blogList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+					<a href="newsList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 				<div class="latestnewv2">
+					<c:forEach var="nvo" items="${newsList }">
 					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv21.jpg" alt=""></a>
+						<a href="newsDetail.do?no=${nvo.news_id }"><img src="${nvo.thumbnail }" style="width: 90%; height: 200px;"></a>
 						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do"></a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>Looks like Kong: Skull Island started a tradition with its casting of Straight ...</p>
+							<h3><a href="newsDetail.do?no=${nvo.news_id }">${nvo.title }</a></h3>
+							<span class="time">${nvo.regdate }</span>
+							<p>${nvo.subject }</p>
 						</div>
 					</div>
-					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv22.jpg" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do">First Official Images of Alicia Vikander As Tomb Raider’s Lara Croft</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>Aside from the her digital incarnation, the most recognisable image of Tomb ...</p>
-						</div>
-					</div>
-					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv23.jpg" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do">New Spider-Man: Homecoming Poster Finds Peter Parker At Rest</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>He might be a primary protector of New York City, but at heart, Peter Parker is ...</p>
-						</div>
-					</div>
-					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv24.jpg" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do">Joseph Gordon-Levitt Directing Moive Musical Comedy Wingmen</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>A little over a year ago, we learned that Joseph Gordon-Levitt and Channing ...</p>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<!-- <div class="col-md-3">

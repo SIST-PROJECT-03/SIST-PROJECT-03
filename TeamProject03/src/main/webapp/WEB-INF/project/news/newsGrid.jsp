@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="css/newsList.css">
+<link rel="stylesheet" href="../css/newsGrid.css">
 </head>
 <body>
 <!-- ============================= BLOG GRID TITLE AREA START  ============================== -->
@@ -26,39 +27,49 @@
 </div>
 <!-- ============================= BLOG-GRID TITLE AREA END  ============================== -->
 
-<!-- ============================= BLOG-LIST LIST AREA START  ============================== -->
+<!-- ============================= BLOG-GRID LIST AREA START  ============================== -->
 <div class="page-single">
 	<div class="container">
 		<div class="row ipad-width2">
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
-					<p class="totalnews">총 <span>${count } </span> 개의 뉴스</p>
+					<p class="newsGridTotal">총 <span>${count } </span> 개의 뉴스</p>
 					<!-- <label>Sort by:</label> -->
-					<select class="newsSelect">
+					<select class="newsGridSelect">
 						<option value="popularity">최근순</option>
 						<option value="popularity">인기순</option>
 						<option value="rating">Rating Descending</option>
 						<option value="date">Release date Ascending</option>
 					</select>
-					<a href="newsList.do" class="list"><i class="ion-ios-list-outline active"></i></a>
-					<a href="newsGrid.do" class="grid"><i class="ion-grid"></i></a>
+					<a href="blogList.do" class="list"><i class="ion-ios-list-outline"></i></a>
+					<a href="blogGrid.do" class="grid"><i class="ion-grid active"></i></a>
 				</div>
-				<c:forEach var="vo" items="${list }">
-					<div class="blog-item-style-1 blog-item-style-3">
-	            		<img src="${vo.thumbnail }">
-	            		<div class="blog-it-infor">
-	            			<h3><a href="newsDetail.do?no=${vo.news_id }">${vo.title }</a></h3>
-	            			<span class="time">${vo.regdate }</span>
-	            			<p>${vo.subject }</p>
-	            		</div>
-	            	</div>
-				</c:forEach>
-            	
+				
+					<div class="row">
+						<c:forEach var="vo" items="${list }">
+							<div class="col-md-4 col-sm-12 col-xs-12">
+								<div class="blog-item-style-2">
+									<a href="newsDetail.do?no=${vo.news_id }"><img src="${vo.thumbnail }"></a>
+									<div class="blog-it-infor">
+										<h3><a href="newsDetail.do?no=${vo.news_id }">${vo.title }</a></h3>
+										<span class="time"><fmt:formatDate value="${vo.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/></span>
+										<p>${vo.subject }</p>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
+					</div>
+				
+				
             	<ul class="pagination">
-            		<li class="icon-prev"><a href="newsList.do?page=1"><i class="ion-ios-arrow-left"></i></a></li>
-            		<c:forEach var="i" begin="${startpage }" end="${endpage}">
-            			<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
-            		</c:forEach>
+            		<li class="icon-prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
+            		<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">...</a></li>
+					<li><a href="#">21</a></li>
+					<li><a href="#">22</a></li>
 					<li class="icon-next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
             	</ul>
 			</div>
@@ -103,7 +114,7 @@
 						</ul>
 					</div>
 					<div class="ads">
-						<img src="../images/uploads/ads1.png" alt="">
+						<img src="images/uploads/ads1.png" alt="">
 					</div>
 				</div>
 			</div>

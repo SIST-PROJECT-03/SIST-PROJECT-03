@@ -21,13 +21,13 @@
 
 	<!-- CSS files -->
 	<link rel="stylesheet" href="css/plugins.css">
-	<link rel="stylesheet" href="css/style.css">
+	
 
 </head>
 <body>
 
 <!--preloading-->
-
+<!--TeamProject03/src/main/java/com/sist/spring/MainController.java  -->
 <!--end of preloading-->
 
 <!-- BEGIN | Header -->
