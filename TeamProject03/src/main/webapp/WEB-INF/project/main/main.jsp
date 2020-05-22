@@ -50,6 +50,7 @@
 <script src="js/plugins.js"></script>
 <script src="js/plugins2.js"></script>
 <script src="js/custom.js"></script>
-
+<script src="js/ajax.js"></script>
+<script src="js/detailPrint.js"></script>
 </body>
 </html>
