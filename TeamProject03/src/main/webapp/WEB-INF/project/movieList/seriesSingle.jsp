@@ -1,11 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script text="javascript/text">
+    $(document).ready(function(){
+
+        $('.box').each(function(){
+            var content = $(this).children('.content');
+            var content_txt = content.text();
+            var content_txt_short = content_txt.substring(0,100)+"...";
+            var btn_more = $('<a href="javascript:void(0)" class="more">더보기</a>');
+
+            
+            $(this).append(btn_more);
+            
+            if(content_txt.length >= 100){
+                content.html(content_txt_short)
+                
+            }else{
+                btn_more.hide()
+            }
+            
+            btn_more.click(toggle_content);
+            // 아래 bind가 안 되는 이유는??
+            // btn_more.bind('click',toggle_content);
+
+            function toggle_content(){
+                if($(this).hasClass('short')){
+                    // 접기 상태
+                    $(this).html('더보기');
+                    content.html(content_txt_short)
+                    $(this).removeClass('short');
+                }else{
+                    // 더보기 상태
+                    $(this).html('접기');
+                    content.html(content_txt);
+                    $(this).addClass('short');
+
+                }
+            }
+        });
+    });
+  </script>
 <script type="text/javascript">
 $(function(){
 	$(document).ready(function(){
@@ -38,6 +80,13 @@ function showAllBtn(){
 
 
 </script>
+   <style>
+        .box{margin:30px;}
+        .content{
+            width:400px;
+            padding:10px;
+        }
+    </style>
 </head>
 <body>
 <!-- ============================= MOVIE DETAIL TOP AREA START  ============================== -->
@@ -130,8 +179,8 @@ function showAllBtn(){
 						        <div id="overview" class="tab active">
 						            <div class="row">
 						            	<div class="col-md-8 col-sm-12 col-xs-12">
-						            		<p>Leonard Hofstadter and Sheldon Cooper are both brilliant physicists working at Cal Tech in Pasadena, California. They are colleagues, best friends, and roommates, although in all capacities their relationship is always tested primarily by Sheldon's regimented, deeply eccentric, and non-conventional ways.</p>
-						            		<!-- <div class="title-hd-sm">
+						            		<div class="box"><p class="content">${vo.story }</p></div>
+<!-- 						            		<div class="title-hd-sm">
 												<h4>Current Season</h4>
 												<a href="#" class="time">View All Seasons <i class="ion-ios-arrow-right"></i></a>
 											</div>
@@ -148,8 +197,8 @@ function showAllBtn(){
 														</div>	
 													</div>											
 												</div>	
-											</div> -->
-						            		<div class="title-hd-sm">
+											</div>
+ -->						            		<div class="title-hd-sm">
 												<h4>포토/영상</h4>
 												<a href="#" class="time">더보기 <i class="ion-ios-arrow-right"></i></a>
 											</div>
@@ -167,7 +216,9 @@ function showAllBtn(){
 												<a href="#" class="time">더보기  <i class="ion-ios-arrow-right"></i></a>
 											</div>
 											<!-- movie cast -->
-											<div class="mvcast-item">											
+											<div class="mvcast-item">	
+											<!-- 인물 DB넣은 후 연결하고나서 출력하기 -->
+										<%-- 	<!--  <c:forEach var="vo" items="${list}">		-->								
 												<div class="cast-it">
 													<div class="cast-left">
 														<img src="images/uploads/cast1.jpg" alt="">
@@ -175,55 +226,7 @@ function showAllBtn(){
 													</div>
 													<p>...  Robert Downey Jr.</p>
 												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast2.jpg" alt="">
-														<a href="../celeb/celebDetail.do">Chris Hemsworth</a>
-													</div>
-													<p>...  Thor</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast3.jpg" alt="">
-														<a href="../celeb/celebDetail.do">Mark Ruffalo</a>
-													</div>
-													<p>...  Bruce Banner/ Hulk</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast4.jpg" alt="">
-														<a href="../celeb/celebDetail.do">Chris Evans</a>
-													</div>
-													<p>...  Steve Rogers/ Captain America</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast5.jpg" alt="">
-														<a href="../celeb/celebDetail.do">Scarlett Johansson</a>
-													</div>
-													<p>...  Natasha Romanoff/ Black Widow</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast6.jpg" alt="">
-														<a href="../celeb/celebDetail.do">Jeremy Renner</a>
-													</div>
-													<p>...  Clint Barton/ Hawkeye</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast7.jpg" alt="">
-														<a href="../celeb/celebDetail.do">James Spader</a>
-													</div>
-													<p>...  Ultron</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast9.jpg" alt="">
-														<a href="../celeb/celebDetail.do">Don Cheadle</a>
-													</div>
-													<p>...  James Rhodes/ War Machine</p>
-												</div>
+											</c:forEach>  --%>
 											</div>
 											<div class="title-hd-sm">
 												<h4>관람객 리뷰</h4>
@@ -247,7 +250,7 @@ function showAllBtn(){
 												<p class="time">
 													17 December 2016 by <a href="#"> hawaiipierson</a>
 												</p>
-												<p>This is by far one of my favorite movies from the MCU. The introduction of new Characters both good and bad also makes the movie more exciting. giving the characters more of a back story can also help audiences relate more to different characters better, and it connects a bond between the audience and actors or characters. Having seen the movie three times does not bother me here as it is as thrilling and exciting every time I am watching it. In other words, the movie is by far better than previous movies (and I do love everything Marvel), the plotting is splendid (they really do out do themselves in each film, there are no problems watching it more than once.</p>
+												<p>This is.</p>
 											</div>
 						            	</div>
 						            	<div class="col-md-4 col-xs-12 col-sm-12">
@@ -265,19 +268,19 @@ function showAllBtn(){
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>장르:</h6>
-						            			<p><a href="#">Action, </a> <a href="#"> Sci-Fi,</a> <a href="#">Adventure</a></p>
+						            			<p><a href="#">${vo.genre } </a></p>
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>개봉일:</h6>
-						            			<p>1 May 2006 (U.S.A)</p>
+						            			<p><fmt:formatDate value="${vo.opening_date }" pattern="yyyy-MM-dd"/></p>
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>상영시간:</h6>
-						            			<p>22 min</p>
+						            			<p>${vo.running_time }분</p>
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>등급:</h6>
-						            			<p>TV-14</p>
+						            			<p>${vo.grade }</p>
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>주요 키워드:</h6>
@@ -289,9 +292,6 @@ function showAllBtn(){
 													<span class="time"><a href="#">final battle</a></span>
 						            			</p>
 						            		</div>
-						            		<div class="ads">
-												<img src="images/uploads/ads1.png" alt="">
-											</div>
 						            	</div>
 						            </div>
 						        </div>
@@ -347,7 +347,7 @@ function showAllBtn(){
 													</p>
 												</div>
 											</div>
-											<p>This is by far one of my favorite movies from the MCU. The introduction of new Characters both good and bad also makes the movie more exciting. giving the characters more of a back story can also help audiences relate more to different characters better, and it connects a bond between the audience and actors or characters. Having seen the movie three times does not bother me here as it is as thrilling and exciting every time I am watching it. In other words, the movie is by far better than previous movies (and I do love everything Marvel), the plotting is splendid (they really do out do themselves in each film, there are no problems watching it more than once.</p>
+											<p> out do themselvnce.</p>
 										</div>
 										<div class="mv-user-review-item">
 											<div class="user-infor">
@@ -371,15 +371,15 @@ function showAllBtn(){
 													</p>
 												</div>
 											</div>
-											<p>Avengers Age of Ultron is an excellent sequel and a worthy MCU title! There are a lot of good and one thing that feels off in my opinion. </p>
+											<p>Avengers Age of There are a lot of good and one thing that feels off in my opinion. </p>
 
 											<p>THE GOOD:</p>
 
-											<p>First off the action in this movie is amazing, to buildings crumbling, to evil blue eyed robots tearing stuff up, this movie has the action perfectly handled. And with that action comes visuals. The visuals are really good, even though you can see clearly where they are through the movie, but that doesn't detract from the experience. While all the CGI glory is taking place, there are lovable characters that are in the mix. First off the original characters, Iron Man, Captain America, Thor, Hulk, Black Widow, and Hawkeye, are just as brilliant as they are always. And Joss Whedon fixed my main problem in the first Avengers by putting in more Hawkeye and him more fleshed out. Then there is the new Avengers, Quicksilver, Scarletwich, and Vision, they are pretty cool in my opinion. Vision in particular is pretty amazing in all his scenes.</p>
+											<p>First .</p>
 
 											<p>THE BAD:</p>
 
-											<p>The beginning of the film it's fine until towards the second act and there is when it starts to feel a little rushed. Also I do feel like there are scenes missing but there was talk of an extended version on Blu-Ray so that's cool.</p>
+											<p>Twhen irus talk of an extended version on Blu-Ray so that's cool.</p>
 										</div>
 										<div class="mv-user-review-item">
 											<div class="user-infor">
@@ -986,10 +986,5 @@ function showAllBtn(){
 	</div>
 </div>
 <!-- ============================= MOVIE DETAIL BOTTOM AREA END  ============================== -->
-<script type="text/javascript">
-	document.addEventListner('DOMContentLoaded',(e)=>{
-		console.log("");
-	})
-</script>
 </body>
 </html>
