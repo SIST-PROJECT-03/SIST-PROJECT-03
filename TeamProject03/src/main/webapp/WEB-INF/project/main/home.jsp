@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/home.css">
 	<!-- react -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 	
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -50,25 +45,6 @@ $(function(){
 </head>
 <body>
 <!-- search form -->
-<div class="container" id="root"></div>
-<script type="text/babel">
-class App extends React.Component{
-	constructor(props){
-	}
- 	render(){
-		return(
-		)
-	}
-}
-class MovieList extends React.Component{
-	render(){
-		return(
-		)
-	}
-}
-ReactDOM.render(<App/>,document.getElementByid('root'));
-
-</script>
 
 <div class="slider sliderv2">
 	<div class="container">
@@ -167,6 +143,46 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 	    		</div>
 	    	</div>
 	    </div>
+	</div>
+</div>
+<div class="movie-items  full-width" style="padding-bottom: 0px;">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="title-hd">
+				<h2>in theater</h2>
+				<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+			</div>
+			<div class="tabs">
+				<ul class="tab-links">
+					<li class="active"><a href="#tab1-h2">#Popular</a></li>
+					<li><a href="#tab2-h2"> #Coming soon</a></li>
+					<li><a href="#tab3-h2">  #Top rated  </a></li>
+					<li><a href="#tab4-h2"> #Most reviewed</a></li>                        
+				</ul>
+			    <div class="tab-content">
+			        <div id="tab1-h2" class="tab active">
+			            <div class="row">
+			            	<div class="slick-multiItem2">
+			            		<div class="slide-it">
+			            			<div class="movie-item">
+				            			<div class="mv-img">
+				            				<img src="images/uploads/mv-it1.jpg" alt="">
+				            			</div>
+				            			<div class="hvr-inner">
+				            				<a class="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i></a>
+				            			</div>
+				            			<div class="title-in">
+				            				<h6><a href="#">Interstellar</a></h6>
+				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+				            			</div>
+				            		</div>
+			            		</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="movie-items full-width mainDetailinfo" >
@@ -920,50 +936,142 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 		<div class="row ipad-width">
 		
 			<!-- =============================  TRAILER SLIDER AREA START  ============================== -->
-			<!-- <div class="col-md-9 col-sm-12 col-xs-12">
+			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="title-hd">
 					<h2>개봉예정작 예고편</h2>
-					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+					<!-- <a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a> -->
+				</div>
+				<div class="videos">
+				 	<div class="slider-for-2 video-ft">
+					   <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/w0qQkSuWOS8"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/44LdLqgOpjo"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/gbug3zTm3Ws"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/e3Nl_TCQXuw"></iframe>
+					    </div>
+					    <div>
+					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
+					    </div>
+
+					</div>
+					<div class="slider-nav-2 thumb-ft">
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">위대한 쇼맨</h4>
+	                        	<p>2:30</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">베일리 어게인</h4>
+	                        	<p>2:37</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">라라랜드</h4>
+	                        	<p>2:44</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">날씨의 아이</h4>	
+	                        	<p>2:43</p>
+	                        </div>
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">초미의 관심사</h4>	
+	                        	<p>2: 32</p>
+	                        </div>	
+						</div>
+						<div class="item">
+							<div class="trailer-img">
+								<img src="images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
+							</div>
+							<div class="trailer-infor">
+	                        	<h4 class="desc">톰보이</h4>	
+	                        	<p>3:11</p>
+	                        </div>	
+						</div>
+					</div>
 				</div>
 			</div>
-			=============================  TRAILER SLIDER AREA END  ==============================
-			
-			=============================  주목받는 영화인  AREA START  ==============================
+			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
+
+			<!-- =============================  주목받는 영화인  AREA START  ============================== -->
+
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="celebrities">
 						<h4 class="sb-title">주목받는 영화인</h4>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
+							<a href="celebDetail.do"><img
+								src="images/uploads/ava1.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
-								<h6><a href="#">Samuel N. Jack</a></h6>
-								<span>Actor</span>
+								<h6>
+									<a href="#">우디엘런</a>
+								</h6>
+								<span>감독</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img
+								src="images/uploads/ava2.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
-								<h6><a href="#">Benjamin Carroll</a></h6>
-								<span>Actor</span>
+								<h6>
+									<a href="#">티모시 샬라메</a>
+								</h6>
+								<span>배우</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img
+								src="images/uploads/ava3.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
-								<h6><a href="#">Beverly Griffin</a></h6>
-								<span>Actor</span>
+								<h6>
+									<a href="#">앤 해서웨이</a>
+								</h6>
+								<span>배우</span>
 							</div>
 						</div>
 						<div class="celeb-item">
-							<a href="../celeb/celebDetail.do"><img src="../images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
+							<a href="../celeb/celebDetail.do"><img
+								src="images/uploads/ava4.jpg" alt="" width="70" height="70"></a>
 							<div class="celeb-author">
-								<h6><a href="#">Justin Weaver</a></h6>
-								<span>Actor</span>
+								<h6>
+									<a href="#">조정석</a>
+								</h6>
+								<span>배우</span>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div> 
 			<!-- =============================  주목받는 영화인  AREA END  ============================== -->
 			
 		</div>
@@ -974,47 +1082,25 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 <div class="latestnew full-width">
 		<div class="row">
 			<!-- <div class="col-md-9"> -->
-			<div>	
+			<div>
 				<div class="ads adsv2">
-					<img src="../images/uploads/ads2.png" alt="">
+					<img src="images/uploads/ads2.png" alt="">
 				</div>
 				<div class="title-hd">
 					<h2>최신 영화 뉴스</h2>
-					<a href="../news/blogList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+					<a href="newsList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 				<div class="latestnewv2">
+				<%-- 	<c:forEach var="nvo" items="${newsList }">
 					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv21.jpg" alt=""></a>
+						<a href="newsDetail.do?no=${nvo.news_id }"><img src="${nvo.thumbnail }" style="width: 300px; height: 200px;;"></a>
 						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do"></a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>Looks like Kong: Skull Island started a tradition with its casting of Straight ...</p>
+							<h3><a href="newsDetail.do?no=${nvo.news_id }">${nvo.title }</a></h3>
+							<span class="time">${nvo.regdate }</span>
+							<p>${nvo.subject }</p>
 						</div>
 					</div>
-					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv22.jpg" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do">First Official Images of Alicia Vikander As Tomb Raider’s Lara Croft</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>Aside from the her digital incarnation, the most recognisable image of Tomb ...</p>
-						</div>
-					</div>
-					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv23.jpg" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do">New Spider-Man: Homecoming Poster Finds Peter Parker At Rest</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>He might be a primary protector of New York City, but at heart, Peter Parker is ...</p>
-						</div>
-					</div>
-					<div class="blog-item-style-2">
-						<a href="../news/blogDetail.do"><img src="../images/uploads/blogv24.jpg" alt=""></a>
-						<div class="blog-it-infor">
-							<h3><a href="../news/blogDetail.do">Joseph Gordon-Levitt Directing Moive Musical Comedy Wingmen</a></h3>
-							<span class="time">27 Mar 2017</span>
-							<p>A little over a year ago, we learned that Joseph Gordon-Levitt and Channing ...</p>
-						</div>
-					</div>
+					</c:forEach> --%>
 				</div>
 			</div>
 			<!-- <div class="col-md-3">
