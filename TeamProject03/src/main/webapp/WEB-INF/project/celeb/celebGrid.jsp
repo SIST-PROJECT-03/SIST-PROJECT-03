@@ -16,7 +16,7 @@
 				<div class="hero-ct">
 					<h1>영화인 </h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="../main.do">홈</a></li>
+						<li class="active"><a href="main.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span> 영화인 목록</li>
 					</ul>
 				</div>
@@ -34,9 +34,9 @@
 			<!-- ============================= 영화인 목록 AREA START  ============================== -->
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
-					<p class="pad-change"> '<span>레오나르도 디카프리오</span>'에 대한 <span>50</span>건의 검색 결과</p>
+					<p class="pad-change celebPad"> '<span>레오나르도 디카프리오</span>'에 대한 <span>50</span>건의 검색 결과</p>
 					<!-- <label>정렬순</label> -->
-					<select>
+					<select class="selectChange">
 						<option value="popularity">랭킹순</option>
 						<option value="rating">평점순</option>
 						<option value="date">Release date Descending</option>

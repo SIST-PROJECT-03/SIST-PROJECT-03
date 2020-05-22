@@ -205,7 +205,7 @@
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav flex-child-menu menu-left">
+					<ul class="nav navbar-nav genrenavbar-nav flex-child-menu menu-left">
 						<li class="hidden">
 							<a href="#page-top"></a>
 						</li>
@@ -227,7 +227,7 @@
 							<ul class="dropdown-menu level1">
 								<li class="dropdown">
 									<a href="javascript:void(0)" style="cursor: default;">장르<i class="fa fa-caret-right" aria-hidden="true" onclick="false"></i></a>
-									<ul class="dropdown-menu level2" style="list-style: none;">
+									<ul class="dropdown-menu level2 hearderLevel" style="list-style: none;">
 										<li class="navLi"><a href="movieGrid.do">액션</a></li>
 										<li class="navLi"><a href="movieGrid.do">드라마</a></li>
 										<li class="navLi"><a href="movieGrid.do">애니메이션</a></li>
