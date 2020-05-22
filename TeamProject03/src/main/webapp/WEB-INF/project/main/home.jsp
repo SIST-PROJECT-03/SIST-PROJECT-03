@@ -1339,7 +1339,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">위대한 쇼맨</h4>
+	                        	<h4 class="desc">원더우먼</h4>
 	                        	<p>2:30</p>
 	                        </div>
 						</div>
@@ -1348,7 +1348,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">베일리 어게인</h4>
+	                        	<h4 class="desc">오빌리언</h4>
 	                        	<p>2:37</p>
 	                        </div>
 						</div>
@@ -1357,7 +1357,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">라라랜드</h4>
+	                        	<h4 class="desc">킹콩</h4>
 	                        	<p>2:44</p>
 	                        </div>
 						</div>
@@ -1366,7 +1366,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">날씨의 아이</h4>	
+	                        	<h4 class="desc">로건</h4>	
 	                        	<p>2:43</p>
 	                        </div>
 						</div>
@@ -1375,7 +1375,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">초미의 관심사</h4>	
+	                        	<h4 class="desc">미녀와 야수</h4>	
 	                        	<p>2: 32</p>
 	                        </div>	
 						</div>
@@ -1384,7 +1384,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<img src="images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">톰보이</h4>	
+	                        	<h4 class="desc">패스트 & 퓨리어스</h4>	
 	                        	<p>3:11</p>
 	                        </div>	
 						</div>

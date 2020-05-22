@@ -15,7 +15,7 @@
 				<div class="hero-ct">
 					<h1>인기 액션 영화 Top 30</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="../main.do">홈</a></li>
+						<li class="active"><a href="main.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span> 영화 탐색</li>
 					</ul>
 				</div>
@@ -32,9 +32,9 @@
 			<!-- ============================= MOVIE LIST AREA START  ============================== -->
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
-					<p class="pad-change"> '<span>해리포터</span>'에 대한 <span>50</span>건의 검색 결과</p>
+					<p class="pad-change celebPad"> '<span>해리포터</span>'에 대한 <span>50</span>건의 검색 결과</p>
 					<!-- <label>정렬순</label> -->
-					<select>
+					<select class="selectChange">
 						<option value="ranking">랭킹순</option>
 						<option value="rating">평점순</option>
 						<option value="date">최신작품순</option>

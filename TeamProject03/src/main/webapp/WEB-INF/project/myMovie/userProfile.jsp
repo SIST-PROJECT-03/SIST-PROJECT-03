@@ -15,9 +15,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-				<h1>범블비 님의 프로필</h1>
+				<h1 class="userTitleInfo">범블비 님의 프로필</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="../main/home.do">홈</a></li>
+						<li class="active"><a href="home.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>프로필</li>
 					</ul>
 				</div>
@@ -25,7 +25,7 @@
 		</div>
 	</div>
 </div>
-<div class="page-single">
+<div class="page-single userSinglePage">
 	<div class="container">
 		<div class="row ipad-width">
 			<div class="col-md-3 col-sm-12 col-xs-12">
@@ -119,7 +119,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-2">
-								<input class="submit" type="submit" value="변경완료">
+								<input class="submit styleSubmit" type="submit" value="변경완료">
 							</div>
 						</div>	
 					</form>

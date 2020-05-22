@@ -1,10 +1,10 @@
 @CHARSET "UTF-8";
 
-p.pad-change {
+p.celebPad {
     padding-right: 0px;
-    width: 460px;
+    width: 550px;
 }
 
-.topbar-filter select {
+.topbar-filter .selectChange {
     width: 190px;
 }    

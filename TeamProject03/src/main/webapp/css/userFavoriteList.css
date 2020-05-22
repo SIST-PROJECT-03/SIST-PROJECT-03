@@ -1,14 +1,14 @@
 @CHARSET "UTF-8";
 
-.topbar-filter.user p {
+.topbar-filter.user .searchTotal {
     padding-right: 390px;
 }
 
-.page-single {
+.userPageSingle {
     background-color: #020d18;
     padding: 70px 0;
 }
 
-.user-hero .hero-ct h1 {
+.user-hero .hero-ct .userTitleInfo {
     margin-left: -270px;
 }
