@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sist.mapper.MovieMapper;
+import com.sist.vo.MovieDetailVO;
 
 @Repository
 public class MovieDAO {

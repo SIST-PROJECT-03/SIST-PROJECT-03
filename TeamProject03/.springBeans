@@ -7,11 +7,6 @@
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
-<<<<<<< HEAD
-		<config>src/main/webapp/WEB-INF/config/application-context.xml</config>
-=======
-		<config>src/main/webapp/WEB-INF/config/application-content.xml</config>
->>>>>>> 15104c5b820935563ec1a6b02c4831e857f1354f
 		<config>src/main/webapp/WEB-INF/config/application-datasource.xml</config>
 	</configs>
 	<autoconfigs>
