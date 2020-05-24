@@ -1,16 +1,16 @@
 @CHARSET "UTF-8";
 
 
-.page-single {
+.userSinglePage {
     background-color: #020d18;
    	padding: 70px 0;
 }
 
-.user-hero .hero-ct h1 {
+.user-hero .hero-ct .userTitleInfo {
     margin-left: -270px;
 }
 
-.user-pro input.submit {
+.user-pro input.styleSubmit {
     -webkit-border-radius: 50px !important;
     -moz-border-radius: 50px !important;
     border-radius: 50px !important;

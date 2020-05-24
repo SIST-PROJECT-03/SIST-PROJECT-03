@@ -13,7 +13,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1>범블비님의 컬렉션</h1>
+					<h1 class="userTitleInfo">범블비님의 컬렉션</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="main/home.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>컬렉션</li>
@@ -26,7 +26,7 @@
 <!-- ========================== userFavoriteList 컬렉션 타이틀 END ========================== -->
 
 <!-- ========================== userFavoriteList 컬렉션 목록 START ========================== -->
-<div class="page-single userfav_list">
+<div class="page-single userfav_list userPageSingle">
 	<div class="container">
 		<div class="row ipad-width2">
 			<div class="col-md-3 col-sm-12 col-xs-12">
@@ -54,7 +54,7 @@
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="topbar-filter user">
-					<p>총 <span>1,608 </span> 개의 영화</p>
+					<p class="searchTotal">총 <span>1,608 </span> 개의 영화</p>
 					<!-- <label>Sort by:</label> -->
 					<select>
 						<option value="range">저장순</option>

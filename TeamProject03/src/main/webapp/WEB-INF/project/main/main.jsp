@@ -22,13 +22,13 @@
 	
 	<!-- CSS files -->
 	<link rel="stylesheet" href="css/plugins.css">
-	<link rel="stylesheet" href="css/style.css">
+	
 
 </head>
 <body>
 
 <!--preloading-->
-
+<!--TeamProject03/src/main/java/com/sist/spring/MainController.java  -->
 <!--end of preloading-->
 
 <!-- BEGIN | Header -->
@@ -51,6 +51,7 @@
 <script src="js/plugins.js"></script>
 <script src="js/plugins2.js"></script>
 <script src="js/custom.js"></script>
-
+<script src="js/ajax.js"></script>
+<script src="js/detailPrint.js"></script>
 </body>
 </html>
