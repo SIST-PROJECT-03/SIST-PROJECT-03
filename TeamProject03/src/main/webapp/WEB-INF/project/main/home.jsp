@@ -6,80 +6,57 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/home.css">
-	<!-- react -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 	
+<!-- react -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-
 <script type="text/javascript">
-	$(function() {
-		$(document).ready(function() {
-			$('.mainDetailinfo').hide();
-		})
-		/* 상세보기버튼 클릭이벤트 */
-		$('.hvr-inner').click(function() {
-			$('.mainDetailinfo').show();
-			$('.mainInnerDetail').show();
-			$('.mainNav').show();
-			$('.ing').css('background-color', '#dd003f');
-			$('.ing2').css('background-color', '');
-			$('.mainSim').hide();
-		});
-		/* x버튼 클릭이벤트 */
-		$('.viewall2').click(function() {
-			$('.mainDetailinfo').hide();
-		});
-		/* 기본정보버튼 클릭이벤트 */
-		$('.info').click(function() {
-			$('.mainInnerDetail').show();
-			$('.mainSim').hide();
-			$('.ing').css('background-color', '#dd003f');
-			$('.ing2').css('background-color', '');
-		});
-		/* 비슷한 작품버튼 클릭이벤트 */
-		$('.similar').click(function() {
-			$('.mainInnerDetail').hide();
-			$('.mainSim').show();
-			$('.ing2').css('background-color', '#dd003f');
-			$('.ing').css('background-color', '');
-		});
+$(function(){
+	
+	$(document).ready(function(){
+		$('.mainDetailinfo').hide();
 	})
+	
+	/* 상세보기버튼 클릭이벤트 */
+	$('.hvr-inner').click(function() {
+		$('.mainDetailinfo').show();
+		$('.mainInnerDetail').show();
+		$('.mainNav').show();
+		$('.ing').css('background-color', '#dd003f');
+		$('.ing2').css('background-color', '');
+		$('.mainSim').hide();
+	});
+	
+	/* x버튼 클릭이벤트 */
+	$('.viewall2').click(function() {
+		$('.mainDetailinfo').hide();
+	});
+	
+	/* 기본정보버튼 클릭이벤트 */
+	$('.info').click(function() {
+		$('.mainInnerDetail').show();
+		$('.mainSim').hide();
+		$('.ing').css('background-color', '#dd003f');
+		$('.ing2').css('background-color', '');
+	});
+	
+	/* 비슷한 작품버튼 클릭이벤트 */
+	$('.similar').click(function() {
+		$('.mainInnerDetail').hide();
+		$('.mainSim').show();
+		$('.ing2').css('background-color', '#dd003f');
+		$('.ing').css('background-color', '');
+	});
+	
+})
 </script>
 </head>
 <body>
-<script type="text/babel">
-	
-<!-- search form -->
-<div class="container" id="root"></div>
-<script type="text/babel">
-class App extends React.Component{
-	constructor(props){
-	}
- 	render(){
-		return(
-		)
-	}
-}
-class MovieList extends React.Component{
-	render(){
-		return(
-		)
-	}
-}
-ReactDOM.render(<App/>,document.getElementByid('root'));
-
-</script>
-
 	<!-- search form -->
 
 	<div class="slider sliderv2">
 		<div class="container">
 			<div class="row">
 				<div class="slider-single-item">
-					<div class="movie-item">
+					<div class="movie-item mainTop">
 						<div class="row">
 							<div class="col-md-8 col-sm-12 col-xs-12">
 								<div class="title-in">
@@ -132,7 +109,6 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 								<div class="mv-img-2">
 									<a href="#"><img src="images/uploads/poster1.jpg" alt=""></a>
 								</div>
-<<<<<<< HEAD
 							</div>
 						</div>
 					</div>
@@ -197,7 +173,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			</div>
 		</div>
 	</div>
-	<div class="movie-items  full-width" style="padding-bottom: 0px;">
+	<div class="movie-items full-width mainMovie" style="padding-bottom: 0px;">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="title-hd">
@@ -221,8 +197,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 												<img src="images/uploads/mv-it1.jpg" alt="">
 											</div>
 											<div class="hvr-inner">
-												<a class="mainDetail"> 상세보기 <i
-													class="ion-android-arrow-dropright"></i></a>
+												<a class="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i></a>
 											</div>
 											<div class="title-in">
 												<h6>
@@ -242,7 +217,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			</div>
 		</div>
 	</div>
-	<div class="movie-items full-width mainDetailinfo">
+	<div class="movie-items full-width mainDetailinfo mainMovie">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="mainInner">
@@ -261,8 +236,8 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 									<p>출연</p>
 									<p>개요 | 장르 | 국가 | 개봉연도</p>
 									<div class="social-btn">
-										<a href="#" class="parent-btn"><i class="ion-play"></i></a> <a
-											href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+										<a href="#" class="parent-btn"><i class="ion-play"></i>재생하기</a> 
+										<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
 									</div>
 									<div class="btn-transform transform-vertical">
 										<a href="seriesSingle.do?movie_id=35901"
@@ -318,7 +293,7 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 			</div>
 		</div>
 	</div>
-	<div class="movie-items  full-width">
+	<div class="movie-items full-width mainMovie">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="title-hd">
@@ -1311,15 +1286,9 @@ ReactDOM.render(<App/>,document.getElementByid('root'));
 					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 			</div>
-<<<<<<< HEAD
 			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
 
 			<!-- =============================  주목받는 영화인  AREA START  ============================== -->
-=======
-			=============================  TRAILER SLIDER AREA END  ==============================
-			
-			=============================  주목받는 영화인  AREA START  ==============================
->>>>>>> branch 'master' of https://github.com/SIST-PROJECT-03/SIST-PROJECT-03.git
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="celebrities">

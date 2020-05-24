@@ -1,15 +1,13 @@
 @CHARSET "UTF-8";
 
 
-.movie-items .movie-item .mv-img {
-
+.movie-items .mainTop .mv-img {
 	max-width:100%;
 	height:auto;
-	
 }
 
 
-.movie-items .movie-item .mv-img:hover {
+.movie-items .mainTop .mv-img:hover {
   	cursor:pointer;
 	transform:scale(1.8);
 	z-index:1;
@@ -18,10 +16,8 @@
 	transpare
 }
 
-.movie-items .slick-multiItem .slick-list, .movie-items .slick-multiItem2 .slick-list{
-    
+.mainMovie .slick-multiItem .slick-list, .movie-items .slick-multiItem2 .slick-list{
 	padding: 20px 0;
-	
 }
 
 /* 상세보기 css */

@@ -17,6 +17,7 @@ public class MainController {
 	@RequestMapping("main.do")
 	public String main_main()
 	{	
+		System.out.println("·Î±×ÀÎ????");
 		return "main";
 	}
 }
