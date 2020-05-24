@@ -19,13 +19,25 @@ public class NewsController {
 	{
 		if(page==null)
 			page="1";
-		int totalpage=dao.newsTotalPage();
+		int totalpage=dao.newsTotalListPage();
 		int curpage=Integer.parseInt(page);
-		int block=5;
-		int curBlock=curpage%block==0?curpage/block:(curpage/block)+1;
-		int start=(curpage-1)*block+1;
-		int end=start+(block-1);
+		//한 페이지당 가져오는 데이터수
+		int rowSize=5;
+		int start=(rowSize*curpage)-(rowSize-1);
+		int end=(rowSize*curpage);
 		
+		//블록 페이징
+		int block=5;
+		int startblock;
+		int endblock;
+		if(curpage%block==0){
+			startblock=(curpage/block)*block-(block-1);
+			endblock=(curpage/block)*block;
+		}
+		else{
+			startblock=(curpage/block)*block+1;
+			endblock=(curpage/block+1)*block;
+		}
 		
 		HashMap map=new HashMap();
 		map.put("start", start);
@@ -35,8 +47,10 @@ public class NewsController {
 		int count=dao.newsCount();
 		
 		model.addAttribute("count",count);
-		model.addAttribute("startpage",start);
-		model.addAttribute("endpage",end);
+		model.addAttribute("startblock",startblock);
+		model.addAttribute("endblock",endblock);
+		model.addAttribute("curpage",curpage);
+		model.addAttribute("totalpage",totalpage);
 		model.addAttribute("list",list);
 		return "project/news/newsList";
 	}
@@ -59,9 +73,24 @@ public class NewsController {
 		if(page==null)
 			page="1";
 		int curpage=Integer.parseInt(page);
+		int totalpage=dao.newsTotalGridPage();
+		//한 페이지당 가져오는 데이터수
 		int rowSize=18;
 		int start=(rowSize*curpage)-(rowSize-1);
 		int end=(rowSize*curpage);
+		
+		//블록 페이징
+		int block=5;
+		int startblock;
+		int endblock;
+		if(curpage%block==0){
+			startblock=(curpage/block)*block-(block-1);
+			endblock=(curpage/block)*block;
+		}
+		else{
+			startblock=(curpage/block)*block+1;
+			endblock=(curpage/block+1)*block;
+		}
 		
 		HashMap map=new HashMap();
 		
@@ -74,18 +103,21 @@ public class NewsController {
 		for(NewsVO vo:list)
 		{
 			String temp=vo.getSubject();
-			temp=temp.substring(0, 70);
+			temp=temp.substring(0, 37);
 			
 			String temp2=vo.getTitle();
-			temp2=temp2.substring(0,15);
+			if(temp2.length()>15){
+				temp2=temp2.substring(0,15);
+				vo.setTitle(temp2+"...");
+			}
 			vo.setSubject(temp+"...");
-			vo.setTitle(temp2+"...");
-			System.out.println(vo.getRegdate());
 		}
 		
-		
-		
 		model.addAttribute("count",count);
+		model.addAttribute("startblock",startblock);
+		model.addAttribute("endblock",endblock);
+		model.addAttribute("curpage",curpage);
+		model.addAttribute("totalpage",totalpage);
 		model.addAttribute("list",list);
 		return "project/news/newsGrid";
 	}

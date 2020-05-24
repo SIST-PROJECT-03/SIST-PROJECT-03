@@ -33,7 +33,7 @@ public class MainController {
 			String temp=vo.getSubject();
 			temp=temp.substring(0, 70);
 			vo.setSubject(temp+"...");
-			System.out.println(vo.getRegdate());
+			/*System.out.println(vo.getRegdate());*/
 		}
 		
 		model.addAttribute("newsList",newsList);

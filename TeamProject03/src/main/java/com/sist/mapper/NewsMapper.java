@@ -14,8 +14,11 @@ public interface NewsMapper {
 	@Select("SELECT COUNT(*) FROM movie_news")
 	public int newsCount();
 	
-	@Select("SELECT CEIL(COUNT(*)/20.0) FROM movie_news")
-	public int newsTotalPage();
+	@Select("SELECT CEIL(COUNT(*)/5.0) FROM movie_news")
+	public int newsTotalListPage();
+	
+	@Select("SELECT CEIL(COUNT(*)/18.0) FROM movie_news")
+	public int newsTotalGridPage();
 	
 	@Select("SELECT news_id,title,subject,thumbnail,regdate,num "
 			+ "FROM (SELECT news_id,title,subject,thumbnail,regdate,rownum as num "

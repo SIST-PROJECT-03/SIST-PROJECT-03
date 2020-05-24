@@ -24,9 +24,14 @@ public class NewsDAO {
 		return mapper.newsCount();
 	}
 	
-	public int newsTotalPage()
+	public int newsTotalListPage()
 	{
-		return mapper.newsTotalPage();
+		return mapper.newsTotalListPage();
+	}
+	
+	public int newsTotalGridPage()
+	{
+		return mapper.newsTotalGridPage();
 	}
 	
 	public List<NewsVO> mainNewsList()

@@ -55,11 +55,26 @@
 				</c:forEach>
             	
             	<ul class="pagination">
-            		<li class="icon-prev"><a href="newsList.do?page=1"><i class="ion-ios-arrow-left"></i></a></li>
-            		<c:forEach var="i" begin="${startpage }" end="${endpage}">
-            			<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
-            		</c:forEach>
-					<li class="icon-next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+            		<c:if test="${curpage>5 }">
+            			<li class="icon-next"><a href="newsList.do?page=1"><i class="ion-ios-arrow-left"></i><i class="ion-ios-arrow-left"></i></a></li>
+            			<li class="icon-prev"><a href="newsList.do?page=${startblock-1}"><i class="ion-ios-arrow-left"></i></a></li>
+            		</c:if>
+            		<c:choose>
+            			<c:when test="${totalpage<endblock }">
+            				<c:forEach var="i" begin="${startblock }" end="${totalpage }">
+            					<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
+            				</c:forEach>
+            			</c:when>
+            			<c:otherwise>
+            				<c:forEach var="i" begin="${startblock }" end="${endblock }">
+            					<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
+            				</c:forEach>
+            			</c:otherwise>
+            		</c:choose>
+            		<c:if test="${endblock<totalpage }">
+            			<li class="icon-next"><a href="newsList.do?page=${endblock+1 }"><i class="ion-ios-arrow-right"></i></a></li>
+            			<li class="icon-next"><a href="newsList.do?page=${totalpage }"><i class="ion-ios-arrow-right"></i><i class="ion-ios-arrow-right"></i></a></li>
+            		</c:if>
             	</ul>
 			</div>
 			<div class="col-md-3 col-sm-12 col-xs-12">
