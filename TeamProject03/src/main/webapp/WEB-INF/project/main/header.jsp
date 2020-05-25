@@ -21,37 +21,17 @@
 </div>
 <!-- =========================== PRELOADING SECTION END ============================-->
 
+
 <!-- =========================== LOGIN FORM START ============================-->
 <div class="login-wrapper" id="login-content">
     <div class="login-content">
         <a href="#" class="close">x</a>
         <h3>Login</h3>
         <form method="post" action="login_ok.do">
-        	<!-- <div class="row">
-        		 <label for="username">
-                     이메일
-                    <input type="text" name="email" placeholder="BlockBuster@blockbuster.com" pattern="^[\S]+@([a-z]+\.)+[a-z]{2,3}$" required="required" />
-                </label>
-        	</div>
-           
-            <div class="row">
-            	<label for="password">
-                    패스워드
-                    <input type="password" name="password" id="password" placeholder="******" />
-                </label>
-            </div>
-           	 <div class="row">
-            	<div class="remember">
-					<div>
-						<input type="checkbox" name="remember" value="Remember me"><span>Remember me</span>
-					</div>
-            		<a href="#">비밀번호찾기</a>
-            	</div>
-            </div> -->
             <div class="row">
             	<label class="col-sm-5">이메일</label>
           		<input type="text" name="email" placeholder="BlockBuster@blockbuster.com" required="required">
-          		<%= session.getAttribute("email") %>
+          		<%-- <%= session.getAttribute("email") %> --%>
             </div>
             <div class="row">
             	<label class="col-sm-5">비밀번호</label>
@@ -61,15 +41,9 @@
            	 <button type="submit">로그인</button>
            </div>
         </form>
-        <!-- <div class="row">
-        	<p>Or via social</p>
-            <div class="social-btn-2">
-            	<a class="fb" href="#"><i class="ion-social-facebook"></i>Facebook</a>
-            	<a class="tw" href="#"><i class="ion-social-twitter"></i>twitter</a>
-            </div>
-        </div> -->  
     </div>  
 </div>
+
 <!-- =========================== LOGIN FORM END ============================-->
 <!-- =========================== SIGNUP FORM START ============================-->
 <div class="login-wrapper"  id="signup-content">
@@ -173,6 +147,7 @@
     </div>
 </div>
 <!-- =========================== SIGNUP FORM END ============================-->
+
 
 <!-- =========================== HEADER SECTION START ============================-->
 <header class="ht-header full-width-hd">
@@ -281,7 +256,7 @@
 								<li><a href="homev3.html">Home 03</a></li>
 							</ul> -->
 						</li>	
-						
+						<c:if test="${sessionScope.email!=null }">
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							나의 영화<i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -292,6 +267,7 @@
 								<li class="it-last"><a href="userRate.do">평점/리뷰</a></li>
 							</ul>
 						</li>
+						</c:if>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
 						<!--  <li class="dropdown first">
@@ -304,9 +280,16 @@
 								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
 							</ul>
 						</li>                
-						<li><a href="#">Help</a></li> --> 
-						<li class="loginLink"><a href="signin">로그인</a></li>
-						<li class="btn signupLink"><a href="signup">회원가입</a></li>
+						<li><a href="#">Help</a></li> -->
+						<c:if test="${sessionScope.email==null }">
+							<li class="loginLink"><a href="signin">로그인</a></li>
+							<li class="btn signupLink"><a href="signup">회원가입</a></li>
+						</c:if> 
+						<c:if test="${sessionScope.email!=null }">
+							<form method="post" action="logout.do">
+								<input type="submit" class="btn" id="logout" value="로그아웃">
+							</form>
+						</c:if>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->

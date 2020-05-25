@@ -20,17 +20,16 @@ public class MainController {
 	
 	@Autowired
 	private MemberDAO dao;
+	
 	@Autowired
 	private MainDAO mDao;
+	
 	@RequestMapping("main.do")
 	public String main_main(Model model)
 	{	
-<<<<<<< HEAD
-		System.out.println("�α���????");
-=======
+		System.out.println("로그인????");
 		List<NewsVO> newsList=newsDao.mainNewsList();
 		
-		// 뉴스 subject내용 길어서 짜르는 코드
 		for(NewsVO vo:newsList)
 		{
 			String temp=vo.getSubject();
@@ -43,7 +42,6 @@ public class MainController {
 		List<MovieVO> movieList=new ArrayList<MovieVO>();
 		movieList=mDao.mainListData();
 		model.addAttribute("movieList",movieList);
->>>>>>> 3f5ff0f4975a27b2a757ac844ad856b51a1c08b3
 		return "main";
 	}
 }

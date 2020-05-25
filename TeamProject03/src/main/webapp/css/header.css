@@ -42,7 +42,6 @@ header .navbar-default .genrenavbar-nav li a {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 /* 회원가입 추가 css */
 .overlay .login-content .row {
 	display: flex;
@@ -61,5 +60,13 @@ header .navbar-default .genrenavbar-nav li a {
 .overlay .login-content .row .genders span{
 	margin-right: 25px;
 }
-=======
->>>>>>> 3f5ff0f4975a27b2a757ac844ad856b51a1c08b3
+
+header .navbar-default .navbar-nav #logout {
+    background-color: #dd003f;
+    color: #ffffff;
+    padding: 11px 25px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border-color: rgba(100,100,100,.4);
+}

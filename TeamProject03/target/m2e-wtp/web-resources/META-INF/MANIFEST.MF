@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: daege
-=======
-Built-By: kimys
->>>>>>> 3f5ff0f4975a27b2a757ac844ad856b51a1c08b3
 Build-Jdk: 1.8.0_231
 Created-By: Maven Integration for Eclipse
 
