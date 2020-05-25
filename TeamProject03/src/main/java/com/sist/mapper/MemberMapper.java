@@ -15,5 +15,8 @@ public interface MemberMapper {
 	
 	@Select("SELECT pwd FROM movie_member WHERE email=#{email}")
 	public String emailGetPassword(String email);
+	
+	@Select("SELECT * FROM movie_member WHERE email=#{email}")
+	public MemberVO profileData(String email); 
 
 }

@@ -57,15 +57,15 @@
 						<h4>프로필 정보</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>아이디</label>
-								<input type="text" placeholder="edwardkennedy">
+								<label>이메일</label>
+								<input type="text" placeholder="${vo.email }">
 							</div>
 							<div class="col-md-6 form-it">
-								<label>이메일</label>
-								<input type="text" placeholder="edward@kennedy.com">
+								<label>닉네임</label>
+								<input type="text" placeholder="${vo.nick }">
 							</div>
 						</div>
-						<div class="row">
+						<!-- <div class="row">
 							<div class="col-md-6 form-it">
 								<label>성</label>
 								<input type="text" placeholder="Edward ">
@@ -74,9 +74,9 @@
 								<label>이름</label>
 								<input type="text" placeholder="Kennedy">
 							</div>
-						</div>
-						<div class="row">
-						<!-- 	<div class="col-md-6 form-it">
+						</div> -->
+						<!-- 	<div class="row">
+						<div class="col-md-6 form-it">
 								<label>Country</label>
 								<select>
 								  <option value="united">United States</option>
@@ -89,8 +89,8 @@
 								  <option value="united">New York</option>
 								  <option value="saab">Others</option>
 								</select>
-							</div> -->
-						</div>
+							</div>
+						</div> -->
 						<div class="row">
 							<div class="col-md-2">
 								<input class="submit" type="submit" value="저장하기">
