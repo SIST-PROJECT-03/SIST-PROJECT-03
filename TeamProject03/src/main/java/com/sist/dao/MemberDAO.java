@@ -17,4 +17,14 @@ public class MemberDAO {
 		mapper.join(vo);
 	}
 	
+	public int emailCount(String email)
+	{
+		return mapper.emailCount(email);
+	}
+	
+	public String emailGetPassword(String email)
+	{
+		return mapper.emailGetPassword(email);
+	}
+	
 }

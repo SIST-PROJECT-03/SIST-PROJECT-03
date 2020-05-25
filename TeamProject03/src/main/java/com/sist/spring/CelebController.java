@@ -39,7 +39,7 @@ public class CelebController {
 		return "project/celeb/celebGrid";
 	}
 	
-	@RequestMapping("celeDetail.do")
+	@RequestMapping("celebDetail.do")
 	public String celeb_Detail()
 	{
 		return "project/celeb/celebDetail";

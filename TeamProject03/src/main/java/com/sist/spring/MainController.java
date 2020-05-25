@@ -20,14 +20,16 @@ public class MainController {
 	
 	@Autowired
 	private MemberDAO dao;
+	
 	@Autowired
 	private MainDAO mDao;
+	
 	@RequestMapping("main.do")
 	public String main_main(Model model)
 	{	
+		System.out.println("로그인????");
 		List<NewsVO> newsList=newsDao.mainNewsList();
 		
-		// 뉴스 subject내용 길어서 짜르는 코드
 		for(NewsVO vo:newsList)
 		{
 			String temp=vo.getSubject();
