@@ -52,5 +52,7 @@
 <script src="js/custom.js"></script>
 <script src="js/ajax.js"></script>
 <script src="js/detailPrint.js"></script>
+<script src="js/celeb.js"></script>
+
 </body>
 </html>

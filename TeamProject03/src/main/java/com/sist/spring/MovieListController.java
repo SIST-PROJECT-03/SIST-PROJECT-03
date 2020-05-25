@@ -23,7 +23,7 @@ public class MovieListController {
 	}
 
 	@RequestMapping("movieList.do")
-	public String movie_List() {
+	public String movie_List(Model model) {
 		return "project/movieList/movieList";
 	}
 
