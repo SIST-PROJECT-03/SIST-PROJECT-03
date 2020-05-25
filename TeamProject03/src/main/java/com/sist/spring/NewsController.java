@@ -14,7 +14,10 @@ import java.util.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 @Controller
 public class NewsController {
@@ -63,19 +66,26 @@ public class NewsController {
 	}
 	
 	@RequestMapping("newsDetail.do")
-	public String news_detail(Model model,int no,HttpServletResponse response)
+	public String news_detail(Model model,int no,HttpServletRequest request)
 	{
 		NewsVO vo=dao.newsDetailData(no);
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd hh:mi:ss");
-		String formatRegdate=sdf.format(vo.getRegdate());
-		response.addCookie(new Cookie("news_id", String.valueOf(vo.getNews_id())));
-		response.addCookie(new Cookie("news_title", vo.getTitle()));
-		response.addCookie(new Cookie("news_regdate", formatRegdate));
-		response.addCookie(new Cookie("news_subject", vo.getSubject()));
+		HttpSession session=request.getSession();
+		if(session.getAttribute("newsList")!=null){
+			List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
+			newsList.add(vo);
+			/*System.out.println(newsList.size());*/
+			session.setAttribute("newsList", newsList);
+		}
+		else
+		{
+			List<NewsVO> newsList=new ArrayList<NewsVO>();
+			newsList.add(vo);
+			session.setAttribute("newsList", newsList);
+		}
 		
 		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
 		vo.setContent("<p>"+vo.getContent()+"</p>");
-		System.out.println(vo.getContent());
+		/*System.out.println(vo.getContent());*/
 		model.addAttribute("vo",vo);
 		return "project/news/newsDetail";
 	}
