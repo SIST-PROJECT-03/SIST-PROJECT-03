@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../css/newsGrid.css">
+<link rel="stylesheet" href="css/newsGrid.css">
 </head>
 <body>
 <!-- ============================= BLOG GRID TITLE AREA START  ============================== -->
@@ -37,19 +37,24 @@
 					<!-- <label>Sort by:</label> -->
 					<select class="newsGridSelect">
 						<option value="popularity">최근순</option>
-						<option value="popularity">인기순</option>
-						<option value="rating">Rating Descending</option>
-						<option value="date">Release date Ascending</option>
 					</select>
 					<a href="newsList.do" class="list"><i class="ion-ios-list-outline"></i></a>
 					<a href="newsGrid.do" class="grid"><i class="ion-grid active"></i></a>
 				</div>
-				
 					<div class="row">
 						<c:forEach var="vo" items="${list }">
 							<div class="col-md-4 col-sm-12 col-xs-12">
 								<div class="blog-item-style-2">
-									<a href="newsDetail.do?no=${vo.news_id }"><img src="${vo.thumbnail }"></a>
+									<a href="newsDetail.do?no=${vo.news_id }">
+										<c:choose>
+											<c:when test="${empty vo.thumbnail }">
+												<img src="images/news_noimg.PNG">							
+											</c:when>
+											<c:otherwise>
+												<img src="${vo.thumbnail }">
+											</c:otherwise>
+										</c:choose>
+									</a>
 									<div class="blog-it-infor">
 										<h3><a href="newsDetail.do?no=${vo.news_id }">${vo.title }</a></h3>
 										<span class="time">

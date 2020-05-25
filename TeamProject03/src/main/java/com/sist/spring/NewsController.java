@@ -7,7 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.dao.NewsDAO;
 import com.sist.vo.*;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class NewsController {
@@ -56,11 +63,17 @@ public class NewsController {
 	}
 	
 	@RequestMapping("newsDetail.do")
-	public String news_detail(Model model,int no)
+	public String news_detail(Model model,int no,HttpServletResponse response)
 	{
 		NewsVO vo=dao.newsDetailData(no);
-		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd hh:mi:ss");
+		String formatRegdate=sdf.format(vo.getRegdate());
+		response.addCookie(new Cookie("news_id", String.valueOf(vo.getNews_id())));
+		response.addCookie(new Cookie("news_title", vo.getTitle()));
+		response.addCookie(new Cookie("news_regdate", formatRegdate));
+		response.addCookie(new Cookie("news_subject", vo.getSubject()));
 		
+		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
 		vo.setContent("<p>"+vo.getContent()+"</p>");
 		System.out.println(vo.getContent());
 		model.addAttribute("vo",vo);
@@ -121,4 +134,11 @@ public class NewsController {
 		model.addAttribute("list",list);
 		return "project/news/newsGrid";
 	}
+	
+	/*@RequestMapping("newsSearch.do")
+	public String news_search(int page){
+		String result="";
+		List<NewsVO> list=dao.newsListData(map);
+		return result;
+	}*/
 }
