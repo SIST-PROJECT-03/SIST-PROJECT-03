@@ -1,8 +1,5 @@
 package com.sist.dao;
 
-import java.util.ArrayList;
-import java.util.Map;
-
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +16,6 @@ public class MovieDAO {
 	private MovieMapper mapper; 
 	
 	public MovieDetailVO getMovieDetailData(int movie_id)
-
 	{
 	   return mapper.getMovieDetailData(movie_id);
 	}
@@ -46,5 +42,6 @@ public class MovieDAO {
 	public ArrayList<MovieDetailVO> getMovieAllList()
 	{
 		return mapper.getMovieAllList();
+
 	}
 }
