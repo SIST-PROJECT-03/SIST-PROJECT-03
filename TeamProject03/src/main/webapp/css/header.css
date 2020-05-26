@@ -42,3 +42,31 @@ header .navbar-default .genrenavbar-nav li a {
     cursor: pointer;
 }
 
+/* 회원가입 추가 css */
+.overlay .login-content .row {
+	display: flex;
+}
+
+.overlay .login-content .row .genders {
+  font-family: 'Dosis', sans-serif;
+  font-size: 14px;
+  color: #222222;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.overlay .login-content .row .genders span{
+	margin-right: 25px;
+}
+
+header .navbar-default .navbar-nav #logout {
+    background-color: #dd003f;
+    color: #ffffff;
+    padding: 11px 25px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border-color: rgba(100,100,100,.4);
+}

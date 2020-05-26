@@ -1,5 +1,8 @@
 package com.sist.spring;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,22 +10,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.dao.MainDAO;
 import com.sist.dao.MemberDAO;
+import com.sist.dao.NewsDAO;
 import com.sist.vo.MovieVO;
-
-import java.util.*;
+import com.sist.vo.NewsVO;
 @Controller
 public class MainController {
+	@Autowired
+	private NewsDAO newsDao;
 	
 	@Autowired
 	private MemberDAO dao;
+	
 	@Autowired
 	private MainDAO mDao;
+	
 	@RequestMapping("main.do")
 	public String main_main(Model model)
 	{	
-		List<MovieVO> list=new ArrayList<MovieVO>();
-		list=mDao.mainListData();
-		model.addAttribute("list",list);
+		/*System.out.println("로그인????");*/
+		List<NewsVO> newsList=newsDao.mainNewsList();
+		
+		for(NewsVO vo:newsList)
+		{
+			String temp=vo.getSubject();
+			temp=temp.substring(0, 70);
+			vo.setSubject(temp+"...");
+			/*System.out.println(vo.getRegdate());*/
+		}
+		
+		model.addAttribute("newsList",newsList);
+		List<MovieVO> movieList=new ArrayList<MovieVO>();
+		movieList=mDao.mainListData();
+		model.addAttribute("movieList",movieList);
 		return "main";
 	}
 }

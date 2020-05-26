@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -780,7 +781,6 @@ $(function(){
 					    <div>
 					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
 					    </div>
-
 					</div>
 					<div class="slider-nav-2 thumb-ft">
 						<div class="item">
@@ -911,16 +911,16 @@ $(function(){
 					<a href="newsList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 				</div>
 				<div class="latestnewv2">
-				<%-- 	<c:forEach var="nvo" items="${newsList }">
+					<c:forEach var="nvo" items="${newsList }">
 					<div class="blog-item-style-2">
-						<a href="newsDetail.do?no=${nvo.news_id }"><img src="${nvo.thumbnail }" style="width: 300px; height: 200px;;"></a>
+						<a href="newsDetail.do?no=${nvo.news_id }"><img src="${nvo.thumbnail }" style="width: 90%; height: 200px;"></a>
 						<div class="blog-it-infor">
 							<h3><a href="newsDetail.do?no=${nvo.news_id }">${nvo.title }</a></h3>
-							<span class="time">${nvo.regdate }</span>
+							<span class="time"><fmt:formatDate value="${nvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/></span>
 							<p>${nvo.subject }</p>
 						</div>
 					</div>
-					</c:forEach> --%>
+					</c:forEach>
 				</div>
 			</div>
 			<!-- <div class="col-md-3">
