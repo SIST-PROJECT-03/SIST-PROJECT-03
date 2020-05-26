@@ -1,7 +1,6 @@
 package com.sist.spring;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,14 +40,41 @@ public class MovieListController {
 		return "project/movieList/seriesSingle";
 	}
 
-	@RequestMapping("movieList.do")
-	public String movie_List() {
-		return "project/movieList/movieList";
+	@RequestMapping("movieGrid.do")
+	public String movie_List(Model model, String page) {
+		
+		int curPage;
+		if(page==null)
+			curPage=1;
+		else
+			curPage=Integer.parseInt(page);
+		
+		int rowSize=51;
+		int totalPage = dao.getTotalPage(rowSize);
+		int start = (curPage*rowSize) - (rowSize-1);
+		int end = curPage*rowSize;
+		
+		Map map=new HashMap();
+		map.put("start", start);
+		map.put("end", end);
+		
+		List<MovieDetailVO> list = dao.getMovieList(map);
+
+		model.addAttribute("curPage",curPage);
+		model.addAttribute("list", list);
+		model.addAttribute("totalPage",totalPage);
+		model.addAttribute("start",start);
+		model.addAttribute("end",end);
+		
+		
+				
+		
+		return "project/movieList/movieGrid";
 	}
 
-	@RequestMapping("movieGrid.do")
+	@RequestMapping("movieList.do")
 	public String movie_Grid() {
-		return "project/movieList/movieGrid";
+		return "project/movieList/movieList";
 	}
 
 }

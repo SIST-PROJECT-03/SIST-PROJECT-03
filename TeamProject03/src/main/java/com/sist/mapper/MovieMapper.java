@@ -1,6 +1,8 @@
 package com.sist.mapper;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.*;
+
 
 import org.apache.ibatis.annotations.Select;
 
@@ -33,4 +35,15 @@ public interface MovieMapper {
 	@Select("SELECT genre FROM movie_genre_mapper WHERE movie_id=#{movie_id}")
 	public List<String> getGenreData(int movie_id);
 	
+
+	@Select("SELECT num,movie_id,title,grade,opening_date,genre,country,running_time,hit,audience_count,story,poster " 
+			+ "from (SELECT rownum as num,naver_re_movies.* from naver_re_movies) "
+			+ "WHERE num between #{start} AND #{end}")
+	public ArrayList<MovieDetailVO> getMovieList(Map map);
+	
+	@Select("SELECT CEIL(count(*)/#{count}) FROM naver_re_movies")
+	public int getTotalPage(int count);
+	
+	@Select("SELECT * FROM naver_re_movies WHERE movie_id between 1 AND 10521")
+	public ArrayList<MovieDetailVO> getMovieAllList();
 }
