@@ -27,4 +27,9 @@ public class MemberDAO {
 		return mapper.emailGetPassword(email);
 	}
 	
+	public MemberVO profileData(String email)
+	{
+		return mapper.profileData(email);
+	}
+	
 }

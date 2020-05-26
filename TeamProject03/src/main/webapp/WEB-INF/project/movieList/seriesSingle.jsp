@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE>
 <html>
 <head>
@@ -33,12 +34,10 @@
 
             function toggle_content(){
                 if($(this).hasClass('short')){
-                    // 접기 상태
                     $(this).html('더보기');
                     content.html(content_txt_short)
                     $(this).removeClass('short');
                 }else{
-                    // 더보기 상태
                     $(this).html('접기');
                     content.html(content_txt);
                     $(this).addClass('short');
@@ -87,6 +86,12 @@ function showAllBtn(){
         .content{
             width:100%;
         }
+        .poster{
+        margin 0px auto;
+        width:100px;
+        height:115px;
+        float:left;
+        }
     </style>
 </head>
 <body>
@@ -118,12 +123,8 @@ function showAllBtn(){
 					<img src="${vo.poster }" alt="">
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
-							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> 예고편 보기</a></div>
-							<div><a href="https://www.youtube.com/embed/o-0hcF97wy0" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
-						</div>
-						<div class="btn-transform transform-vertical">
-							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>
-							<div><a href="#" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
+							<div><a href="${movieUrl }" class="item item-1 redbtn"> <i class="ion-play"></i> 예고편 보기</a></div>
+							<div><a href="${movieUrl }" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
 						</div>
 					</div>
 				</div>
@@ -146,7 +147,7 @@ function showAllBtn(){
 					<div class="movie-rate">
 						<div class="rate">
 							<i class="ion-android-star"></i>
-							<p><span>8.1</span> /10<br>
+							<p><span>${wvo.male_rating }</span><br>
 							</p>
 							<p><span class="rv">56 리뷰</span>
 							</p>
@@ -200,13 +201,13 @@ function showAllBtn(){
 												</div>	
 											</div>
  -->						            		<div class="title-hd-sm">
-												<h4>포토/영상</h4>
-												<a href="#" class="time">더보기 <i class="ion-ios-arrow-right"></i></a>
-											</div>
+													<h4>포토/영상</h4>
+													<a href="#" class="time">더보기 <i class="ion-ios-arrow-right"></i></a>
+												</div>
 											<div class="mvsingle-item ov-item">
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image41.jpg" ><img src="images/uploads/image4.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image51.jpg" ><img src="images/uploads/image5.jpg" alt=""></a>
-												<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image61.jpg" ><img src="images/uploads/image6.jpg" alt=""></a>
+											<c:forEach var="moviePictures" items="${moviePictures }">
+													<a class="img-lightbox" data-fancybox-group="gallery" href="" ><img src="${moviePictures }" alt=""></a>
+													</c:forEach>
 												<div class="vd-it">
 													<img class="vd-img" src="images/uploads/image7.jpg" alt="">
 													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
@@ -219,7 +220,6 @@ function showAllBtn(){
 											<!-- movie cast -->
 											<div class="mvcast-item">	
 											<!-- 인물 DB넣은 후 연결하고나서 출력하기 -->
-										<%-- 	<!--  <c:forEach var="vo" items="${list}">		-->								
 												<div class="cast-it">
 													<div class="cast-left">
 														<img src="images/uploads/cast1.jpg" alt="">
@@ -227,7 +227,6 @@ function showAllBtn(){
 													</div>
 													<p>...  Robert Downey Jr.</p>
 												</div>
-											</c:forEach>  --%>
 											</div>
 											<div class="title-hd-sm">
 												<h4>관람객 리뷰</h4>
@@ -269,7 +268,7 @@ function showAllBtn(){
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>장르:</h6>
-						            			<p><a href="#">${vo.genre } </a></p>
+						            			<p>범죄|미스터리|스릴러|코미디|드라마</p>
 						            		</div>
 						            		<div class="sb-it">
 						            			<h6>개봉일:</h6>
@@ -694,6 +693,7 @@ function showAllBtn(){
 											<h4>영상 <span>(8)</span></h4>
 										</div>
 										<div class="mvsingle-item media-item">
+										
 											<div class="vd-item">
 												<div class="vd-it">
 													<img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
@@ -704,103 +704,17 @@ function showAllBtn(){
 													<p class="time"> 1: 31</p>
 												</div>
 											</div>
-											<div class="vd-item">
-												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item2.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
-												</div>
-												<div class="vd-infor">
-													<h6> <a href="#">Featurette: “Avengers Re-Assembled</a></h6>
-													<p class="time"> 1: 03</p>
-												</div>
-											</div>
-											<div class="vd-item">
-												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item3.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
-												</div>
-												<div class="vd-infor">
-													<h6> <a href="#">Interview: Robert Downey Jr</a></h6>
-													<p class="time"> 3:27</p>
-												</div>
-											</div>
-											<div class="vd-item">
-												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
-												</div>
-												<div class="vd-infor">
-													<h6> <a href="#">Interview: Scarlett Johansson</a></h6>
-													<p class="time"> 3:27</p>
-												</div>
-											</div>
-											<div class="vd-item">
-												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item1.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
-												</div>
-												<div class="vd-infor">
-													<h6> <a href="#">Featurette: Meet Quicksilver & The Scarlet Witch</a></h6>
-													<p class="time"> 1: 31</p>
-												</div>
-											</div>
-											<div class="vd-item">
-												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item2.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
-												</div>
-												<div class="vd-infor">
-													<h6> <a href="#">Interview: Director Joss Whedon</a></h6>
-													<p class="time"> 1: 03</p>
-												</div>
-											</div>
-											<div class="vd-item">
-												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item3.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
-												</div>
-												<div class="vd-infor">
-													<h6> <a href="#">Interview: Mark Ruffalo</a></h6>
-													<p class="time"> 3:27</p>
-												</div>
-											</div>
-											<div class="vd-item">
-												<div class="vd-it">
-													<img class="vd-img" src="images/uploads/vd-item4.jpg" alt="">
-													<a class="fancybox-media hvr-grow" href="https://www.youtube.com/embed/o-0hcF97wy0"><img src="images/uploads/play-vd.png" alt=""></a>
-												</div>
-												<div class="vd-infor">
-													<h6> <a href="#">Official Trailer #2</a></h6>
-													<p class="time"> 3:27</p>
-												</div>
-											</div>
+										
+											
 										</div>
 										<div class="title-hd-sm">
-											<h4>포토 <span> (21)</span></h4>
+											<h4>포토 <span> (${fn:length(moviePictures)} )</span></h4>
 										</div>
-										<div class="mvsingle-item">
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image11.jpg" ><img src="images/uploads/image1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image21.jpg" ><img src="images/uploads/image2.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image31.jpg" ><img src="images/uploads/image3.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image41.jpg" ><img src="images/uploads/image4.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image51.jpg" ><img src="images/uploads/image5.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image61.jpg" ><img src="images/uploads/image6.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image71.jpg" ><img src="images/uploads/image7.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image81.jpg" ><img src="images/uploads/image8.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image91.jpg" ><img src="images/uploads/image9.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image101.jpg" ><img src="images/uploads/image10.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image111.jpg" ><img src="images/uploads/image1-1.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image121.jpg" ><img src="images/uploads/image12.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image131.jpg" ><img src="images/uploads/image13.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image141.jpg" ><img src="images/uploads/image14.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image151.jpg" ><img src="images/uploads/image15.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image161.jpg" ><img src="images/uploads/image16.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image171.jpg" ><img src="images/uploads/image17.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image181.jpg" ><img src="images/uploads/image18.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image191.jpg" ><img src="images/uploads/image19.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image201.jpg" ><img src="images/uploads/image20.jpg" alt=""></a>
-											<a class="img-lightbox"  data-fancybox-group="gallery" href="../images/uploads/image211.jpg" ><img src="images/uploads/image2-1.jpg" alt=""></a>
+										<c:forEach var="moviePictures" items="${moviePictures }">
+										<div class="mvsingle-item poster">
+											<a class="img-lightbox"  data-fancybox-group="gallery" href="${moviePictures }" ><img src="${moviePictures }" alt=""></a>
 										</div>
+										</c:forEach>	
 						        	</div>
 					       	 	</div>
 					       	 	

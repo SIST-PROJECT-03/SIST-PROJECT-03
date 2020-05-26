@@ -27,7 +27,7 @@ public class MainController {
 	@RequestMapping("main.do")
 	public String main_main(Model model)
 	{	
-		System.out.println("로그인????");
+		/*System.out.println("로그인????");*/
 		List<NewsVO> newsList=newsDao.mainNewsList();
 		
 		for(NewsVO vo:newsList)

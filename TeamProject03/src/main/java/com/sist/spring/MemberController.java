@@ -43,9 +43,8 @@ public class MemberController {
 			{
 				result="OK";
 				session.setAttribute("email", email);
-				/*System.out.println(email);
-				System.out.println(pwd);
-				System.out.println(db_pwd);*/
+				/*MemberVO vo=dao.profileData(email);
+				System.out.println(vo.getNick());*/
 			}
 			else
 			{
