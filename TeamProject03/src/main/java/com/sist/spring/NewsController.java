@@ -7,7 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.dao.NewsDAO;
 import com.sist.vo.*;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 @Controller
 public class NewsController {
@@ -56,13 +66,26 @@ public class NewsController {
 	}
 	
 	@RequestMapping("newsDetail.do")
-	public String news_detail(Model model,int no)
+	public String news_detail(Model model,int no,HttpServletRequest request)
 	{
 		NewsVO vo=dao.newsDetailData(no);
-		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
+		HttpSession session=request.getSession();
+		if(session.getAttribute("newsList")!=null){
+			List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
+			newsList.add(vo);
+			/*System.out.println(newsList.size());*/
+			session.setAttribute("newsList", newsList);
+		}
+		else
+		{
+			List<NewsVO> newsList=new ArrayList<NewsVO>();
+			newsList.add(vo);
+			session.setAttribute("newsList", newsList);
+		}
 		
+		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
 		vo.setContent("<p>"+vo.getContent()+"</p>");
-		System.out.println(vo.getContent());
+		/*System.out.println(vo.getContent());*/
 		model.addAttribute("vo",vo);
 		return "project/news/newsDetail";
 	}
@@ -121,4 +144,11 @@ public class NewsController {
 		model.addAttribute("list",list);
 		return "project/news/newsGrid";
 	}
+	
+	/*@RequestMapping("newsSearch.do")
+	public String news_search(int page){
+		String result="";
+		List<NewsVO> list=dao.newsListData(map);
+		return result;
+	}*/
 }

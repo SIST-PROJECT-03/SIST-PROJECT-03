@@ -31,7 +31,7 @@
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="user-information">
 					<div class="user-img">
-						<a href="#"><img src="../images/uploads/user-img.png" alt=""><br></a>
+						<a href="#"><img src="images/uploads/user-img.png" alt=""><br></a>
 						<a href="#" class="redbtn">프로필 사진 변경</a>
 					</div>
 					<div class="user-fav">
@@ -42,13 +42,13 @@
 							<li><a href="userRate.do">평점/리뷰</a></li>
 						</ul>
 					</div>
-					<div class="user-fav">
-						<!-- <p>Others</p> -->
+					<!--<div class="user-fav">
+						<p>Others</p>
 						<ul>
 							<li><a href="#">비밀번호 변경</a></li>
-							<li><a href="#">로그아웃</a></li>
+							 <li><a href="#">로그아웃</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -57,15 +57,15 @@
 						<h4>프로필 정보</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
-								<label>아이디</label>
-								<input type="text" placeholder="edwardkennedy">
+								<label>이메일</label>
+								<input type="text" placeholder="${vo.email }">
 							</div>
 							<div class="col-md-6 form-it">
-								<label>이메일</label>
-								<input type="text" placeholder="edward@kennedy.com">
+								<label>닉네임</label>
+								<input type="text" placeholder="${vo.nick }">
 							</div>
 						</div>
-						<div class="row">
+						<!-- <div class="row">
 							<div class="col-md-6 form-it">
 								<label>성</label>
 								<input type="text" placeholder="Edward ">
@@ -74,9 +74,9 @@
 								<label>이름</label>
 								<input type="text" placeholder="Kennedy">
 							</div>
-						</div>
-						<div class="row">
-						<!-- 	<div class="col-md-6 form-it">
+						</div> -->
+						<!-- 	<div class="row">
+						<div class="col-md-6 form-it">
 								<label>Country</label>
 								<select>
 								  <option value="united">United States</option>
@@ -89,15 +89,15 @@
 								  <option value="united">New York</option>
 								  <option value="saab">Others</option>
 								</select>
-							</div> -->
-						</div>
+							</div>
+						</div> -->
 						<div class="row">
 							<div class="col-md-2">
 								<input class="submit" type="submit" value="저장하기">
 							</div>
 						</div>	
 					</form>
-					<form action="#" class="password">
+					<!-- <form action="#" class="password">
 						<h4>비밀번호 변경</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
@@ -122,7 +122,7 @@
 								<input class="submit styleSubmit" type="submit" value="변경완료">
 							</div>
 						</div>	
-					</form>
+					</form> -->
 				</div>
 			</div>
 		</div>

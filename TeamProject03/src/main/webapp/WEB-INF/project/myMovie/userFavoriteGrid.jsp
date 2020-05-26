@@ -44,13 +44,13 @@
 							<li><a href="userRate.do">평점/리뷰</a></li>
 						</ul>
 					</div>
-					<div class="user-fav">
-						<!-- <p>Others</p> -->
+					<!-- <div class="user-fav">
+						<p>Others</p>
 						<ul>
 							<li><a href="#">비밀번호 변경</a></li>
 							<li><a href="#">로그아웃</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12">

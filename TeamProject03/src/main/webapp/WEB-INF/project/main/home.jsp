@@ -781,7 +781,6 @@ $(function(){
 					    <div>
 					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
 					    </div>
-
 					</div>
 					<div class="slider-nav-2 thumb-ft">
 						<div class="item">
