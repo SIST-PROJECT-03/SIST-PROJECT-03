@@ -9,8 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.dao.MovieDAO;
+import com.sist.vo.CelebVO;
+import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
-import com.sist.vo.MoviePicturesVO;
 import com.sist.vo.WatchingTrendVO;
 
 @Controller
@@ -20,17 +21,23 @@ public class MovieListController {
 
 	@RequestMapping("seriesSingle.do")
 	public String movie_series(int movie_id, Model model) {
- 
-		 List<String> moviePictures = new ArrayList<String>();
-		List<String> movieUrl = new ArrayList<String>();
-		movieUrl=dao.getMovieUrl(movie_id);
-		 MovieDetailVO vo=dao.getMovieDetailData(movie_id);
-		 WatchingTrendVO wvo=dao.getWatchingTrend(movie_id);
-		 moviePictures =dao.getMoviePictures(movie_id);
-		 model.addAttribute("movieUrl",movieUrl);
-		 model.addAttribute("moviePictures",moviePictures);
-		 model.addAttribute("vo",vo);
-		 model.addAttribute("wvo",wvo);
+
+		List<String> moviePictures = dao.getMoviePictures(movie_id);
+		List<String> movieUrl = dao.getMovieUrl(movie_id);
+		List<CelebVO> actorData = dao.getActorData(movie_id);
+		List<String> genre = dao.getGenreData(movie_id);
+		CelebVO cvo = dao.getDirectorData(movie_id);
+
+		MovieDetailVO vo = dao.getMovieDetailData(movie_id);
+		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
+
+		model.addAttribute("genre", genre);
+		model.addAttribute("cvo", cvo);
+		model.addAttribute("actorData", actorData);
+		model.addAttribute("movieUrl", movieUrl);
+		model.addAttribute("moviePictures", moviePictures);
+		model.addAttribute("vo", vo);
+		model.addAttribute("wvo", wvo);
 		return "project/movieList/seriesSingle";
 	}
 
