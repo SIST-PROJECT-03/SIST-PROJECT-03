@@ -1,12 +1,12 @@
 @CHARSET "UTF-8";
 
-.topbar-filter p {
+.topbar-filter .newsGridTotal {
     /* padding-right: 200px; */
     margin-bottom: 0;
     width: 570px;
 }
 
-.topbar-filter select {
+.topbar-filter .newsGridSelect {
     width: 170px;
     -webkit-appearance: none;
     -moz-appearance: none;

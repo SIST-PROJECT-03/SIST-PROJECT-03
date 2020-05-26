@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>    
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,13 +22,13 @@
 	
 	<!-- CSS files -->
 	<link rel="stylesheet" href="css/plugins.css">
-	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
 
 </head>
 <body>
 
 <!--preloading-->
-
+<!--TeamProject03/src/main/java/com/sist/spring/MainController.java  -->
 <!--end of preloading-->
 
 <!-- BEGIN | Header -->
@@ -50,6 +51,7 @@
 <script src="js/plugins.js"></script>
 <script src="js/plugins2.js"></script>
 <script src="js/custom.js"></script>
-
+<script src="js/ajax.js"></script>
+<script src="js/detailPrint.js"></script>
 </body>
 </html>
