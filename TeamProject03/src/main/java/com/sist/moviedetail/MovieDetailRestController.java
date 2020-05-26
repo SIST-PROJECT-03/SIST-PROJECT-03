@@ -2,13 +2,16 @@ package com.sist.moviedetail;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sist.dao.MovieDAO;
+import com.sist.vo.CelebVO;
 import com.sist.vo.MovieDetailVO;
 
 @RestController
@@ -43,4 +46,6 @@ public class MovieDetailRestController {
 		System.out.println("obj string : " + obj.toJSONString());
 		return obj.toJSONString();
 	}
+	
+	
 }
