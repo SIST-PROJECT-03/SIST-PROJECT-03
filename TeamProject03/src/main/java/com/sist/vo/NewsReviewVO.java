@@ -3,6 +3,18 @@ package com.sist.vo;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.*;
+/*
+    NO         NOT NULL NUMBER        
+	RNO                 NUMBER        
+	EMAIL      NOT NULL VARCHAR2(300) 
+	MSG        NOT NULL CLOB          
+	REGDATE             DATE          
+	GROUP_ID            NUMBER        
+	GROUP_STEP          NUMBER        
+	GROUP_TAB           NUMBER        
+	ROOT                NUMBER        
+	DEPTH               NUMBER        
+ */
 @Getter
 @Setter
 public class NewsReviewVO {

@@ -54,8 +54,13 @@ public class NewsDAO {
 		return mapper.newsReviewData(no);
 	}
 	
-	public int newsReviewTotalCount(int no)
+	public void newsReviewInsert(NewsReviewVO vo)
 	{
-		return mapper.newsReviewTotalCount(no);
+		mapper.newsReviewInsert(vo);
+	}
+	
+	public int newsTotalReview(int no)
+	{
+		return mapper.newsTotalReview(no);
 	}
 }

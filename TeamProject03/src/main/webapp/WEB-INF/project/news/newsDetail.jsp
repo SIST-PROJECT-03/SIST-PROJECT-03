@@ -57,31 +57,34 @@
 						</div>
 					</div>
 					<!-- comment items -->
-						<div class="comments">
-							<h4>총 ${newsTotalCount }개의 댓글</h4>
-							<c:forEach var="rvo" items="${rList }">
-								<div class="cmt-item flex-it">
-									<div class="author-infor">
-										<div class="flex-it2">
-											<h6>${rvo.email }</h6> <span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/> </span>
-										</div>
-										<p style="white-space: pre-wrap;">${rvo.msg }</p>
-										<p><a class="rep-btn" href="#">+ Reply</a></p>
-									</div>
-								</div>
-							</c:forEach>
-						</div>
 						
-					<c:if test="${sessionScope!=null }">
+					<h4>총 ${newsReviewTotal }개의 댓글</h4>
+					<c:forEach var="rvo" items="${rlist }">
+						<div class="comments">
+							<div class="cmt-item flex-it">
+								<!-- <img src="../images/uploads/author.png" alt=""> -->
+								<div class="author-infor">
+									<div class="flex-it2">
+										<h6 style="color: white;">${rvo.email }</h6> 
+										<span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+									</div>
+									<p style="white-space: pre-wrap;">${rvo.msg }</p>
+									<p><a class="rep-btn" href="#">+ Reply</a></p>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
+					<c:if test="${sessionScope.email!=null }">
 						<div class="comment-form">
 							<h4>댓글 작성</h4>
-							<form method="post" action="newsReplyInsert.do">
+							<form method="post" action="newsReview.do">
 								<div class="row">
 									<div class="col-md-12">
 										<textarea name="msg" placeholder="내용"></textarea>
 									</div>
 								</div>
 								<input class="submit newsDetailSubmit" type="submit" placeholder="작성완료">
+								<input type="hidden" name="news_no" value="${vo.news_id }"/>
 							</form>
 						</div>
 					</c:if>

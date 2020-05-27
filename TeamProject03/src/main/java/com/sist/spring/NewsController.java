@@ -69,29 +69,33 @@ public class NewsController {
 	public String news_detail(Model model,int no,HttpServletRequest request)
 	{
 		NewsVO vo=dao.newsDetailData(no);
-		List<NewsReviewVO> rList=dao.newsReviewData(no);
-		int newsTotalCount=dao.newsReviewTotalCount(no);
+		List<NewsReviewVO> rlist=dao.newsReviewData(no);
+		int newsReviewTotal=dao.newsTotalReview(no);
 		
 		HttpSession session=request.getSession();
-		if(session.getAttribute("newsList")!=null){
-			List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
-			newsList.add(vo);
-			/*System.out.println(newsList.size());*/
-			session.setAttribute("newsList", newsList);
-		}
-		else
+		if(session.getAttribute("email")!=null)
 		{
-			List<NewsVO> newsList=new ArrayList<NewsVO>();
-			newsList.add(vo);
-			session.setAttribute("newsList", newsList);
+			if(session.getAttribute("newsList")!=null){
+				List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
+				newsList.add(vo);
+				/*System.out.println(newsList.size());*/
+				session.setAttribute("newsList", newsList);
+			}
+			else
+			{
+				List<NewsVO> newsList=new ArrayList<NewsVO>();
+				newsList.add(vo);
+				session.setAttribute("newsList", newsList);
+			}
 		}
 		
 		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
 		vo.setContent("<p>"+vo.getContent()+"</p>");
 		/*System.out.println(vo.getContent());*/
 		model.addAttribute("vo",vo);
-		model.addAttribute("rList",rList);
-		model.addAttribute("newsTotalCount",newsTotalCount);
+
+		model.addAttribute("rlist",rlist);
+		model.addAttribute("newsReviewTotal",newsReviewTotal);
 		return "project/news/newsDetail";
 	}
 	
@@ -150,10 +154,14 @@ public class NewsController {
 		return "project/news/newsGrid";
 	}
 	
-	@RequestMapping("newsReviewInsert.do")
-	public String new_review_insert()
+	@RequestMapping("newsReview.do")
+	public String news_review(NewsReviewVO vo,HttpServletRequest request)
 	{
-		return "project/news/newsDetail";
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
+		vo.setEmail(email);
+		dao.newsReviewInsert(vo);
+		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
 	/*@RequestMapping("newsSearch.do")
 	public String news_search(int page){
