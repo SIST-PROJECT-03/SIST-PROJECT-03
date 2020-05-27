@@ -1,12 +1,17 @@
 package com.sist.spring;
 
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.dao.MovieDAO;
+import com.sist.vo.CelebVO;
+import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
+import com.sist.vo.WatchingTrendVO;
 
 @Controller
 public class MovieListController {
@@ -16,20 +21,60 @@ public class MovieListController {
 	@RequestMapping("seriesSingle.do")
 	public String movie_series(int movie_id, Model model) {
 
-		 MovieDetailVO vo=dao.getMovieDetailData(movie_id);
+		List<String> moviePictures = dao.getMoviePictures(movie_id);
+		List<String> movieUrl = dao.getMovieUrl(movie_id);
+		List<CelebVO> actorData = dao.getActorData(movie_id);
+		List<String> genre = dao.getGenreData(movie_id);
+		CelebVO cvo = dao.getDirectorData(movie_id);
 
-		 model.addAttribute("vo",vo);
+		MovieDetailVO vo = dao.getMovieDetailData(movie_id);
+		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
+
+		model.addAttribute("genre", genre);
+		model.addAttribute("cvo", cvo);
+		model.addAttribute("actorData", actorData);
+		model.addAttribute("movieUrl", movieUrl);
+		model.addAttribute("moviePictures", moviePictures);
+		model.addAttribute("vo", vo);
+		model.addAttribute("wvo", wvo);
 		return "project/movieList/seriesSingle";
 	}
 
-	@RequestMapping("movieList.do")
-	public String movie_List() {
-		return "project/movieList/movieList";
+	@RequestMapping("movieGrid.do")
+	public String movie_List(Model model, String page) {
+		
+		int curPage;
+		if(page==null)
+			curPage=1;
+		else
+			curPage=Integer.parseInt(page);
+		
+		int rowSize=51;
+		int totalPage = dao.getTotalPage(rowSize);
+		int start = (curPage*rowSize) - (rowSize-1);
+		int end = curPage*rowSize;
+		
+		Map map=new HashMap();
+		map.put("start", start);
+		map.put("end", end);
+		
+		List<MovieDetailVO> list = dao.getMovieList(map);
+
+		model.addAttribute("curPage",curPage);
+		model.addAttribute("list", list);
+		model.addAttribute("totalPage",totalPage);
+		model.addAttribute("start",start);
+		model.addAttribute("end",end);
+		
+		
+				
+		
+		return "project/movieList/movieGrid";
 	}
 
-	@RequestMapping("movieGrid.do")
+	@RequestMapping("movieList.do")
 	public String movie_Grid() {
-		return "project/movieList/movieGrid";
+		return "project/movieList/movieList";
 	}
 
 }

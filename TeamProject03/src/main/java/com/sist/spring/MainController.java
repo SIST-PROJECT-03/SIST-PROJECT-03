@@ -20,14 +20,16 @@ public class MainController {
 	
 	@Autowired
 	private MemberDAO dao;
+	
 	@Autowired
 	private MainDAO mDao;
+	
 	@RequestMapping("main.do")
 	public String main_main(Model model)
 	{	
+		/*System.out.println("로그인????");*/
 		List<NewsVO> newsList=newsDao.mainNewsList();
 		
-		// 뉴스 subject내용 길어서 짜르는 코드
 		for(NewsVO vo:newsList)
 		{
 			String temp=vo.getSubject();
@@ -35,11 +37,16 @@ public class MainController {
 			vo.setSubject(temp+"...");
 			/*System.out.println(vo.getRegdate());*/
 		}
-		
+
 		model.addAttribute("newsList",newsList);
-		List<MovieVO> movieList=new ArrayList<MovieVO>();
-		movieList=mDao.mainListData();
+		
+		// MAIN 전체 데이터
+		List<MovieVO> movieList=mDao.mainListData();
 		model.addAttribute("movieList",movieList);
+		
+		// MAIN 추천2 *(여성 선호 평점)
+		List<MovieVO> ratingList=mDao.ratingByGender();
+		model.addAttribute("ratingList",ratingList);
 		return "main";
 	}
 }

@@ -62,12 +62,12 @@ function showAllBtn(){
 				<div class="movie-single-ct">
 					<h1 class="bd-hd">Hugh Jackman</h1>
 					<p class="ceb-single">배우  |  프로듀서</p>
-					<div class="social-link cebsingle-socail">
+					<!-- <div class="social-link cebsingle-socail">
 						<a href="#"><i class="ion-social-facebook"></i></a>
 						<a href="#"><i class="ion-social-twitter"></i></a>
 						<a href="#"><i class="ion-social-googleplus"></i></a>
 						<a href="#"><i class="ion-social-linkedin"></i></a>
-					</div>
+					</div> -->
 					<div class="movie-tabs">
 						<div class="tabs">
 							<ul class="tab-links tabs-mv">

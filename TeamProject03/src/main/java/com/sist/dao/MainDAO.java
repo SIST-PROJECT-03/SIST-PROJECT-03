@@ -17,4 +17,9 @@ public class MainDAO {
 	{
 		return mapper.mainListData();
 	}
+	
+	public List<MovieVO> ratingByGender()
+	{
+		return mapper.ratingByGender();
+	}
 }

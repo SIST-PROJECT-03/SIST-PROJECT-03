@@ -36,16 +36,22 @@
 					<!-- <label>Sort by:</label> -->
 					<select class="newsSelect">
 						<option value="popularity">최근순</option>
-						<option value="popularity">인기순</option>
-						<option value="rating">Rating Descending</option>
-						<option value="date">Release date Ascending</option>
 					</select>
 					<a href="newsList.do" class="list"><i class="ion-ios-list-outline active"></i></a>
 					<a href="newsGrid.do" class="grid"><i class="ion-grid"></i></a>
 				</div>
+				
 				<c:forEach var="vo" items="${list }">
 					<div class="blog-item-style-1 blog-item-style-3">
-	            		<img src="${vo.thumbnail }">
+						<c:choose>
+							<c:when test="${empty vo.thumbnail }">
+								<img src="images/news_noimg.PNG">							
+							</c:when>
+							<c:otherwise>
+								<img src="${vo.thumbnail }">
+							</c:otherwise>
+						</c:choose>
+						
 	            		<div class="blog-it-infor">
 	            			<h3><a href="newsDetail.do?no=${vo.news_id }">${vo.title }</a></h3>
 	            			<span class="time">${vo.regdate }</span>

@@ -1,7 +1,5 @@
 package com.sist.vo;
 
-import lombok.Getter;
-import lombok.Setter;
 
 public class CelebVO {
 	private String name;
@@ -9,8 +7,15 @@ public class CelebVO {
 	private String thumbnail;
 	private String profile;
 	private String reward;
+	private String cast_id;
 	
 	
+	public String getCast_id() {
+		return cast_id;
+	}
+	public void setCast_id(String cast_id) {
+		this.cast_id = cast_id;
+	}
 	public String getName() {
 		return name;
 	}

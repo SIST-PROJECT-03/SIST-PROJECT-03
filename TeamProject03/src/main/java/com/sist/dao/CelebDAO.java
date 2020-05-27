@@ -15,8 +15,16 @@ public class CelebDAO {
 	@Autowired
 	private CelebMapper mapper;
 
-	public ArrayList<CelebVO> getCelebList()
+	public ArrayList<CelebVO> getCelebList(Map map)
 	{		
-		return mapper.getCelebList();
+		return mapper.getCelebList(map);
+	}
+	public int  getCelebTotalPage(int rowSize)
+	{
+		return mapper.getCelebTotalPage(rowSize);
+	}
+	public ArrayList<CelebVO> getSearchCelebList(String name)
+	{
+		return mapper.getSearchCelebList(name);
 	}
 }
