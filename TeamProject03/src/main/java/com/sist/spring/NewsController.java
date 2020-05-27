@@ -69,6 +69,9 @@ public class NewsController {
 	public String news_detail(Model model,int no,HttpServletRequest request)
 	{
 		NewsVO vo=dao.newsDetailData(no);
+		List<NewsReviewVO> rList=dao.newsReviewData(no);
+		int newsTotalCount=dao.newsReviewTotalCount(no);
+		
 		HttpSession session=request.getSession();
 		if(session.getAttribute("newsList")!=null){
 			List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
@@ -87,6 +90,8 @@ public class NewsController {
 		vo.setContent("<p>"+vo.getContent()+"</p>");
 		/*System.out.println(vo.getContent());*/
 		model.addAttribute("vo",vo);
+		model.addAttribute("rList",rList);
+		model.addAttribute("newsTotalCount",newsTotalCount);
 		return "project/news/newsDetail";
 	}
 	
@@ -145,6 +150,11 @@ public class NewsController {
 		return "project/news/newsGrid";
 	}
 	
+	@RequestMapping("newsReviewInsert.do")
+	public String new_review_insert()
+	{
+		return "project/news/newsDetail";
+	}
 	/*@RequestMapping("newsSearch.do")
 	public String news_search(int page){
 		String result="";

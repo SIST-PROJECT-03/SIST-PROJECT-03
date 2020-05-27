@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,41 +57,34 @@
 						</div>
 					</div>
 					<!-- comment items -->
-					<div class="comments">
-						<h4>총 4개의 댓글</h4>
-						<div class="cmt-item flex-it">
-							<img src="../images/uploads/author.png" alt="">
-							<div class="author-infor">
-								<div class="flex-it2">
-									<h6><a href="#">Steve Perry</a></h6> <span class="time"> - 27 Mar 2017</span>
+						<div class="comments">
+							<h4>총 ${newsTotalCount }개의 댓글</h4>
+							<c:forEach var="rvo" items="${rList }">
+								<div class="cmt-item flex-it">
+									<div class="author-infor">
+										<div class="flex-it2">
+											<h6>${rvo.email }</h6> <span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/> </span>
+										</div>
+										<p style="white-space: pre-wrap;">${rvo.msg }</p>
+										<p><a class="rep-btn" href="#">+ Reply</a></p>
+									</div>
 								</div>
-								<p>Even though Journey's classic vocalist Steve Perry didn��t reunite with the band during their Rock Hall performance (to the dismay of hopeful fans), he did offer up a touching speech.</p>
-								<p><a class="rep-btn" href="#">+ Reply</a></p>
-							</div>
+							</c:forEach>
 						</div>
-					</div>
-					<div class="comment-form">
-						<h4>댓글 작성</h4>
-						<form action="#">
-							<div class="row">
-								<div class="col-md-4">
-									<input type="text" placeholder="닉네임">
+						
+					<c:if test="${sessionScope!=null }">
+						<div class="comment-form">
+							<h4>댓글 작성</h4>
+							<form method="post" action="newsReplyInsert.do">
+								<div class="row">
+									<div class="col-md-12">
+										<textarea name="msg" placeholder="내용"></textarea>
+									</div>
 								</div>
-								<div class="col-md-4">
-									<input type="text" placeholder="이메일">
-								</div>
-								<div class="col-md-4">
-									<input type="text" placeholder="웹사이트 주소">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<textarea name="message" id="" placeholder="내용"></textarea>
-								</div>
-							</div>
-							<input class="submit newsDetailSubmit" type="submit" placeholder="작성완료">
-						</form>
-					</div>
+								<input class="submit newsDetailSubmit" type="submit" placeholder="작성완료">
+							</form>
+						</div>
+					</c:if>
 					<!-- comment form -->
 				</div>
 			</div>

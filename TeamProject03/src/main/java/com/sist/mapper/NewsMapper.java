@@ -38,4 +38,12 @@ public interface NewsMapper {
 			+ "FROM movie_news ORDER BY news_id ASC))"
 			+ "WHERE num BETWEEN #{start} AND #{end}")
 	public List<NewsVO> newsGirdListData(Map map);
+	
+	@Select("SELECT no,news_no,email,msg,regdate FROM "
+			+ "news_review "
+			+ "WHERE news_no=#{no}")
+	public List<NewsReviewVO> newsReviewData(int no);
+	
+	@Select("SELECT COUNT(*) FROM news_review WHERE news_no=#{no}")
+	public int newsReviewTotalCount(int no);
 }

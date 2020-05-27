@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sist.mapper.NewsMapper;
+import com.sist.vo.NewsReviewVO;
 import com.sist.vo.NewsVO;
 
 @Repository
@@ -46,5 +47,15 @@ public class NewsDAO {
 	public List<NewsVO> newsGirdListData(Map map)
 	{
 		return mapper.newsGirdListData(map);
+	}
+	
+	public List<NewsReviewVO> newsReviewData(int no)
+	{
+		return mapper.newsReviewData(no);
+	}
+	
+	public int newsReviewTotalCount(int no)
+	{
+		return mapper.newsReviewTotalCount(no);
 	}
 }
