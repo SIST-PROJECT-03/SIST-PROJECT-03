@@ -440,13 +440,13 @@ $(function(){
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="${rvo.poster }" alt="">
+				            				<img src="${ratingList }" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
 				            				<a class="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i></a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6>${rvo.title }</h6>
+				            				<h6>${ratingList }</h6>
 				            			</div>
 				            		</div>
 			            		</div>
