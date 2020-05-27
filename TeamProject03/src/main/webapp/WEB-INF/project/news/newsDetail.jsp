@@ -68,26 +68,40 @@
 										<h6 style="color: white;">${rvo.email }</h6> 
 										<span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
 										<div class="reply">
-											<h6 class="reply_btn"><span data-no="${rvo.no }">수정</span></h6> 
-											<h6 class="reply_btn"><a href="newsReplyDelete.do?no=${rvo.no }">삭제</a></h6>
-											<h6 class="reply_btn"><span data-no="${rvo.no }">댓글</span></h6>
+											<h6 class="reply_btn"><span class="updateBtn" data-no="${rvo.no }">수정</span></h6> 
+											<h6 class="reply_btn"><a href="newsReplyDelete.do?no=${rvo.no }" style="font-size: 16px">삭제</a></h6>
+											<h6 class="reply_btn"><span class="insertBtn" data-no="${rvo.no }">댓글</span></h6>
 										</div>
 									</div>
 									<p style="white-space: pre-wrap;">${rvo.msg }</p>
-									<div class="comment-form">
+									
+									<div id="r${rvo.no }" class="comment-form replyReplyInsert" style="display: none">
+										<form method="post" action="newsReplyReplyInsert.do">
+											<div class="row">
+												<div class="col-md-10">
+													<textarea name="msg" placeholder="내용" style="height: 120px; width: 800px; margin-bottom: 0px"></textarea>
+													<input type="hidden" name="no" value="${rvo.no }"/>
+													<input type="hidden" name="news_no" value="${rvo.news_no }"/>
+												</div>
+												<div class="col-md-2">
+													<input class="submit newsDetailSubmit reviewBtn" type="submit" placeholder="작성완료">
+												</div>
+											</div>
+										</form>
+									</div>
+									
+									<div id="u${rvo.no }" class="comment-form replyUpdate" style="display: none">
 										<form method="post" action="newsReviewUpdate.do">
 											<div class="row">
 												<div class="col-md-10">
-													<textarea name="msg" placeholder="내용" style="height: 120px">${rvo.msg }</textarea>
-													
+													<textarea name="msg" placeholder="내용" style="height: 120px; width: 800px; margin-bottom: 0px">${rvo.msg }</textarea>
+													<input type="hidden" name="no" value="${rvo.no }"/>
+													<input type="hidden" name="news_no" value="${rvo.news_no }"/>
 												</div>
 												<div class="col-md-2">
-													<input class="submit newsDetailSubmit" type="submit" placeholder="작성완료">
+													<input class="submit newsDetailSubmit reviewBtn" type="submit" placeholder="작성완료">
 												</div>
-												
 											</div>
-											<input type="hidden" name="no" value="${rvo.no }"/>
-											<input type="hidden" name="news_no" value="${rvo.news_no }"/>
 										</form>
 									</div>
 								<%-- 	<tr id="m${rvo.no }" style="display:none" class="replys">
