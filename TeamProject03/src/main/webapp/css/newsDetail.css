@@ -16,3 +16,14 @@
     margin-left: 710px;
 }
 
+.reply{
+	margin-bottom: 0px;
+	position: absolute;
+    right: 40px;
+}
+.reply_btn{
+    color: white;
+    display: inline;
+	
+}
+

@@ -63,4 +63,9 @@ public class NewsDAO {
 	{
 		return mapper.newsTotalReview(no);
 	}
+	
+	public NewsReviewVO newsReviewUpdateData(int no)
+	{
+		return mapper.newsReviewUpdateData(no);
+	}
 }

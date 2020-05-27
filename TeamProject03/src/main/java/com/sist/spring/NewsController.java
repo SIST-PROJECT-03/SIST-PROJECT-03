@@ -169,4 +169,18 @@ public class NewsController {
 		List<NewsVO> list=dao.newsListData(map);
 		return result;
 	}*/
+	
+	@RequestMapping("newsReplyUpdate.do")
+	public String new_reply_update(Model model,int no)
+	{
+		NewsReviewVO vo=dao.newsReviewUpdateData(no);
+		
+		return "redirect:newsDetail.do?no="+vo.getNews_no();
+	}
+	@RequestMapping("newsReplyReply.do")
+	public String new_reply_reply(NewsReviewVO vo)
+	{
+		
+		return "redirect:newsDetail.do?no="+vo.getNews_no();
+	}
 }

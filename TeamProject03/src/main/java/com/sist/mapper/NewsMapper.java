@@ -58,4 +58,10 @@ public interface NewsMapper {
 			+ "(SELECT NVL(MAX(group_id)+1,1) FROM news_review),"
 			+ "0,0,0,0)")
 	public void newsReviewInsert(NewsReviewVO vo);
+	
+	@Select("SELECT no,news_no,email,msg FROM news_review "
+			+ "WHERE no=#{no}")
+	public NewsReviewVO newsReviewUpdateData(int no);
+	
+	
 }
