@@ -37,11 +37,16 @@ public class MainController {
 			vo.setSubject(temp+"...");
 			/*System.out.println(vo.getRegdate());*/
 		}
-		
+
 		model.addAttribute("newsList",newsList);
-		List<MovieVO> movieList=new ArrayList<MovieVO>();
-		movieList=mDao.mainListData();
+		
+		// MAIN 전체 데이터
+		List<MovieVO> movieList=mDao.mainListData();
 		model.addAttribute("movieList",movieList);
+		
+		// MAIN 추천2 *(여성 선호 평점)
+		List<MovieVO> ratingList=mDao.ratingByGender();
+		model.addAttribute("ratingList",ratingList);
 		return "main";
 	}
 }
