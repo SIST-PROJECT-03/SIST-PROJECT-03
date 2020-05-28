@@ -48,7 +48,7 @@ public class MainController {
 	   	List<MovieVO> bigSliderList=mDao.bigSliderList();
 		for(MovieVO svo:bigSliderList)
 		{
-			System.out.println(svo.getNet().getEvaluation_point());
+			//System.out.println(svo.getNet().getEvaluation_point());
 		}
 		model.addAttribute("bigSliderList", bigSliderList);
 		

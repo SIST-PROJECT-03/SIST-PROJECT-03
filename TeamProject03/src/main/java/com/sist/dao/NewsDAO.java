@@ -68,4 +68,19 @@ public class NewsDAO {
 	{
 		return mapper.newsReviewUpdateData(no);
 	}
+	
+	public NewsReviewVO newsReplyReplySelect(int pno)
+	{
+		return mapper.newsReplyReplySelect(pno);
+	}
+	
+	public void newsReplyReplyDepthIncrement(int no)
+	{
+		mapper.newsReplyReplyDepthIncrement(no);
+	}
+	
+	public void newsReplyReplyInsert(NewsReviewVO vo)
+	{
+		mapper.newsReplyReplyInsert(vo);
+	}
 }
