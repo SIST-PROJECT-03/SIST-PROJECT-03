@@ -49,9 +49,9 @@ public class NewsDAO {
 		return mapper.newsGirdListData(map);
 	}
 	
-	public List<NewsReviewVO> newsReviewData()
+	public List<NewsReviewVO> newsReviewData(int no)
 	{
-		return mapper.newsReviewData();
+		return mapper.newsReviewData(no);
 	}
 	
 	public void newsReviewInsert(NewsReviewVO vo)
@@ -62,5 +62,10 @@ public class NewsDAO {
 	public int newsTotalReview(int no)
 	{
 		return mapper.newsTotalReview(no);
+	}
+	
+	public NewsReviewVO newsReviewUpdateData(int no)
+	{
+		return mapper.newsReviewUpdateData(no);
 	}
 }

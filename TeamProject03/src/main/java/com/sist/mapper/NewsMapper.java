@@ -42,12 +42,14 @@ public interface NewsMapper {
 			+ "WHERE num BETWEEN #{start} AND #{end}")
 	public List<NewsVO> newsGirdListData(Map map);
 	
+	
 	@Select("SELECT COUNT(*) FROM news_review WHERE news_no=#{no}")
 	public int newsTotalReview(int no);
 	
 	@Select("SELECT no,news_no,email,msg,regdate FROM news_review "
+			+ "WHERE news_no=#{no} "
 			+ "ORDER BY group_id DESC , group_step ASC")
-	public List<NewsReviewVO> newsReviewData();
+	public List<NewsReviewVO> newsReviewData(int no);
 	
 	@SelectKey(keyProperty="no",resultType=int.class,before=true,
 			statement="SELECT NVL(MAX(no)+1,1) as no FROM news_review")
@@ -56,4 +58,10 @@ public interface NewsMapper {
 			+ "(SELECT NVL(MAX(group_id)+1,1) FROM news_review),"
 			+ "0,0,0,0)")
 	public void newsReviewInsert(NewsReviewVO vo);
+	
+	@Select("SELECT no,news_no,email,msg FROM news_review "
+			+ "WHERE no=#{no}")
+	public NewsReviewVO newsReviewUpdateData(int no);
+	
+	
 }
