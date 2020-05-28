@@ -22,10 +22,7 @@ public class MovieDAO {
 	{
 	   return mapper.getMovieDetailData(movie_id);
 	}
-	public ArrayList<MovieDetailVO> getMovieList(Map map)
-	{
-		return mapper.getMovieList(map);
-	}
+
 	public WatchingTrendVO getWatchingTrend(int movie_id)
 	{
 		return mapper.getWatchingTrend(movie_id);
@@ -50,13 +47,12 @@ public class MovieDAO {
 		return mapper.getGenreData(movie_id);
 	}
 	
-	public int getTotalPage(int count)
-	{
-		return mapper.getTotalPage(count);
+	public List<MovieDetailVO> getMovieList(Map map){
+		return mapper.getMovieList(map);
 	}
-	public ArrayList<MovieDetailVO> getMovieAllList()
-	{
-		return mapper.getMovieAllList();
-
+	public int getTotalPage(Map map){
+		return mapper.getTotalPage(map);
 	}
+	
+	
 }

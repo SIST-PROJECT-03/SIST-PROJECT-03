@@ -8,6 +8,15 @@
 		<put-attribute name="footer" value="/WEB-INF/project/main/footer.jsp"/>
 	</definition>
 	
+	<definition name="result" template="/WEB-INF/project/result/result.jsp">
+		<put-attribute name="resultPrint" value=""/>
+	</definition>
+	
+	<definition name="project/result/*" extends="result">
+		<put-attribute name="resultPrint" value="/WEB-INF/project/result/{1}.jsp"/>
+	</definition>
+	
+	
 	<definition name="*/*" extends="main">
 		<put-attribute name="home" value="/WEB-INF/{1}/{2}.jsp"/>
 	</definition>
@@ -16,8 +25,14 @@
 		<put-attribute name="home" value="/WEB-INF/{1}/{2}/{3}.jsp"/>
 	</definition>
 	
+	
 	<definition name="*/*/*/*" extends="main">
 		<put-attribute name="home" value="/WEB-INF/{1}/{2}/{3}/{4}.jsp"/>
 	</definition>
 	
+	
+	
 </tiles-definitions>
+
+
+

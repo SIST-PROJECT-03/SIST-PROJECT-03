@@ -54,6 +54,6 @@
 <script src="js/ajax.js"></script>
 <script src="js/detailPrint.js"></script>
 <script src="js/celeb.js"></script>
-
+<script src="js/movieList.js"></script>
 </body>
 </html>
