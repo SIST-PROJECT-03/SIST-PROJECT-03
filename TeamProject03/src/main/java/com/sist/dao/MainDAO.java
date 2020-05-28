@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sist.mapper.MainMapper;
-import com.sist.vo.MovieVO;
+import com.sist.vo.*;
 
 import java.util.*;
 @Repository
@@ -13,13 +13,23 @@ public class MainDAO {
 	@Autowired
 	private MainMapper mapper;
 	
-	public List<MovieVO> mainListData()
+	public List<MovieVO> ageRecommendation()
+	   {
+	      return mapper.ageRecommendation();
+	   }
+	
+	
+	public List<MovieVO> bigSliderList()
 	{
-		return mapper.mainListData();
+		return mapper.bigSliderList();
 	}
 	
-	public List<MovieVO> ratingByGender()
+/*	public List<MovieGenreVO> selectGenre(int movie_id)
 	{
-		return mapper.ratingByGender();
-	}
+		return mapper.selectGenre(movie_id);
+		
+	}*/
+	
+	
+	
 }

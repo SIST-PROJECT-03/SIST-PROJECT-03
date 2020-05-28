@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <!-- Basic need -->
-	<title>Open Pediatrics</title>
+	<title>BlockBuster</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
