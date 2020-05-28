@@ -15,34 +15,45 @@ import com.sist.vo.MovieVO;
 import com.sist.vo.NewsVO;
 @Controller
 public class MainController {
-	@Autowired
-	private NewsDAO newsDao;
+   @Autowired
+   private NewsDAO newsDao;
+   
+   @Autowired
+   private MemberDAO dao;
+   
+   @Autowired
+   private MainDAO mDao;
+   
+   @RequestMapping("main.do")
+   public String main_main(Model model)
+   {   
+	      /*System.out.println("로그인????");*/
+	      List<NewsVO> newsList=newsDao.mainNewsList();
+	      
+	      for(NewsVO vo:newsList)
+	      {
+	         String temp=vo.getSubject();
+	         temp=temp.substring(0, 70);
+	         vo.setSubject(temp+"...");
+	         /*System.out.println(vo.getRegdate());*/
+	      }
 	
-	@Autowired
-	private MemberDAO dao;
-	
-	@Autowired
-	private MainDAO mDao;
-	
-	@RequestMapping("main.do")
-	public String main_main(Model model)
-	{	
-		/*System.out.println("로그인????");*/
-		List<NewsVO> newsList=newsDao.mainNewsList();
+	      model.addAttribute("newsList",newsList);
+	      
+	      //추천2 : 성별 추천
+	      List<MovieVO> ageList=mDao.ageRecommendation();
+	      model.addAttribute("ageList",ageList);
+
 		
-		for(NewsVO vo:newsList)
+	   	List<MovieVO> bigSliderList=mDao.bigSliderList();
+		for(MovieVO svo:bigSliderList)
 		{
-			String temp=vo.getSubject();
-			temp=temp.substring(0, 70);
-			vo.setSubject(temp+"...");
-			/*System.out.println(vo.getRegdate());*/
+			System.out.println(svo.getNet().getEvaluation_point());
 		}
 
-		model.addAttribute("newsList",newsList);
+		model.addAttribute("bigSliderList", bigSliderList);
 		
-		//추천2 : 성별 추천
-		List<MovieVO> ageList=mDao.ageRecommendation();
-		model.addAttribute("ageList",ageList);
+
 		return "main";
 	}
 }
