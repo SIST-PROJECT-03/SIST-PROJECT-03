@@ -20,5 +20,6 @@ public class MovieVO {
 	private int audience_count;
 	private String story;
 	private String poster;
+	private NetizenEvaluationTrendVO netvo=new NetizenEvaluationTrendVO();
 	
 }

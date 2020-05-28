@@ -13,13 +13,8 @@ public class MainDAO {
 	@Autowired
 	private MainMapper mapper;
 	
-	public List<MovieVO> mainListData()
+	public List<MovieVO> ageRecommendation()
 	{
-		return mapper.mainListData();
-	}
-	
-	public List<MovieVO> ratingByGender()
-	{
-		return mapper.ratingByGender();
+		return mapper.ageRecommendation();
 	}
 }

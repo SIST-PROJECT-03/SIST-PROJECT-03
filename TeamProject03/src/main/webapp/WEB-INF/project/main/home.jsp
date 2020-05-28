@@ -151,7 +151,7 @@ $(function(){
 		<div class="col-md-12">
 			<div class="title-hd">
 				<h2>#블록버스터 최고의 인기작</h2>
-				<a href="../movieList/movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+				<a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 			</div>
 
 			<div class="tabs">
@@ -160,104 +160,7 @@ $(function(){
 			        <div id="tab1-h2" class="tab active">
 			            <div class="row">
 			            	<div class="slick-multiItem2">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it1.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a class="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i></a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">오블리비언</a></h6>
-				            				<p><i class="ion-android-star"></i><span>8.9</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-								<div class="slide-it">
-									<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it2.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">인 투 더 와일드</a></h6>
-				            				<p><i class="ion-android-star"></i><span>9.4</span> /10</p>
-				            			</div>
-				            		</div>
-								</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="https://movie-phinf.pstatic.net/20161123_188/1479862185516tYkKO_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">라라랜드</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.0</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="https://movie-phinf.pstatic.net/20200310_91/1583805533463Yqyui_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">분노의 질주: 더 익스트림</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.8</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="https://movie-phinf.pstatic.net/20200211_164/1581396524128hxWV1_JPEG/movie_image.jpg?type=m203_290_2" alt="" style="width:257px; height:394.84px;">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">젠틀맨</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it6.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">007 스카이폴</a></h6>
-				            				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="images/uploads/mv-it7.jpg" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6><a href="#">그것</a></h6>
-				            				<p><i class="ion-android-star"></i><span>9.0</span> /10</p>
-				            			</div>
-				            		</div>
-			            		</div>
+			       
 			            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
@@ -267,14 +170,15 @@ $(function(){
 				            				<a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6><a href="#">인셉션</a></h6>
-				            				<p><i class="ion-android-star"></i><span>8.5</span> /10</p>
+				            				<h5>인셉션</h5>
 				            			</div>
 				            		</div>
 			            		</div>
+			            		
 			            	</div>
 			            </div>
 			        </div>
+			        
 <!--================================================================================================================================ajax start  -->
 <div class="movie-items full-width mainDetailinfo" >
 	<div class="row">
@@ -425,30 +329,35 @@ $(function(){
 <!--================================================================================================================================ajax end  -->           		 
 			</div>
 <!--============================================================================================================================================추천1 END-->
-
+</div>
 			
 <!--============================================================================================================================================추천2 START-->
+
 			<div class="title-hd">
 					<h2>#여성 기준 평점</h2>
-					<a class="viewall2">x</a>
+					<a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
 			</div>
 			 <div class="tab-content">
 			        <div id="tab1-h2" class="tab active">
 			            <div class="row">
 			            	<div class="slick-multiItem2">
-			            	  <c:forEach var="rvo" items="${ratingList }">
+			            	  <c:forEach var="nvo" items="${ageList }">
 			            		<div class="slide-it">
+			      
+				            		<div class="slide-it">
 			            			<div class="movie-item">
 				            			<div class="mv-img">
-				            				<img src="${ratingList }" alt="">
+				            				<img src="${nvo.poster }" alt="">
 				            			</div>
 				            			<div class="hvr-inner">
-				            				<a class="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i></a>
+				            				<a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
 				            			</div>
 				            			<div class="title-in">
-				            				<h6>${ratingList }</h6>
+				            				<h5>${nvo.title }</h5>
+				            
 				            			</div>
 				            		</div>
+			            		</div>
 			            		</div>
 			            	   </c:forEach>
 			            	</div>
@@ -456,107 +365,9 @@ $(function(){
 			        </div>
 			</div>
 <!--============================================================================================================================================추천2 END-->
+	     </div>     
+	    </div>
 	</div>
-</div>
-<!-- =============================  THEMA SLIDER AREA START  ============================== -->
-
-
-
-
- <!-- =============================  TRAILER SLIDER & 영화인  AREA START  ============================== -->
-<!--<div class="trailers full-width">
-		<div class="row ipad-width">
-		
-			=============================  TRAILER SLIDER AREA START  ==============================
-			<div class="col-md-9 col-sm-12 col-xs-12">
-				<div class="title-hd">
-					<h2>개봉예정작 예고편</h2>
-					<a href="#" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
-				</div>
-				<!-- <div class="videos">
-				 	<div class="slider-for-2 video-ft">
-					   <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/w0qQkSuWOS8"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/44LdLqgOpjo"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/gbug3zTm3Ws"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/e3Nl_TCQXuw"></iframe>
-					    </div>
-					    <div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
-					    </div>
-					</div>
-					<div class="slider-nav-2 thumb-ft">
-						<div class="item">
-							<div class="trailer-img">
-								<img src="images/uploads/trailer7.jpg"  alt="photo by Barn Images" width="4096" height="2737">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">원더우먼</h4>
-	                        	<p>2:30</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="images/uploads/trailer2.jpg"  alt="photo by Barn Images" 	width="350" height="200">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">오빌리언</h4>
-	                        	<p>2:37</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="images/uploads/trailer6.jpg" alt="photo by Joshua Earle" width="509" height="301">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">킹콩</h4>
-	                        	<p>2:44</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="images/uploads/trailer3.png" alt="photo by Alexander Dimitrov" width="100" height="56">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">로건</h4>	
-	                        	<p>2:43</p>
-	                        </div>
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="images/uploads/trailer4.png"  alt="photo by Wojciech Szaturski" width="100" height="56">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">미녀와 야수</h4>	
-	                        	<p>2: 32</p>
-	                        </div>	
-						</div>
-						<div class="item">
-							<div class="trailer-img">
-								<img src="images/uploads/trailer5.jpg"  alt="photo by Wojciech Szaturski" width="360" height="189">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">패스트 & 퓨리어스</h4>	
-	                        	<p>3:11</p>
-	                        </div>	
-						</div>
-					</div>
-				</div> -->
-				</div>
-			</div>
-			<!-- =============================  TRAILER SLIDER AREA END  ============================== -->
-		</div>
-</div>
-<!-- =============================  TRAILER SLIDER & 영화인  AREA END  ============================== -->
 
 <!-- =============================  LATEST NEWS AREA START  ============================== -->
 <div class="latestnew full-width">

@@ -1,7 +1,7 @@
 package com.sist.spring;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,13 +40,9 @@ public class MainController {
 
 		model.addAttribute("newsList",newsList);
 		
-		// MAIN 전체 데이터
-		List<MovieVO> movieList=mDao.mainListData();
-		model.addAttribute("movieList",movieList);
-		
-		// MAIN 추천2 *(여성 선호 평점)
-		List<MovieVO> ratingList=mDao.ratingByGender();
-		model.addAttribute("ratingList",ratingList);
+		//추천2 : 성별 추천
+		List<MovieVO> ageList=mDao.ageRecommendation();
+		model.addAttribute("ageList",ageList);
 		return "main";
 	}
 }
