@@ -1,20 +1,6 @@
 package com.sist.vo;
 
-import lombok.Getter;
-import lombok.Setter;
 import java.util.*;
-/*
-    NO         NOT NULL NUMBER        
-	NEWS_NO                 NUMBER        
-	EMAIL      NOT NULL VARCHAR2(300) 
-	MSG        NOT NULL CLOB          
-	REGDATE             DATE          
-	GROUP_ID            NUMBER        
-	GROUP_STEP          NUMBER        
-	GROUP_TAB           NUMBER        
-	ROOT                NUMBER        
-	DEPTH               NUMBER        
- */
 
 public class NewsReviewVO {
 	private int no;
