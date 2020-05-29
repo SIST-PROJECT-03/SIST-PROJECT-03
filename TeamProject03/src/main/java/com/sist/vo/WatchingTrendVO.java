@@ -2,6 +2,8 @@ package com.sist.vo;
 
 public class WatchingTrendVO {
 	private int movie_id;
+	private int ebaluation_point;
+	private int people_count;
 	private int male_rating;
 	private int female_rating;
 	private int age_10;
@@ -9,6 +11,67 @@ public class WatchingTrendVO {
 	private int age_30;
 	private int age_40;
 	private int age_50;
+	private int production_point;
+	private int acting_point;
+	private int story_point;
+	private int visual_point;
+	private int ost_point;
+
+	public int getEbaluation_point() {
+		return ebaluation_point;
+	}
+
+	public void setEbaluation_point(int ebaluation_point) {
+		this.ebaluation_point = ebaluation_point;
+	}
+
+	public int getPeople_count() {
+		return people_count;
+	}
+
+	public void setPeople_count(int people_count) {
+		this.people_count = people_count;
+	}
+
+	public int getProduction_point() {
+		return production_point;
+	}
+
+	public void setProduction_point(int production_point) {
+		this.production_point = production_point;
+	}
+
+	public int getActing_point() {
+		return acting_point;
+	}
+
+	public void setActing_point(int acting_point) {
+		this.acting_point = acting_point;
+	}
+
+	public int getStory_point() {
+		return story_point;
+	}
+
+	public void setStory_point(int story_point) {
+		this.story_point = story_point;
+	}
+
+	public int getVisual_point() {
+		return visual_point;
+	}
+
+	public void setVisual_point(int visual_point) {
+		this.visual_point = visual_point;
+	}
+
+	public int getOst_point() {
+		return ost_point;
+	}
+
+	public void setOst_point(int ost_point) {
+		this.ost_point = ost_point;
+	}
 
 	public int getMovie_id() {
 		return movie_id;

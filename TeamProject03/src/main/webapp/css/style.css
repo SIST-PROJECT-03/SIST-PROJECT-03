@@ -4086,6 +4086,7 @@ ul {
 .movie-items .movie-item .mv-img {
   position: relative;
 }
+
 .movie-items .movie-item .mv-img:after {
   box-shadow: inset -5px -50px 100px -15px #000000;
   -webkit-box-shadow: inset -5px -50px 100px -15px #000000;
@@ -4124,6 +4125,13 @@ ul {
 .movie-items .movie-item .title-in h6 a {
   font-family: 'Dosis', sans-serif;
   font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.movie-items .movie-item .title-in h5 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;

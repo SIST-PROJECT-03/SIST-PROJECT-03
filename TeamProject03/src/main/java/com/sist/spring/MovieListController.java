@@ -40,41 +40,115 @@ public class MovieListController {
 		return "project/movieList/seriesSingle";
 	}
 
+	
+	
+	
 	@RequestMapping("movieGrid.do")
-	public String movie_List(Model model, String page) {
+	public String movie_List(Model model, String genre, String country, String grade,String range, String page, String rowSize) {
+		//genre, country, grade, start, end, range
+		//rowSize, totalPage, curPage
 		
 		int curPage;
+		int totalPage;
+		int curRowSize;
+		int start;
+		int end;
+		
+		if(country==null)
+			country="";
+		
+		if(genre==null)
+			genre="";
+		
+		if(grade==null)
+			grade="";
+		
+		if(range==null)
+			range="running_time";
+		
+		if(rowSize==null)
+			rowSize="60";
+		
 		if(page==null)
-			curPage=1;
-		else
-			curPage=Integer.parseInt(page);
+			page="1";
 		
-		int rowSize=51;
-		int totalPage = dao.getTotalPage(rowSize);
-		int start = (curPage*rowSize) - (rowSize-1);
-		int end = curPage*rowSize;
+		curPage= Integer.parseInt(page);
+		curRowSize = Integer.parseInt(rowSize);
 		
-		Map map=new HashMap();
+		start = (curPage-1)*(curRowSize)+1;
+		end = curPage*curRowSize;
+		
+		Map map = new HashMap();
+		map.put("genre", genre);
+		map.put("country", country);
+		map.put("grade", grade);
+		map.put("range", range);
+		map.put("rowSize", curRowSize);
 		map.put("start", start);
 		map.put("end", end);
 		
+		
 		List<MovieDetailVO> list = dao.getMovieList(map);
-
-		model.addAttribute("curPage",curPage);
+		totalPage= dao.getTotalPage(map);
+		
+	
 		model.addAttribute("list", list);
-		model.addAttribute("totalPage",totalPage);
-		model.addAttribute("start",start);
-		model.addAttribute("end",end);
-		
-		
-				
+		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("curPage", curPage);		
+	
 		
 		return "project/movieList/movieGrid";
 	}
+	@RequestMapping("movieGridPrint.do")
+	public String movieGridPrint(Model model, String genre, String country, String grade,String range, String rowSize) {
+		//genre, country, grade, start, end, range
+		//rowSize, totalPage, curPage
+		
+		int curPage;
+		int totalPage;
+		int curRowSize;
+		int start;
+		int end;
+	
+		if(country==null)
+			country="";
+		
+		if(genre==null)
+			genre="";
+		
+		if(grade==null)
+			grade="";
+		
+		curPage= Integer.parseInt("1");
+		curRowSize = Integer.parseInt(rowSize);
+		
+		start = (curPage-1)*(curRowSize)+1;
+		end = curPage*curRowSize;
+		
 
-	@RequestMapping("movieList.do")
-	public String movie_Grid() {
-		return "project/movieList/movieList";
+		Map map = new HashMap();
+		map.put("genre", genre);
+		map.put("country", country);
+		map.put("grade", grade);
+		map.put("range", range);
+		map.put("rowSize", curRowSize);
+		map.put("start", start);
+		map.put("end", end);
+		
+		
+		List<MovieDetailVO> list = dao.getMovieList(map);
+		totalPage= dao.getTotalPage(map);
+		
+		
+		System.out.println("list size : " + list.size());
+		System.out.println("totalPage" + totalPage);
+		model.addAttribute("list", list);
+		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("curPage", curPage);		
+	
+		
+		return "project/result/movieGridResult";
 	}
-
+	
+	
 }
