@@ -111,7 +111,7 @@ $(function(){
    <div class="row">
       <div class="col-md-12">
          <div class="title-hd">
-            <h2>#블록버스터 인기순 수정해야 함</h2>
+            <h2>#블록버스터 인기순 수정</h2>
             <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
 
