@@ -49,12 +49,6 @@
 							<a href="#"><i class="ion-social-pinterest"></i></a>
 							<a href="#"><i class="ion-social-linkedin"></i></a>
 						</div>
-						<div class="right-it">
-							<h4>태그</h4>
-							<a href="#">Gray,</a>
-							<a href="#">Film,</a>
-							<a href="#">Poster</a>
-						</div>
 					</div>
 					<!-- comment items -->
 					
@@ -65,6 +59,12 @@
 								<!-- <img src="../images/uploads/author.png" alt=""> -->
 								<div class="author-infor">
 									<div class="flex-it2">
+										<c:forEach var="i" begin="1" end="${rvo.group_tab }">
+											&nbsp;&nbsp;&nbsp;&nbsp;
+										</c:forEach>
+										<c:if test="${rvo.group_tab>0 }">
+											<img  src="images/arrow.PNG" width="50px" height="50px"/>
+										</c:if>
 										<h6 style="color: white;">${rvo.email }</h6> 
 										<span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
 										<div class="reply">
@@ -99,7 +99,7 @@
 											<div class="row">
 												<div class="col-md-10">
 													<textarea name="msg" placeholder="내용" style="height: 120px; width: 800px; margin-bottom: 0px">${rvo.msg }</textarea>
-													<input type="hidden" name="pno" value="${rvo.no }"/>
+													<input type="hidden" name="no" value="${rvo.no }"/>
 													<input type="hidden" name="news_no" value="${rvo.news_no }"/>
 												</div>
 												<div class="col-md-2">

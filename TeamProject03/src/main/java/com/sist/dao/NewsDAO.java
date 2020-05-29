@@ -83,4 +83,24 @@ public class NewsDAO {
 	{
 		mapper.newsReplyReplyInsert(vo);
 	}
+	
+	public void newsReviewUpdate(NewsReviewVO vo)
+	{
+		mapper.newsReviewUpdate(vo);
+	}
+	
+	public void newsReplyDepthDecrement(int pno)
+	{
+		mapper.newsReplyDepthDecrement(pno);
+	}
+	
+	public void newsReplyReplyDelete(int no)
+	{
+		mapper.newsReplyReplyDelete(no);
+	}
+	
+	public void newsReplyReplyDeleteMsg(NewsReviewVO vo)
+	{
+		mapper.newsReplyReplyDeleteMsg(vo);
+	}
 }

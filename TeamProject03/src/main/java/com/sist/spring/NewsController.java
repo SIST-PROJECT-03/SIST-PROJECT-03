@@ -73,13 +73,13 @@ public class NewsController {
 		List<NewsReviewVO> rlist=dao.newsReviewData(no);
 		int newsReviewTotal=dao.newsTotalReview(no);
 		
-		HttpSession session=request.getSession();
+		/*HttpSession session=request.getSession();
 		if(session.getAttribute("email")!=null)
 		{
 			if(session.getAttribute("newsList")!=null){
 				List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
 				newsList.add(vo);
-				/*System.out.println(newsList.size());*/
+				System.out.println(newsList.size());
 				session.setAttribute("newsList", newsList);
 			}
 			else
@@ -88,7 +88,7 @@ public class NewsController {
 				newsList.add(vo);
 				session.setAttribute("newsList", newsList);
 			}
-		}
+		}*/
 		
 		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
 		vo.setContent("<p>"+vo.getContent()+"</p>");
@@ -173,9 +173,9 @@ public class NewsController {
 	}*/
 	
 	@RequestMapping("newsReviewUpdate.do")
-	public String news_reply_update(Model model,int no)
+	public String news_reply_update(NewsReviewVO vo)
 	{
-		NewsReviewVO vo=dao.newsReviewUpdateData(no);
+		dao.newsReviewUpdate(vo);
 		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
@@ -199,5 +199,21 @@ public class NewsController {
 		dao.newsReplyReplyInsert(vo);
 		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
+	}
+	
+	@RequestMapping("newsReplyDelete.do")
+	public String news_reply_reply_delete(int no)
+	{
+		NewsReviewVO vo=dao.newsReviewUpdateData(no);
+		if(vo.getDepth()==0)
+		{
+			dao.newsReplyReplyDelete(no);
+		}
+		else
+		{
+			vo.setMsg("관리자가 삭제한 댓글입니다.");
+		}
+		dao.newsReplyDepthDecrement(no);
+		return "";
 	}
 }
