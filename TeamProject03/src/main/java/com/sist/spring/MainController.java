@@ -1,52 +1,56 @@
 package com.sist.spring;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sist.dao.MainDAO;
-import com.sist.dao.MemberDAO;
-import com.sist.dao.NewsDAO;
-import com.sist.vo.MovieVO;
-import com.sist.vo.NewsVO;
+import com.sist.dao.*;
+import com.sist.vo.*;
 @Controller
 public class MainController {
-	@Autowired
-	private NewsDAO newsDao;
+   @Autowired
+   private NewsDAO newsDao;
+   
+   @Autowired
+   private MemberDAO dao;
+   
+   @Autowired
+   private MainDAO mDao;
+   
+   @RequestMapping("main.do")
+   public String main_main(Model model)
+   {   
+	      /*System.out.println("로그인????");*/
+	      List<NewsVO> newsList=newsDao.mainNewsList();
+	      
+	      for(NewsVO vo:newsList)
+	      {
+	         String temp=vo.getSubject();
+	         temp=temp.substring(0, 70);
+	         vo.setSubject(temp+"...");
+	         /*System.out.println(vo.getRegdate());*/
+	      }
 	
-	@Autowired
-	private MemberDAO dao;
-	
-	@Autowired
-	private MainDAO mDao;
-	
-	@RequestMapping("main.do")
-	public String main_main(Model model)
-	{	
-		/*System.out.println("로그인????");*/
-		List<NewsVO> newsList=newsDao.mainNewsList();
+	      model.addAttribute("newsList",newsList);
+	      
+	      //추천2 : 성별 추천
+	      List<MovieVO> ageList=mDao.ageRecommendation();
+	      model.addAttribute("ageList",ageList);
+
 		
-		for(NewsVO vo:newsList)
+	   	List<MovieVO> bigSliderList=mDao.bigSliderList();
+		for(MovieVO svo:bigSliderList)
 		{
-			String temp=vo.getSubject();
-			temp=temp.substring(0, 70);
-			vo.setSubject(temp+"...");
-			/*System.out.println(vo.getRegdate());*/
+			//System.out.println(svo.getNet().getEvaluation_point());
 		}
 
-		model.addAttribute("newsList",newsList);
+		model.addAttribute("bigSliderList", bigSliderList);
 		
-		// MAIN 전체 데이터
-		List<MovieVO> movieList=mDao.mainListData();
-		model.addAttribute("movieList",movieList);
-		
-		// MAIN 추천2 *(여성 선호 평점)
-		List<MovieVO> ratingList=mDao.ratingByGender();
-		model.addAttribute("ratingList",ratingList);
+
 		return "main";
 	}
 }

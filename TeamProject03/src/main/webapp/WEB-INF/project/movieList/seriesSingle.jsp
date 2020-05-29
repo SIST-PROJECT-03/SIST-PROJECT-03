@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/sliding.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script text="javascript/text">
@@ -247,7 +248,57 @@ $(document).ready(function(){
 														class="ion-ios-arrow-right"></i></a>
 												</div>
 												<div id="mvsingle-item ov-item">
-												<div>
+												<body>
+    <section class="sliding-wrap">
+        <ul class="sliding-item">
+        </ul>
+        <a href="#" class="sliding-left-arrow pos-absolute">
+            <img src="img/left-arrow.png" alt="">
+            <img src="" alt="">
+        </a>
+        <a href="#" class="sliding-right-arrow pos-absolute">
+            <img src="img/right-arrow.png" alt="">
+            <img src="" alt="">
+        </a>
+        <div class="sliding-check-box pos-absolute">
+            <ul class="sliding-check-items">
+                <li>
+                    <a href="#">
+                        <img src="img/stop-btn.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <script id="template-sliding-check-item" type="text/template">
+            <li><a>
+                <img src="./../img/{img-kind}" class = "{class}" alt="">    
+            </a></li>
+
+        </script>
+    <script id="template-sliding-items" type="text/template">
+            <li name="{name}">
+                <a><img src="{moviePictures}" alt=""></a>
+                <a><div>{title}</div></a>
+                <a><div>{information}</div></a>
+            </li>
+        </script>
+    <script src="js/ajax/ajax.js"></script>
+    <script src="js/cache.js"></script>
+    <script src="js/constructor.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/operating.js"></script>
+    <script src="js/slidingConfiguration.js"></script>
+    <script src="js/getDataForSliding.js"></script>
+
+
+    <script src="js/slide-for-supporting/slide.js">alert('hello')</script>
+
+												
+											<%-- 	<div>
 													<c:forEach var="moviePictures" items="${moviePictures }" begin="0" end="1">
 														<a class="img-lightbox" data-fancybox-group="gallery"
 															href=""><img src="${moviePictures }" alt=""></a>
@@ -265,7 +316,7 @@ $(document).ready(function(){
 															href="https://www.youtube.com/embed/o-0hcF97wy0"><img
 															src="images/uploads/play-vd.png" alt=""></a>
 													</div>
-												</div>
+												</div> --%>
 												<div class="title-hd-sm">
 													<h4>배우</h4>
 													<a href="#" class="time">더보기 <i
@@ -832,7 +883,7 @@ $(document).ready(function(){
 												<div class="mvsingle-item poster">
 													<a class="img-lightbox" data-fancybox-group="gallery"
 														href="${moviePictures }"><img src="${moviePictures }"
-														alt=""></a>
+														alt="" style="width:100px;height:100px"></a>
 												</div>
 											</c:forEach>
 										</div>
