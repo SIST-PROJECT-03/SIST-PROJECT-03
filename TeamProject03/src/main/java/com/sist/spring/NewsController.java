@@ -2,6 +2,7 @@ package com.sist.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -163,6 +164,7 @@ public class NewsController {
 		dao.newsReviewInsert(vo);
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
+	
 	/*@RequestMapping("newsSearch.do")
 	public String news_search(int page){
 		String result="";
@@ -170,16 +172,31 @@ public class NewsController {
 		return result;
 	}*/
 	
-	@RequestMapping("newsReplyUpdate.do")
-	public String new_reply_update(Model model,int no)
+	@RequestMapping("newsReviewUpdate.do")
+	public String news_reply_update(Model model,int no)
 	{
 		NewsReviewVO vo=dao.newsReviewUpdateData(no);
 		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
-	@RequestMapping("newsReplyReply.do")
-	public String new_reply_reply(NewsReviewVO vo)
+	
+	@Transactional
+	@RequestMapping("newsReplyReplyInsert.do")
+	public String news_reply_reply_insert(NewsReviewVO vo,int pno,HttpServletRequest request)
 	{
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
+		
+		NewsReviewVO rvo=dao.newsReplyReplySelect(pno);
+		
+		vo.setEmail(email);
+		vo.setGroup_id(rvo.getGroup_id());
+		vo.setGroup_step(rvo.getGroup_step()+1);
+		vo.setGroup_tab(rvo.getGroup_tab()+1);
+		vo.setRoot(pno);
+		
+		dao.newsReviewUpdateData(pno);
+		dao.newsReplyReplyInsert(vo);
 		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}

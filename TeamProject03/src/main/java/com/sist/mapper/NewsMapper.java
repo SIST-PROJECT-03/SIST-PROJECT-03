@@ -3,6 +3,7 @@ package com.sist.mapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
 
 import com.sist.vo.*;
 import java.util.*;
@@ -56,12 +57,29 @@ public interface NewsMapper {
 	@Insert("INSERT INTO news_review VALUES("
 			+ "#{no},#{news_no},#{email},#{msg},SYSDATE,"
 			+ "(SELECT NVL(MAX(group_id)+1,1) FROM news_review),"
-			+ "0,0,0,0)")
+			+ "0,0,0,0) "
+			+ "WHERE new_no=#{news_no}")
 	public void newsReviewInsert(NewsReviewVO vo);
 	
 	@Select("SELECT no,news_no,email,msg FROM news_review "
 			+ "WHERE no=#{no}")
 	public NewsReviewVO newsReviewUpdateData(int no);
+	
+	@Select("SELECT group_id,group_step,group_tab "
+			+ "FROM movie_news "
+			+ "WHERE no=#{pno}")
+	public NewsReviewVO newsReplyReplySelect(int pno);
+	
+	@Update("UPDATE movie_news SET "
+			+ "depth=depth+1 "
+			+ "WHERE no=#{no}")
+	public void newsReplyReplyDepthIncrement(int no);
+	
+	@SelectKey(keyProperty="no",resultType=int.class,before=true,
+			statement="SELECT NVL(MAX(no)+1,1) as no FROM news_review")
+	@Insert("INSERT INTO movie_news(no,new_no,email,msg,group_id,group_step,group_tab,root) "
+			+ "VALUES(#{no},#{news_no},#{email},#{msg},#{group_id},#{group_step},#{group_tab},#{root})")
+	public void newsReplyReplyInsert(NewsReviewVO vo);
 	
 	
 }

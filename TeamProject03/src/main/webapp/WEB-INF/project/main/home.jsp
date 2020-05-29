@@ -51,7 +51,6 @@ $(function(){
 		<div class="row">
 	    	<div class="slider-single-item">
 	    	
-	    	
 				<!-- ====================================1 big slider start=========================================== -->	 
 				<c:forEach var="svo" items="${bigSliderList }">   	
 	    		<div class="movie-item">
@@ -112,7 +111,7 @@ $(function(){
    <div class="row">
       <div class="col-md-12">
          <div class="title-hd">
-            <h2>#블록버스터 최고의 인기작</h2>
+            <h2>#블록버스터 인기순 수정해야 함</h2>
             <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
 

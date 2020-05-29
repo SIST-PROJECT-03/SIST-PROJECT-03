@@ -8,11 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sist.dao.MainDAO;
-import com.sist.dao.MemberDAO;
-import com.sist.dao.NewsDAO;
-import com.sist.vo.MovieVO;
-import com.sist.vo.NewsVO;
+import com.sist.dao.*;
+import com.sist.vo.*;
 @Controller
 public class MainController {
    @Autowired
@@ -48,7 +45,7 @@ public class MainController {
 	   	List<MovieVO> bigSliderList=mDao.bigSliderList();
 		for(MovieVO svo:bigSliderList)
 		{
-			System.out.println(svo.getNet().getEvaluation_point());
+			//System.out.println(svo.getNet().getEvaluation_point());
 		}
 
 		model.addAttribute("bigSliderList", bigSliderList);

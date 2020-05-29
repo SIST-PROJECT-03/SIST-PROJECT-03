@@ -5,7 +5,7 @@ import lombok.Setter;
 import java.util.*;
 /*
     NO         NOT NULL NUMBER        
-	RNO                 NUMBER        
+	NEWS_NO                 NUMBER        
 	EMAIL      NOT NULL VARCHAR2(300) 
 	MSG        NOT NULL CLOB          
 	REGDATE             DATE          
