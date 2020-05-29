@@ -68,11 +68,8 @@ public interface NewsMapper {
 	public void newsReviewUpdate(NewsReviewVO vo);
 	
 	// =========== 대댓글 Insert =============
-	@Select("SELECT no,news_no,email,msg FROM news_review "
-			+ "WHERE no=#{no}")
-	public NewsReviewVO newsReviewUpdateData(int no);
 	
-	@Select("SELECT group_id,group_step,group_tab "
+	@Select("SELECT no,news_no,group_id,group_step,group_tab,root "
 			+ "FROM news_review "
 			+ "WHERE no=#{pno}")
 	public NewsReviewVO newsReplyReplySelect(int pno);

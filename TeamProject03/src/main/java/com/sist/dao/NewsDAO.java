@@ -64,11 +64,6 @@ public class NewsDAO {
 		return mapper.newsTotalReview(no);
 	}
 	
-	public NewsReviewVO newsReviewUpdateData(int no)
-	{
-		return mapper.newsReviewUpdateData(no);
-	}
-	
 	public NewsReviewVO newsReplyReplySelect(int pno)
 	{
 		return mapper.newsReplyReplySelect(pno);
@@ -103,4 +98,5 @@ public class NewsDAO {
 	{
 		mapper.newsReplyReplyDeleteMsg(vo);
 	}
+	
 }

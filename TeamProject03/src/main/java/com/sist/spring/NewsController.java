@@ -195,25 +195,30 @@ public class NewsController {
 		vo.setGroup_tab(rvo.getGroup_tab()+1);
 		vo.setRoot(pno);
 		
-		dao.newsReviewUpdateData(pno);
+		dao.newsReplyReplyDepthIncrement(pno);
 		dao.newsReplyReplyInsert(vo);
 		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
 	
+	@Transactional
 	@RequestMapping("newsReplyDelete.do")
 	public String news_reply_reply_delete(int no)
 	{
-		NewsReviewVO vo=dao.newsReviewUpdateData(no);
+		NewsReviewVO vo=dao.newsReplyReplySelect(no);
+		System.out.println(vo.getNo());
+		System.out.println(vo.getDepth());
 		if(vo.getDepth()==0)
 		{
 			dao.newsReplyReplyDelete(no);
 		}
 		else
 		{
+			vo.setNo(no);
 			vo.setMsg("관리자가 삭제한 댓글입니다.");
+			dao.newsReplyReplyDeleteMsg(vo);
 		}
-		dao.newsReplyDepthDecrement(no);
-		return "";
+		dao.newsReplyDepthDecrement(vo.getRoot());
+		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
 }
