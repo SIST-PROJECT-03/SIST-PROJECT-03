@@ -1,5 +1,7 @@
 package com.sist.dao;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -30,6 +32,11 @@ public class MemberDAO {
 	public MemberVO profileData(String email)
 	{
 		return mapper.profileData(email);
+	}
+	
+	public void profileUpdate(Map map)
+	{
+		mapper.profileUpdate(map);
 	}
 	
 }

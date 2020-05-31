@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-				<h1 class="userTitleInfo">범블비 님의 프로필</h1>
+				<h1 class="userTitleInfo">${vo.nick }님의 프로필</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="home.do">홈</a></li>
 						<li> <span class="ion-ios-arrow-right"></span>프로필</li>
@@ -30,10 +30,10 @@
 		<div class="row ipad-width">
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="user-information">
-					<div class="user-img">
+					<!-- <div class="user-img">
 						<a href="#"><img src="images/uploads/user-img.png" alt=""><br></a>
 						<a href="#" class="redbtn">프로필 사진 변경</a>
-					</div>
+					</div> -->
 					<div class="user-fav">
 						<!-- <p>Account Details</p> -->
 						<ul>
@@ -52,17 +52,17 @@
 				</div>
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12">
-				<div class="form-style-1 user-pro" action="#">
-					<form action="#" class="user">
+				<div class="form-style-1 user-pro">
+					<form action="profileUpdate.do" class="user">
 						<h4>프로필 정보</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
 								<label>이메일</label>
-								<input type="text" placeholder="${vo.email }">
+								<input type="text" name="email" placeholder="${vo.email }" readonly="readonly" style="background-color:  #233a50;color: #abb7c4;">
 							</div>
 							<div class="col-md-6 form-it">
 								<label>닉네임</label>
-								<input type="text" placeholder="${vo.nick }">
+								<input type="text" name="nick" placeholder="${vo.nick }">
 							</div>
 						</div>
 						<!-- <div class="row">
