@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sist.mapper.NewsMapper;
+import com.sist.vo.NewsReviewVO;
 import com.sist.vo.NewsVO;
 
 @Repository
@@ -47,4 +48,55 @@ public class NewsDAO {
 	{
 		return mapper.newsGirdListData(map);
 	}
+	
+	public List<NewsReviewVO> newsReviewData(int no)
+	{
+		return mapper.newsReviewData(no);
+	}
+	
+	public void newsReviewInsert(NewsReviewVO vo)
+	{
+		mapper.newsReviewInsert(vo);
+	}
+	
+	public int newsTotalReview(int no)
+	{
+		return mapper.newsTotalReview(no);
+	}
+	
+	public NewsReviewVO newsReplyReplySelect(int pno)
+	{
+		return mapper.newsReplyReplySelect(pno);
+	}
+	
+	public void newsReplyReplyDepthIncrement(int no)
+	{
+		mapper.newsReplyReplyDepthIncrement(no);
+	}
+	
+	public void newsReplyReplyInsert(NewsReviewVO vo)
+	{
+		mapper.newsReplyReplyInsert(vo);
+	}
+	
+	public void newsReviewUpdate(NewsReviewVO vo)
+	{
+		mapper.newsReviewUpdate(vo);
+	}
+	
+	public void newsReplyDepthDecrement(int pno)
+	{
+		mapper.newsReplyDepthDecrement(pno);
+	}
+	
+	public void newsReplyReplyDelete(int no)
+	{
+		mapper.newsReplyReplyDelete(no);
+	}
+	
+	public void newsReplyReplyDeleteMsg(NewsReviewVO vo)
+	{
+		mapper.newsReplyReplyDeleteMsg(vo);
+	}
+	
 }

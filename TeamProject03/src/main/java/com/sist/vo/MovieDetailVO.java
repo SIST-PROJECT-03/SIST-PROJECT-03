@@ -2,6 +2,7 @@ package com.sist.vo;
 
 import java.util.Date;
 
+
 public class MovieDetailVO {
 	private int movie_id;
 	private String title;
@@ -14,6 +15,16 @@ public class MovieDetailVO {
 	private	int audience_count;
 	private String story;
 	private String poster;
+	
+	private WatchingTrendVO wvo = new WatchingTrendVO();
+	
+	
+	public WatchingTrendVO getWvo() {
+		return wvo;
+	}
+	public void setWvo(WatchingTrendVO wvo) {
+		this.wvo = wvo;
+	}
 	public int getMovie_id() {
 		return movie_id;
 	}

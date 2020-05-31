@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <!-- Basic need -->
-	<title>Open Pediatrics</title>
+	<title>BlockBuster</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -53,5 +53,9 @@
 <script src="js/custom.js"></script>
 <script src="js/ajax.js"></script>
 <script src="js/detailPrint.js"></script>
+<script src="js/celeb.js"></script>
+<script src="js/movieList.js"></script>
+<script src="js/newsdetail.js"></script>
+
 </body>
 </html>

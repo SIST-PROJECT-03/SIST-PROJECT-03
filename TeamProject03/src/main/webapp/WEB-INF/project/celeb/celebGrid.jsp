@@ -66,14 +66,51 @@
 					</select>
 					
 					<div class="pagination2">
-						<span>Page 1 of 6:</span>
-						<a class="active" href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">4</a>
-						<a href="#">5</a>
-						<a href="#">6</a>
-						<a href="#"><i class="ion-arrow-right-b"></i></a>
+						<span>Page 1 of ${totalPage }:</span>
+						<a href="celebGrid.do?page=${curPage<=1?curPage:curPage-1 }"><i class="ion-arrow-left-b"></i></a>
+						<!-- <a class="active" href="#">1</a> -->
+						
+						<c:choose>
+							<c:when  test="${curPage >= totalPage-2 }" >
+								<c:forEach begin="${totalPage-4}" end="${totalPage}" var="i">
+									<c:if test="${i !=curPage }">
+										<a href="celebGrid.do?page=${i}">${i }</a>
+									</c:if>
+									<c:if test="${i == curPage }">
+										<a class="active" href="celebGrid.do?page=${i}">${i }</a>
+									</c:if>
+								</c:forEach>
+							</c:when>
+							<c:when test="${curPage > 2 }">
+								<c:forEach begin="${curPage-2}" end="${curPage+2}" var="i">
+									<c:if test="${i !=curPage }">
+										<a href="celebGrid.do?page=${i}">${i }</a>
+									</c:if>
+									<c:if test="${i == curPage }">
+										<a class="active" href="celebGrid.do?page=${i}">${i }</a>
+									</c:if>
+								</c:forEach>	
+							</c:when>
+							<c:otherwise>			
+								<c:forEach begin="1" end="5" var="i">
+									<c:if test="${i !=curPage }">
+										<a href="celebGrid.do?page=${i}">${i }</a>
+									</c:if>
+									<c:if test="${i == curPage }">
+										<a class="active" href="celebGrid.do?page=${i}">${i }</a>
+									</c:if>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+						
+						
+						
+						
+					
+						
+					 	
+					 
+						<a href="celebGrid.do?page=${curPage>=totalPage?totalPage:curPage+1 }"><i class="ion-arrow-right-b"></i></a>
 					</div>
 				</div>
 			</div>
@@ -89,7 +126,7 @@
 							<div class="row">
 								<div class="col-md-12 form-it">
 									<label>이름</label>
-									<input type="text" placeholder="Enter keywords">
+									<input class="celebSearch" type="text" placeholder="Enter keywords">
 								</div>
 								<!-- <div class="col-md-12 form-it">
 									<label>Celebrity Letter</label>
@@ -98,10 +135,10 @@
 									  <option value="saab">B</option>
 									</select>
 								</div> -->
-								<div class="col-md-12 form-it">
+								<!-- <div class="col-md-12 form-it">
 									<label>카테고리</label>
 									<select>
-									  <!-- <option value="range">전체</option> -->
+									  <option value="range">전체</option>
 									  <option value="range">배우</option>
 									  <option value="saab">스텝</option>
 									</select>
@@ -122,9 +159,9 @@
 											</select>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="col-md-12 ">
-									<input class="submit" type="submit" value="검색하기">
+									<input class="celebSearchButton" type="button" value="검색하기">
 								</div>
 							</div>
 						</form>
