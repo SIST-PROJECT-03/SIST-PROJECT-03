@@ -70,7 +70,7 @@
 										<div class="reply">
 											<c:if test="${sessionScope.email!=null&&sessionScope.email==rvo.email }">
 												<h6 class="reply_btn"><span class="updateBtn" data-no="${rvo.no }">수정</span></h6> 
-												<h6 class="reply_btn"><a href="newsReplyDelete.do?no=${rvo.no }" style="font-size: 16px">삭제</a></h6>
+												<h6 class="reply_btn"><a href="newsReplyDelete.do?pno=${rvo.no }" style="font-size: 16px">삭제</a></h6>
 											</c:if>
 											<c:if test="${sessionScope.email!=null }">
 												<h6 class="reply_btn"><span class="insertBtn" data-no="${rvo.no }">댓글</span></h6>

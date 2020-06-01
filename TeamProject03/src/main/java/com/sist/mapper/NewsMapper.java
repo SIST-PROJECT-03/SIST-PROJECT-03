@@ -58,9 +58,13 @@ public interface NewsMapper {
 	@Insert("INSERT INTO news_review VALUES("
 			+ "#{no},#{news_no},#{email},#{msg},SYSDATE,"
 			+ "(SELECT NVL(MAX(group_id)+1,1) FROM news_review),"
-			+ "0,0,0,0) "
-			+ "WHERE new_no=#{news_no}")
+			+ "0,0,0,0)")
 	public void newsReviewInsert(NewsReviewVO vo);
+	
+	@Update("UPDATE news_review SET "
+			+ "group_step=group_step+1 "
+			+ "WHERE group_id=#{group_id} AND group_step>#{group_step}")
+	public void newsGroupstepIncrement(NewsReviewVO vo);
 	
 	@Update("UPDATE news_review SET "
 			+ "msg=#{msg} "
@@ -69,7 +73,7 @@ public interface NewsMapper {
 	
 	// =========== 대댓글 Insert =============
 	
-	@Select("SELECT no,news_no,group_id,group_step,group_tab,root "
+	@Select("SELECT no,news_no,group_id,group_step,group_tab,root,depth "
 			+ "FROM news_review "
 			+ "WHERE no=#{pno}")
 	public NewsReviewVO newsReplyReplySelect(int pno);

@@ -2,6 +2,7 @@ package com.sist.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -180,7 +181,7 @@ public class NewsController {
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
 	
-	@Transactional
+	@Transactional(propagation=Propagation.REQUIRED,rollbackFor=Exception.class)
 	@RequestMapping("newsReplyReplyInsert.do")
 	public String news_reply_reply_insert(NewsReviewVO vo,int pno,HttpServletRequest request)
 	{
@@ -188,6 +189,7 @@ public class NewsController {
 		String email=(String)session.getAttribute("email");
 		
 		NewsReviewVO rvo=dao.newsReplyReplySelect(pno);
+		dao.newsGroupstepIncrement(rvo);
 		
 		vo.setEmail(email);
 		vo.setGroup_id(rvo.getGroup_id());
@@ -201,24 +203,26 @@ public class NewsController {
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
 	
-	@Transactional
+	@Transactional(propagation=Propagation.REQUIRED,rollbackFor=Exception.class)
 	@RequestMapping("newsReplyDelete.do")
-	public String news_reply_reply_delete(int no)
+	public String news_reply_reply_delete(int pno)
 	{
-		NewsReviewVO vo=dao.newsReplyReplySelect(no);
-		System.out.println(vo.getNo());
-		System.out.println(vo.getDepth());
+		System.out.println("pno: "+pno);
+		NewsReviewVO vo=dao.newsReplyReplySelect(pno);
+		System.out.println("no :"+vo.getNo());
+		System.out.println("depth: "+vo.getDepth());
 		if(vo.getDepth()==0)
 		{
-			dao.newsReplyReplyDelete(no);
+			dao.newsReplyReplyDelete(pno);
+			dao.newsReplyDepthDecrement(vo.getRoot());
 		}
 		else
 		{
-			vo.setNo(no);
+			vo.setNo(pno);
 			vo.setMsg("관리자가 삭제한 댓글입니다.");
 			dao.newsReplyReplyDeleteMsg(vo);
 		}
-		dao.newsReplyDepthDecrement(vo.getRoot());
+		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
 }
