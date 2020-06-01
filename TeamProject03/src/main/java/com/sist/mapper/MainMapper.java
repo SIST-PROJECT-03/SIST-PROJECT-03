@@ -87,11 +87,17 @@ public interface MainMapper {
 				+ "ORDER BY acting_point DESC")
 		public List<MovieVO> pointRecommendation();
 	
-		// 추천6) 전문가평점 
-		
-		// 추천7) 사용자 유사도
-		
-		// 추천8) 형태소 분석 
+
+		 //1.  사용자 장르 + 나이/최신 정렬
+	    @Select("SELECT * FROM "
+	          +"(SELECT title , poster, genre, age_10 "
+	          +"FROM naver_re_movies nm, netizen_evaluation_trend nt "
+	          +"WHERE nm.movie_id=nt.movie_id AND genre LIKE '%'||#{user_genre}||'%' ORDER BY opening_date DESC "
+	          +"ORDER BY age_10 DESC) "
+	          +"WHERE ROWNUM < 50")
+	    public List<MovieVO> genreRecomm(String user_genre);
+	   
+
 	
 
 }

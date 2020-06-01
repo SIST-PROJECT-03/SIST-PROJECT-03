@@ -48,5 +48,11 @@ public class MainDAO {
 		
 	}*/
 	
+	 public List<MovieVO> genreRecomm(String user_genre)
+	 {
+	     System.out.println(user_genre);
+	     return mapper.genreRecomm(user_genre);
+	 }
+	
 	
 }
