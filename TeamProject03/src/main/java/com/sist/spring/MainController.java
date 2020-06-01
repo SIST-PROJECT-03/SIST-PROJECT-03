@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sist.dao.*;
 import com.sist.vo.*;
@@ -22,9 +23,23 @@ public class MainController {
    @Autowired
    private MainDAO mDao;
    
-   @RequestMapping("main.do")
+   @RequestMapping(value = "main.do", method=RequestMethod.GET)
    public String main_main(String email,Model model,HttpSession session)
    {   
+	   
+	   //세션에 있는 값 가져오기
+	   	  String user_genre=(String)session.getAttribute("genre");
+	      String user_nick=(String)session.getAttribute("nick");
+	      String user_email=(String)session.getAttribute("email");
+	      String user_gender=(String)session.getAttribute("gender");
+	      String user_age=(String)session.getAttribute("age");
+	      String user_point=(String)session.getAttribute("point");
+	      String user_loc=(String)session.getAttribute("loc");
+	      String user_actor=(String)session.getAttribute("actor");
+	      System.out.println("user_genre: "+ user_genre);
+	      System.out.println("user_nick: "+user_nick);
+	      System.out.println("user_email: "+ user_email);
+	   
 	   	  email="ginogin@gmail.com";
 	      /*System.out.println("로그인????");*/
 	      List<NewsVO> newsList=newsDao.mainNewsList();
@@ -57,6 +72,21 @@ public class MainController {
 		  }
 
 		  model.addAttribute("bigSliderList", bigSliderList);
+		  
+		  
+		  try{
+		         
+		         if(user_email != null)
+		         {
+		            List<MovieVO> genreList=mDao.genreRecomm(user_genre);
+		            model.addAttribute("genreList", genreList);
+		            model.addAttribute("user_genre", user_genre);
+		            model.addAttribute("user_nick", user_nick);
+		            System.out.println("user_genre: " + user_genre + " -- user_nick: "+ " -- gList : "+ genreList);
+		         }
+		         
+		      }catch (Exception ex) {}
+		      
 		  
 		  
 
