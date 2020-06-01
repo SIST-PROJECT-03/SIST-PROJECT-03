@@ -99,4 +99,9 @@ public class NewsDAO {
 		mapper.newsReplyReplyDeleteMsg(vo);
 	}
 	
+	public void newsGroupstepIncrement(NewsReviewVO vo)
+	{
+		mapper.newsGroupstepIncrement(vo);
+	}
+	
 }
