@@ -44,9 +44,6 @@ public interface MainMapper {
 			@Result(property="gen.genre",column="genre")
 			
 		}) 
-
-		
-		
 		
 		@Select("SELECT * FROM "
 				+"(SELECT nt.movie_id as movie_id,  title, grade, country,opening_date, running_time, poster, genre, evaluation_point "
@@ -56,31 +53,45 @@ public interface MainMapper {
 				+"WHERE ROWNUM < 15")
 		public List<MovieVO> bigSliderList();
 
-	   // 사용자 정보 받아오기 (안넘어감)
+	 
+	   // 사용자 정보 받아오기
 	   @Select("SELECT genre,gender,age,point,loc FROM movie_member WHERE email=#{email}")
 	   public MemberVO getUserInfo(String email); 
 	   
+	   
 	   // 추천1) 제작지역
 	   
-	   // 추천2) 연령대 (지금은 10대라고 가정)
-	   @Select("SELECT age_10,title,poster "
+	   // 추천2) 연령대 age 
+	   @Select("SELECT age_10,age_20,age_30,age_40,age_50,title,poster "
 	         + "FROM netizen_evaluation_trend,naver_re_movies "
-	         + "WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 ORDER BY age_10")
+	         + "WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
+	         + "ORDER BY age_40 DESC")
 	   public List<MovieVO> ageRecommendation();
 	
-	   // 추천3) 성별 
-		@Select("SELECT netizen_evaluation_trend.movie_id,female_rating,title,evaluation_point,poster "
-				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<40 "
-				+ "ORDER BY female_rating")
-		public List<MovieVO> ratingByGender();
+	   // 추천3) 성별 gender
+		@Select("SELECT male_rating,female_rating,title,poster "
+				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
+				+ "ORDER BY female_rating DESC")
+		public List<MovieVO> genderRecommendation();
 	  
 	  
-		// 추천4) 장르
+		// 추천4) 장르 genre
 		/*@Select("SELECT ge.genre FROM movie_genre_mapper ge, naver_re_movies mv "
 				+"WHERE ge.movie_id=mv.movie_id AND mv.movie_id=#{movid_id}")
 		public List<MovieGenreVO> selectGenre(int movie_id);
 		*/
+		
+		// 추천5) 감상포인트 point
+		@Select("SELECT acting_point,story_point,visual_point,ost_point,production_point,title,poster "
+				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum <50 "
+				+ "ORDER BY acting_point DESC")
+		public List<MovieVO> pointRecommendation();
 	
+		// 추천6) 전문가평점 
+		
+		// 추천7) 사용자 유사도
+		
+		// 추천8) 형태소 분석 
 	
 
 }

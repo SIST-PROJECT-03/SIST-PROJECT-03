@@ -19,12 +19,23 @@ public class MainDAO {
 		return mapper.getUserInfo(email);
 	}
 	
-	// 추천 2 : 성별
+	// 추천 2 :  나이  
 	public List<MovieVO> ageRecommendation()
 	 {
 	      return mapper.ageRecommendation();
 	 }
 	
+	// 추천 3 : 성별
+	public List<MovieVO> genderRecommendation()
+	{
+		return mapper.genderRecommendation();
+	}
+	
+	// 추천 4 : 감상포인
+	public List<MovieVO> pointRecommendation()
+	{
+		return mapper.pointRecommendation();
+	}
 	// 슬라이더 
 	public List<MovieVO> bigSliderList()
 	{
