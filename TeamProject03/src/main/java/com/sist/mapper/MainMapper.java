@@ -82,7 +82,7 @@ public interface MainMapper {
 		// 추천5) 감상포인트 point
 		@Select("SELECT acting_point,story_point,visual_point,ost_point,production_point,title,poster "
 				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum <50 "
-				+ "ORDER BY ost_point DESC")
+				+ "ORDER BY #{user_point} DESC")
 		public List<MovieVO> pointRecommendation(String user_point);
 	
 

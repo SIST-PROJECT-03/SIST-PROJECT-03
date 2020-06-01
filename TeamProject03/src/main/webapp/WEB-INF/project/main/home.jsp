@@ -123,7 +123,7 @@ $(function(){
  </div>
 </c:if>
 
-<c:if test="${sessionScope.email!=null }">
+<c:if test="${not empty sessionScope.email }">
 <div class="movie-items  full-width">
 
    <div class="row">
