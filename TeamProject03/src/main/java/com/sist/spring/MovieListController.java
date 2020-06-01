@@ -2,6 +2,9 @@ package com.sist.spring;
 
 import java.util.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +14,9 @@ import com.sist.dao.MovieDAO;
 import com.sist.vo.CelebVO;
 import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
+import com.sist.vo.MovieReviewVO;
+import com.sist.vo.NewsReviewVO;
+import com.sist.vo.NewsVO;
 import com.sist.vo.WatchingTrendVO;
 
 @Controller
@@ -26,10 +32,11 @@ public class MovieListController {
 		List<CelebVO> actorData = dao.getActorData(movie_id);
 		List<String> genre = dao.getGenreData(movie_id);
 		CelebVO cvo = dao.getDirectorData(movie_id);
-
 		MovieDetailVO vo = dao.getMovieDetailData(movie_id);
 		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
-
+	    List<MovieReviewVO> rlist=dao.movieReviewData(movie_id);
+		
+	    model.addAttribute("rlist",rlist);
 		model.addAttribute("genre", genre);
 		model.addAttribute("cvo", cvo);
 		model.addAttribute("actorData", actorData);
@@ -39,8 +46,21 @@ public class MovieListController {
 		model.addAttribute("wvo", wvo);
 		return "project/movieList/seriesSingle";
 	}
-
 	
+	
+	@RequestMapping("movieReview.do")
+	public String movie_review(MovieReviewVO vo,HttpServletRequest request)
+	{
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
+		int idx = email.indexOf("@"); 
+		String id = email.substring(0, idx);
+		vo.setId(id);
+		vo.setEmail(email);
+		dao.movieReviewInsert(vo);
+		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+		
+	}
 	
 	
 	@RequestMapping("movieGrid.do")

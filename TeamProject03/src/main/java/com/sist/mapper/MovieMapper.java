@@ -2,15 +2,19 @@ package com.sist.mapper;
 
 import java.util.*;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 
 import com.sist.vo.CelebVO;
 import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
 import com.sist.vo.MovieJoinVO;
 import com.sist.vo.MoviePicturesVO;
+import com.sist.vo.MovieReviewVO;
+import com.sist.vo.NewsReviewVO;
 import com.sist.vo.WatchingTrendVO;
 
 public interface MovieMapper {
@@ -61,4 +65,12 @@ public interface MovieMapper {
 	//genre, country, grade, start, end, range, rowSize
 	public int getTotalPage(Map map);
 	
+	@Select("SELECT * FROM movie_reviews "
+			+ "WHERE movie_id=#{movie_id}  order by no desc")
+	public List<MovieReviewVO> movieReviewData(int movie_id);
+	
+	@SelectKey(keyProperty="no",resultType=int.class,before=true,
+			statement="SELECT NVL(MAX(no)+1,1) as no FROM movie_reviews")
+	@Insert("INSERT INTO movie_reviews VALUES(#{no},#{movie_id},#{email},#{msg},SYSDATE)")
+	public void movieReviewInsert(MovieReviewVO vo);
 }

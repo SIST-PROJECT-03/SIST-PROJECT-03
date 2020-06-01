@@ -8,55 +8,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/sliding.css">
+<link rel="stylesheet" href="css/newsDetail.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script text="javascript/text">
 
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
+						$('.box').each(function() {
+							var content = $(this).children(
+									'.content');
+							var content_txt = content.text();
+							var content_txt_short = content_txt
+									.substring(0, 100)
+									+ "...";
+							var btn_more = $('<a href="javascript:void(0)" class="more">더보기</a>');
 
-						$('.box')
-								.each(
-										function() {
-											var content = $(this).children(
-													'.content');
-											var content_txt = content.text();
-											var content_txt_short = content_txt
-													.substring(0, 100)
-													+ "...";
-											var btn_more = $('<a href="javascript:void(0)" class="more">더보기</a>');
+							$(this).append(btn_more);
 
-											$(this).append(btn_more);
+							if (content_txt.length >= 100) {
+								content.html(content_txt_short)
 
-											if (content_txt.length >= 100) {
-												content.html(content_txt_short)
+							} else {
+								btn_more.hide()
+							}
 
-											} else {
-												btn_more.hide()
-											}
+							btn_more.click(toggle_content);
+							// 아래 bind가 안 되는 이유는??
+							// btn_more.bind('click',toggle_content);
 
-											btn_more.click(toggle_content);
-											// 아래 bind가 안 되는 이유는??
-											// btn_more.bind('click',toggle_content);
+							function toggle_content() {
+								if ($(this).hasClass('short')) {
+									$(this).html('더보기');
+									content
+											.html(content_txt_short)
+									$(this)
+											.removeClass(
+													'short');
+								} else {
+									$(this).html('접기');
+									content.html(content_txt);
+									$(this).addClass('short');
 
-											function toggle_content() {
-												if ($(this).hasClass('short')) {
-													$(this).html('더보기');
-													content
-															.html(content_txt_short)
-													$(this)
-															.removeClass(
-																	'short');
-												} else {
-													$(this).html('접기');
-													content.html(content_txt);
-													$(this).addClass('short');
-
-												}
-											}
-										});
+								}
+							}
+						});
 					});
 </script>
 <script type="text/javascript">
@@ -106,19 +101,19 @@
 <script> 
 $(document).ready(function(){
   $("#flip").click(function(){
-    $("#moviePictures").slideToggle("slow");
+    $("#panel").slideToggle("slow");
   });
 });
 </script>
 <style> 
 #panel, #flip {
-  padding: 5px;
+  padding: 0px auto;
   text-align: center;
-  border: solid 1px #c3c3c3;
+  border: solid 0px ;
 }
 
-#moviePictures {
-  padding: 50px;
+#panel {
+  padding: 0px auto;
   display: none;
 }
 </style>
@@ -189,7 +184,7 @@ $(document).ready(function(){
 							<div class="rate">
 								<i class="ion-android-star"></i>
 								<p>
-									<span>${wvo.male_rating }</span><br>
+									<span>8</span><br>
 								</p>
 								<p>
 									<span class="rv">56 리뷰</span>
@@ -223,116 +218,45 @@ $(document).ready(function(){
 												<div class="box">
 													<p class="content">${vo.story }</p>
 												</div>
-												<!-- 						            		<div class="title-hd-sm">
-												<h4>Current Season</h4>
-												<a href="#" class="time">View All Seasons <i class="ion-ios-arrow-right"></i></a>
-											</div>
-											movie cast
-											<div class="mvcast-item">											
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on 
-															September 19, 2016.</p>
-														</div>	
-													</div>											
-												</div>	
-											</div>
- -->
 												<div class="title-hd-sm">
-													<h4>포토/영상</h4>
-													<a href="#" class="time" id="load">더보기 <i
-														class="ion-ios-arrow-right"></i></a>
+													<h4>포토</h4>
 												</div>
 												<div id="mvsingle-item ov-item">
-												<body>
-    <section class="sliding-wrap">
-        <ul class="sliding-item">
-        </ul>
-        <a href="#" class="sliding-left-arrow pos-absolute">
-            <img src="img/left-arrow.png" alt="">
-            <img src="" alt="">
-        </a>
-        <a href="#" class="sliding-right-arrow pos-absolute">
-            <img src="img/right-arrow.png" alt="">
-            <img src="" alt="">
-        </a>
-        <div class="sliding-check-box pos-absolute">
-            <ul class="sliding-check-items">
-                <li>
-                    <a href="#">
-                        <img src="img/stop-btn.png" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-
-
-    <script id="template-sliding-check-item" type="text/template">
-            <li><a>
-                <img src="./../img/{img-kind}" class = "{class}" alt="">    
-            </a></li>
-
-        </script>
-    <script id="template-sliding-items" type="text/template">
-            <li name="{name}">
-                <a><img src="{moviePictures}" alt=""></a>
-                <a><div>{title}</div></a>
-                <a><div>{information}</div></a>
-            </li>
-        </script>
-    <script src="js/ajax/ajax.js"></script>
-    <script src="js/cache.js"></script>
-    <script src="js/constructor.js"></script>
-    <script src="js/layout.js"></script>
-    <script src="js/operating.js"></script>
-    <script src="js/slidingConfiguration.js"></script>
-    <script src="js/getDataForSliding.js"></script>
-
-
-    <script src="js/slide-for-supporting/slide.js">alert('hello')</script>
-
 												
-											<%-- 	<div>
-													<c:forEach var="moviePictures" items="${moviePictures }" begin="0" end="1">
+												<div>
+													<c:forEach var="moviePictures" items="${moviePictures }" begin="0" end="7">
 														<a class="img-lightbox" data-fancybox-group="gallery"
-															href=""><img src="${moviePictures }" alt=""></a>
+															href=""><img src="${moviePictures }" alt=""style="width:100px;height:115px"></a>
 													</c:forEach></div>
-													<div id="flip">click</div>
-													<div id="moviePictures">
-													<c:forEach var="moviePictures" items="${moviePictures }" begin="2" end="${moviePictures.size() }">
-														<a class="img-lightbox" data-fancybox-group="gallery"
-															href=""><img src="${moviePictures }" alt=""></a>
-													</c:forEach></div>
-													
-													<div class="vd-it">
-														<img class="vd-img" src="images/uploads/image7.jpg" alt="">
-														<a class="fancybox-media hvr-grow"
-															href="https://www.youtube.com/embed/o-0hcF97wy0"><img
-															src="images/uploads/play-vd.png" alt=""></a>
-													</div>
-												</div> --%>
+												</div>
 												<div class="title-hd-sm">
 													<h4>배우</h4>
-													<a href="#" class="time">더보기 <i
-														class="ion-ios-arrow-right"></i></a>
 												</div>
 												<!-- movie cast -->
 												<div class="mvcast-item">
 													<!-- 인물 DB넣은 후 연결하고나서 출력하기 -->
+													<c:forEach var="actorData" items="${actorData }" begin="0" end="2">
 													<div class="cast-it">
 														<div class="cast-left">
-															<img src="images/uploads/cast1.jpg" alt=""> <a
-																href="#">Robert Downey Jr.</a>
+															<img src="${actorData.thumbnail }" alt="" style="width:110px;height:140px"> <a
+																href="#">${actorData.name }</a>
 														</div>
-														<p>... Robert Downey Jr.</p>
+														<p>${actorData.reward }</p>
 													</div>
+													</c:forEach>
 												</div>
+												<div id="flip" style="color:#4280bf">더보기 <i
+														class="ion-ios-arrow-right"></i></div>
+													<div class="mvcast-item" id="panel">
+													<c:forEach var="actorData" items="${actorData }" begin="3" end="${actorData.size() }">
+														<div class="cast-it">
+														<div class="cast-left">
+															<img src="${actorData.thumbnail }" alt="" style="width:110px;height:140px"> <a
+																href="#">${actorData.name }</a>
+														</div>
+														<p>${actorData.reward }</p>
+													</div>
+													</c:forEach></div>
 												<!-- cast for문 -->
 												<div class="title-hd-sm">
 													<h4>관람객 리뷰</h4>
@@ -419,15 +343,16 @@ $(document).ready(function(){
 											</div>
 
 											<!--리뷰작성  -->
-											<div id="reviewWrite" class="rv-hd">
-												<div class="div">
-													<!-- maxlength를 넣어주면 글자수 제한도 가능하다. -->
-													<textarea rows="5" cols="80%" autofocus required
-														wrap="hard" placeholder="댓글을 입력해주세요."></textarea>
+											 <form method="post" action="movieReview.do">
+												<div id="reviewWrite" class="rv-hd">
+													<div class="div">
+														<textarea name ="msg" rows="5" cols="80%" autofocus required
+															wrap="hard" placeholder="댓글을 입력해주세요."></textarea>
+													</div>
+													<input class="redbtn submit movieDetailSubmit" type="submit" value="리뷰작성"/>
+													<input type="hidden" name="movie_id" value="${vo.movie_id }"/>
 												</div>
-												<a class="redbtn">리뷰작성</a>
-											</div>
-
+											</form>
 											<div class="topbar-filter">
 												<p>
 													Found <span>56 reviews</span> in total
@@ -437,47 +362,22 @@ $(document).ready(function(){
 													<option value="saab">-- Choose option 2--</option>
 												</select>
 											</div>
+											<c:forEach var="rvo" items="${rlist }">
 											<div class="mv-user-review-item">
 												<div class="user-infor">
-													<img src="images/uploads/userava1.jpg" alt="">
+													<h6 style="color: white;">${rvo.email }</h6> 
 													<div>
-														<h3>Best Marvel movie in my opinion</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star last"></i>
-														</div>
-														<p class="time">
-															17 December 2016 by <a href="#"> hawaiipierson</a>
-														</p>
+														<h3>${rvo.msg }</h3>
+														<span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
 													</div>
 												</div>
-												<p>out do themselvnce.</p>
 											</div>
+											</c:forEach>
 											<div class="mv-user-review-item">
 												<div class="user-infor">
 													<img src="images/uploads/userava2.jpg" alt="">
 													<div>
 														<h3>Just about as good as the first one!</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i>
-														</div>
 														<p class="time">
 															17 December 2016 by <a href="#"> hawaiipierson</a>
 														</p>
@@ -665,184 +565,30 @@ $(document).ready(function(){
 											<div class="mvcast-item">
 												<div class="cast-it">
 													<div class="cast-left">
-														<h4>JW</h4>
-														<a href="#">Joss Whedon</a>
+														<img src="${cvo.thumbnail }" alt=""> <a
+															href="#">${cvo.name }</a>
 													</div>
-													<p>... Director</p>
+													<p>${cvo.reward }</p>
 												</div>
 											</div>
 											<!-- //== -->
-											<div class="title-hd-sm">
-												<h4>제작진</h4>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>SL</h4>
-														<a href="#">Stan Lee</a>
-													</div>
-													<p>... (based on Marvel comics)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JK</h4>
-														<a href="#">Jack Kirby</a>
-													</div>
-													<p>... (based on Marvel comics)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JS</h4>
-														<a href="#">Joe Simon</a>
-													</div>
-													<p>... (character created by: Captain America)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JS</h4>
-														<a href="#">Joe Simon</a>
-													</div>
-													<p>... (character created by: Thanos)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>RT</h4>
-														<a href="#">Roy Thomas</a>
-													</div>
-													<p>... (character created by: Ultron, Vision)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JB</h4>
-														<a href="#">John Buscema</a>
-													</div>
-													<p>... (character created by: Ultron, Vision)</p>
-												</div>
-											</div>
-											<!-- //== -->
+											
 											<div class="title-hd-sm">
 												<h4>배우</h4>
 											</div>
 											<div class="mvcast-item">
+											<c:forEach var="actorData" items="${actorData }">
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast1.jpg" alt=""> <a
-															href="#">Robert Downey Jr.</a>
+														<img src="${actorData.thumbnail }" alt="" style="width:40px;height:40px;"> <a
+															href="#">${actorData.name }</a>
 													</div>
-													<p>... Robert Downey Jr.</p>
+													<p>${actorData.reward }</p>
 												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast2.jpg" alt=""> <a
-															href="#">Chris Hemsworth</a>
-													</div>
-													<p>... Thor</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast3.jpg" alt=""> <a
-															href="#">Mark Ruffalo</a>
-													</div>
-													<p>... Bruce Banner/ Hulk</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast4.jpg" alt=""> <a
-															href="#">Chris Evans</a>
-													</div>
-													<p>... Steve Rogers/ Captain America</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast5.jpg" alt=""> <a
-															href="#">Scarlett Johansson</a>
-													</div>
-													<p>... Natasha Romanoff/ Black Widow</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast6.jpg" alt=""> <a
-															href="#">Jeremy Renner</a>
-													</div>
-													<p>... Clint Barton/ Hawkeye</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast7.jpg" alt=""> <a
-															href="#">James Spader</a>
-													</div>
-													<p>... Ultron</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast9.jpg" alt=""> <a
-															href="#">Don Cheadle</a>
-													</div>
-													<p>... James Rhodes/ War Machine</p>
-												</div>
+												</c:forEach>
 											</div>
 											<!-- //== -->
-											<div class="title-hd-sm">
-												<h4>Produced by</h4>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>VA</h4>
-														<a href="#">Victoria Alonso</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>MB</h4>
-														<a href="#">Mitchel Bell</a>
-													</div>
-													<p>... co-producer (as Mitch Bell)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JC</h4>
-														<a href="#">Jamie Christopher</a>
-													</div>
-													<p>... associate producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>LD</h4>
-														<a href="#">Louis D’Esposito</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JF</h4>
-														<a href="#">Jon Favreau</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>KF</h4>
-														<a href="#">Kevin Feige</a>
-													</div>
-													<p>... producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>AF</h4>
-														<a href="#">Alan Fine</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JF</h4>
-														<a href="#">Jeffrey Ford</a>
-													</div>
-													<p>... associate producer</p>
-												</div>
-											</div>
+											
 										</div>
 									</div>
 									<!-- ============================= MOVIE DETAIL -  CAST 배우 제작진 TAB END  ============================== -->
