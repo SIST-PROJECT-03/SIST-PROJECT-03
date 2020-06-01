@@ -49,8 +49,8 @@ public class MemberController {
 	            session.setAttribute("age", vo.getAge());
 	            session.setAttribute("point", vo.getPoint());
 	            session.setAttribute("loc", vo.getLoc());
-	            session.setAttribute("actor", vo.getActor());
-	            System.out.println("session에서 얻은 회원정보"+vo.getNick()+vo.getAge()+vo.getPoint()+vo.getLoc()+vo.getActor());
+	           /* session.setAttribute("actor", vo.getActor());*/
+	            System.out.println("session에서 얻은 회원정보:"+vo.getNick()+vo.getAge()+vo.getPoint()+vo.getLoc());
 				
 			}
 			else
@@ -69,4 +69,5 @@ public class MemberController {
 		session.invalidate();
 		return "main";
 	}
+
 }

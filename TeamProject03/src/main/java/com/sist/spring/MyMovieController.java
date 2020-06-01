@@ -45,6 +45,16 @@ public class MyMovieController {
 		return "redirect:userProfile.do";
 	}
 	
+	@RequestMapping("userDelete.do")
+	public String userdelete(HttpSession session)
+	{
+		String email=(String)session.getAttribute("email");
+		//System.out.println("1. 회원탈퇴할 email: "+email);
+		dao.userDelete(email);
+		session.invalidate();
+		return "redirect:main.do";
+	}
+	
 	@RequestMapping("userFavoriteGrid.do")
 	public String user_favorite_grid()
 	{
@@ -62,6 +72,8 @@ public class MyMovieController {
 	{
 		return "project/myMovie/userRate";
 	}
+	
+	
 	
 	
 }

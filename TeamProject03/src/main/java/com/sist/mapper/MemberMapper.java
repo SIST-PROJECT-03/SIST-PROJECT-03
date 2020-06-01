@@ -1,6 +1,8 @@
 package com.sist.mapper;
 
 import java.util.Map;
+
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -22,5 +24,8 @@ public interface MemberMapper {
 	
 	@Update("UPDATE movie_member SET nick=#{nick} WHERE email=#{email}")
 	public void profileUpdate(Map map);
+	
+	@Delete("DELETE FROM movie_member WHERE email=#{email}")
+	public void userDelete(String email);
 
 }

@@ -39,4 +39,10 @@ public class MemberDAO {
 		mapper.profileUpdate(map);
 	}
 	
+	public void userDelete(String email)
+	{
+		//System.out.println("2. DAO email: "+email);
+		mapper.userDelete(email);
+	}
+	
 }

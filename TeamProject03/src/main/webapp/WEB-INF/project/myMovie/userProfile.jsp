@@ -38,8 +38,8 @@
 						<!-- <p>Account Details</p> -->
 						<ul>
 							<li class="active"><a href="userProfile.do">프로필</a></li>
-							<li><a href="userFavoriteGrid.do">컬렉션</a></li>
-							<li><a href="userRate.do">평점/리뷰</a></li>
+							<!-- <li><a href="userFavoriteGrid.do">컬렉션</a></li>
+							<li><a href="userRate.do">평점/리뷰</a></li> -->
 						</ul>
 					</div>
 					<!--<div class="user-fav">
@@ -53,7 +53,7 @@
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="form-style-1 user-pro">
-					<form action="profileUpdate.do" class="user">
+					<form action="profileUpdate.do">	
 						<h4>프로필 정보</h4>
 						<div class="row">
 							<div class="col-md-6 form-it">
@@ -94,6 +94,15 @@
 						<div class="row">
 							<div class="col-md-2">
 								<input class="submit" type="submit" value="저장하기">
+							</div>
+						</div>	
+					</form>
+					<!-- 회원탈퇴기능 -->
+					<h4 style="margin-top: 30px;">회원 탈퇴하기</h4>
+					<form action="userDelete.do">
+						<div class="row">
+							<div class="col-md-2">
+								<input class="submit" type="submit" value="탈퇴하기">
 							</div>
 						</div>	
 					</form>
