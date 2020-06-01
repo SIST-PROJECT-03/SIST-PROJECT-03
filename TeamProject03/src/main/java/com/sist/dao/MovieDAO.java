@@ -50,6 +50,7 @@ public class MovieDAO {
 	public List<MovieDetailVO> getMovieList(Map map){
 		return mapper.getMovieList(map);
 	}
+	
 	public int getTotalPage(Map map){
 		return mapper.getTotalPage(map);
 	}

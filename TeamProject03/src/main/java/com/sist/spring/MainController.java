@@ -1,3 +1,4 @@
+
 package com.sist.spring;
 
 import java.util.*;
@@ -24,7 +25,7 @@ public class MainController {
    private MainDAO mDao;
 
    @RequestMapping(value = "main.do", method=RequestMethod.GET)
-   public String main_main(String email,Model model,HttpSession session)
+   public String main_main(Model model,HttpSession session)
    {   
 	   
 	   //세션에 있는 값 가져오기
@@ -35,10 +36,23 @@ public class MainController {
 	      String user_age=(String)session.getAttribute("age");
 	      String user_point=(String)session.getAttribute("point");
 	      String user_loc=(String)session.getAttribute("loc");
-	      String user_actor=(String)session.getAttribute("actor");
+
 	      System.out.println("user_genre: "+ user_genre);
 	      System.out.println("user_nick: "+user_nick);
 	      System.out.println("user_email: "+ user_email);
+	      System.out.println("user_gender: "+ user_gender);
+	      System.out.println("user_age: "+user_age);
+	      System.out.println("user_point: "+ user_point);
+	      System.out.println("user_loc: "+ user_loc);
+	      
+	      String gender_tag=user_gender;
+	      String age_tag=user_age;
+	      String point_tag=user_point;
+	      
+	      model.addAttribute("gender_tag",gender_tag);
+	      model.addAttribute("age_tag",age_tag);
+	      model.addAttribute("point_tag",point_tag);
+
 	   
 
 	      /*System.out.println("로그인????");*/
@@ -65,31 +79,28 @@ public class MainController {
 		  
 		  
 		  try{
-		         
-		         if(user_email != null)
-		         { 
-		        	 // 연령
-		        	 if(user_age.contains("10")) user_age= "age_10"; 
+			  if(user_email!=null ) {
+		    
+		        	  if(user_age.contains("10")) user_age= "age_10"; 
 					  if(user_age.contains("20")) user_age= "age_20"; 
 					  if(user_age.contains("30")) user_age= "age_30";
 					  if(user_age.contains("40")) user_age= "age_40"; 
 					  if(user_age.contains("50")) user_age= "age_50"; 
 					  System.out.println("연령대: "+user_age);
 					  
-					  //성별
-					  if(user_gender.equals("여자")) user_gender="female_rating";
-					  if(user_gender.equals("남자")) user_gender="male_rating";
-					  System.out.println("성별:" +user_age);
-					 
-				  
-					  //포인트
+				 
 					  if(user_point.contains("스토리")) user_point="story_point";
 					  if(user_point.contains("연출")) user_point="production_point";
 					  if(user_point.contains("OST")) user_point="ost_point";
 					  if(user_point.contains("연기")) user_point="acting_point";
 					  if(user_point.contains("영상미")) user_point="visual_point";
-					  
-					  List<MovieVO> ageList=mDao.ageRecommendation();
+					  System.out.println("감상포인트: "+user_point);
+					
+					  if(user_gender.contains("여")) user_gender="female_rating";
+					  if(user_gender.contains("남")) user_gender="male_rating";
+						 
+					  System.out.println("성별:" +user_gender);
+					  List<MovieVO> ageList=mDao.ageRecommendation(user_age);
 					  model.addAttribute("ageList",ageList);
 
 					  List<MovieVO> genderList=mDao.genderRecommendation(user_gender);
@@ -98,20 +109,23 @@ public class MainController {
 					  List<MovieVO> pointList=mDao.pointRecommendation(user_point);
 					  model.addAttribute("pointList",pointList);
 			      
-		            List<MovieVO> genreList=mDao.genreRecomm(user_genre);
-		            model.addAttribute("genreList", genreList);
+		              List<MovieVO> genreList=mDao.genreRecomm(user_genre);
+		              model.addAttribute("genreList", genreList);
 		            
-		            model.addAttribute("user_genre", user_genre);
-		            model.addAttribute("user_nick", user_nick); 
-		            model.addAttribute("user_age",user_age);
-		            model.addAttribute("user_gender",user_gender);
-		            model.addAttribute("user_point",user_point);
-		            model.addAttribute("user_loc",user_loc);
+			            model.addAttribute("user_genre", user_genre);
+			            model.addAttribute("user_nick", user_nick); 
+			            model.addAttribute("user_age",user_age);
+			            model.addAttribute("user_gender",user_gender);
+			            model.addAttribute("user_point",user_point);
+			            model.addAttribute("user_loc",user_loc);
 		            
-		   
-		         }
+		            
+			  }   
 		         
-		      }catch (Exception ex) {ex.printStackTrace();}
+		      }catch (NullPointerException ex) {
+		    	  System.out.println("Failed to load user_data....");
+		    	  ex.printStackTrace();
+		      }
 		      
 		  
 		  

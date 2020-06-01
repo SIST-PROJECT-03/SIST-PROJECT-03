@@ -1,3 +1,4 @@
+
 package com.sist.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,21 +16,21 @@ public class MainDAO {
 
 	
 	// 추천 2 :  나이  
-	public List<MovieVO> ageRecommendation()
+	public List<MovieVO> ageRecommendation(String user_age)
 	 {
-	      return mapper.ageRecommendation();
+	      return mapper.ageRecommendation(user_age);
 	 }
 	
 	// 추천 3 : 성별
-	public List<MovieVO> genderRecommendation(String gender)
+	public List<MovieVO> genderRecommendation(String user_gender)
 	{
-		return mapper.genderRecommendation(gender);
+		return mapper.genderRecommendation(user_gender);
 	}
 	
-	// 추천 4 : 감상포인
-	public List<MovieVO> pointRecommendation(String point)
+	// 추천 4 : 감상포인트 
+	public List<MovieVO> pointRecommendation(String user_point)
 	{
-		return mapper.pointRecommendation(point);
+		return mapper.pointRecommendation(user_point);
 	}
 	// 슬라이더 
 	public List<MovieVO> bigSliderList()

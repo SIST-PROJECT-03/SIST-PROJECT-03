@@ -1,3 +1,4 @@
+
 package com.sist.mapper;
 
 
@@ -15,12 +16,12 @@ public interface MainMapper {
 
 [ 추천 태그 목록 (순서대로) ]
 
-0) 슬라이더 = 최신순, 인기순, 평점순 Top15     
+0) 슬라이더  v   
 1) 제작 지역 							  
-2) 연령대								   
-3) 성별								   
-4) 장르								   
-5) 감상포인트								
+2) 연령대	   v						   
+3) 성별	   v							   
+4) 장르	   v						   
+5) 감상포인트 v								
 6) 전문가 평점
 -------------
 7) 사용자유사도 
@@ -55,33 +56,33 @@ public interface MainMapper {
  
 	   
 	   // 추천1) 제작지역
-	   
+
 	   // 추천2) 연령대 age 
 	   @Select("SELECT age_10,age_20,age_30,age_40,age_50,title,poster "
 	         + "FROM netizen_evaluation_trend,naver_re_movies "
 	         + "WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
-	         + "ORDER BY ${user_age} DESC")
-	   public List<MovieVO> ageRecommendation();
+	         + "ORDER BY age_50 DESC")
+	   public List<MovieVO> ageRecommendation(String user_age);
 	
 	   // 추천3) 성별 gender
 		@Select("SELECT male_rating,female_rating,title,poster "
 				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
-				+ "ORDER BY ${user_gender} DESC")
+				+ "ORDER BY #{user_gender} DESC")
 		public List<MovieVO> genderRecommendation(String user_gender);
 	  
 	  
 		// 추천4) 장르 genre + 나이 최신 정렬 
 		@Select("SELECT * FROM "
-		          +"(SELECT title , poster, genre, ${user_genre} "
+		          +"(SELECT title , poster, genre, age_10 "
 		          +"FROM naver_re_movies nm, netizen_evaluation_trend nt "
 		          +"WHERE nm.movie_id=nt.movie_id AND genre LIKE '%'||#{user_genre}||'%' ORDER BY opening_date DESC) "
-		          +"WHERE ROWNUM < 50 ORDER BY ${user_age} DESC")
+		          +"WHERE ROWNUM < 50 ORDER BY age_10 DESC")
 		public List<MovieVO> genreRecomm(String user_genre);
 		
 		// 추천5) 감상포인트 point
 		@Select("SELECT acting_point,story_point,visual_point,ost_point,production_point,title,poster "
 				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum <50 "
-				+ "ORDER BY #{user_point} DESC")
+				+ "ORDER BY ost_point DESC")
 		public List<MovieVO> pointRecommendation(String user_point);
 	
 

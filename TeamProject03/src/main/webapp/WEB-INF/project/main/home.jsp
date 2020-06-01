@@ -46,19 +46,9 @@ $(function(){
 </script>
 </head>
 <body>
-<input type="hidden" value="${sessionScope.email }"/>
- 		
+<input type="hidden" value="${sessionScope.email }"/>	
 <!-- ==============================main big slider total area start ================================= -->
 <div class="slider sliderv2">
-<%-- <c:if test="${empty sessionScope.email}">
-<div class="container" style="width:100%; height:528px;text-align:center;">
-	<h1 style="font-size: 56px;color: #ffffff; margin-top:150px;!important"> <br/> 지금 블록버스터의 회원이 되어 <br/> 다양한 영화를 추천 받으세요</h1>
-	<ul class="nav navbar-nav flex-child-menu menu-right" id="sign">
-	<li class="btn signupLink"><a href="signup">지금 가입하기</a></li>	
-	</ul>
-</div>
-</c:if> --%>
-	
 	<div class="container">
 		<div class="row">
 			<div class="title-hd">
@@ -122,9 +112,18 @@ $(function(){
 </div> 
 <!-- ==============================main big slider total area end ================================= -->
 
+<c:if test="${empty sessionScope.email}">
+ <div class="movie-items  full-width">
+  <div class="container" style="width:100%; height:528px;text-align:center;">
+	<h1 style="font-size: 56px;color: #ffffff; margin-top:150px;!important"> 지금 블록버스터의 회원이 되어 <br/>더욱 다양한 영화를 추천 받으세요</h1>
+	<ul class="nav navbar-nav flex-child-menu menu-right" id="sign">
+	<li class="btn signupLink" style="margin: 50px 470px auto;"><a href="signup">지금 가입하기</a></li>
+	</ul>
+  </div>
+ </div>
+</c:if>
 
-
-
+<c:if test="${sessionScope.email!=null }">
 <div class="movie-items  full-width">
 
    <div class="row">
@@ -312,9 +311,8 @@ $(function(){
 </div>
          
 <!--=========================================================== 연령대 =======================================================================추천2 START-->
-		<input type="hidden" value="age"/>
          <div class="title-hd"> 
-               <h2># ${user_age} 인기 영화 </h2>
+               <h2># ${age_tag} 연령층 인기 영화 </h2>
                <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
@@ -349,7 +347,7 @@ $(function(){
 <!--=========================================================성별 ==============================================================================추천3 START-->
 
          <div class="title-hd">
-               <h2># ${user_gender } 관객 높은 평점 영화 </h2>
+               <h2># ${gender_tag } 관객 높은 평점 영화 </h2>
                <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
@@ -419,26 +417,26 @@ $(function(){
 <!--=============================================================감상포인트============================================================추천5 START-->
 
          <div class="title-hd">
-               <h2># ${user_point} 훌륭한 영화 </h2>
+               <h2># ${point_tag}가 훌륭한 영화 </h2>
                <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
                      <div class="row">
                         <div class="slick-multiItem2">
-                          <c:forEach var="pvo" items="${pointList }">
+                          <c:forEach var="ptvo" items="${pointList}">
                            <div class="slide-it">
                
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
-                                    <img src="${pvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                    <img src="${ptvo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
                                     <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
                                  </div>
                                  <div class="title-in">
-                                    <h5>${pvo.title }</h5>
+                                    <h5>${ptvo.title }</h5>
                         
                                  </div>
                               </div>
@@ -453,59 +451,6 @@ $(function(){
         </div>     
        </div>
 
-
-   </div>
-
-
-<!-- =============================  LATEST NEWS AREA START  ============================== -->
-<div class="latestnew full-width">
-      <div class="row">
-         <!-- <div class="col-md-9"> -->
-         <div>
-            <div class="ads adsv2">
-               <img src="images/uploads/ads2.png" alt="">
-            </div>
-            <div class="title-hd">
-               <h2>최신 영화 뉴스</h2>
-               <a href="newsList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
-            </div>
-            <div class="latestnewv2">
-               <c:forEach var="nvo" items="${newsList }">
-               <div class="blog-item-style-2">
-                  <a href="newsDetail.do?no=${nvo.news_id }"><img src="${nvo.thumbnail }" style="width: 90%; height: 200px;"></a>
-                  <div class="blog-it-infor">
-                     <h3><a href="newsDetail.do?no=${nvo.news_id }">${nvo.title }</a></h3>
-                     <span class="time"><fmt:formatDate value="${nvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-                     <p>${nvo.subject }</p>
-                  </div>
-               </div>
-               </c:forEach>
-            </div>
-         </div>
-         <!-- <div class="col-md-3">
-            <div class="sidebar">
-               <div class="sb-facebook sb-it">
-                  <h4 class="sb-title">Find us on Facebook</h4>
-                  <iframe src="#" data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftemplatespoint.net%2F%3Ffref%3Dts&tabs=timeline&width=340&height=315px&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId"  height="315" style="width:100%;border:none;overflow:hidden" ></iframe>
-               </div>
-               <div class="sb-twitter sb-it">
-                  <h4 class="sb-title">Tweet to us</h4>
-                  <div class="slick-tw">
-                     <div class="tweet item" id="">Put your twiter id here
-                     </div>
-                     <div class="tweet item" id="">Put your 2nd twiter account id here
-                     </div>
-                  </div>               
-               </div>
-            </div>
-         </div> -->
-      </div>
-
- </div>
-<!-- =============================  LATEST NEWS AREA END  ============================== -->
-
-
-<div class="movie-items  full-width">
  <div class="row">
       <div class="col-md-12">
          <div class="mainInner" style="background-color:#020d18">
@@ -613,13 +558,54 @@ $(function(){
          </div>
 
 <!--============================================================================================================================================추천7 END-->
-</div>
-</div>
-</div>
+     </div>
+    </div>
+   </div>
+ </div>
+</c:if>
+<!-- =============================  LATEST NEWS AREA START  ============================== -->
+<div class="latestnew full-width">
+      <div class="row">
+         <!-- <div class="col-md-9"> -->
+         <div>
+            <div class="title-hd">
+               <h2>최신 영화 뉴스</h2>
+               <a href="newsList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+            </div>
+            <div class="latestnewv2">
+               <c:forEach var="nvo" items="${newsList }">
+               <div class="blog-item-style-2">
+                  <a href="newsDetail.do?no=${nvo.news_id }"><img src="${nvo.thumbnail }" style="width: 90%; height: 200px;"></a>
+                  <div class="blog-it-infor">
+                     <h3><a href="newsDetail.do?no=${nvo.news_id }">${nvo.title }</a></h3>
+                     <span class="time"><fmt:formatDate value="${nvo.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/></span>
+                     <p>${nvo.subject }</p>
+                  </div>
+               </div>
+               </c:forEach>
+            </div>
+         </div>
+         <!-- <div class="col-md-3">
+            <div class="sidebar">
+               <div class="sb-facebook sb-it">
+                  <h4 class="sb-title">Find us on Facebook</h4>
+                  <iframe src="#" data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftemplatespoint.net%2F%3Ffref%3Dts&tabs=timeline&width=340&height=315px&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId"  height="315" style="width:100%;border:none;overflow:hidden" ></iframe>
+               </div>
+               <div class="sb-twitter sb-it">
+                  <h4 class="sb-title">Tweet to us</h4>
+                  <div class="slick-tw">
+                     <div class="tweet item" id="">Put your twiter id here
+                     </div>
+                     <div class="tweet item" id="">Put your 2nd twiter account id here
+                     </div>
+                  </div>               
+               </div>
+            </div>
+         </div> -->
+      </div>
 
-</div>
-
+ </div>
+<!-- =============================  LATEST NEWS AREA END  ============================== -->
 <!-- =============================  HOME END  ============================== -->
-</div>
 </body>
 </html>
