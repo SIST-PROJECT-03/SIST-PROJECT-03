@@ -52,12 +52,7 @@ public interface MainMapper {
 				+"ORDER BY evaluation_point DESC) "
 				+"WHERE ROWNUM < 15")
 		public List<MovieVO> bigSliderList();
-
-	 
-	   // 사용자 정보 받아오기
-	   @Select("SELECT genre,gender,age,point,loc FROM movie_member WHERE email=#{email}")
-	   public MemberVO getUserInfo(String email); 
-	   
+ 
 	   
 	   // 추천1) 제작지역
 	   
@@ -65,37 +60,32 @@ public interface MainMapper {
 	   @Select("SELECT age_10,age_20,age_30,age_40,age_50,title,poster "
 	         + "FROM netizen_evaluation_trend,naver_re_movies "
 	         + "WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
-	         + "ORDER BY age_40 DESC")
+	         + "ORDER BY ${user_age} DESC")
 	   public List<MovieVO> ageRecommendation();
 	
 	   // 추천3) 성별 gender
 		@Select("SELECT male_rating,female_rating,title,poster "
 				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
-				+ "ORDER BY female_rating DESC")
-		public List<MovieVO> genderRecommendation();
+				+ "ORDER BY ${user_gender} DESC")
+		public List<MovieVO> genderRecommendation(String user_gender);
 	  
 	  
-		// 추천4) 장르 genre
-		/*@Select("SELECT ge.genre FROM movie_genre_mapper ge, naver_re_movies mv "
-				+"WHERE ge.movie_id=mv.movie_id AND mv.movie_id=#{movid_id}")
-		public List<MovieGenreVO> selectGenre(int movie_id);
-		*/
+		// 추천4) 장르 genre + 나이 최신 정렬 
+		@Select("SELECT * FROM "
+		          +"(SELECT title , poster, genre, ${user_genre} "
+		          +"FROM naver_re_movies nm, netizen_evaluation_trend nt "
+		          +"WHERE nm.movie_id=nt.movie_id AND genre LIKE '%'||#{user_genre}||'%' ORDER BY opening_date DESC) "
+		          +"WHERE ROWNUM < 50 ORDER BY ${user_age} DESC")
+		public List<MovieVO> genreRecomm(String user_genre);
 		
 		// 추천5) 감상포인트 point
 		@Select("SELECT acting_point,story_point,visual_point,ost_point,production_point,title,poster "
 				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum <50 "
-				+ "ORDER BY acting_point DESC")
-		public List<MovieVO> pointRecommendation();
+				+ "ORDER BY #{user_point} DESC")
+		public List<MovieVO> pointRecommendation(String user_point);
 	
 
-		 //1.  사용자 장르 + 나이/최신 정렬
-	    @Select("SELECT * FROM "
-	          +"(SELECT title , poster, genre, age_10 "
-	          +"FROM naver_re_movies nm, netizen_evaluation_trend nt "
-	          +"WHERE nm.movie_id=nt.movie_id AND genre LIKE '%'||#{user_genre}||'%' ORDER BY opening_date DESC "
-	          +"ORDER BY age_10 DESC) "
-	          +"WHERE ROWNUM < 50")
-	    public List<MovieVO> genreRecomm(String user_genre);
+	   
 	   
 
 	

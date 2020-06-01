@@ -2,9 +2,6 @@ package com.sist.vo;
 
 import java.util.*;
 
-import lombok.Getter;
-import lombok.Setter;
-
 
 public class MovieVO {
 
@@ -99,7 +96,6 @@ public MovieGenreVO getGen() {
 public void setGen(MovieGenreVO gen) {
 	this.gen = gen;
 }
-	
 	
 	
 }

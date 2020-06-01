@@ -12,12 +12,7 @@ public class MainDAO {
 
 	@Autowired
 	private MainMapper mapper;
-	
-	//유저 취향 정보
-	public MemberVO getUserInfo(String email)
-	{
-		return mapper.getUserInfo(email);
-	}
+
 	
 	// 추천 2 :  나이  
 	public List<MovieVO> ageRecommendation()
@@ -26,15 +21,15 @@ public class MainDAO {
 	 }
 	
 	// 추천 3 : 성별
-	public List<MovieVO> genderRecommendation()
+	public List<MovieVO> genderRecommendation(String gender)
 	{
-		return mapper.genderRecommendation();
+		return mapper.genderRecommendation(gender);
 	}
 	
 	// 추천 4 : 감상포인
-	public List<MovieVO> pointRecommendation()
+	public List<MovieVO> pointRecommendation(String point)
 	{
-		return mapper.pointRecommendation();
+		return mapper.pointRecommendation(point);
 	}
 	// 슬라이더 
 	public List<MovieVO> bigSliderList()
@@ -42,12 +37,7 @@ public class MainDAO {
 		return mapper.bigSliderList();
 	}
 	
-/*	public List<MovieGenreVO> selectGenre(int movie_id)
-	{
-		return mapper.selectGenre(movie_id);
-		
-	}*/
-	
+	// 추천 5 : 장르  
 	 public List<MovieVO> genreRecomm(String user_genre)
 	 {
 	     System.out.println(user_genre);

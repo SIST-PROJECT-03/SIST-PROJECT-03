@@ -22,7 +22,7 @@ public class MainController {
    
    @Autowired
    private MainDAO mDao;
-   
+
    @RequestMapping(value = "main.do", method=RequestMethod.GET)
    public String main_main(String email,Model model,HttpSession session)
    {   
@@ -40,7 +40,7 @@ public class MainController {
 	      System.out.println("user_nick: "+user_nick);
 	      System.out.println("user_email: "+ user_email);
 	   
-	   	  email="ginogin@gmail.com";
+
 	      /*System.out.println("로그인????");*/
 	      List<NewsVO> newsList=newsDao.mainNewsList();
 	      
@@ -54,29 +54,7 @@ public class MainController {
 	      
 	      model.addAttribute("newsList",newsList);
 	      
-	      //사용자 취향 정보		 
-			/*
-			 * String email=(String)session.getAttribute("email"); String
-			 * age=(String)session.getAttribute("age");
-			 * System.out.println("The User:"+email); System.out.println("Age"+age);
-			 * if(email!=null) {MemberVO userData=mDao.getUserInfo(email);
-			 * model.addAttribute("userData",userData); }
-			 * 
-			 * 
-			 * if(age.equals("10대")) age= "age_10"; if(age.equals("20대")) age= "age_20";
-			 * if(age.equals("30대")) age= "age_30"; if(age.equals("40대")) age= "age_40";
-			 * if(age.equals("50대")) age= "age_50";
-			 */
 			 
-		  
-	      List<MovieVO> ageList=mDao.ageRecommendation();
-	      model.addAttribute("ageList",ageList);
-
-	      List<MovieVO> genderList=mDao.genderRecommendation();
-	      model.addAttribute("genderList",genderList);
-	      
-	      List<MovieVO> pointList=mDao.pointRecommendation();
-	      model.addAttribute("pointList",pointList);
 	   	  List<MovieVO> bigSliderList=mDao.bigSliderList();
 		  for(MovieVO svo:bigSliderList)
 		  {
@@ -89,15 +67,51 @@ public class MainController {
 		  try{
 		         
 		         if(user_email != null)
-		         {
+		         { 
+		        	 // 연령
+		        	 if(user_age.contains("10")) user_age= "age_10"; 
+					  if(user_age.contains("20")) user_age= "age_20"; 
+					  if(user_age.contains("30")) user_age= "age_30";
+					  if(user_age.contains("40")) user_age= "age_40"; 
+					  if(user_age.contains("50")) user_age= "age_50"; 
+					  System.out.println("연령대: "+user_age);
+					  
+					  //성별
+					  if(user_gender.equals("여자")) user_gender="female_rating";
+					  if(user_gender.equals("남자")) user_gender="male_rating";
+					  System.out.println("성별:" +user_age);
+					 
+				  
+					  //포인트
+					  if(user_point.contains("스토리")) user_point="story_point";
+					  if(user_point.contains("연출")) user_point="production_point";
+					  if(user_point.contains("OST")) user_point="ost_point";
+					  if(user_point.contains("연기")) user_point="acting_point";
+					  if(user_point.contains("영상미")) user_point="visual_point";
+					  
+					  List<MovieVO> ageList=mDao.ageRecommendation();
+					  model.addAttribute("ageList",ageList);
+
+					  List<MovieVO> genderList=mDao.genderRecommendation(user_gender);
+					  model.addAttribute("genderList",genderList);
+			      
+					  List<MovieVO> pointList=mDao.pointRecommendation(user_point);
+					  model.addAttribute("pointList",pointList);
+			      
 		            List<MovieVO> genreList=mDao.genreRecomm(user_genre);
 		            model.addAttribute("genreList", genreList);
+		            
 		            model.addAttribute("user_genre", user_genre);
-		            model.addAttribute("user_nick", user_nick);
-		            System.out.println("user_genre: " + user_genre + " -- user_nick: "+ " -- gList : "+ genreList);
+		            model.addAttribute("user_nick", user_nick); 
+		            model.addAttribute("user_age",user_age);
+		            model.addAttribute("user_gender",user_gender);
+		            model.addAttribute("user_point",user_point);
+		            model.addAttribute("user_loc",user_loc);
+		            
+		   
 		         }
 		         
-		      }catch (Exception ex) {}
+		      }catch (Exception ex) {ex.printStackTrace();}
 		      
 		  
 		  
