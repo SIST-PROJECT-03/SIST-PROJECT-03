@@ -23,7 +23,13 @@ public class MainController {
    
    @Autowired
    private MainDAO mDao;
-
+   
+   @RequestMapping("blockbuster.do")
+   public String blockbuster_main()
+   {
+	   return "project/main/blockbuster";
+   }
+   
    @RequestMapping(value = "main.do", method=RequestMethod.GET)
    public String main_main(Model model,HttpSession session)
    {   
@@ -117,19 +123,13 @@ public class MainController {
 			            model.addAttribute("user_age",user_age);
 			            model.addAttribute("user_gender",user_gender);
 			            model.addAttribute("user_point",user_point);
-			            model.addAttribute("user_loc",user_loc);
-		            
-		            
+			            model.addAttribute("user_loc",user_loc);    
 			  }   
 		         
 		      }catch (NullPointerException ex) {
 		    	  System.out.println("Failed to load user_data....");
 		    	  ex.printStackTrace();
 		      }
-		      
-		  
-		  
-
 		  return "main";
 	}
 }
