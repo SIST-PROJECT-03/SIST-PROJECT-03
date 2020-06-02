@@ -12,22 +12,7 @@ import com.sist.vo.*;
 
 import java.util.*;
 public interface MainMapper {
-/*
 
-[ 추천 태그 목록 (순서대로) ]
-
-0) 슬라이더  v   
-1) 제작 지역 							  
-2) 연령대	   v						   
-3) 성별	   v							   
-4) 장르	   v						   
-5) 감상포인트 v								
-6) 전문가 평점
--------------
-7) 사용자유사도 
-8) 댓글 분석 
-
- */
 	
 	 @Results({
 			@Result(property="title",column="title"),
@@ -62,7 +47,7 @@ public interface MainMapper {
 	   @Select("SELECT age_10,age_20,age_30,age_40,age_50,title,poster "
 	         + "FROM netizen_evaluation_trend,naver_re_movies "
 	         + "WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
-	         + "ORDER BY age_50 DESC")
+	         + "ORDER BY #{user_age} DESC")
 	   public List<MovieVO> ageRecommendation(String user_age);
 	
 	   // 추천3) 성별 gender

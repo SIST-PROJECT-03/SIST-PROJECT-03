@@ -64,7 +64,6 @@ $(function(){
 </c:if>
 
 <c:if test="${not empty sessionScope.email }">
-<input type="hidden" value="${sessionScope.email }"/>	
 <!-- ==============================main big slider total area start ================================= -->
 <div class="slider sliderv2">
 	<div class="container">

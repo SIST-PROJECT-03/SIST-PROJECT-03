@@ -54,20 +54,13 @@ public class MainController {
 		 	//System.out.println(svo.getNet().getEvaluation_point());
 		  }
 		  model.addAttribute("bigSliderList", bigSliderList);
-		  
-
-		  //세션에 있는 값 가져오기
-	      String user_email=(String)session.getAttribute("email");
-/*		  String user_genre=(String)session.getAttribute("genre");
-	      String user_nick=(String)session.getAttribute("nick");
-	      String user_gender=(String)session.getAttribute("gender");
-	      String user_age=(String)session.getAttribute("age");
-	      String user_point=(String)session.getAttribute("point");
-	      String user_loc=(String)session.getAttribute("loc");*/
+		 
+		  String email=(String)session.getAttribute("email");
+		 
+		  System.out.println("지금로긴한 사람 : "+email);
 	      
-	       MemberVO mvo=dao.profileData(user_email);
-	     
-	      
+		  if(email==null) email="sist@gmail.com";
+		  MemberVO mvo=dao.profileData(email);
 	      String user_genre=mvo.getGenre();
 	      String user_loc=mvo.getLoc();	 
 	      String user_age=mvo.getAge();
@@ -77,7 +70,7 @@ public class MainController {
 	      
 	      System.out.println("user_genre: "+ user_genre);
 	      System.out.println("user_nick: "+user_nick);
-	      System.out.println("user_email: "+ user_email);
+	      System.out.println("user_email: "+ email);
 	      System.out.println("user_gender: "+ user_gender);
 	      System.out.println("user_age: "+user_age);
 	      System.out.println("user_point: "+ user_point);
@@ -93,7 +86,7 @@ public class MainController {
 
 	  
 		 try{
-			  if(user_email!=null ) {
+			  if(email!=null ) {
 		    
 		        	  if(user_age.contains("10")) user_age= "age_10"; 
 					  if(user_age.contains("20")) user_age= "age_20"; 
