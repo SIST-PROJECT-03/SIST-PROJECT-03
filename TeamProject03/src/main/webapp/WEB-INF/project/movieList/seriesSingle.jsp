@@ -63,8 +63,15 @@
 		$('#review').click(function() {
 			$('#reviewWrite').show();
 		})
+		$('#review').hover(function(){
+			$(this).css('color','yellow');
+			$(this).css('cursor','pointer');
+		},function(){
+			$(this).css('color','white');
+			$(this).css('cursor','default');
+		});
 	})
-
+	
 	function showAllBtn() {
 
 		//구현중..
@@ -165,21 +172,6 @@ $(document).ready(function(){
 					<div class="movie-single-ct main-content">
 						<h1 class="bd-hd">${vo.title }<span> </span>
 						</h1>
-						<div class="social-btn">
-							<a href="#" class="parent-btn"><i class="ion-heart"></i>컬렉션
-								담기</a>
-							<div class="hover-bnt">
-								<a href="#" class="parent-btn"><i
-									class="ion-android-share-alt"></i>공유하기</a>
-								<div class="hvr-item">
-									<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
-									<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
-									<a href="#" class="hvr-grow"><i
-										class="ion-social-googleplus"></i></a> <a href="#"
-										class="hvr-grow"><i class="ion-social-youtube"></i></a>
-								</div>
-							</div>
-						</div>
 						<div class="movie-rate">
 							<div class="rate">
 								<i class="ion-android-star"></i>
@@ -338,8 +330,8 @@ $(document).ready(function(){
 													<h3>Related Movies To</h3>
 													<h2>${vo.title }</h2>
 												</div>
-												<a href="#" class="redbtn" id="review"
-													style="margin-right: 15px;">리뷰 작성</a>
+												<span class="redbtn" id="review"
+													style="margin-right: 15px;">리뷰 작성</span>
 											</div>
 
 											<!--리뷰작성  -->
@@ -349,7 +341,7 @@ $(document).ready(function(){
 														<textarea name ="msg" rows="5" cols="80%" autofocus required
 															wrap="hard" placeholder="댓글을 입력해주세요."></textarea>
 													</div>
-													<input class="redbtn submit movieDetailSubmit" type="submit" value="리뷰작성"/>
+													<input class="redbtn " type="submit" value="리뷰작성"/>
 													<input type="hidden" name="movie_id" value="${vo.movie_id }"/>
 												</div>
 											</form>
@@ -363,179 +355,37 @@ $(document).ready(function(){
 												</select>
 											</div>
 											<c:forEach var="rvo" items="${rlist }">
-											<div class="mv-user-review-item">
-												<div class="user-infor">
-													<h6 style="color: white;">${rvo.email }</h6> 
-													<div>
-														<h3>${rvo.msg }</h3>
-														<span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+												<div class="blog-detail-ct">
+													<div class="cmt-item flex-it">
+														<div class="author-infor">
+															<div class="flex-it2">
+																<h6 style="color:white">${rvo.email },${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+																<div class="reply">
+																	<c:if test="${sessionScope.email!=null&&sessionScope.email==rvo.email }">
+																		<h6 class="reply_btn"><span class="updateBtn" data-no="${rvo.no }">수정</span></h6> 
+																		<h6 class="reply_btn"><a href="movieReviewDelete.do?pno=${rvo.no }" style="font-size: 16px">삭제</a></h6>
+																	</c:if>
+																</div>	
+															</div>
+															<p>${rvo.msg }</p>
+															<div id="u${rvo.no }" class="comment-form replyUpdate" style="display: none">
+																<form method="post" action="movieReviewUpdate.do">
+																	<div class="row">
+																		<div class="col-md-10">
+																			<textarea name="msg" placeholder="내용" style="height: 120px; width: 500px; margin-bottom: 0px">${rvo.msg }</textarea>
+																			<input type="hidden" name="no" value="${rvo.no }"/>
+																			<input type="hidden" name="movie_id" value="${rvo.movie_id }"/>
+																		</div>
+																		<div class="col-md-2">
+																			<input class="submit movieDetailSubmit reviewBtn" type="submit" placeholder="작성완료">
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
 													</div>
 												</div>
-											</div>
 											</c:forEach>
-											<div class="mv-user-review-item">
-												<div class="user-infor">
-													<img src="images/uploads/userava2.jpg" alt="">
-													<div>
-														<h3>Just about as good as the first one!</h3>
-														<p class="time">
-															17 December 2016 by <a href="#"> hawaiipierson</a>
-														</p>
-													</div>
-												</div>
-												<p>Avengers Age of There are a lot of good and one thing
-													that feels off in my opinion.</p>
-
-												<p>THE GOOD:</p>
-
-												<p>First .</p>
-
-												<p>THE BAD:</p>
-
-												<p>Twhen irus talk of an extended version on Blu-Ray so
-													that's cool.</p>
-											</div>
-											<div class="mv-user-review-item">
-												<div class="user-infor">
-													<img src="images/uploads/userava3.jpg" alt="">
-													<div>
-														<h3>One of the most boring exepirences from watching
-															a movie</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i>
-														</div>
-														<p class="time">
-															26 March 2017 by<a href="#"> christopherfreeman</a>
-														</p>
-													</div>
-												</div>
-												<p>I can't right much... it's just so
-													forgettable...Okay, from what I remember, I remember just
-													sitting down on my seat and waiting for the movie to begin.
-													5 minutes into the movie, boring scene of Tony Stark just
-													talking to his "dead" friends saying it's his fault. 10
-													minutes in: Boring scene of Ultron and Jarvis having robot
-													space battles(I dunno:/). 15 minutes in: I leave the
-													theatre.2nd attempt at watching it: I fall asleep. What
-													woke me up is the next movie on Netflix when the movie was
-													over.</p>
-
-												<p>Bottemline: It's boring...</p>
-
-												<p>10/10 because I'm a Marvel Fanboy</p>
-											</div>
-											<div class="mv-user-review-item ">
-												<div class="user-infor">
-													<img src="images/uploads/userava4.jpg" alt="">
-													<div>
-														<h3>That spirit of fun</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i>
-														</div>
-														<p class="time">
-															26 March 2017 by <a href="#"> juliawest</a>
-														</p>
-													</div>
-												</div>
-												<p>If there were not an audience for Marvel comic heroes
-													than clearly these films would not be made, to answer one
-													other reviewer although I sympathize with him somewhat. The
-													world is indeed an infinitely more complex place than the
-													world of Marvel comics with clearly identifiable heroes and
-													villains. But I get the feeling that from Robert Downey,
-													Jr. on down the organizer and prime mover as Iron Man
-													behind the Avengers these players do love doing these roles
-													because it's a lot of fun. If they didn't show that spirit
-													of fun to the audience than these films would never be
-													made.</p>
-
-												<p>So in that spirit of fun Avengers: Age Of Ultron
-													comes before us and everyone looks like they're having a
-													good time saving the world. A computer program got loose
-													and took form in this dimension named Ultron and James
-													Spader who is completely unrecognizable is running amuck in
-													the earth. No doubt Star Trek fans took notice that this
-													guy's mission is to cleanse the earth much like that old
-													earth probe NOMAD which got its programming mixed up in
-													that classic Star Trek prime story. Wouldst Captain James
-													T. Kirk of the Enterprise had a crew like Downey has at his
-													command.</p>
-												<p>My favorite is always Chris Evans because of the
-													whole cast he best gets into the spirit of being a
-													superhero. Of all of them, he's already played two
-													superheroes, Captain America and Johnny Storm the Human
-													Torch. I'll be before he's done Evans will play a couple of
-													more as long as the money's good and he enjoys it.</p>
-
-												<p>Pretend you're a kid again and enjoy, don't take it
-													so seriously.</p>
-											</div>
-											<div class="mv-user-review-item last">
-												<div class="user-infor">
-													<img src="images/uploads/userava5.jpg" alt="">
-													<div>
-														<h3>Impressive Special Effects and Cast</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i>
-														</div>
-														<p class="time">
-															26 March 2017 by <a href="#"> johnnylee</a>
-														</p>
-													</div>
-												</div>
-												<p>The Avengers raid a Hydra base in Sokovia commanded
-													by Strucker and they retrieve Loki's scepter. They also
-													discover that Strucker had been conducting experiments with
-													the orphan twins Pietro Maximoff (Aaron Taylor-Johnson),
-													who has super speed, and Wanda Maximoff (Elizabeth Olsen),
-													who can control minds and project energy. Tony Stark
-													(Robert Downey Jr.) discovers an Artificial Intelligence in
-													the scepter and convinces Bruce Banner (Mark Ruffalo) to
-													secretly help him to transfer the A.I. to his Ultron
-													defense system. However, the Ultron understands that is
-													necessary to annihilate mankind to save the planet, attacks
-													the Avengers and flees to Sokovia with the scepter. He
-													builds an armature for self-protection and robots for his
-													army and teams up with the twins. The Avengers go to
-													Clinton Barton's house to recover, but out of the blue,
-													Nick Fury (Samuel L. Jackson) arrives and convinces them to
-													fight against Ultron. Will they succeed?</p>
-
-												<p>"Avengers: Age of Ultron" is an entertaining
-													adventure with impressive special effects and cast. The
-													storyline might be better, since most of the characters do
-													not show any chemistry. However, it is worthwhile watching
-													this film since the amazing special effects are not
-													possible to be described in words. Why Pietro has to die is
-													also not possible to be explained. My vote is eight.</p>
-											</div>
 											<div class="topbar-filter">
 												<label>Reviews per page:</label> <select>
 													<option value="range">5 Reviews</option>

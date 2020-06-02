@@ -36,6 +36,13 @@ public class MovieListController {
 		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
 	    List<MovieReviewVO> rlist=dao.movieReviewData(movie_id);
 		
+	    /*for(MovieReviewVO rvo : rlist){
+	    	String email=rvo.getEmail();
+	    	int idx = email.indexOf("@"); 
+			String id = email.substring(0, idx);
+			
+			rvo.setEmail(id);
+	    }*/
 	    model.addAttribute("rlist",rlist);
 		model.addAttribute("genre", genre);
 		model.addAttribute("cvo", cvo);
@@ -44,6 +51,7 @@ public class MovieListController {
 		model.addAttribute("moviePictures", moviePictures);
 		model.addAttribute("vo", vo);
 		model.addAttribute("wvo", wvo);
+		
 		return "project/movieList/seriesSingle";
 	}
 	
@@ -53,15 +61,31 @@ public class MovieListController {
 	{
 		HttpSession session=request.getSession();
 		String email=(String)session.getAttribute("email");
-		int idx = email.indexOf("@"); 
-		String id = email.substring(0, idx);
-		vo.setId(id);
+		String pwd=(String)session.getAttribute("email");
+		String nick=(String)session.getAttribute("nick");
+		vo.setNick(nick);
 		vo.setEmail(email);
+		vo.setPwd(pwd);
+		
 		dao.movieReviewInsert(vo);
 		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
 		
 	}
 	
+	@RequestMapping("movieReviewUpdate.do")
+	public String movie_review_update(MovieReviewVO vo){
+			dao.movieReviewUpdate(vo);
+		
+			return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+	}
+	
+	@RequestMapping("movieReviewDelete.do")
+	public String movie_review_delete(int pno){
+		MovieReviewVO vo=dao.movieReviewSelect(pno);
+		dao.movieReviewDelete(pno);
+		
+		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+	}
 	
 	@RequestMapping("movieGrid.do")
 	public String movie_List(Model model, String genre, String country, String grade,String range, String page, String rowSize) {
