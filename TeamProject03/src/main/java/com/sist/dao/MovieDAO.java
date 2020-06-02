@@ -11,6 +11,8 @@ import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
 import com.sist.vo.MovieJoinVO;
 import com.sist.vo.MoviePicturesVO;
+import com.sist.vo.MovieReviewVO;
+import com.sist.vo.NewsReviewVO;
 import com.sist.vo.WatchingTrendVO;
 
 @Repository
@@ -55,5 +57,13 @@ public class MovieDAO {
 		return mapper.getTotalPage(map);
 	}
 	
+	public List<MovieReviewVO> movieReviewData(int movie_id)
+	{
+		return mapper.movieReviewData(movie_id);
+	}
 	
-}
+	public void movieReviewInsert(MovieReviewVO vo)
+	{
+		mapper.movieReviewInsert(vo);
+	}
+}	

@@ -168,7 +168,7 @@
 												<option value="number">10</option>
 												<option value="number">20</option>
 												<option value="number">30</option>
-											</select>
+											</select> 
 										</div>
 										<div class="col-md-6">
 											<select>

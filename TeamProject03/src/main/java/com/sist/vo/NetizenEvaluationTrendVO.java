@@ -1,12 +1,9 @@
 package com.sist.vo;
 
-import lombok.Getter;
-import lombok.Setter;
 
 
 public class NetizenEvaluationTrendVO {
 
-	
 	private int movie_id;
 	private int evaluation_point;
 	private int people_count;
