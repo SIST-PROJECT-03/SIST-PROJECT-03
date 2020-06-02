@@ -1,8 +1,6 @@
 package com.sist.vo;
 
 
-
-
 public class MovieGenreVO {
 
 	private int movie_id;

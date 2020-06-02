@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/blockbuster.css">
    <!-- react -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
@@ -46,6 +46,24 @@ $(function(){
 </script>
 </head>
 <body>
+
+<c:if test="${empty sessionScope.email}">
+ <div class="movie-items  full-width">
+  <div class="container" style="width:100%; height:528px;text-align:center;">
+	<h1 style="font-size: 56px;color: #ffffff; margin-top:150px;!important"> 지금 블록버스터의 회원이 되어 <br/>더욱 다양한 영화를 추천 받으세요</h1>
+	<ul class="nav navbar-nav flex-child-menu menu-right" id="sign">
+		<li class="btn signupLink">
+			<a href="signup">회원가입</a>
+		</li>
+		<li class="loginLink">
+			<a href="signin">로그인</a>
+		</li>
+	</ul>
+  </div>
+ </div>
+</c:if>
+
+<c:if test="${not empty sessionScope.email }">
 <input type="hidden" value="${sessionScope.email }"/>	
 <!-- ==============================main big slider total area start ================================= -->
 <div class="slider sliderv2">
@@ -59,7 +77,7 @@ $(function(){
 				<!-- ====================================1 big slider start=========================================== -->	 
 				<c:forEach var="svo" items="${bigSliderList }">   	
 	    		<div class="movie-item">
-	    			<input type=hidden name=movie_id value="${svo.movie_id }" id="movie_id" >
+	    			<input type=hidden name=movie_id value="${svo.net.movie_id }" id="movie_id" >
 	    			<div class="row">
 	    				<div class="col-md-8 col-sm-12 col-xs-12">
 	    					<div class="title-in">
@@ -68,8 +86,8 @@ $(function(){
 			    					<span class="yell"><a href="#">${svo.country }</a></span>
 			    					<!-- <span class="orange"><a href="#">범죄</a></span> -->
 			    				</div>
-			    				<h1><a href="#"><br>
-								${svo.title }<span>${svo.movie_id }</span></a></h1>
+			    				<h1><a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
+								${svo.title }<span>${svo.net.movie_id }</span></a></h1>
 								<div class="social-btn">
 									<a href="#" class="parent-btn"><i class="ion-play"></i>예고편 보기</a>
 									<a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>
@@ -104,35 +122,19 @@ $(function(){
 		    			</div>
 	    			</div>	
 	    		</div>
-	    		
 	    		</c:forEach>
 	    	</div>
 	    </div>
 	</div>
 </div> 
 <!-- ==============================main big slider total area end ================================= -->
-
-<c:if test="${empty sessionScope.email}">
- <div class="movie-items  full-width">
-  <div class="container" style="width:100%; height:528px;text-align:center;">
-	<h1 style="font-size: 56px;color: #ffffff; margin-top:150px;!important"> 지금 블록버스터의 회원이 되어 <br/>더욱 다양한 영화를 추천 받으세요</h1>
-	<ul class="nav navbar-nav flex-child-menu menu-right" id="sign">
-	<li class="btn signupLink" style="margin: 50px 470px auto;"><a href="signup">지금 가입하기</a></li>
-	</ul>
-  </div>
- </div>
-</c:if>
-
-<c:if test="${not empty sessionScope.email }">
 <div class="movie-items  full-width">
-
    <div class="row">
       <div class="col-md-12">
          <div class="title-hd">
             <h2>#제작지역</h2>
             <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
-
          <div class="tabs">
 <!--=======================================================영화 제작 지역=============================================================추천1 START -->
              <div class="tab-content">
@@ -562,7 +564,6 @@ $(function(){
     </div>
    </div>
  </div>
-</c:if>
 <!-- =============================  LATEST NEWS AREA START  ============================== -->
 <div class="latestnew full-width">
       <div class="row">
@@ -603,8 +604,8 @@ $(function(){
             </div>
          </div> -->
       </div>
-
  </div>
+</c:if>
 <!-- =============================  LATEST NEWS AREA END  ============================== -->
 <!-- =============================  HOME END  ============================== -->
 </body>

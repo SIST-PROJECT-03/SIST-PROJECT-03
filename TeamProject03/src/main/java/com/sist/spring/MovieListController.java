@@ -2,6 +2,9 @@ package com.sist.spring;
 
 import java.util.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +14,9 @@ import com.sist.dao.MovieDAO;
 import com.sist.vo.CelebVO;
 import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
+import com.sist.vo.MovieReviewVO;
+import com.sist.vo.NewsReviewVO;
+import com.sist.vo.NewsVO;
 import com.sist.vo.WatchingTrendVO;
 
 @Controller
@@ -26,10 +32,18 @@ public class MovieListController {
 		List<CelebVO> actorData = dao.getActorData(movie_id);
 		List<String> genre = dao.getGenreData(movie_id);
 		CelebVO cvo = dao.getDirectorData(movie_id);
-
 		MovieDetailVO vo = dao.getMovieDetailData(movie_id);
 		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
-
+	    List<MovieReviewVO> rlist=dao.movieReviewData(movie_id);
+		
+	    /*for(MovieReviewVO rvo : rlist){
+	    	String email=rvo.getEmail();
+	    	int idx = email.indexOf("@"); 
+			String id = email.substring(0, idx);
+			
+			rvo.setEmail(id);
+	    }*/
+	    model.addAttribute("rlist",rlist);
 		model.addAttribute("genre", genre);
 		model.addAttribute("cvo", cvo);
 		model.addAttribute("actorData", actorData);
@@ -37,11 +51,41 @@ public class MovieListController {
 		model.addAttribute("moviePictures", moviePictures);
 		model.addAttribute("vo", vo);
 		model.addAttribute("wvo", wvo);
+		
 		return "project/movieList/seriesSingle";
 	}
-
 	
 	
+	@RequestMapping("movieReview.do")
+	public String movie_review(MovieReviewVO vo,HttpServletRequest request)
+	{
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
+		String pwd=(String)session.getAttribute("email");
+		String nick=(String)session.getAttribute("nick");
+		vo.setNick(nick);
+		vo.setEmail(email);
+		vo.setPwd(pwd);
+		
+		dao.movieReviewInsert(vo);
+		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+		
+	}
+	
+	@RequestMapping("movieReviewUpdate.do")
+	public String movie_review_update(MovieReviewVO vo){
+			dao.movieReviewUpdate(vo);
+		
+			return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+	}
+	
+	@RequestMapping("movieReviewDelete.do")
+	public String movie_review_delete(int pno){
+		MovieReviewVO vo=dao.movieReviewSelect(pno);
+		dao.movieReviewDelete(pno);
+		
+		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+	}
 	
 	@RequestMapping("movieGrid.do")
 	public String movie_List(Model model, String genre, String country, String grade,String range, String page, String rowSize) {

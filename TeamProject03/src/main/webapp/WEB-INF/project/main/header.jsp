@@ -25,16 +25,6 @@ $(function(){
 </head>
 <body>
 
-<!-- =========================== PRELOADING SECTION START ============================-->
-<div id="preloader">
-    <img class="logo" src="images/logo1.png" alt="" width="119" height="58">
-    <div id="status">
-        <span></span>
-        <span></span>
-    </div>
-</div>
-<!-- =========================== PRELOADING SECTION END ============================-->
-
 <!-- =========================== LOGIN FORM START ============================-->
 <div class="login-wrapper" id="login-content">
     <div class="login-content">
@@ -141,12 +131,59 @@ $(function(){
             <div class="row">
    				<label class="col-sm-5">선호제작지역</label>
 	          	<select name="loc">
-	          		<option value="아시아">아시아</option>
-	          		<option value="오세아니아">오세아니아</option>
-	          		<option value="북미주">북미주</option>
-	        		<option value="중남미">중남미</option>
-	        		<option value="유럽">유럽</option>
-	          		<option value="중동/아프리카">중동/아프리카</option>
+	          		<option value="대만">대만</option>
+	          		<option value="일본">일본</option>
+	          		<option value="한국">한국</option>
+	        		<option value="홍콩">홍콩</option>
+	        		<option value="중국">중국</option>
+	          		<option value="북한">북한</option>
+	          		<option value="몽골">몽골</option>
+	          		<option value="베트남">베트남</option>
+	          		<option value="태국">태국</option>
+	          		<option value="말레이시아">말레이시아</option>
+	          		<option value="인도네시아">인도네시아</option>
+	          		<option value="싱가포르">싱가포르</option>
+	          		<option value="인도">인도</option>
+	          		<option value="파키스탄">파키스탄</option>
+	          		<option value="터키">터키</option>
+	          		<option value="이란">이란</option>
+	          		<option value="이스라엘">이스라엘</option>
+	          		<option value="레바논">레바논</option>
+	          		<option value="아랍에미리트">아랍에미리트</option>
+	          		<option value="튀니지">투니지</option>
+	          		<option value="영국">영국</option>
+	          		<option value="프랑스">프랑스</option>
+	          		<option value="네덜란드">네덜란드</option>
+	          		<option value="벨기에">벨기에</option>
+	          		<option value="독일">독일</option>
+	          		<option value="이탈리아">이탈리아</option>
+	          		<option value="스페인">스페인</option>
+	          		<option value="그리스">그리스</option>
+	          		<option value="러시아">러시아</option>
+	          		<option value="헝가리">헝가리</option>
+	          		<option value="체코">체코</option>
+	          		<option value="슬로바키아">슬로바키아</option>
+	          		<option value="폴란드">폴란드</option>
+	          		<option value="스웨덴">스웨덴</option>
+	          		<option value="노르웨이">노르웨이</option>
+	          		<option value="핀란드">핀란드</option>
+	          		<option value="덴마크">덴마크</option>
+	          		<option value="아이슬란드">아이슬란드</option>
+	          		<option value="리투아니아">리투아니아</option>
+	          		<option value="라트비아">라트비아</option>
+	          		<option value="에스토니아">에스토니아</option>
+	          		<option value="미국">미국</option>
+	          		<option value="캐나다">캐나다</option>
+	          		<option value="멕시코">멕시코</option>
+	          		<option value="쿠바">쿠바</option>
+	          		<option value="브라질">브라질</option>
+	          		<option value="아르헨티나">아르헨티나</option>
+	          		<option value="베네수엘라">베네수엘라</option>
+	          		<option value="칠레">칠레</option>
+	          		<option value="콜롬비아">콜롬비아</option>
+	          		<option value="나이지리아">나이지리아</option>
+	          		<option value="가나">가나</option>
+	          		<option value="호주">호주</option>
 	          	</select>
             </div>
             <!-- <div class="row">
@@ -162,6 +199,16 @@ $(function(){
 </div>
 <!-- =========================== SIGNUP FORM END ============================-->
 
+<c:if test="${not empty sessionScope.email}">
+<!-- =========================== PRELOADING SECTION START ============================-->
+<div id="preloader">
+    <img class="logo" src="images/logo1.png" alt="" width="119" height="58">
+    <div id="status">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!-- =========================== PRELOADING SECTION END ============================-->
 <!-- =========================== HEADER SECTION START ============================-->
 <header class="ht-header full-width-hd">
 		<div class="row">
@@ -296,10 +343,10 @@ $(function(){
 							</ul>
 						</li>                
 						<li><a href="#">Help</a></li> -->
-						<c:if test="${sessionScope.email==null }">
+						<!--<c:if test="${sessionScope.email==null }">
 							<li class="loginLink"><a href="signin">로그인</a></li>
-							<li class="btn signupLink"><a href="signup">회원가입</a></li>
-						</c:if> 
+							<li class="btn signupLink"><a href="signup">회원가입</a></li> 
+						</c:if> -->
 						<c:if test="${sessionScope.email!=null }">
 							<form method="post" action="logout.do">
 								<input type="submit" class="btn" id="logout" value="로그아웃">
@@ -321,6 +368,7 @@ $(function(){
 	    </div>
 		</div>	
 </header>
+</c:if>
 <!-- =========================== HEADER SECTION END ============================-->
 </body>
 </html>

@@ -8,55 +8,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/sliding.css">
+<link rel="stylesheet" href="css/newsDetail.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script text="javascript/text">
 
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
+						$('.box').each(function() {
+							var content = $(this).children(
+									'.content');
+							var content_txt = content.text();
+							var content_txt_short = content_txt
+									.substring(0, 100)
+									+ "...";
+							var btn_more = $('<a href="javascript:void(0)" class="more">더보기</a>');
 
-						$('.box')
-								.each(
-										function() {
-											var content = $(this).children(
-													'.content');
-											var content_txt = content.text();
-											var content_txt_short = content_txt
-													.substring(0, 100)
-													+ "...";
-											var btn_more = $('<a href="javascript:void(0)" class="more">더보기</a>');
+							$(this).append(btn_more);
 
-											$(this).append(btn_more);
+							if (content_txt.length >= 100) {
+								content.html(content_txt_short)
 
-											if (content_txt.length >= 100) {
-												content.html(content_txt_short)
+							} else {
+								btn_more.hide()
+							}
 
-											} else {
-												btn_more.hide()
-											}
+							btn_more.click(toggle_content);
+							// 아래 bind가 안 되는 이유는??
+							// btn_more.bind('click',toggle_content);
 
-											btn_more.click(toggle_content);
-											// 아래 bind가 안 되는 이유는??
-											// btn_more.bind('click',toggle_content);
+							function toggle_content() {
+								if ($(this).hasClass('short')) {
+									$(this).html('더보기');
+									content
+											.html(content_txt_short)
+									$(this)
+											.removeClass(
+													'short');
+								} else {
+									$(this).html('접기');
+									content.html(content_txt);
+									$(this).addClass('short');
 
-											function toggle_content() {
-												if ($(this).hasClass('short')) {
-													$(this).html('더보기');
-													content
-															.html(content_txt_short)
-													$(this)
-															.removeClass(
-																	'short');
-												} else {
-													$(this).html('접기');
-													content.html(content_txt);
-													$(this).addClass('short');
-
-												}
-											}
-										});
+								}
+							}
+						});
 					});
 </script>
 <script type="text/javascript">
@@ -68,8 +63,15 @@
 		$('#review').click(function() {
 			$('#reviewWrite').show();
 		})
+		$('#review').hover(function(){
+			$(this).css('color','yellow');
+			$(this).css('cursor','pointer');
+		},function(){
+			$(this).css('color','white');
+			$(this).css('cursor','default');
+		});
 	})
-
+	
 	function showAllBtn() {
 
 		//구현중..
@@ -106,19 +108,19 @@
 <script> 
 $(document).ready(function(){
   $("#flip").click(function(){
-    $("#moviePictures").slideToggle("slow");
+    $("#panel").slideToggle("slow");
   });
 });
 </script>
 <style> 
 #panel, #flip {
-  padding: 5px;
+  padding: 0px auto;
   text-align: center;
-  border: solid 1px #c3c3c3;
+  border: solid 0px ;
 }
 
-#moviePictures {
-  padding: 50px;
+#panel {
+  padding: 0px auto;
   display: none;
 }
 </style>
@@ -170,26 +172,11 @@ $(document).ready(function(){
 					<div class="movie-single-ct main-content">
 						<h1 class="bd-hd">${vo.title }<span> </span>
 						</h1>
-						<div class="social-btn">
-							<a href="#" class="parent-btn"><i class="ion-heart"></i>컬렉션
-								담기</a>
-							<div class="hover-bnt">
-								<a href="#" class="parent-btn"><i
-									class="ion-android-share-alt"></i>공유하기</a>
-								<div class="hvr-item">
-									<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
-									<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
-									<a href="#" class="hvr-grow"><i
-										class="ion-social-googleplus"></i></a> <a href="#"
-										class="hvr-grow"><i class="ion-social-youtube"></i></a>
-								</div>
-							</div>
-						</div>
 						<div class="movie-rate">
 							<div class="rate">
 								<i class="ion-android-star"></i>
 								<p>
-									<span>${wvo.male_rating }</span><br>
+									<span>8</span><br>
 								</p>
 								<p>
 									<span class="rv">56 리뷰</span>
@@ -223,116 +210,45 @@ $(document).ready(function(){
 												<div class="box">
 													<p class="content">${vo.story }</p>
 												</div>
-												<!-- 						            		<div class="title-hd-sm">
-												<h4>Current Season</h4>
-												<a href="#" class="time">View All Seasons <i class="ion-ios-arrow-right"></i></a>
-											</div>
-											movie cast
-											<div class="mvcast-item">											
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on 
-															September 19, 2016.</p>
-														</div>	
-													</div>											
-												</div>	
-											</div>
- -->
 												<div class="title-hd-sm">
-													<h4>포토/영상</h4>
-													<a href="#" class="time" id="load">더보기 <i
-														class="ion-ios-arrow-right"></i></a>
+													<h4>포토</h4>
 												</div>
 												<div id="mvsingle-item ov-item">
-												<body>
-    <section class="sliding-wrap">
-        <ul class="sliding-item">
-        </ul>
-        <a href="#" class="sliding-left-arrow pos-absolute">
-            <img src="img/left-arrow.png" alt="">
-            <img src="" alt="">
-        </a>
-        <a href="#" class="sliding-right-arrow pos-absolute">
-            <img src="img/right-arrow.png" alt="">
-            <img src="" alt="">
-        </a>
-        <div class="sliding-check-box pos-absolute">
-            <ul class="sliding-check-items">
-                <li>
-                    <a href="#">
-                        <img src="img/stop-btn.png" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-
-
-    <script id="template-sliding-check-item" type="text/template">
-            <li><a>
-                <img src="./../img/{img-kind}" class = "{class}" alt="">    
-            </a></li>
-
-        </script>
-    <script id="template-sliding-items" type="text/template">
-            <li name="{name}">
-                <a><img src="{moviePictures}" alt=""></a>
-                <a><div>{title}</div></a>
-                <a><div>{information}</div></a>
-            </li>
-        </script>
-    <script src="js/ajax/ajax.js"></script>
-    <script src="js/cache.js"></script>
-    <script src="js/constructor.js"></script>
-    <script src="js/layout.js"></script>
-    <script src="js/operating.js"></script>
-    <script src="js/slidingConfiguration.js"></script>
-    <script src="js/getDataForSliding.js"></script>
-
-
-    <script src="js/slide-for-supporting/slide.js">alert('hello')</script>
-
 												
-											<%-- 	<div>
-													<c:forEach var="moviePictures" items="${moviePictures }" begin="0" end="1">
+												<div>
+													<c:forEach var="moviePictures" items="${moviePictures }" begin="0" end="7">
 														<a class="img-lightbox" data-fancybox-group="gallery"
-															href=""><img src="${moviePictures }" alt=""></a>
+															href=""><img src="${moviePictures }" alt=""style="width:100px;height:115px"></a>
 													</c:forEach></div>
-													<div id="flip">click</div>
-													<div id="moviePictures">
-													<c:forEach var="moviePictures" items="${moviePictures }" begin="2" end="${moviePictures.size() }">
-														<a class="img-lightbox" data-fancybox-group="gallery"
-															href=""><img src="${moviePictures }" alt=""></a>
-													</c:forEach></div>
-													
-													<div class="vd-it">
-														<img class="vd-img" src="images/uploads/image7.jpg" alt="">
-														<a class="fancybox-media hvr-grow"
-															href="https://www.youtube.com/embed/o-0hcF97wy0"><img
-															src="images/uploads/play-vd.png" alt=""></a>
-													</div>
-												</div> --%>
+												</div>
 												<div class="title-hd-sm">
 													<h4>배우</h4>
-													<a href="#" class="time">더보기 <i
-														class="ion-ios-arrow-right"></i></a>
 												</div>
 												<!-- movie cast -->
 												<div class="mvcast-item">
 													<!-- 인물 DB넣은 후 연결하고나서 출력하기 -->
+													<c:forEach var="actorData" items="${actorData }" begin="0" end="2">
 													<div class="cast-it">
 														<div class="cast-left">
-															<img src="images/uploads/cast1.jpg" alt=""> <a
-																href="#">Robert Downey Jr.</a>
+															<img src="${actorData.thumbnail }" alt="" style="width:110px;height:140px"> <a
+																href="#">${actorData.name }</a>
 														</div>
-														<p>... Robert Downey Jr.</p>
+														<p>${actorData.reward }</p>
 													</div>
+													</c:forEach>
 												</div>
+												<div id="flip" style="color:#4280bf">더보기 <i
+														class="ion-ios-arrow-right"></i></div>
+													<div class="mvcast-item" id="panel">
+													<c:forEach var="actorData" items="${actorData }" begin="3" end="${actorData.size() }">
+														<div class="cast-it">
+														<div class="cast-left">
+															<img src="${actorData.thumbnail }" alt="" style="width:110px;height:140px"> <a
+																href="#">${actorData.name }</a>
+														</div>
+														<p>${actorData.reward }</p>
+													</div>
+													</c:forEach></div>
 												<!-- cast for문 -->
 												<div class="title-hd-sm">
 													<h4>관람객 리뷰</h4>
@@ -414,20 +330,21 @@ $(document).ready(function(){
 													<h3>Related Movies To</h3>
 													<h2>${vo.title }</h2>
 												</div>
-												<a href="#" class="redbtn" id="review"
-													style="margin-right: 15px;">리뷰 작성</a>
+												<span class="redbtn" id="review"
+													style="margin-right: 15px;">리뷰 작성</span>
 											</div>
 
 											<!--리뷰작성  -->
-											<div id="reviewWrite" class="rv-hd">
-												<div class="div">
-													<!-- maxlength를 넣어주면 글자수 제한도 가능하다. -->
-													<textarea rows="5" cols="80%" autofocus required
-														wrap="hard" placeholder="댓글을 입력해주세요."></textarea>
+											 <form method="post" action="movieReview.do">
+												<div id="reviewWrite" class="rv-hd">
+													<div class="div">
+														<textarea name ="msg" rows="5" cols="80%" autofocus required
+															wrap="hard" placeholder="댓글을 입력해주세요."></textarea>
+													</div>
+													<input class="redbtn " type="submit" value="리뷰작성"/>
+													<input type="hidden" name="movie_id" value="${vo.movie_id }"/>
 												</div>
-												<a class="redbtn">리뷰작성</a>
-											</div>
-
+											</form>
 											<div class="topbar-filter">
 												<p>
 													Found <span>56 reviews</span> in total
@@ -437,205 +354,38 @@ $(document).ready(function(){
 													<option value="saab">-- Choose option 2--</option>
 												</select>
 											</div>
-											<div class="mv-user-review-item">
-												<div class="user-infor">
-													<img src="images/uploads/userava1.jpg" alt="">
-													<div>
-														<h3>Best Marvel movie in my opinion</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star last"></i>
+											<c:forEach var="rvo" items="${rlist }">
+												<div class="blog-detail-ct">
+													<div class="cmt-item flex-it">
+														<div class="author-infor">
+															<div class="flex-it2">
+																<h6 style="color:white">${rvo.email },${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+																<div class="reply">
+																	<c:if test="${sessionScope.email!=null&&sessionScope.email==rvo.email }">
+																		<h6 class="reply_btn"><span class="updateBtn" data-no="${rvo.no }">수정</span></h6> 
+																		<h6 class="reply_btn"><a href="movieReviewDelete.do?pno=${rvo.no }" style="font-size: 16px">삭제</a></h6>
+																	</c:if>
+																</div>	
+															</div>
+															<p>${rvo.msg }</p>
+															<div id="u${rvo.no }" class="comment-form replyUpdate" style="display: none">
+																<form method="post" action="movieReviewUpdate.do">
+																	<div class="row">
+																		<div class="col-md-10">
+																			<textarea name="msg" placeholder="내용" style="height: 120px; width: 500px; margin-bottom: 0px">${rvo.msg }</textarea>
+																			<input type="hidden" name="no" value="${rvo.no }"/>
+																			<input type="hidden" name="movie_id" value="${rvo.movie_id }"/>
+																		</div>
+																		<div class="col-md-2">
+																			<input class="submit movieDetailSubmit reviewBtn" type="submit" placeholder="작성완료">
+																		</div>
+																	</div>
+																</form>
+															</div>
 														</div>
-														<p class="time">
-															17 December 2016 by <a href="#"> hawaiipierson</a>
-														</p>
 													</div>
 												</div>
-												<p>out do themselvnce.</p>
-											</div>
-											<div class="mv-user-review-item">
-												<div class="user-infor">
-													<img src="images/uploads/userava2.jpg" alt="">
-													<div>
-														<h3>Just about as good as the first one!</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i>
-														</div>
-														<p class="time">
-															17 December 2016 by <a href="#"> hawaiipierson</a>
-														</p>
-													</div>
-												</div>
-												<p>Avengers Age of There are a lot of good and one thing
-													that feels off in my opinion.</p>
-
-												<p>THE GOOD:</p>
-
-												<p>First .</p>
-
-												<p>THE BAD:</p>
-
-												<p>Twhen irus talk of an extended version on Blu-Ray so
-													that's cool.</p>
-											</div>
-											<div class="mv-user-review-item">
-												<div class="user-infor">
-													<img src="images/uploads/userava3.jpg" alt="">
-													<div>
-														<h3>One of the most boring exepirences from watching
-															a movie</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i>
-														</div>
-														<p class="time">
-															26 March 2017 by<a href="#"> christopherfreeman</a>
-														</p>
-													</div>
-												</div>
-												<p>I can't right much... it's just so
-													forgettable...Okay, from what I remember, I remember just
-													sitting down on my seat and waiting for the movie to begin.
-													5 minutes into the movie, boring scene of Tony Stark just
-													talking to his "dead" friends saying it's his fault. 10
-													minutes in: Boring scene of Ultron and Jarvis having robot
-													space battles(I dunno:/). 15 minutes in: I leave the
-													theatre.2nd attempt at watching it: I fall asleep. What
-													woke me up is the next movie on Netflix when the movie was
-													over.</p>
-
-												<p>Bottemline: It's boring...</p>
-
-												<p>10/10 because I'm a Marvel Fanboy</p>
-											</div>
-											<div class="mv-user-review-item ">
-												<div class="user-infor">
-													<img src="images/uploads/userava4.jpg" alt="">
-													<div>
-														<h3>That spirit of fun</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i>
-														</div>
-														<p class="time">
-															26 March 2017 by <a href="#"> juliawest</a>
-														</p>
-													</div>
-												</div>
-												<p>If there were not an audience for Marvel comic heroes
-													than clearly these films would not be made, to answer one
-													other reviewer although I sympathize with him somewhat. The
-													world is indeed an infinitely more complex place than the
-													world of Marvel comics with clearly identifiable heroes and
-													villains. But I get the feeling that from Robert Downey,
-													Jr. on down the organizer and prime mover as Iron Man
-													behind the Avengers these players do love doing these roles
-													because it's a lot of fun. If they didn't show that spirit
-													of fun to the audience than these films would never be
-													made.</p>
-
-												<p>So in that spirit of fun Avengers: Age Of Ultron
-													comes before us and everyone looks like they're having a
-													good time saving the world. A computer program got loose
-													and took form in this dimension named Ultron and James
-													Spader who is completely unrecognizable is running amuck in
-													the earth. No doubt Star Trek fans took notice that this
-													guy's mission is to cleanse the earth much like that old
-													earth probe NOMAD which got its programming mixed up in
-													that classic Star Trek prime story. Wouldst Captain James
-													T. Kirk of the Enterprise had a crew like Downey has at his
-													command.</p>
-												<p>My favorite is always Chris Evans because of the
-													whole cast he best gets into the spirit of being a
-													superhero. Of all of them, he's already played two
-													superheroes, Captain America and Johnny Storm the Human
-													Torch. I'll be before he's done Evans will play a couple of
-													more as long as the money's good and he enjoys it.</p>
-
-												<p>Pretend you're a kid again and enjoy, don't take it
-													so seriously.</p>
-											</div>
-											<div class="mv-user-review-item last">
-												<div class="user-infor">
-													<img src="images/uploads/userava5.jpg" alt="">
-													<div>
-														<h3>Impressive Special Effects and Cast</h3>
-														<div class="no-star">
-															<i class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star"></i> <i
-																class="ion-android-star last"></i> <i
-																class="ion-android-star last"></i>
-														</div>
-														<p class="time">
-															26 March 2017 by <a href="#"> johnnylee</a>
-														</p>
-													</div>
-												</div>
-												<p>The Avengers raid a Hydra base in Sokovia commanded
-													by Strucker and they retrieve Loki's scepter. They also
-													discover that Strucker had been conducting experiments with
-													the orphan twins Pietro Maximoff (Aaron Taylor-Johnson),
-													who has super speed, and Wanda Maximoff (Elizabeth Olsen),
-													who can control minds and project energy. Tony Stark
-													(Robert Downey Jr.) discovers an Artificial Intelligence in
-													the scepter and convinces Bruce Banner (Mark Ruffalo) to
-													secretly help him to transfer the A.I. to his Ultron
-													defense system. However, the Ultron understands that is
-													necessary to annihilate mankind to save the planet, attacks
-													the Avengers and flees to Sokovia with the scepter. He
-													builds an armature for self-protection and robots for his
-													army and teams up with the twins. The Avengers go to
-													Clinton Barton's house to recover, but out of the blue,
-													Nick Fury (Samuel L. Jackson) arrives and convinces them to
-													fight against Ultron. Will they succeed?</p>
-
-												<p>"Avengers: Age of Ultron" is an entertaining
-													adventure with impressive special effects and cast. The
-													storyline might be better, since most of the characters do
-													not show any chemistry. However, it is worthwhile watching
-													this film since the amazing special effects are not
-													possible to be described in words. Why Pietro has to die is
-													also not possible to be explained. My vote is eight.</p>
-											</div>
+											</c:forEach>
 											<div class="topbar-filter">
 												<label>Reviews per page:</label> <select>
 													<option value="range">5 Reviews</option>
@@ -665,184 +415,30 @@ $(document).ready(function(){
 											<div class="mvcast-item">
 												<div class="cast-it">
 													<div class="cast-left">
-														<h4>JW</h4>
-														<a href="#">Joss Whedon</a>
+														<img src="${cvo.thumbnail }" alt=""> <a
+															href="#">${cvo.name }</a>
 													</div>
-													<p>... Director</p>
+													<p>${cvo.reward }</p>
 												</div>
 											</div>
 											<!-- //== -->
-											<div class="title-hd-sm">
-												<h4>제작진</h4>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>SL</h4>
-														<a href="#">Stan Lee</a>
-													</div>
-													<p>... (based on Marvel comics)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JK</h4>
-														<a href="#">Jack Kirby</a>
-													</div>
-													<p>... (based on Marvel comics)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JS</h4>
-														<a href="#">Joe Simon</a>
-													</div>
-													<p>... (character created by: Captain America)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JS</h4>
-														<a href="#">Joe Simon</a>
-													</div>
-													<p>... (character created by: Thanos)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>RT</h4>
-														<a href="#">Roy Thomas</a>
-													</div>
-													<p>... (character created by: Ultron, Vision)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JB</h4>
-														<a href="#">John Buscema</a>
-													</div>
-													<p>... (character created by: Ultron, Vision)</p>
-												</div>
-											</div>
-											<!-- //== -->
+											
 											<div class="title-hd-sm">
 												<h4>배우</h4>
 											</div>
 											<div class="mvcast-item">
+											<c:forEach var="actorData" items="${actorData }">
 												<div class="cast-it">
 													<div class="cast-left">
-														<img src="images/uploads/cast1.jpg" alt=""> <a
-															href="#">Robert Downey Jr.</a>
+														<img src="${actorData.thumbnail }" alt="" style="width:40px;height:40px;"> <a
+															href="#">${actorData.name }</a>
 													</div>
-													<p>... Robert Downey Jr.</p>
+													<p>${actorData.reward }</p>
 												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast2.jpg" alt=""> <a
-															href="#">Chris Hemsworth</a>
-													</div>
-													<p>... Thor</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast3.jpg" alt=""> <a
-															href="#">Mark Ruffalo</a>
-													</div>
-													<p>... Bruce Banner/ Hulk</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast4.jpg" alt=""> <a
-															href="#">Chris Evans</a>
-													</div>
-													<p>... Steve Rogers/ Captain America</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast5.jpg" alt=""> <a
-															href="#">Scarlett Johansson</a>
-													</div>
-													<p>... Natasha Romanoff/ Black Widow</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast6.jpg" alt=""> <a
-															href="#">Jeremy Renner</a>
-													</div>
-													<p>... Clint Barton/ Hawkeye</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast7.jpg" alt=""> <a
-															href="#">James Spader</a>
-													</div>
-													<p>... Ultron</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<img src="images/uploads/cast9.jpg" alt=""> <a
-															href="#">Don Cheadle</a>
-													</div>
-													<p>... James Rhodes/ War Machine</p>
-												</div>
+												</c:forEach>
 											</div>
 											<!-- //== -->
-											<div class="title-hd-sm">
-												<h4>Produced by</h4>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>VA</h4>
-														<a href="#">Victoria Alonso</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>MB</h4>
-														<a href="#">Mitchel Bell</a>
-													</div>
-													<p>... co-producer (as Mitch Bell)</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JC</h4>
-														<a href="#">Jamie Christopher</a>
-													</div>
-													<p>... associate producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>LD</h4>
-														<a href="#">Louis D’Esposito</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JF</h4>
-														<a href="#">Jon Favreau</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>KF</h4>
-														<a href="#">Kevin Feige</a>
-													</div>
-													<p>... producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>AF</h4>
-														<a href="#">Alan Fine</a>
-													</div>
-													<p>... executive producer</p>
-												</div>
-												<div class="cast-it">
-													<div class="cast-left">
-														<h4>JF</h4>
-														<a href="#">Jeffrey Ford</a>
-													</div>
-													<p>... associate producer</p>
-												</div>
-											</div>
+											
 										</div>
 									</div>
 									<!-- ============================= MOVIE DETAIL -  CAST 배우 제작진 TAB END  ============================== -->
