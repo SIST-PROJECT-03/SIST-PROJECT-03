@@ -87,33 +87,37 @@ public class MainController {
 	  
 		 try{
 			  if(email!=null ) {
-		    
-		        	  if(user_age.contains("10")) user_age= "age_10"; 
-					  if(user_age.contains("20")) user_age= "age_20"; 
-					  if(user_age.contains("30")) user_age= "age_30";
-					  if(user_age.contains("40")) user_age= "age_40"; 
-					  if(user_age.contains("50")) user_age= "age_50"; 
-					  System.out.println("연령대: "+user_age);
+				  
+				  		/*ORDER BY reads only Integer OR ${} Type*/
+		        	  if(user_age.contains("10"))  user_age= "age_10"; 
+					  if(user_age.contains("20"))  user_age= "age_20"; 
+					  if(user_age.contains("30"))  user_age= "age_30";
+					  if(user_age.contains("40"))  user_age= "age_40";
+					  if(user_age.contains("50"))  user_age= "age_50";
 					  
-				 
+					
 					  if(user_point.contains("스토리")) user_point="story_point";
 					  if(user_point.contains("연출")) user_point="production_point";
 					  if(user_point.contains("OST")) user_point="ost_point";
 					  if(user_point.contains("연기")) user_point="acting_point";
 					  if(user_point.contains("영상미")) user_point="visual_point";
-					  System.out.println("감상포인트: "+user_point);
-					
+
+			
 					  if(user_gender.contains("여")) user_gender="female_rating";
 					  if(user_gender.contains("남")) user_gender="male_rating";
-						 
-					  System.out.println("성별:" +user_gender);
-					  List<MovieVO> ageList=mDao.ageRecommendation(user_age);
+						
+					  Map map=new HashMap();
+			           map.put("user_age",user_age);
+			           map.put("user_gender",user_gender);
+			           map.put("user_point",user_point);
+			           
+					  List<MovieVO> ageList=mDao.ageRecommendation(map);
 					  model.addAttribute("ageList",ageList);
 
-					  List<MovieVO> genderList=mDao.genderRecommendation(user_gender);
+					  List<MovieVO> genderList=mDao.genderRecommendation(map);
 					  model.addAttribute("genderList",genderList);
 			      
-					  List<MovieVO> pointList=mDao.pointRecommendation(user_point);
+					  List<MovieVO> pointList=mDao.pointRecommendation(map);
 					  model.addAttribute("pointList",pointList);
 			      
 		              List<MovieVO> genreList=mDao.genreRecomm(user_genre);
@@ -125,7 +129,8 @@ public class MainController {
 		              List<MovieVO> specialList=mDao.specialRecomm(user_genre);
 		              model.addAttribute("specialList", specialList);
 		              
-		              
+		               
+		               
 			           model.addAttribute("user_genre", user_genre);
 			           model.addAttribute("user_nick", user_nick); 
 			           model.addAttribute("user_age",user_age);

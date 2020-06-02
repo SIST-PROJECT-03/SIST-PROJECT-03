@@ -40,21 +40,19 @@ public interface MainMapper {
 				+"WHERE ROWNUM < 15")
 		public List<MovieVO> bigSliderList();
  
-	   
-	   // 추천1) 제작지역
 
 	   // 추천2) 연령대 age 
-	   @Select("SELECT age_10,age_20,age_30,age_40,age_50,title,poster "
+	   @Select("SELECT netizen_evaluation_trend.movie_id,age_10,age_20,age_30,age_40,age_50,title,poster "
 	         + "FROM netizen_evaluation_trend,naver_re_movies "
 	         + "WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
-	         + "ORDER BY #{user_age} DESC")
-	   public List<MovieVO> ageRecommendation(String user_age);
+	         + "ORDER BY ${user_age} DESC")
+	   public List<MovieVO> ageRecommendation(Map map);
 	
 	   // 추천3) 성별 gender
-		@Select("SELECT male_rating,female_rating,title,poster "
+		@Select("SELECT netizen_evaluation_trend.movie_id,male_rating,female_rating,title,poster "
 				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum<50 "
-				+ "ORDER BY #{user_gender} DESC")
-		public List<MovieVO> genderRecommendation(String user_gender);
+				+ "ORDER BY ${user_gender} DESC")
+		public List<MovieVO> genderRecommendation(Map map);
 	  
 	  
 		// 추천4) 장르 genre + 나이 최신 정렬 
@@ -66,10 +64,10 @@ public interface MainMapper {
 		public List<MovieVO> genreRecomm(String user_genre);
 		
 		// 추천5) 감상포인트 point
-		@Select("SELECT acting_point,story_point,visual_point,ost_point,production_point,title,poster "
+		@Select("SELECT netizen_evaluation_trend.movie_id,acting_point,story_point,visual_point,ost_point,production_point,title,poster "
 				+ "FROM netizen_evaluation_trend,naver_re_movies WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id AND rownum <50 "
-				+ "ORDER BY #{user_point} DESC")
-		public List<MovieVO> pointRecommendation(String user_point);
+				+ "ORDER BY ${user_point} DESC")
+		public List<MovieVO> pointRecommendation(Map map);
 	
 		
 		// 추천6) 선호지역 

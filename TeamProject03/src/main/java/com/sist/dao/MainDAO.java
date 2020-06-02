@@ -14,19 +14,19 @@ public class MainDAO {
 	@Autowired
 	private MainMapper mapper;
 
-	public List<MovieVO> ageRecommendation(String user_age)
+	public List<MovieVO> ageRecommendation(Map map)
 	 {
-	      return mapper.ageRecommendation(user_age);
+	      return mapper.ageRecommendation(map);
 	 }
 	
-	public List<MovieVO> genderRecommendation(String user_gender)
+	public List<MovieVO> genderRecommendation(Map map)
 	{
-		return mapper.genderRecommendation(user_gender);
+		return mapper.genderRecommendation(map);
 	}
  
-	public List<MovieVO> pointRecommendation(String user_point)
+	public List<MovieVO> pointRecommendation(Map map)
 	{
-		return mapper.pointRecommendation(user_point);
+		return mapper.pointRecommendation(map);
 	}
 
 	public List<MovieVO> bigSliderList()

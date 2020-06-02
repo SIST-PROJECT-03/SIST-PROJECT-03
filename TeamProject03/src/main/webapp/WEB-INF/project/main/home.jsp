@@ -313,26 +313,26 @@ $(function(){
          
 <!--=========================================================== 연령대 =======================================================================추천2 START-->
          <div class="title-hd"> 
-               <h2># ${age_tag} 연령층 인기 영화 </h2>
+               <h2># ${age_tag}대 연령층 인기 영화 </h2>
                <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
                      <div class="row">
                         <div class="slick-multiItem2">
-                          <c:forEach var="nvo" items="${ageList }">
+                          <c:forEach var="avo" items="${ageList }">
                            <div class="slide-it">
-               
+               				<input type="hidden" value="${avo.net.movie_id}" name="movie_id" id="movie_id"/>        				
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
-                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                    <img src="${avo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
                                     <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
                                  </div>
                                  <div class="title-in">
-                                    <h5>${nvo.title }</h5>
+                                    <h5>${avo.title }</h5>
                         
                                  </div>
                               </div>
@@ -357,7 +357,7 @@ $(function(){
                         <div class="slick-multiItem2">
                           <c:forEach var="gvo" items="${genderList }">
                            <div class="slide-it">
-               
+               				<input type="hidden" value="${gvo.net.movie_id}" name="movie_id" id="movie_id"/>        				
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
@@ -394,7 +394,7 @@ $(function(){
                         <div class="slick-multiItem2">
                           <c:forEach var="grvo" items="${genreList }">
                            <div class="slide-it">
-               
+               				<input type="hidden" value="${grvo.net.movie_id}" name="movie_id" id="movie_id"/>        				
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
@@ -429,7 +429,7 @@ $(function(){
                         <div class="slick-multiItem2">
                           <c:forEach var="ptvo" items="${pointList}">
                            <div class="slide-it">
-               
+               					<input type="hidden" value="${ptvo.net.movie_id}" name="movie_id" id="movie_id"/>        				
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
