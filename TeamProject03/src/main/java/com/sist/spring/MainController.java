@@ -30,37 +30,10 @@ public class MainController {
 	   return "project/main/blockbuster";
    }
    
-   @RequestMapping(value = "main.do", method=RequestMethod.GET)
+   @RequestMapping("main.do")
    public String main_main(Model model,HttpSession session)
    {   
-	   
-	   //세션에 있는 값 가져오기
-	   	  String user_genre=(String)session.getAttribute("genre");
-	      String user_nick=(String)session.getAttribute("nick");
-	      String user_email=(String)session.getAttribute("email");
-	      String user_gender=(String)session.getAttribute("gender");
-	      String user_age=(String)session.getAttribute("age");
-	      String user_point=(String)session.getAttribute("point");
-	      String user_loc=(String)session.getAttribute("loc");
-
-	      System.out.println("user_genre: "+ user_genre);
-	      System.out.println("user_nick: "+user_nick);
-	      System.out.println("user_email: "+ user_email);
-	      System.out.println("user_gender: "+ user_gender);
-	      System.out.println("user_age: "+user_age);
-	      System.out.println("user_point: "+ user_point);
-	      System.out.println("user_loc: "+ user_loc);
-	      
-	      String gender_tag=user_gender;
-	      String age_tag=user_age;
-	      String point_tag=user_point;
-	      
-	      model.addAttribute("gender_tag",gender_tag);
-	      model.addAttribute("age_tag",age_tag);
-	      model.addAttribute("point_tag",point_tag);
-
-	   
-
+	  
 	      /*System.out.println("로그인????");*/
 	      List<NewsVO> newsList=newsDao.mainNewsList();
 	      
@@ -80,11 +53,46 @@ public class MainController {
 		  {
 		 	//System.out.println(svo.getNet().getEvaluation_point());
 		  }
-
 		  model.addAttribute("bigSliderList", bigSliderList);
 		  
-		  
-		  try{
+
+		  //세션에 있는 값 가져오기
+	      String user_email=(String)session.getAttribute("email");
+/*		  String user_genre=(String)session.getAttribute("genre");
+	      String user_nick=(String)session.getAttribute("nick");
+	      String user_gender=(String)session.getAttribute("gender");
+	      String user_age=(String)session.getAttribute("age");
+	      String user_point=(String)session.getAttribute("point");
+	      String user_loc=(String)session.getAttribute("loc");*/
+	      
+	       MemberVO mvo=dao.profileData(user_email);
+	     
+	      
+	      String user_genre=mvo.getGenre();
+	      String user_loc=mvo.getLoc();	 
+	      String user_age=mvo.getAge();
+	      String user_nick=mvo.getNick();
+	      String user_point=mvo.getPoint();
+	      String user_gender=mvo.getGender();
+	      
+	      System.out.println("user_genre: "+ user_genre);
+	      System.out.println("user_nick: "+user_nick);
+	      System.out.println("user_email: "+ user_email);
+	      System.out.println("user_gender: "+ user_gender);
+	      System.out.println("user_age: "+user_age);
+	      System.out.println("user_point: "+ user_point);
+	      System.out.println("user_loc: "+ user_loc);
+	      
+	      String gender_tag=user_gender;
+	      String age_tag=user_age;
+	      String point_tag=user_point;
+	      
+	      model.addAttribute("gender_tag",gender_tag);
+	      model.addAttribute("age_tag",age_tag);
+	      model.addAttribute("point_tag",point_tag);
+
+	  
+		 try{
 			  if(user_email!=null ) {
 		    
 		        	  if(user_age.contains("10")) user_age= "age_10"; 
@@ -117,19 +125,26 @@ public class MainController {
 			      
 		              List<MovieVO> genreList=mDao.genreRecomm(user_genre);
 		              model.addAttribute("genreList", genreList);
-		            
-			            model.addAttribute("user_genre", user_genre);
-			            model.addAttribute("user_nick", user_nick); 
-			            model.addAttribute("user_age",user_age);
-			            model.addAttribute("user_gender",user_gender);
-			            model.addAttribute("user_point",user_point);
-			            model.addAttribute("user_loc",user_loc);    
+
+		              List<MovieVO> locList=mDao.locRecomm(user_loc);
+		              model.addAttribute("locList", locList);
+		              
+		              List<MovieVO> specialList=mDao.specialRecomm(user_genre);
+		              model.addAttribute("specialList", specialList);
+		              
+		              
+			           model.addAttribute("user_genre", user_genre);
+			           model.addAttribute("user_nick", user_nick); 
+			           model.addAttribute("user_age",user_age);
+			           model.addAttribute("user_gender",user_gender);
+			           model.addAttribute("user_point",user_point);
+			           model.addAttribute("user_loc",user_loc);    
 			  }   
 		         
 		      }catch (NullPointerException ex) {
 		    	  System.out.println("Failed to load user_data....");
 		    	  ex.printStackTrace();
-		      }
+		      } 
 		  return "main";
 	}
 }

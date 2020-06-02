@@ -45,5 +45,19 @@ public class MainDAO {
 	     return mapper.genreRecomm(user_genre);
 	 }
 	
+	 // 추천 6: 지역
+	 public List<MovieVO> locRecomm(String user_loc)
+	 {
+		 System.out.println(user_loc);
+		 return mapper.locRecomm(user_loc);
+	 }
 	
+	// 추천7 :전문가 평점!
+	 public List<MovieVO> specialRecomm(String user_genre)
+	 {
+		 return mapper.specialRecomm(user_genre);
+	 }
+	 
+	 
+	 
 }

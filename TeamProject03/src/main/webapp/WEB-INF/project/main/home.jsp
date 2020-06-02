@@ -381,6 +381,8 @@ $(function(){
          </div>
 <!--============================================================================================================================================추천3 END-->
 
+
+
 <!--================================================= 장르 ====================================================================================추천4 START-->
 
          <div class="title-hd">
@@ -450,6 +452,81 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천5END-->
+
+
+<!--================================================= 선호 지역 영화 ====================================================================================추천6 START-->
+
+         <div class="title-hd">
+               <h2># 추천 ${user_loc} 영화</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="lvo" items="${locList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${lvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${lvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천6END-->
+
+
+
+
+<!--================================================= 선호 지역 영화 ====================================================================================추천7 START-->
+
+         <div class="title-hd">
+               <h2># 전문가 추천 ${user_genre} 영화</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="svo" items="${specialList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${svo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${svo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천7END-->
+
         </div>     
        </div>
 

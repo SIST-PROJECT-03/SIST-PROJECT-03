@@ -42,7 +42,8 @@ public interface MainMapper {
 			@Result(property="poster",column="poster"),
 			@Result(property="net.evaluation_point",column="evaluation_point"),
 			@Result(property="net.movie_id",column="movie_id"),
-			@Result(property="gen.genre",column="genre")
+			@Result(property="gen.genre",column="genre"),
+			@Result(property="sps.score",column="score")
 			
 		}) 
 		
@@ -76,7 +77,7 @@ public interface MainMapper {
 		          +"(SELECT title , poster, genre, age_10 "
 		          +"FROM naver_re_movies nm, netizen_evaluation_trend nt "
 		          +"WHERE nm.movie_id=nt.movie_id AND genre LIKE '%'||#{user_genre}||'%' ORDER BY opening_date DESC) "
-		          +"WHERE ROWNUM < 50 ORDER BY age_10 DESC")
+		          +"WHERE ROWNUM < 50 ")
 		public List<MovieVO> genreRecomm(String user_genre);
 		
 		// 추천5) 감상포인트 point
@@ -85,8 +86,26 @@ public interface MainMapper {
 				+ "ORDER BY #{user_point} DESC")
 		public List<MovieVO> pointRecommendation(String user_point);
 	
-
+		
+		// 추천6) 선호지역 
+		 @Select("SELECT * FROM "
+		    		+"(SELECT nm.movie_id, title, genre, opening_date, poster FROM naver_re_movies nm, netizen_evaluation_trend nt "
+		    		+"WHERE nm.movie_id=nt.movie_id AND country LIKE '%'||#{user_loc}||'%' ORDER BY opening_date DESC) " 
+		    		+"WHERE ROWNUM < 50 ")
+		    public List<MovieVO> locRecomm(String user_loc);
 	   
+		
+		// 추천7) 전문가 평점
+		 //장르 + 전문가
+		    @Select("SELECT * FROM "
+		    		+"(SELECT title, genre, opening_date, poster, ROUND(AVG(sps.score), 2) score "
+		    		+"FROM naver_re_movies nm, specialpoint sps " 
+		    		+"WHERE nm.movie_id=sps.movie_id AND genre LIKE '%'||#{user_genre}||'%' GROUP BY title, genre, opening_date, poster ORDER BY opening_date DESC) " 
+		    		+"WHERE ROWNUM < 50 ")
+		    public List<MovieVO> specialRecomm(String user_genre); 
+		 
+		 
+		 
 	   
 
 	
