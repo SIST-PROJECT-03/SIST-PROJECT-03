@@ -53,41 +53,37 @@ public class MainController {
 		  {
 		 	//System.out.println(svo.getNet().getEvaluation_point());
 		  }
-		  model.addAttribute("bigSliderList", bigSliderList);
-		 
+		  model.addAttribute("bigSliderList", bigSliderList);	 
 		  String email=(String)session.getAttribute("email");
 		 
-		  System.out.println("지금로긴한 사람 : "+email);
-	      
-		  if(email==null) email="sist@gmail.com";
-		  MemberVO mvo=dao.profileData(email);
-	      String user_genre=mvo.getGenre();
-	      String user_loc=mvo.getLoc();	 
-	      String user_age=mvo.getAge();
-	      String user_nick=mvo.getNick();
-	      String user_point=mvo.getPoint();
-	      String user_gender=mvo.getGender();
-	      
-	      System.out.println("user_genre: "+ user_genre);
-	      System.out.println("user_nick: "+user_nick);
-	      System.out.println("user_email: "+ email);
-	      System.out.println("user_gender: "+ user_gender);
-	      System.out.println("user_age: "+user_age);
-	      System.out.println("user_point: "+ user_point);
-	      System.out.println("user_loc: "+ user_loc);
-	      
-	      String gender_tag=user_gender;
-	      String age_tag=user_age;
-	      String point_tag=user_point;
-	      
-	      model.addAttribute("gender_tag",gender_tag);
-	      model.addAttribute("age_tag",age_tag);
-	      model.addAttribute("point_tag",point_tag);
-
 	  
 		 try{
 			  if(email!=null ) {
-				  
+					  
+					  MemberVO mvo=dao.profileData(email);
+				      String user_genre=mvo.getGenre();
+				      String user_loc=mvo.getLoc();	 
+				      String user_age=mvo.getAge();
+				      String user_nick=mvo.getNick();
+				      String user_point=mvo.getPoint();
+				      String user_gender=mvo.getGender();
+				      
+				      System.out.println("user_genre: "+ user_genre);
+				      System.out.println("user_nick: "+user_nick);
+				      System.out.println("user_email: "+ email);
+				      System.out.println("user_gender: "+ user_gender);
+				      System.out.println("user_age: "+user_age);
+				      System.out.println("user_point: "+ user_point);
+				      System.out.println("user_loc: "+ user_loc);
+				      
+				      String gender_tag=user_gender;
+				      String age_tag=user_age;
+				      String point_tag=user_point;
+				      
+				      model.addAttribute("gender_tag",gender_tag);
+				      model.addAttribute("age_tag",age_tag);
+				      model.addAttribute("point_tag",point_tag);
+			      
 				  		/*ORDER BY reads only Integer OR ${} Type*/
 		        	  if(user_age.contains("10"))  user_age= "age_10"; 
 					  if(user_age.contains("20"))  user_age= "age_20"; 
@@ -107,9 +103,9 @@ public class MainController {
 					  if(user_gender.contains("남")) user_gender="male_rating";
 						
 					  Map map=new HashMap();
-			           map.put("user_age",user_age);
-			           map.put("user_gender",user_gender);
-			           map.put("user_point",user_point);
+			          map.put("user_age",user_age);
+			          map.put("user_gender",user_gender);
+			          map.put("user_point",user_point);
 			           
 					  List<MovieVO> ageList=mDao.ageRecommendation(map);
 					  model.addAttribute("ageList",ageList);

@@ -57,7 +57,7 @@ public interface MainMapper {
 	  
 		// 추천4) 장르 genre + 나이 최신 정렬 
 		@Select("SELECT * FROM "
-		          +"(SELECT title , poster, genre, age_10 "
+		          +"(SELECT nt.movie_id,title , poster, genre, age_10 "
 		          +"FROM naver_re_movies nm, netizen_evaluation_trend nt "
 		          +"WHERE nm.movie_id=nt.movie_id AND genre LIKE '%'||#{user_genre}||'%' ORDER BY opening_date DESC) "
 		          +"WHERE ROWNUM < 50 ")
@@ -72,7 +72,7 @@ public interface MainMapper {
 		
 		// 추천6) 선호지역 
 		 @Select("SELECT * FROM "
-		    		+"(SELECT nm.movie_id, title, genre, opening_date, poster FROM naver_re_movies nm, netizen_evaluation_trend nt "
+		    		+"(SELECT nt.movie_id, title, genre, opening_date, poster FROM naver_re_movies nm, netizen_evaluation_trend nt "
 		    		+"WHERE nm.movie_id=nt.movie_id AND country LIKE '%'||#{user_loc}||'%' ORDER BY opening_date DESC) " 
 		    		+"WHERE ROWNUM < 50 ")
 		    public List<MovieVO> locRecomm(String user_loc);
