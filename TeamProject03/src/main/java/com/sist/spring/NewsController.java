@@ -2,6 +2,7 @@ package com.sist.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -73,13 +74,13 @@ public class NewsController {
 		List<NewsReviewVO> rlist=dao.newsReviewData(no);
 		int newsReviewTotal=dao.newsTotalReview(no);
 		
-		HttpSession session=request.getSession();
+		/*HttpSession session=request.getSession();
 		if(session.getAttribute("email")!=null)
 		{
 			if(session.getAttribute("newsList")!=null){
 				List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
 				newsList.add(vo);
-				/*System.out.println(newsList.size());*/
+				System.out.println(newsList.size());
 				session.setAttribute("newsList", newsList);
 			}
 			else
@@ -88,7 +89,7 @@ public class NewsController {
 				newsList.add(vo);
 				session.setAttribute("newsList", newsList);
 			}
-		}
+		}*/
 		
 		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
 		vo.setContent("<p>"+vo.getContent()+"</p>");
@@ -173,14 +174,14 @@ public class NewsController {
 	}*/
 	
 	@RequestMapping("newsReviewUpdate.do")
-	public String news_reply_update(Model model,int no)
+	public String news_reply_update(NewsReviewVO vo)
 	{
-		NewsReviewVO vo=dao.newsReviewUpdateData(no);
+		dao.newsReviewUpdate(vo);
 		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}
 	
-	@Transactional
+	@Transactional(propagation=Propagation.REQUIRED,rollbackFor=Exception.class)
 	@RequestMapping("newsReplyReplyInsert.do")
 	public String news_reply_reply_insert(NewsReviewVO vo,int pno,HttpServletRequest request)
 	{
@@ -188,6 +189,7 @@ public class NewsController {
 		String email=(String)session.getAttribute("email");
 		
 		NewsReviewVO rvo=dao.newsReplyReplySelect(pno);
+		dao.newsGroupstepIncrement(rvo);
 		
 		vo.setEmail(email);
 		vo.setGroup_id(rvo.getGroup_id());
@@ -195,8 +197,31 @@ public class NewsController {
 		vo.setGroup_tab(rvo.getGroup_tab()+1);
 		vo.setRoot(pno);
 		
-		dao.newsReviewUpdateData(pno);
+		dao.newsReplyReplyDepthIncrement(pno);
 		dao.newsReplyReplyInsert(vo);
+		
+		return "redirect:newsDetail.do?no="+vo.getNews_no();
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRED,rollbackFor=Exception.class)
+	@RequestMapping("newsReplyDelete.do")
+	public String news_reply_reply_delete(int pno)
+	{
+		System.out.println("pno: "+pno);
+		NewsReviewVO vo=dao.newsReplyReplySelect(pno);
+		System.out.println("no :"+vo.getNo());
+		System.out.println("depth: "+vo.getDepth());
+		if(vo.getDepth()==0)
+		{
+			dao.newsReplyReplyDelete(pno);
+			dao.newsReplyDepthDecrement(vo.getRoot());
+		}
+		else
+		{
+			vo.setNo(pno);
+			vo.setMsg("관리자가 삭제한 댓글입니다.");
+			dao.newsReplyReplyDeleteMsg(vo);
+		}
 		
 		return "redirect:newsDetail.do?no="+vo.getNews_no();
 	}

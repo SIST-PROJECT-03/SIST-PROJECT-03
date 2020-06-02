@@ -7,7 +7,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/style.css">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+var celebList=[];
+$(function(){
+	/* actor  actorResult*/
+	$(document).ready(function(){
+		
+		$('.actor').keyup(function(){
+			/* $('.actorResult').text($('.actor').val()); */
+		})
+	})
+})	
+	
+</script> -->
 </head>
 <body>
 
@@ -20,7 +34,6 @@
     </div>
 </div>
 <!-- =========================== PRELOADING SECTION END ============================-->
-
 
 <!-- =========================== LOGIN FORM START ============================-->
 <div class="login-wrapper" id="login-content">
@@ -43,8 +56,8 @@
         </form>
     </div>  
 </div>
-
 <!-- =========================== LOGIN FORM END ============================-->
+
 <!-- =========================== SIGNUP FORM START ============================-->
 <div class="login-wrapper"  id="signup-content">
     <div class="login-content">
@@ -101,18 +114,18 @@
             <div class="row">
             	<label class="col-sm-5">성별</label>
             	<div class="genders text-center">
-            		<input type="radio" name="gender" id="man"><span for="man">남자</span>
-	          		<input type="radio" name="gender" id="woman"><span for="woman">여자</span>
+            		<input type="radio" name="gender" id="man" value="남자"><span for="man">남자</span>
+	          		<input type="radio" name="gender" id="woman" value="여자"><span for="woman">여자</span>
 	          	</div>	
             </div>
             <div class="row">
             	<label class="col-sm-5">나이대</label>
 	          	<select name="age">
-	          		<option value="10대">10대</option>
-	          		<option value="20대">20대</option>
-	          		<option value="30대">30대</option>
-	          		<option value="40대">40대</option>
-	          		<option value="50대">50대</option>
+	          		<option value="10">10대</option>
+	          		<option value="20">20대</option>
+	          		<option value="30">30대</option>
+	          		<option value="40">40대</option>
+	          		<option value="50">50대</option>
 	          	</select>
             </div>
             <div class="row">
@@ -136,10 +149,11 @@
 	          		<option value="중동/아프리카">중동/아프리카</option>
 	          	</select>
             </div>
-            <div class="row">
+            <!-- <div class="row">
             	<label class="col-sm-5">선호 배우</label>
-          		<input type="text" name="actor">
+          		<input type="text" id="actor" name="actor" class="actor">         		
             </div>
+            <div id="actorResult" class="actorResult"></div> -->
 	       	<div class="row">
 	        	<button type="submit">회원가입</button>
 	        </div>
@@ -147,7 +161,6 @@
     </div>
 </div>
 <!-- =========================== SIGNUP FORM END ============================-->
-
 
 <!-- =========================== HEADER SECTION START ============================-->
 <header class="ht-header full-width-hd">
@@ -265,8 +278,8 @@
 								<li>
 									<a href="userProfile.do" >프로필</a>
 								</li>
-								<li><a href="userFavoriteGrid.do">컬렉션</a></li>
-								<li class="it-last"><a href="userRate.do">평점/리뷰</a></li>
+								<!-- <li><a href="userFavoriteGrid.do">컬렉션</a></li>
+								<li class="it-last"><a href="userRate.do">평점/리뷰</a></li> -->
 							</ul>
 						</li>
 						</c:if>

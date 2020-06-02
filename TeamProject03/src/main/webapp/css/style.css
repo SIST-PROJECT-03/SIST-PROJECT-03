@@ -3972,6 +3972,7 @@ textarea {
 .row:after {
   clear: both;
 }
+
 /* Text align
 --------------------------*/
 .text-center {
@@ -4085,6 +4086,13 @@ ul {
 }
 .movie-items .movie-item .mv-img {
   position: relative;
+
+}
+  
+.mv-img img {
+  width:257px;
+  height:350px;
+
 }
 
 .movie-items .movie-item .mv-img:after {
@@ -4122,9 +4130,9 @@ ul {
     margin-left: 60px;
   }
 }
-.movie-items .movie-item .title-in h6 a {
+.movie-items .movie-item .title-in h5 {
   font-family: 'Dosis', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -7808,6 +7816,21 @@ header {
   header {
     background-color: #0f2133;
   }
+}
+
+body #sign li.btn a  {
+    background-color: #dd003f;
+    border-radius: 42px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding: 30px 30px;
+	text-align: center;
 }
 header .navbar-default {
   margin-bottom: 0;

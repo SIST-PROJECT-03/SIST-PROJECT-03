@@ -10,7 +10,6 @@ public class MemberVO {
 	private String age;
 	private String point;
 	private String loc;
-	private String actor;
 	
 	public String getEmail() {
 		return email;
@@ -60,12 +59,5 @@ public class MemberVO {
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
-	public String getActor() {
-		return actor;
-	}
-	public void setActor(String actor) {
-		this.actor = actor;
-	}
-
 
 }

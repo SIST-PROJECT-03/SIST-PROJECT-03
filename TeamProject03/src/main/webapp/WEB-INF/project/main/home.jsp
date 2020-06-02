@@ -1,6 +1,7 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8" isELIgnored="false"%> 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -45,12 +46,15 @@ $(function(){
 </script>
 </head>
 <body>
+<input type="hidden" value="${sessionScope.email }"/>	
 <!-- ==============================main big slider total area start ================================= -->
 <div class="slider sliderv2">
 	<div class="container">
 		<div class="row">
-	    	<div class="slider-single-item">
-	    	
+			<div class="title-hd">
+			<h1 style="color:#ffffff !important;">블록버스터 최신 인기작 Top15</h1>
+			</div>
+	  	 	<div class="slider-single-item">
 	    	
 				<!-- ====================================1 big slider start=========================================== -->	 
 				<c:forEach var="svo" items="${bigSliderList }">   	
@@ -108,21 +112,34 @@ $(function(){
 </div> 
 <!-- ==============================main big slider total area end ================================= -->
 
+<c:if test="${empty sessionScope.email}">
+ <div class="movie-items  full-width">
+  <div class="container" style="width:100%; height:528px;text-align:center;">
+	<h1 style="font-size: 56px;color: #ffffff; margin-top:150px;!important"> 지금 블록버스터의 회원이 되어 <br/>더욱 다양한 영화를 추천 받으세요</h1>
+	<ul class="nav navbar-nav flex-child-menu menu-right" id="sign">
+	<li class="btn signupLink" style="margin: 50px 470px auto;"><a href="signup">지금 가입하기</a></li>
+	</ul>
+  </div>
+ </div>
+</c:if>
+
+<c:if test="${not empty sessionScope.email }">
 <div class="movie-items  full-width">
+
    <div class="row">
       <div class="col-md-12">
          <div class="title-hd">
-            <h2>#블록버스터 최고의 인기작</h2>
+            <h2>#제작지역</h2>
             <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
 
          <div class="tabs">
-<!--==================================================================================================================================추천1 START -->
+<!--=======================================================영화 제작 지역=============================================================추천1 START -->
              <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
                      <div class="row">
                         <div class="slick-multiItem2">
-                
+               <%--  		<c:forEach var="" items=""> --%>
                            <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
@@ -132,11 +149,11 @@ $(function(){
                                     <a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
                                  </div>
                                  <div class="title-in">
-                                    <h5>인셉션</h5>
+                                    <h5></h5>
                                  </div>
                               </div>
                            </div>
-                           
+             <%--             </c:forEach> --%>
                         </div>
                      </div>
                  </div>
@@ -291,47 +308,11 @@ $(function(){
 <!--================================================================================================================================ajax end  -->                  
          </div>
 <!--============================================================================================================================================추천1 END-->
-<<<<<<< HEAD
-
-			
-<!--============================================================================================================================================추천2 START-->
-			<div class="title-hd">
-					<h2>#여성 기준 평점</h2>
-					<a class="viewall2">x</a>
-			</div>
-			 <div class="tab-content">
-			        <div id="tab1-h2" class="tab active">
-			            <div class="row">
-			            	<div class="slick-multiItem2">
-			            	  <c:forEach var="rvo" items="${ratingList }">
-			            		<div class="slide-it">
-			            			<div class="movie-item">
-				            			<div class="mv-img">
-				            				<img src="" alt="">
-				            			</div>
-				            			<div class="hvr-inner">
-				            				<a class="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i></a>
-				            			</div>
-				            			<div class="title-in">
-				            				<h6></h6>
-				            			</div>
-				            		</div>
-			            		</div>
-			            	   </c:forEach>
-			            	</div>
-			            </div>
-			        </div>
-			</div>
-<!--============================================================================================================================================추천2 END-->
-	</div>
-=======
->>>>>>> 6fd44009aec87c65cbed6e320fc0bd5d8b4ab923
 </div>
          
-<!--============================================================================================================================================추천2 START-->
-
-         <div class="title-hd">
-               <h2>#여성 기준 평점</h2>
+<!--=========================================================== 연령대 =======================================================================추천2 START-->
+         <div class="title-hd"> 
+               <h2># ${age_tag} 연령층 인기 영화 </h2>
                <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
@@ -362,18 +343,231 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천2 END-->
+
+<!--=========================================================성별 ==============================================================================추천3 START-->
+
+         <div class="title-hd">
+               <h2># ${gender_tag } 관객 높은 평점 영화 </h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="gvo" items="${genderList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${gvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${gvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천3 END-->
+
+<!--================================================= 장르 ====================================================================================추천4 START-->
+
+         <div class="title-hd">
+               <h2># ${user_genre}</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="grvo" items="${genreList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${grvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${grvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천4END-->
+
+<!--=============================================================감상포인트============================================================추천5 START-->
+
+         <div class="title-hd">
+               <h2># ${point_tag}가 훌륭한 영화 </h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="ptvo" items="${pointList}">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${ptvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${ptvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천5END-->
         </div>     
        </div>
-   </div>
 
+ <div class="row">
+      <div class="col-md-12">
+         <div class="mainInner" style="background-color:#020d18">
+<!--===============================================================================================전문가 평점=============================추천6 START-->
+         <div class="title-hd">
+               <h2>#기자 평점</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="nvo" items="${ageList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${nvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천6END-->
+
+<!--===============================================================================================사용자 유사도==================================추천7 START-->
+
+         <div class="title-hd">
+               <h2>(${user_nick })님과 취향이 비슷한 친구</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="nvo" items="${ageList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${nvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천7 END-->
+
+<!--=============================================================================================== 트위터 통계 분석=================================추천7 START-->
+
+         <div class="title-hd">
+               <h2>트위터 , 형태소 분석</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="nvo" items="${ageList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${nvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+
+<!--============================================================================================================================================추천7 END-->
+     </div>
+    </div>
+   </div>
+ </div>
+</c:if>
 <!-- =============================  LATEST NEWS AREA START  ============================== -->
 <div class="latestnew full-width">
       <div class="row">
          <!-- <div class="col-md-9"> -->
          <div>
-            <div class="ads adsv2">
-               <img src="images/uploads/ads2.png" alt="">
-            </div>
             <div class="title-hd">
                <h2>최신 영화 뉴스</h2>
                <a href="newsList.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
@@ -409,7 +603,8 @@ $(function(){
             </div>
          </div> -->
       </div>
-</div>
+
+ </div>
 <!-- =============================  LATEST NEWS AREA END  ============================== -->
 <!-- =============================  HOME END  ============================== -->
 </body>

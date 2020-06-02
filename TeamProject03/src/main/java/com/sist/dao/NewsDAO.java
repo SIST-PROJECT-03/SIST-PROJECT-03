@@ -64,11 +64,6 @@ public class NewsDAO {
 		return mapper.newsTotalReview(no);
 	}
 	
-	public NewsReviewVO newsReviewUpdateData(int no)
-	{
-		return mapper.newsReviewUpdateData(no);
-	}
-	
 	public NewsReviewVO newsReplyReplySelect(int pno)
 	{
 		return mapper.newsReplyReplySelect(pno);
@@ -83,4 +78,30 @@ public class NewsDAO {
 	{
 		mapper.newsReplyReplyInsert(vo);
 	}
+	
+	public void newsReviewUpdate(NewsReviewVO vo)
+	{
+		mapper.newsReviewUpdate(vo);
+	}
+	
+	public void newsReplyDepthDecrement(int pno)
+	{
+		mapper.newsReplyDepthDecrement(pno);
+	}
+	
+	public void newsReplyReplyDelete(int no)
+	{
+		mapper.newsReplyReplyDelete(no);
+	}
+	
+	public void newsReplyReplyDeleteMsg(NewsReviewVO vo)
+	{
+		mapper.newsReplyReplyDeleteMsg(vo);
+	}
+	
+	public void newsGroupstepIncrement(NewsReviewVO vo)
+	{
+		mapper.newsGroupstepIncrement(vo);
+	}
+	
 }

@@ -30,10 +30,10 @@
 		<div class="row ipad-width2">
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="user-information">
-					<div class="user-img">
+					<!-- <div class="user-img">
 						<a href="#"><img src="images/uploads/user-img.png" alt=""><br></a>
 						<a href="#" class="redbtn">프로필 사진 변경</a>
-					</div>
+					</div> -->
 					<div class="user-fav">
 						<!-- <p>Account Details</p> -->
 						<ul>

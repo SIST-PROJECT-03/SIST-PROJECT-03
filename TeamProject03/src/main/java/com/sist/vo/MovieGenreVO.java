@@ -1,7 +1,5 @@
 package com.sist.vo;
 
-import lombok.Getter;
-import lombok.Setter;
 
 public class MovieGenreVO {
 
