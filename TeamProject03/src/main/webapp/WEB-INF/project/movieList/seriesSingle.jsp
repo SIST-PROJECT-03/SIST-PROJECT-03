@@ -172,23 +172,23 @@ $(document).ready(function(){
 					<div class="movie-single-ct main-content">
 						<h1 class="bd-hd">${vo.title }<span> </span>
 						</h1>
-						<div class="movie-rate">
-							<div class="rate">
+						<div class="movie-rate" >
+						<c:if test="${nvo.evaluation_point != null }">
+							<div class="rate"style="margin-right:10px;">
 								<i class="ion-android-star"></i>
-								<p>
-									<span>8</span><br>
+								<p><span>네티즌 평점 : ${nvo.evaluation_point }</span> /10.0<br>
+								
 								</p>
-								<p>
-									<span class="rv">56 리뷰</span>
+							</div></c:if>
+							<c:if test="${avo.evaluation_point != null }">
+							<div class="rate" style=" margin-right:5px;">
+								<i class="ion-android-star"></i>
+								<p><span>관람객 평점 : ${avo.evaluation_point }</span> /10.0<br>
 								</p>
-							</div>
-							<div class="rate-star">
-								<p>내 평점 등록:</p>
-								<i class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star-outline"></i>
+							</div></c:if>
+							<div class="rate"style="border-left:1px solid white;">
+							
+								<p><span class="rv">총 ${movieTotalReview }개의 리뷰가 있습니다.</span></p>
 							</div>
 						</div>
 						<div class="movie-tabs">
@@ -327,11 +327,10 @@ $(document).ready(function(){
 										<div class="row">
 											<div class="rv-hd">
 												<div class="div">
-													<h3>Related Movies To</h3>
 													<h2>${vo.title }</h2>
 												</div>
-												<span class="redbtn" id="review"
-													style="margin-right: 15px;">리뷰 작성</span>
+												<c:if test="${sessionScope.email !=null }"><span class="redbtn" id="review"
+													style="margin-right: 15px;">리뷰 작성</span></c:if>
 											</div>
 
 											<!--리뷰작성  -->
@@ -347,7 +346,7 @@ $(document).ready(function(){
 											</form>
 											<div class="topbar-filter">
 												<p>
-													Found <span>56 reviews</span> in total
+													총 <span>${movieTotalReview } 개의</span> 리뷰가 있습니다.
 												</p>
 												<label>Filter by:</label> <select>
 													<option value="range">-- Choose option --</option>
@@ -359,7 +358,7 @@ $(document).ready(function(){
 													<div class="cmt-item flex-it">
 														<div class="author-infor">
 															<div class="flex-it2">
-																<h6 style="color:white">${rvo.email },${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+																<h6 style="color:white">${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
 																<div class="reply">
 																	<c:if test="${sessionScope.email!=null&&sessionScope.email==rvo.email }">
 																		<h6 class="reply_btn"><span class="updateBtn" data-no="${rvo.no }">수정</span></h6> 
@@ -484,93 +483,6 @@ $(document).ready(function(){
 											</c:forEach>
 										</div>
 									</div>
-
-
-									<!-- ============================= MOVIE DETAIL - 시즌정보  탭 - 현재 미사용중 START  ============================== -->
-									<div id="season" class="tab">
-										<div class="row">
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- ============================= MOVIE DETAIL - 시즌정보  탭 - 현재 미사용중 END  ============================== -->
-
 
 									<!-- ============================= MOVIE DETAIL -  RELATED MOVIE 관련영화 TAB START  ============================== -->
 									<div id="moviesrelated" class="tab">
