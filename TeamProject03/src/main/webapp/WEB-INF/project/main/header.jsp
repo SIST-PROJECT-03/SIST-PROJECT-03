@@ -244,9 +244,9 @@ $(function(){
 						</li>	
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							영화탐색<i class="fa fa-angle-down" aria-hidden="true"></i>
+							영화탐색<!-- <i class="fa fa-angle-down" aria-hidden="true"></i> -->
 							</a>
-							<ul class="dropdown-menu level1">
+							<!-- <ul class="dropdown-menu level1">
 								<li class="dropdown">
 									<a href="javascript:void(0)" style="cursor: default;">장르<i class="fa fa-caret-right" aria-hidden="true" onclick="false"></i></a>
 									<ul class="dropdown-menu level2 hearderLevel" style="list-style: none;">
@@ -262,7 +262,7 @@ $(function(){
 										<li class="navLi"><a href="movieGrid.do">스릴러</a></li>
 									</ul>
 								</li> 
-								<!-- <li class="dropdown">
+								<li class="dropdown">
 									<a href="movieGrid.do">about us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="dropdown-menu level2">
 										<li><a href="movieGrid.do">About Us 01</a></li>
@@ -283,14 +283,14 @@ $(function(){
 										<li><a href="movieGrid.do">About Us 01</a></li>
 										<li><a href="movieGrid.do">About Us 02</a></li>
 									</ul>
-								</li>  -->
-								<!-- <li><a href="../movieList/movieList.do">Movie list</a></li>
+								</li> 
 								<li><a href="../movieList/movieList.do">Movie list</a></li>
-								<li><a href="../movieList/movieList.do">Movie list</a></li> -->
-							<!-- 	<li><a href="moviegridfw.html">movie grid full width</a></li>  -->
+								<li><a href="../movieList/movieList.do">Movie list</a></li>
+								<li><a href="../movieList/movieList.do">Movie list</a></li>
+								<li><a href="moviegridfw.html">movie grid full width</a></li> 
 								
-							<!-- 	<li class="it-last"><a href="moviesingle.html">Movie single</a></li>  -->
-							</ul>
+								<li class="it-last"><a href="moviesingle.html">Movie single</a></li> 
+							</ul> -->
 						</li>
 						<li class="dropdown first">
 							<!-- <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
