@@ -24,7 +24,7 @@ $(function(){
 </script> -->
 </head>
 <body>
-
+<c:if test="${empty sessionScope.email}">
 <!-- =========================== LOGIN FORM START ============================-->
 <div class="login-wrapper" id="login-content">
     <div class="login-content">
@@ -197,6 +197,7 @@ $(function(){
         </form>
     </div>
 </div>
+</c:if>
 <!-- =========================== SIGNUP FORM END ============================-->
 
 <c:if test="${not empty sessionScope.email}">
@@ -368,7 +369,7 @@ $(function(){
 	    </div>
 		</div>	
 </header>
-</c:if>
+</c:if> 
 <!-- =========================== HEADER SECTION END ============================-->
 </body>
 </html>
