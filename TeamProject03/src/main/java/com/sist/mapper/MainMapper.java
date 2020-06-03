@@ -86,8 +86,8 @@ public interface MainMapper {
 		    		+"WHERE nm.movie_id=sps.movie_id AND genre LIKE '%'||#{user_genre}||'%' GROUP BY title, genre, opening_date, poster ORDER BY opening_date DESC) " 
 		    		+"WHERE ROWNUM < 50 ")
 		    public List<MovieVO> specialRecomm(String user_genre); 
-		 
-	   
+
+		    
 
 	
 
