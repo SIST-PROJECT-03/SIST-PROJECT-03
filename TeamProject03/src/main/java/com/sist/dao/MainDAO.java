@@ -14,36 +14,43 @@ public class MainDAO {
 	@Autowired
 	private MainMapper mapper;
 
-	
-	// 추천 2 :  나이  
-	public List<MovieVO> ageRecommendation(String user_age)
+	public List<MovieVO> ageRecommendation(Map map)
 	 {
-	      return mapper.ageRecommendation(user_age);
+	      return mapper.ageRecommendation(map);
 	 }
 	
-	// 추천 3 : 성별
-	public List<MovieVO> genderRecommendation(String user_gender)
+	public List<MovieVO> genderRecommendation(Map map)
 	{
-		return mapper.genderRecommendation(user_gender);
+		return mapper.genderRecommendation(map);
 	}
-	
-	// 추천 4 : 감상포인트 
-	public List<MovieVO> pointRecommendation(String user_point)
+ 
+	public List<MovieVO> pointRecommendation(Map map)
 	{
-		return mapper.pointRecommendation(user_point);
+		return mapper.pointRecommendation(map);
 	}
-	// 슬라이더 
+
 	public List<MovieVO> bigSliderList()
 	{
 		return mapper.bigSliderList();
 	}
-	
-	// 추천 5 : 장르  
+ 
 	 public List<MovieVO> genreRecomm(String user_genre)
 	 {
 	     System.out.println(user_genre);
 	     return mapper.genreRecomm(user_genre);
 	 }
 	
+	 public List<MovieVO> locRecomm(Map map)
+	 {
+		 System.out.println(map);
+		 return mapper.locRecomm(map);
+	 }
 	
+	 public List<MovieVO> specialRecomm(Map map)
+	 {
+		 return mapper.specialRecomm(map);
+	 }
+	 
+	 
+	 
 }

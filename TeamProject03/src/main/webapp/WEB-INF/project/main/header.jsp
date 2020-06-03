@@ -24,7 +24,7 @@ $(function(){
 </script> -->
 </head>
 <body>
-
+<c:if test="${empty sessionScope.email}">
 <!-- =========================== LOGIN FORM START ============================-->
 <div class="login-wrapper" id="login-content">
     <div class="login-content">
@@ -197,6 +197,7 @@ $(function(){
         </form>
     </div>
 </div>
+</c:if>
 <!-- =========================== SIGNUP FORM END ============================-->
 
 <c:if test="${not empty sessionScope.email}">
@@ -359,7 +360,7 @@ $(function(){
 	    <!-- search form -->
 	    <div class="top-search">
 	    	<select>
-				<option value="saab">영화 제목</option>
+				<option value="movie_title">영화 제목</option>
 				<option value="saab">뉴스</option>
 				<option value="saab">영화인</option>
 				<option value="saab">장르</option>
@@ -368,7 +369,7 @@ $(function(){
 	    </div>
 		</div>	
 </header>
-</c:if>
+</c:if> 
 <!-- =========================== HEADER SECTION END ============================-->
 </body>
 </html>

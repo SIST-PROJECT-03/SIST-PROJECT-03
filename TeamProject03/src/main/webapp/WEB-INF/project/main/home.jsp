@@ -43,6 +43,8 @@ $(function(){
       $('.ing').css('background-color','');
    });
 })
+
+
 </script>
 </head>
 <body>
@@ -64,7 +66,6 @@ $(function(){
 </c:if>
 
 <c:if test="${not empty sessionScope.email }">
-<input type="hidden" value="${sessionScope.email }"/>	
 <!-- ==============================main big slider total area start ================================= -->
 <div class="slider sliderv2">
 	<div class="container">
@@ -87,7 +88,7 @@ $(function(){
 			    					<!-- <span class="orange"><a href="#">범죄</a></span> -->
 			    				</div>
 			    				<h1><a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
-								${svo.title }<span>${svo.net.movie_id }</span></a></h1>
+								${svo.title }<span></span></a></h1>
 								<div class="social-btn">
 									<a href="#" class="parent-btn"><i class="ion-play"></i>예고편 보기</a>
 									<a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>
@@ -131,36 +132,43 @@ $(function(){
 <div class="movie-items  full-width">
    <div class="row">
       <div class="col-md-12">
-         <div class="title-hd">
-            <h2>#제작지역</h2>
-            <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
-         </div>
          <div class="tabs">
-<!--=======================================================영화 제작 지역=============================================================추천1 START -->
-             <div class="tab-content">
+             <div class="tab-content"></div>
+		 </div>
+         
+<!--=========================================================== 연령대 =======================================================================추천2 START-->
+         <div class="title-hd"> 
+               <h2># ${age_tag}대 연령층 인기 영화 </h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
                      <div class="row">
                         <div class="slick-multiItem2">
-               <%--  		<c:forEach var="" items=""> --%>
-                           <div class="slide-it">
+                          <c:forEach var="avo" items="${ageList }">
+                           <div class="slide-it">				
+                              <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
-                                    <img src="images/uploads/mv-it8.jpg" alt="">
+                                    <img src="${avo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                                    <a  href="moviesingle.html"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                    <a href="seriesSingle.do?movie_id=${avo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a>
                                  </div>
                                  <div class="title-in">
-                                    <h5></h5>
+                                    <h5>${avo.title }</h5>
                                  </div>
                               </div>
                            </div>
-             <%--             </c:forEach> --%>
+                           </div>
+                           </c:forEach>
                         </div>
                      </div>
                  </div>
-                 
-<!--================================================================================================================================ajax start  -->
+         </div>
+<!--============================================================================================================================================추천2 END-->
+	
+<!--=============================================================ajax start==============================================================================-->
 <div class="movie-items full-width mainDetailinfo" >
    <div class="row">
       <div class="col-md-12">
@@ -174,7 +182,7 @@ $(function(){
                   <div class="mainInnerDetail">               
                      <div class="movie-item col-md-8">
                         <p>관람객별점 8.8 | 기자/평론가  7.8 | 네티즌  7.7</p>
-                        <p><b>외계인의 침공이 있었던 지구 최후의 날 이후, 모두가 떠나버린 지구의 마지막 정찰병 '잭 하퍼'(톰 크루즈)는 임무를 수행하던 중 정체불명의 우주선을 발견한다. 자신을 이미 알고 있는 한 여자(올가 쿠릴렌코)를 만나 기억나지 않는 과거 속에 어떤 음모가 있었음을 알게 된 잭. 그는 적인지 동료인지 알 수 없는 지하조직의 리더(모건 프리먼)를 통해 자신을 둘러싼 모든 것에 의심을 품기 시작하고 지구의 운명을 건 마지막 전쟁을 시작한다!</b></p>
+                        <p><b>외계인의 침공이 있었던 지구의 운명을 건 마지막 전쟁을 시작한다!</b></p>
                         <p><b>감독</b>&nbsp;  조지프 코신스키</p>
                         <p><b>출연</b>&nbsp;  톰 크루즈, 모건 프리먼, 올가 쿠릴렌코</p>
                         <p><b>개요</b>&nbsp; 15세 관람가 |  액션SF | 미국 | 2011년</p>
@@ -187,15 +195,16 @@ $(function(){
                            <a href="seriesSingle.do?movie_id=35901" class="item item-2 redbtn hvrbtn">상세정보</a>
                         </div>
                      </div>
-                     <!-- <div class="mainInnerVideoRight col-md-4"> -->
-                     <div class="mainInnerImg col-md-4" style="background-image:url('images/uploads/mv-it1.jpg');">
-                        <!-- <div class="videoPlayer">
+                     <div class="mainInnerVideoRight col-md-4">
+                      <div class="mainInnerImg col-md-4" style="background-image:url('images/uploads/mv-it1.jpg');">
+                        <div class="videoPlayer">
                            <img src="images/uploads/mv-it1.jpg">   
-                        </div> -->
+                        </div>
                         <div class="detailImg"></div>
                      </div>
-                  </div>
+                   </div>
                   <div class="mainSim">
+                  
                      <div class=" movie-item col-md-3">
                         <div class="mainInnerVideoRight col-md-5">
                            <div class="videoPlayer">
@@ -209,85 +218,17 @@ $(function(){
                            <p>감독</p>
                            <p>출연</p>
                            <p>장르 | 개봉연도</p>
-                           <!-- <div class="social-btn">      
+                           <div class="social-btn">      
                               <a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
                               <a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
-                           </div> -->
-                        </div>
-                        <div class="btn-transform transform-vertical">
-                           <a href="seriesSingle.do" class="item item-1 redbtn">상세정보</a>
-                           <a href="seriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
-                        </div>
-                     </div>
-                     <div class=" movie-item col-md-3">
-                        <div class="mainInnerVideoRight col-md-5">
-                           <div class="videoPlayer">
-                              <img src="images/uploads/mv-it1.jpg"/>
                            </div>
                         </div>
-                        <div class="mainInnerVideoRight col-md-7">
-                           <!-- <p>관람객별점 | 기자/평론가 | 네티즌</p> -->
-                           <p>제목</p>
-                           <p>줄거리</p>
-                           <p>감독</p>
-                           <p>출연</p>
-                           <p>장르 | 개봉연도</p>
-                           <!-- <div class="social-btn">      
-                              <a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
-                              <a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
-                           </div> -->
-                        </div>
                         <div class="btn-transform transform-vertical">
                            <a href="seriesSingle.do" class="item item-1 redbtn">상세정보</a>
                            <a href="seriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
                         </div>
                      </div>
-                     <div class=" movie-item col-md-3">
-                        <div class="mainInnerVideoRight col-md-5">
-                           <div class="videoPlayer">
-                              <img src="images/uploads/mv-it1.jpg"/>
-                           </div>
-                        </div>
-                        <div class="mainInnerVideoRight col-md-7">
-                           <!-- <p>관람객별점 | 기자/평론가 | 네티즌</p> -->
-                           <p>제목</p>
-                           <p>줄거리</p>
-                           <p>감독</p>
-                           <p>출연</p>
-                           <p>장르 | 개봉연도</p>
-                           <!-- <div class="social-btn">      
-                              <a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
-                              <a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
-                           </div> -->
-                        </div>
-                        <div class="btn-transform transform-vertical">
-                           <a href="seriesSingle.do" class="item item-1 redbtn">상세정보</a>
-                           <a href="seriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
-                        </div>
-                     </div>
-                     <div class=" movie-item col-md-3">
-                        <div class="mainInnerVideoRight col-md-5">
-                           <div class="videoPlayer">
-                              <img src="images/uploads/mv-it1.jpg"/>
-                           </div>
-                        </div>
-                        <div class="mainInnerVideoRight col-md-7">
-                           <!-- <p>관람객별점 | 기자/평론가 | 네티즌</p> -->
-                           <p>제목</p>
-                           <p>줄거리</p>
-                           <p>감독</p>
-                           <p>출연</p>
-                           <p>장르 | 개봉연도</p>
-                           <!-- <div class="social-btn">      
-                              <a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
-                              <a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
-                           </div> -->
-                        </div>
-                        <div class="btn-transform transform-vertical">
-                           <a href="seriesSingle.do" class="item item-1 redbtn">상세정보</a>
-                           <a href="seriesSingle.do" class="item item-2 redbtn hvrbtn">상세정보</a>
-                        </div>
-                     </div>
+                    
                   </div>   
                   <div class="mainNav">
                      <ul class="menu">
@@ -300,52 +241,15 @@ $(function(){
                            <span class="ing2"></span>
                         </li>      
                      </ul>
-                  </div>      
+                  </div>     
                </div>
             </div>
          </div>
-      </div>
-   </div>
+        </div>
+     </div>
+    </div>
 </div>    
-<!--================================================================================================================================ajax end  -->                  
-         </div>
-<!--============================================================================================================================================추천1 END-->
-</div>
-         
-<!--=========================================================== 연령대 =======================================================================추천2 START-->
-         <div class="title-hd"> 
-               <h2># ${age_tag} 연령층 인기 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
-         </div>
-          <div class="tab-content">
-                 <div id="tab1-h2" class="tab active">
-                     <div class="row">
-                        <div class="slick-multiItem2">
-                          <c:forEach var="nvo" items="${ageList }">
-                           <div class="slide-it">
-               
-                              <div class="slide-it">
-                              <div class="movie-item">
-                                 <div class="mv-img">
-                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
-                                 </div>
-                                 <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-                                 </div>
-                                 <div class="title-in">
-                                    <h5>${nvo.title }</h5>
-                        
-                                 </div>
-                              </div>
-                           </div>
-                           </div>
-                           </c:forEach>
-                        </div>
-                     </div>
-                 </div>
-         </div>
-<!--============================================================================================================================================추천2 END-->
-
+<!--================================================================================================================================ajax end  -->     
 <!--=========================================================성별 ==============================================================================추천3 START-->
 
          <div class="title-hd">
@@ -357,15 +261,14 @@ $(function(){
                      <div class="row">
                         <div class="slick-multiItem2">
                           <c:forEach var="gvo" items="${genderList }">
-                           <div class="slide-it">
-               
+                           <div class="slide-it">      				
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
                                     <img src="${gvo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                     <a href="seriesSingle.do?movie_id=${gvo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a>
                                  </div>
                                  <div class="title-in">
                                     <h5>${gvo.title }</h5>
@@ -380,7 +283,7 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천3 END-->
-
+		
 <!--================================================= 장르 ====================================================================================추천4 START-->
 
          <div class="title-hd">
@@ -392,15 +295,14 @@ $(function(){
                      <div class="row">
                         <div class="slick-multiItem2">
                           <c:forEach var="grvo" items="${genreList }">
-                           <div class="slide-it">
-               
+                           <div class="slide-it">    				
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
                                     <img src="${grvo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                    <a href="seriesSingle.do?movie_id=${grvo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a>
                                  </div>
                                  <div class="title-in">
                                     <h5>${grvo.title }</h5>
@@ -415,6 +317,7 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천4END-->
+		
 
 <!--=============================================================감상포인트============================================================추천5 START-->
 
@@ -428,14 +331,14 @@ $(function(){
                         <div class="slick-multiItem2">
                           <c:forEach var="ptvo" items="${pointList}">
                            <div class="slide-it">
-               
+               					<input type="hidden" value="${ptvo.net.movie_id}" name="movie_id" id="movie_id"/>        				
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
                                     <img src="${ptvo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                    <a href="seriesSingle.do?movie_id=${ptvo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a>
                                  </div>
                                  <div class="title-in">
                                     <h5>${ptvo.title }</h5>
@@ -450,34 +353,31 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천5END-->
-        </div>     
-       </div>
+		
 
- <div class="row">
-      <div class="col-md-12">
-         <div class="mainInner" style="background-color:#020d18">
-<!--===============================================================================================전문가 평점=============================추천6 START-->
+<!--================================================= 선호 지역 영화 ====================================================================================추천6 START-->
+
          <div class="title-hd">
-               <h2>#기자 평점</h2>
+               <h2># 추천 ${user_loc} 영화</h2>
                <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
                      <div class="row">
                         <div class="slick-multiItem2">
-                          <c:forEach var="nvo" items="${ageList }">
+                          <c:forEach var="lvo" items="${locList }">
                            <div class="slide-it">
                
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
-                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                    <img src="${lvo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                     <a href="seriesSingle.do?movie_id=${lvo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a>
                                  </div>
                                  <div class="title-in">
-                                    <h5>${nvo.title }</h5>
+                                    <h5>${lvo.title }</h5>
                         
                                  </div>
                               </div>
@@ -489,10 +389,55 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천6END-->
+		
 
-<!--===============================================================================================사용자 유사도==================================추천7 START-->
+
+
+<!--=====================================================================================================================================추천7 START-->
 
          <div class="title-hd">
+               <h2># 전문가 추천 ${user_genre} 영화</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="svo" items="${specialList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${svo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                       <%-- mno확인     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> --%>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${svo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천7END-->
+		
+        </div>     
+       </div>
+
+ <div class="row">
+      <div class="col-md-12">
+         <div class="mainInner" style="background-color:#020d18">
+
+
+<!--===============================================================================================사용자 유사도==================================추천7 START-->
+      <%--    <div class="title-hd">
                <h2>(${user_nick })님과 취향이 비슷한 친구</h2>
                <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
@@ -522,7 +467,7 @@ $(function(){
                         </div>
                      </div>
                  </div>
-         </div>
+         </div> --%>
 <!--============================================================================================================================================추천7 END-->
 
 <!--=============================================================================================== 트위터 통계 분석=================================추천7 START-->
