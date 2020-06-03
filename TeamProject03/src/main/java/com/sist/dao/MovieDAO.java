@@ -6,13 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sist.mapper.MovieMapper;
+import com.sist.vo.AudienceEvaluationTrendVO;
 import com.sist.vo.CelebVO;
 import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
 import com.sist.vo.MovieJoinVO;
 import com.sist.vo.MoviePicturesVO;
 import com.sist.vo.MovieReviewVO;
+import com.sist.vo.NetizenEvaluationTrendVO;
 import com.sist.vo.NewsReviewVO;
+import com.sist.vo.SpecialPointVO;
 import com.sist.vo.WatchingTrendVO;
 
 @Repository
@@ -66,6 +69,11 @@ public class MovieDAO {
 		return mapper.movieReviewSelect(pno);
 	}
 	
+	public int movieTotalReview(int movie_id)
+	{
+		return mapper.movieTotalReview(movie_id);
+	}
+	
 	public void movieReviewInsert(MovieReviewVO vo){
 		mapper.movieReviewInsert(vo);
 	}
@@ -74,5 +82,13 @@ public class MovieDAO {
 	}
 	public void movieReviewDelete(int no){
 		mapper.movieReviewDelete(no);
+	}
+	public AudienceEvaluationTrendVO getAudienceEvaluationTrend(int movie_id)
+	{
+	   return mapper.getAudienceEvaluationTrend(movie_id);
+	}
+	public NetizenEvaluationTrendVO getNetizenEvaluationTrend(int movie_id)
+	{
+	   return mapper.getNetizenEvaluationTrend(movie_id);
 	}
 }	

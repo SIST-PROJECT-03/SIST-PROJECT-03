@@ -53,7 +53,8 @@ public class MainController {
 		  {
 		 	//System.out.println(svo.getNet().getEvaluation_point());
 		  }
-		  model.addAttribute("bigSliderList", bigSliderList);	 
+		  model.addAttribute("bigSliderList", bigSliderList);
+		  
 		  String email=(String)session.getAttribute("email");
 		 
 	  
@@ -84,7 +85,7 @@ public class MainController {
 				      model.addAttribute("age_tag",age_tag);
 				      model.addAttribute("point_tag",point_tag);
 			      
-				  		/*ORDER BY reads only Integer OR ${} Type*/
+				  	   /*ORDER BY reads only Integer OR ${} Type*/
 		        	  if(user_age.contains("10"))  user_age= "age_10"; 
 					  if(user_age.contains("20"))  user_age= "age_20"; 
 					  if(user_age.contains("30"))  user_age= "age_30";
@@ -106,6 +107,8 @@ public class MainController {
 			          map.put("user_age",user_age);
 			          map.put("user_gender",user_gender);
 			          map.put("user_point",user_point);
+			          map.put("user_genre", user_genre);
+			          map.put("user_loc", user_loc);
 			           
 					  List<MovieVO> ageList=mDao.ageRecommendation(map);
 					  model.addAttribute("ageList",ageList);
@@ -115,18 +118,17 @@ public class MainController {
 			      
 					  List<MovieVO> pointList=mDao.pointRecommendation(map);
 					  model.addAttribute("pointList",pointList);
-			      
+					  
 		              List<MovieVO> genreList=mDao.genreRecomm(user_genre);
 		              model.addAttribute("genreList", genreList);
 
-		              List<MovieVO> locList=mDao.locRecomm(user_loc);
+		              List<MovieVO> locList=mDao.locRecomm(map);
 		              model.addAttribute("locList", locList);
 		              
-		              List<MovieVO> specialList=mDao.specialRecomm(user_genre);
+		              List<MovieVO> specialList=mDao.specialRecomm(map);
 		              model.addAttribute("specialList", specialList);
+		             
 		              
-		               
-		               
 			           model.addAttribute("user_genre", user_genre);
 			           model.addAttribute("user_nick", user_nick); 
 			           model.addAttribute("user_age",user_age);

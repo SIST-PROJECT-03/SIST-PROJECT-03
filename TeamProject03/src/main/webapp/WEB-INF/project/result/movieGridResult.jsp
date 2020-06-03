@@ -1,3 +1,5 @@
+
+  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<script src="js/movieListPage.js"></script>
 	<div class="flex-wrap-movielist">
 		<c:forEach items="${list}" var="vo">
 			<div class="movie-item-style-2 movie-item-style-1">
@@ -28,14 +31,22 @@
 
 	</div>
 	<div class="topbar-filter">
-		<label>Movies per page:</label> <select>
-			<option value="range">20 Movies</option>
-			<option value="saab">10 Movies</option>
+		<label>Movies per page:</label>
+		 <select class="selectRowSizeChange" >
+			<c:forEach begin="30" end="60" step="30" var="i">
+				<c:choose >
+					<c:when test="${rowSize == i}">
+						<option value="${i }" selected="selected">${i } Movies</option>
+					</c:when>
+					<c:otherwise>				
+						<option value="${i }">${i } Movies</option>
+					</c:otherwise>
+				</c:choose>	
+			</c:forEach>
 		</select>
 		<div class="pagination2">
-
 			<span>Page</span><span class="totalPagePrint"> ${totalPage }</span><span>
-				of</span> <span>${curPage } :</span> <a href="#"><i
+				of</span> <span>${curPage } :</span> <a href="movieGrid.do"><i
 				class="ion-arrow-left-b"></i><i class="ion-arrow-left-b"></i></a>
 
 			<c:choose>
@@ -87,8 +98,7 @@
 					</c:choose>
 				</c:otherwise>
 			</c:choose>
-
-			<a href="#"><i class="ion-arrow-right-b"></i><i
+			<a href="movieGrid.do?page=${totalPage}&genre=${genre}&country=${country}&grade=${grade}&range=${range}&rowSize=${rowSize}"><i class="ion-arrow-right-b"></i><i
 				class="ion-arrow-right-b"></i></a>
 		</div>
 	</div>

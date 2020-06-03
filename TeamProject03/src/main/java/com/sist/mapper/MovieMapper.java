@@ -10,13 +10,16 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 
+import com.sist.vo.AudienceEvaluationTrendVO;
 import com.sist.vo.CelebVO;
 import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
 import com.sist.vo.MovieJoinVO;
 import com.sist.vo.MoviePicturesVO;
 import com.sist.vo.MovieReviewVO;
+import com.sist.vo.NetizenEvaluationTrendVO;
 import com.sist.vo.NewsReviewVO;
+import com.sist.vo.SpecialPointVO;
 import com.sist.vo.WatchingTrendVO;
 
 public interface MovieMapper {
@@ -73,7 +76,7 @@ public interface MovieMapper {
 	
 	@SelectKey(keyProperty="no",resultType=int.class,before=true,
 			statement="SELECT NVL(MAX(no)+1,1) as no FROM movie_reviews")
-	@Insert("INSERT INTO movie_reviews VALUES(#{no},#{movie_id},#{msg},SYSDATE,#{email},#{nick})")
+	@Insert("INSERT INTO movie_reviews VALUES(#{no},#{movie_id},#{email},#{msg},SYSDATE,#{nick})")
 	public void movieReviewInsert(MovieReviewVO vo);
 	
 	@Update("UPDATE movie_reviews SET "
@@ -88,4 +91,14 @@ public interface MovieMapper {
 	
 	@Delete("DELETE FROM movie_reviews WHERE no=#{no}")
 	public void movieReviewDelete(int no);
+	
+	@Select("SELECT COUNT(*) FROM movie_reviews WHERE movie_id=#{movie_id}")
+	public int movieTotalReview(int movie_id);
+	
+	@Select("SELECT * FROM Audience_Evaluation_Trend WHERE movie_id=#{movie_id}")
+	public AudienceEvaluationTrendVO getAudienceEvaluationTrend(int movie_id);
+	
+	
+	@Select("SELECT * FROM Netizen_Evaluation_Trend WHERE movie_id=#{movie_id}")
+	public NetizenEvaluationTrendVO getNetizenEvaluationTrend(int movie_id);
 }
