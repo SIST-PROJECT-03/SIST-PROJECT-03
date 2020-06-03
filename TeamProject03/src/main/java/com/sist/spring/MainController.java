@@ -53,7 +53,8 @@ public class MainController {
 		  {
 		 	//System.out.println(svo.getNet().getEvaluation_point());
 		  }
-		  model.addAttribute("bigSliderList", bigSliderList);	 
+		  model.addAttribute("bigSliderList", bigSliderList);
+		  
 		  String email=(String)session.getAttribute("email");
 		 
 	  

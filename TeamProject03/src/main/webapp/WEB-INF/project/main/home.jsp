@@ -111,8 +111,8 @@ $(function(){
 			    					</ul>
 			    				</div>
 			    				<div class="btn-transform transform-vertical">
-									<div><a href="#" class="item item-1 redbtn">더보기</a></div>
-									<div><a href= "#" class="item item-2 redbtn hvrbtn">더보기</a></div>
+									<div><a href="seriesSingle.do?movie_id=${svo.net.movie_id }" class="item item-1 redbtn">더보기</a></div>
+									<div><a href= "seriesSingle.do?movie_id=${svo.net.movie_id }" class="item item-2 redbtn hvrbtn">더보기</a></div>
 								</div>		
 			    			</div>
 	    				</div>
@@ -393,7 +393,7 @@ $(function(){
 
 
 
-<!--=====================================================================================================================================추천7 START-->
+<!--==========================================전문가 추천===========================================================================추천7 START-->
 
          <div class="title-hd">
                <h2># 전문가 추천 ${user_genre} 영화</h2>
@@ -412,7 +412,7 @@ $(function(){
                                     <img src="${svo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                       <%-- mno확인     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> --%>
+                       	     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> 
                                  </div>
                                  <div class="title-in">
                                     <h5>${svo.title }</h5>
