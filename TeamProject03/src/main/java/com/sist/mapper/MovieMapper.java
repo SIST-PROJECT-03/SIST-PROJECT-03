@@ -31,13 +31,16 @@ public interface MovieMapper {
 		@Result(property="country",column="country"),
 		@Result(property="running_time",column="running_time"),
 		@Result(property="poster",column="poster"),
-		@Result(property="wvo.ebaluation_point",column="evaluation_point"),
+		@Result(property="wvo.evaluation_point",column="evaluation_point"),
 		@Result(property="sps.score",column="score"),
-		@Result(property="sps.movie_id",column="movie_id")
-		
+		@Result(property="sps.movie_id",column="movie_id"),
+		@Result(property="movie_id",column="movie_id")
 	})
-	@Select("SELECT num, title, grade, genre, country, running_time, poster, evaluation_point, opening_date "
-			+"FROM(SELECT rownum as num, title, grade, genre, country, running_time, poster, evaluation_point, opening_date FROM naver_re_movies,netizen_evaluation_trend "
+	
+	
+	@Select("SELECT movie_id,num, title, grade, genre, country,running_time, poster, evaluation_point,opening_date ,age_10, age_20, age_30, age_40, age_50, production_point, acting_point, story_point, visual_point, ost_point, female_rating, male_rating "
+			+"FROM(SELECT naver_re_movies.movie_id as movie_id,rownum as num, title, grade, genre, country, running_time, poster, evaluation_point, opening_date, age_10, age_20, age_30, age_40, age_50, production_point, acting_point, story_point, visual_point, ost_point, female_rating, male_rating "
+			+"FROM naver_re_movies,netizen_evaluation_trend "
 			+"WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id "
 			+"AND genre LIKE '%'||#{genre}||'%' AND country LIKE '%'||#{country}||'%' AND grade LIKE '%'||#{grade}||'%') "
 			+"WHERE num BETWEEN #{start} AND #{end} ORDER BY ${range} DESC")

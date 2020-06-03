@@ -43,8 +43,6 @@ $(function(){
       $('.ing').css('background-color','');
    });
 })
-
-
 </script>
 </head>
 <body>
@@ -88,7 +86,7 @@ $(function(){
 			    					<!-- <span class="orange"><a href="#">범죄</a></span> -->
 			    				</div>
 			    				<h1><a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
-								${svo.title }<span></span></a></h1>
+								${svo.title }<span>${svo.net.movie_id }</span></a></h1>
 								<div class="social-btn">
 									<a href="#" class="parent-btn"><i class="ion-play"></i>예고편 보기</a>
 									<a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>
@@ -111,8 +109,8 @@ $(function(){
 			    					</ul>
 			    				</div>
 			    				<div class="btn-transform transform-vertical">
-									<div><a href="seriesSingle.do?movie_id=${svo.net.movie_id }" class="item item-1 redbtn">더보기</a></div>
-									<div><a href= "seriesSingle.do?movie_id=${svo.net.movie_id }" class="item item-2 redbtn hvrbtn">더보기</a></div>
+									<div><a href="#" class="item item-1 redbtn">더보기</a></div>
+									<div><a href= "#" class="item item-2 redbtn hvrbtn">더보기</a></div>
 								</div>		
 			    			</div>
 	    				</div>
@@ -139,7 +137,7 @@ $(function(){
 <!--=========================================================== 연령대 =======================================================================추천2 START-->
          <div class="title-hd"> 
                <h2># ${age_tag}대 연령층 인기 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?range=${user_age}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -167,7 +165,6 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천2 END-->
-	
 <!--=============================================================ajax start==============================================================================-->
 <div class="movie-items full-width mainDetailinfo" >
    <div class="row">
@@ -254,7 +251,7 @@ $(function(){
 
          <div class="title-hd">
                <h2># ${gender_tag } 관객 높은 평점 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+                <a href="movieGrid.do?range=${user_gender}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -283,7 +280,9 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천3 END-->
-		
+
+
+
 <!--================================================= 장르 ====================================================================================추천4 START-->
 
          <div class="title-hd">
@@ -317,13 +316,12 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천4END-->
-		
 
 <!--=============================================================감상포인트============================================================추천5 START-->
 
          <div class="title-hd">
                <h2># ${point_tag}가 훌륭한 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+                <a href="movieGrid.do?range=${user_point}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -353,7 +351,7 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천5END-->
-		
+
 
 <!--================================================= 선호 지역 영화 ====================================================================================추천6 START-->
 
@@ -389,11 +387,11 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천6END-->
-		
 
 
 
-<!--==========================================전문가 추천===========================================================================추천7 START-->
+
+<!--=====================================================================================================================================추천7 START-->
 
          <div class="title-hd">
                <h2># 전문가 추천 ${user_genre} 영화</h2>
@@ -412,7 +410,7 @@ $(function(){
                                     <img src="${svo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                       	     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> 
+                       <%-- mno확인     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> --%>
                                  </div>
                                  <div class="title-in">
                                     <h5>${svo.title }</h5>
@@ -427,7 +425,7 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천7END-->
-		
+
         </div>     
        </div>
 
@@ -489,7 +487,7 @@ $(function(){
                                     <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                                    <a  href="seriesSingle.do?movie_id=${nvo.movie_id}"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
                                  </div>
                                  <div class="title-in">
                                     <h5>${nvo.title }</h5>
@@ -555,3 +553,4 @@ $(function(){
 <!-- =============================  HOME END  ============================== -->
 </body>
 </html>
+

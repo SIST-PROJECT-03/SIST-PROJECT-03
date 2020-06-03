@@ -83,14 +83,9 @@ public interface MainMapper {
 		    		+"WHERE ROWNUM < 50 ")
 		    public List<MovieVO> specialRecomm(Map map); 
 		 
-		    
-		 //추천8) 
-		    
-		    
-		 
-		 
-	   
+
 
 	
 
 }
+

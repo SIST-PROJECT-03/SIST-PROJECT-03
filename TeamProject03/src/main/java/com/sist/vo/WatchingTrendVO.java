@@ -2,7 +2,7 @@ package com.sist.vo;
 
 public class WatchingTrendVO {
 	private int movie_id;
-	private int ebaluation_point;
+	private int evaluation_point;
 	private int people_count;
 	private int male_rating;
 	private int female_rating;
@@ -17,12 +17,12 @@ public class WatchingTrendVO {
 	private int visual_point;
 	private int ost_point;
 
-	public int getEbaluation_point() {
-		return ebaluation_point;
+	public int getEvaluation_point() {
+		return evaluation_point;
 	}
 
-	public void setEbaluation_point(int ebaluation_point) {
-		this.ebaluation_point = ebaluation_point;
+	public void setEvaluation_point(int evaluation_point) {
+		this.evaluation_point = evaluation_point;
 	}
 
 	public int getPeople_count() {
