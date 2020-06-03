@@ -86,7 +86,7 @@ $(function(){
 			    					<!-- <span class="orange"><a href="#">범죄</a></span> -->
 			    				</div>
 			    				<h1><a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
-								${svo.title }<span>${svo.net.movie_id }</span></a></h1>
+								${svo.title }<span></span></a></h1>
 								<div class="social-btn">
 									<a href="#" class="parent-btn"><i class="ion-play"></i>예고편 보기</a>
 									<a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>

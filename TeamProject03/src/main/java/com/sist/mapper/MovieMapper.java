@@ -33,7 +33,6 @@ public interface MovieMapper {
 		@Result(property="poster",column="poster"),
 		@Result(property="wvo.evaluation_point",column="evaluation_point"),
 		@Result(property="sps.score",column="score"),
-		@Result(property="sps.movie_id",column="movie_id"),
 		@Result(property="movie_id",column="movie_id")
 	})
 	
