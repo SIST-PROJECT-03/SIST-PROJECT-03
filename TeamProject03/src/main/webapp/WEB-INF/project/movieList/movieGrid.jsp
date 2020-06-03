@@ -63,8 +63,7 @@
 									<div class="movie-item-style-2 movie-item-style-1">
 										<img src="${vo.poster }" alt="">
 										<div class="hvr-inner">
-											<a href="seriesSingle.do"> Read more <i
-												class="ion-android-arrow-dropright"></i>
+											<a href="seriesSingle.do?movie_id=${vo.movie_id}"> Read more <i class="ion-android-arrow-dropright"></i>
 											</a>
 										</div>
 										<div class="mv-item-infor">
