@@ -37,7 +37,7 @@ public interface MainMapper {
 				+"FROM netizen_evaluation_trend nt, naver_re_movies mv "
 				+"WHERE nt.movie_id=mv.movie_id "
 				+"ORDER BY evaluation_point DESC) "
-				+"WHERE ROWNUM < 15")
+				+"WHERE ROWNUM < 15 ")
 		public List<MovieVO> bigSliderList();
  
 
@@ -70,23 +70,26 @@ public interface MainMapper {
 		public List<MovieVO> pointRecommendation(Map map);
 	
 		
-		// 추천6) 선호지역 
+		// 추천6) 선호지역  + 감상포인트
 		 @Select("SELECT * FROM "
-		    		+"(SELECT nt.movie_id, title, genre, opening_date, poster FROM naver_re_movies nm, netizen_evaluation_trend nt "
+		    		+"(SELECT nt.movie_id, title, genre, opening_date, ${user_point}, poster FROM naver_re_movies nm, netizen_evaluation_trend nt "
 		    		+"WHERE nm.movie_id=nt.movie_id AND country LIKE '%'||#{user_loc}||'%' ORDER BY opening_date DESC) " 
 		    		+"WHERE ROWNUM < 50 ")
-		    public List<MovieVO> locRecomm(String user_loc);
+		    public List<MovieVO> locRecomm(Map map);
 	   
 		
-		// 추천7) 전문가 평점
-		 //장르 + 전문가
+		// 추천7) 전문가 평점 + 감상포인트
 		    @Select("SELECT * FROM "
 		    		+"(SELECT title, genre, opening_date, poster, ROUND(AVG(sps.score), 2) score "
 		    		+"FROM naver_re_movies nm, specialpoint sps " 
 		    		+"WHERE nm.movie_id=sps.movie_id AND genre LIKE '%'||#{user_genre}||'%' GROUP BY title, genre, opening_date, poster ORDER BY opening_date DESC) " 
 		    		+"WHERE ROWNUM < 50 ")
-		    public List<MovieVO> specialRecomm(String user_genre); 
+		    public List<MovieVO> specialRecomm(Map map); 
 		 
+		    
+		 //추천8) 
+		    
+		    
 		 
 		 
 	   

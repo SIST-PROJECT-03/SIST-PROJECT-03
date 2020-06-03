@@ -40,15 +40,15 @@ public class MainDAO {
 	     return mapper.genreRecomm(user_genre);
 	 }
 	
-	 public List<MovieVO> locRecomm(String user_loc)
+	 public List<MovieVO> locRecomm(Map map)
 	 {
-		 System.out.println(user_loc);
-		 return mapper.locRecomm(user_loc);
+		 System.out.println(map);
+		 return mapper.locRecomm(map);
 	 }
 	
-	 public List<MovieVO> specialRecomm(String user_genre)
+	 public List<MovieVO> specialRecomm(Map map)
 	 {
-		 return mapper.specialRecomm(user_genre);
+		 return mapper.specialRecomm(map);
 	 }
 	 
 	 
