@@ -359,7 +359,7 @@ $(function(){
 
          <div class="title-hd">
                <h2># 추천 ${user_loc} 영화</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?country=${user_loc}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -397,7 +397,7 @@ $(function(){
 
          <div class="title-hd">
                <h2># 전문가 추천 ${user_genre} 영화</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?genre=${user_genre}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -474,13 +474,13 @@ $(function(){
 
          <div class="title-hd">
                <h2>트위터 , 형태소 분석</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?country=${user_loc}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
                      <div class="row">
                         <div class="slick-multiItem2">
-                          <c:forEach var="nvo" items="${ageList }">
+                          <c:forEach var="nvo" items="${locList }">
                            <div class="slide-it">
                
                               <div class="slide-it">

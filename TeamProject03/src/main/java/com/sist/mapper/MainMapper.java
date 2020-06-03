@@ -1,13 +1,9 @@
 
 package com.sist.mapper;
 
-
-
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
-
-
 import com.sist.vo.*;
 
 import java.util.*;
@@ -30,7 +26,6 @@ public interface MainMapper {
 			@Result(property="gen.genre",column="genre"),
 			@Result(property="sps.score",column="score"),
 			@Result(property="sps.movie_id",column="movie_id")
-			
 			
 		}) 
 		

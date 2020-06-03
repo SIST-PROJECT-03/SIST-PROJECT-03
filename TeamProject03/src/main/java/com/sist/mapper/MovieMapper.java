@@ -31,9 +31,12 @@ public interface MovieMapper {
 		@Result(property="country",column="country"),
 		@Result(property="running_time",column="running_time"),
 		@Result(property="poster",column="poster"),
-		@Result(property="wvo.ebaluation_point",column="evaluation_point")	
+		@Result(property="wvo.ebaluation_point",column="evaluation_point"),
+		@Result(property="sps.score",column="score"),
+		@Result(property="sps.movie_id",column="movie_id")
+		
 	})
-	@Select("SELECT num, title, grade, genre, country, running_time, poster, evaluation_point,opening_date "
+	@Select("SELECT num, title, grade, genre, country, running_time, poster, evaluation_point, opening_date "
 			+"FROM(SELECT rownum as num, title, grade, genre, country, running_time, poster, evaluation_point, opening_date FROM naver_re_movies,netizen_evaluation_trend "
 			+"WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id "
 			+"AND genre LIKE '%'||#{genre}||'%' AND country LIKE '%'||#{country}||'%' AND grade LIKE '%'||#{grade}||'%') "

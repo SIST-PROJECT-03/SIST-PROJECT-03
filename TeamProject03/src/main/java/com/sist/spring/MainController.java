@@ -67,6 +67,9 @@ public class MainController {
 				      String user_point=mvo.getPoint();
 				      String user_gender=mvo.getGender();
 				      
+				      
+				      
+				      
 				      System.out.println("user_genre: "+ user_genre);
 				      System.out.println("user_nick: "+user_nick);
 				      System.out.println("user_email: "+ email);
