@@ -489,7 +489,7 @@ $(function(){
                                     <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                    <a  href="seriesSingle.do?movie_id=${nvo.movie_id}"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
                                  </div>
                                  <div class="title-in">
                                     <h5>${nvo.title }</h5>
