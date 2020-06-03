@@ -360,7 +360,7 @@ $(function(){
 	    <!-- search form -->
 	    <div class="top-search">
 	    	<select>
-				<option value="saab">영화 제목</option>
+				<option value="movie_title">영화 제목</option>
 				<option value="saab">뉴스</option>
 				<option value="saab">영화인</option>
 				<option value="saab">장르</option>

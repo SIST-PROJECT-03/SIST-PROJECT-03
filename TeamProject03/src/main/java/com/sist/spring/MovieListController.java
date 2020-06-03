@@ -36,6 +36,13 @@ public class MovieListController {
 		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
 	    List<MovieReviewVO> rlist=dao.movieReviewData(movie_id);
 		
+	    /*for(MovieReviewVO rvo : rlist){
+	    	String email=rvo.getEmail();
+	    	int idx = email.indexOf("@"); 
+			String id = email.substring(0, idx);
+			
+			rvo.setEmail(id);
+	    }*/
 	    model.addAttribute("rlist",rlist);
 		model.addAttribute("genre", genre);
 		model.addAttribute("cvo", cvo);
@@ -44,6 +51,7 @@ public class MovieListController {
 		model.addAttribute("moviePictures", moviePictures);
 		model.addAttribute("vo", vo);
 		model.addAttribute("wvo", wvo);
+		
 		return "project/movieList/seriesSingle";
 	}
 	
@@ -53,15 +61,31 @@ public class MovieListController {
 	{
 		HttpSession session=request.getSession();
 		String email=(String)session.getAttribute("email");
-		int idx = email.indexOf("@"); 
-		String id = email.substring(0, idx);
-		vo.setId(id);
+		String pwd=(String)session.getAttribute("email");
+		String nick=(String)session.getAttribute("nick");
+		vo.setNick(nick);
 		vo.setEmail(email);
+		vo.setPwd(pwd);
+		
 		dao.movieReviewInsert(vo);
 		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
 		
 	}
 	
+	@RequestMapping("movieReviewUpdate.do")
+	public String movie_review_update(MovieReviewVO vo){
+			dao.movieReviewUpdate(vo);
+		
+			return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+	}
+	
+	@RequestMapping("movieReviewDelete.do")
+	public String movie_review_delete(int pno){
+		MovieReviewVO vo=dao.movieReviewSelect(pno);
+		dao.movieReviewDelete(pno);
+		
+		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();
+	}
 	
 	@RequestMapping("movieGrid.do")
 	public String movie_List(Model model, String genre, String country, String grade,String range, String page, String rowSize) {
@@ -84,7 +108,7 @@ public class MovieListController {
 			grade="";
 		
 		if(range==null)
-			range="running_time";
+			range="opening_date";
 		
 		if(rowSize==null)
 			rowSize="60";
@@ -120,9 +144,11 @@ public class MovieListController {
 		return "project/movieList/movieGrid";
 	}
 	@RequestMapping("movieGridPrint.do")
-	public String movieGridPrint(Model model, String genre, String country, String grade,String range, String rowSize) {
+	public String movieGridPrint(Model model, String genre, String country, String grade,String range, String rowSize,String page) {
 		//genre, country, grade, start, end, range
 		//rowSize, totalPage, curPage
+		
+
 		
 		int curPage;
 		int totalPage;
@@ -139,7 +165,16 @@ public class MovieListController {
 		if(grade==null)
 			grade="";
 		
-		curPage= Integer.parseInt("1");
+		if(range==null)
+			range="opening_date";
+		
+		if(rowSize==null)
+			rowSize="60";
+		
+		if(page==null)
+			page="1";
+		
+		curPage= Integer.parseInt(page);
 		curRowSize = Integer.parseInt(rowSize);
 		
 		start = (curPage-1)*(curRowSize)+1;
@@ -155,20 +190,26 @@ public class MovieListController {
 		map.put("start", start);
 		map.put("end", end);
 		
+		System.out.println("movieGride:"+genre);
+		System.out.println("movieGride:"+country);
+		System.out.println("movieGride:"+grade);
+		System.out.println("movieGride:"+range);
+		System.out.println("movieGride:"+curRowSize);
+		System.out.println("movieGride:"+start);
+		System.out.println("movieGride:"+end);
+		
+		
 		
 		List<MovieDetailVO> list = dao.getMovieList(map);
 		totalPage= dao.getTotalPage(map);
 		
-		
-		System.out.println("list size : " + list.size());
-		System.out.println("totalPage" + totalPage);
 		model.addAttribute("list", list);
 		model.addAttribute("totalPage", totalPage);
 		model.addAttribute("curPage", curPage);		
-	
+		
+		System.out.println(totalPage);	
+		System.out.println("listSize = "+list.size());
 		
 		return "project/result/movieGridResult";
 	}
-	
-	
 }

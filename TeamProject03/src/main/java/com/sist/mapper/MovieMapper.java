@@ -2,11 +2,13 @@ package com.sist.mapper;
 
 import java.util.*;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
 
 import com.sist.vo.CelebVO;
 import com.sist.vo.GenreVO;
@@ -71,6 +73,19 @@ public interface MovieMapper {
 	
 	@SelectKey(keyProperty="no",resultType=int.class,before=true,
 			statement="SELECT NVL(MAX(no)+1,1) as no FROM movie_reviews")
-	@Insert("INSERT INTO movie_reviews VALUES(#{no},#{movie_id},#{email},#{msg},SYSDATE)")
+	@Insert("INSERT INTO movie_reviews VALUES(#{no},#{movie_id},#{msg},SYSDATE,#{email},#{nick})")
 	public void movieReviewInsert(MovieReviewVO vo);
+	
+	@Update("UPDATE movie_reviews SET "
+			+ "msg=#{msg} "
+			+ "WHERE no=#{no}")
+	public void movieReviewUpdate(MovieReviewVO vo);
+	
+	@Select("SELECT * "
+			+ "FROM movie_reviews "
+			+ "WHERE no=#{pno}")
+	public MovieReviewVO movieReviewSelect(int pno);
+	
+	@Delete("DELETE FROM movie_reviews WHERE no=#{no}")
+	public void movieReviewDelete(int no);
 }

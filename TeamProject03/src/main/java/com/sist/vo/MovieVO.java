@@ -17,7 +17,8 @@ public class MovieVO {
 	private String poster;
 	private NetizenEvaluationTrendVO net = new NetizenEvaluationTrendVO();
 	private MovieGenreVO gen = new MovieGenreVO();
-
+	private SpecialPointVO sps=new SpecialPointVO();
+	
 	public int getMovie_id() {
 		return movie_id;
 	}
@@ -122,4 +123,13 @@ public class MovieVO {
 		this.gen = gen;
 	}
 
+	public SpecialPointVO getSps() {
+		return sps;
+	}
+
+	public void setSps(SpecialPointVO sps) {
+		this.sps = sps;
+	}
+	
+	
 }

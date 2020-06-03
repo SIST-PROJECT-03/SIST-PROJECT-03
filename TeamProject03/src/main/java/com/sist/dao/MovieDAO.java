@@ -57,13 +57,22 @@ public class MovieDAO {
 		return mapper.getTotalPage(map);
 	}
 	
-	public List<MovieReviewVO> movieReviewData(int movie_id)
-	{
+	public List<MovieReviewVO> movieReviewData(int movie_id){
 		return mapper.movieReviewData(movie_id);
 	}
 	
-	public void movieReviewInsert(MovieReviewVO vo)
+	public MovieReviewVO movieReviewSelect(int pno)
 	{
+		return mapper.movieReviewSelect(pno);
+	}
+	
+	public void movieReviewInsert(MovieReviewVO vo){
 		mapper.movieReviewInsert(vo);
+	}
+	public void movieReviewUpdate(MovieReviewVO vo){
+		mapper.movieReviewUpdate(vo);
+	}
+	public void movieReviewDelete(int no){
+		mapper.movieReviewDelete(no);
 	}
 }	
