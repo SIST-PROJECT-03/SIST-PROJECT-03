@@ -43,8 +43,6 @@ $(function(){
       $('.ing').css('background-color','');
    });
 })
-
-
 </script>
 </head>
 <body>
@@ -139,7 +137,7 @@ $(function(){
 <!--=========================================================== 연령대 =======================================================================추천2 START-->
          <div class="title-hd"> 
                <h2># ${age_tag}대 연령층 인기 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?range=${user_age}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -167,7 +165,6 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천2 END-->
-	
 <!--=============================================================ajax start==============================================================================-->
 <div class="movie-items full-width mainDetailinfo" >
    <div class="row">
@@ -254,7 +251,7 @@ $(function(){
 
          <div class="title-hd">
                <h2># ${gender_tag } 관객 높은 평점 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+                <a href="movieGrid.do?range=${user_gender}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -283,7 +280,9 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천3 END-->
-		
+
+
+
 <!--================================================= 장르 ====================================================================================추천4 START-->
 
          <div class="title-hd">
@@ -317,13 +316,12 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천4END-->
-		
 
 <!--=============================================================감상포인트============================================================추천5 START-->
 
          <div class="title-hd">
                <h2># ${point_tag}가 훌륭한 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+                <a href="movieGrid.do?range=${user_point}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -353,13 +351,13 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천5END-->
-		
+
 
 <!--================================================= 선호 지역 영화 ====================================================================================추천6 START-->
 
          <div class="title-hd">
                <h2># 추천 ${user_loc} 영화</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?country=${user_loc}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -389,7 +387,7 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천6END-->
-		
+
 
 
 
@@ -397,7 +395,7 @@ $(function(){
 
          <div class="title-hd">
                <h2># 전문가 추천 ${user_genre} 영화</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?genre=${user_genre}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -427,7 +425,7 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천7END-->
-		
+
         </div>     
        </div>
 
@@ -474,13 +472,13 @@ $(function(){
 
          <div class="title-hd">
                <h2>트위터 , 형태소 분석</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?country=${user_loc}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
                      <div class="row">
                         <div class="slick-multiItem2">
-                          <c:forEach var="nvo" items="${ageList }">
+                          <c:forEach var="nvo" items="${locList }">
                            <div class="slide-it">
                
                               <div class="slide-it">
@@ -555,3 +553,4 @@ $(function(){
 <!-- =============================  HOME END  ============================== -->
 </body>
 </html>
+

@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.sist.dao.*;
 import com.sist.vo.*;
 @Controller
@@ -53,7 +51,8 @@ public class MainController {
 		  {
 		 	//System.out.println(svo.getNet().getEvaluation_point());
 		  }
-		  model.addAttribute("bigSliderList", bigSliderList);	 
+		  model.addAttribute("bigSliderList", bigSliderList);
+		  
 		  String email=(String)session.getAttribute("email");
 		 
 	  
@@ -67,6 +66,9 @@ public class MainController {
 				      String user_nick=mvo.getNick();
 				      String user_point=mvo.getPoint();
 				      String user_gender=mvo.getGender();
+				      
+				      
+				      
 				      
 				      System.out.println("user_genre: "+ user_genre);
 				      System.out.println("user_nick: "+user_nick);

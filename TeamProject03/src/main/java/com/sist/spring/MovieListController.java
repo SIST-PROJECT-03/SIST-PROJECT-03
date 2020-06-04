@@ -11,12 +11,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.dao.MovieDAO;
+import com.sist.vo.AudienceEvaluationTrendVO;
 import com.sist.vo.CelebVO;
 import com.sist.vo.GenreVO;
 import com.sist.vo.MovieDetailVO;
 import com.sist.vo.MovieReviewVO;
+import com.sist.vo.NetizenEvaluationTrendVO;
 import com.sist.vo.NewsReviewVO;
 import com.sist.vo.NewsVO;
+import com.sist.vo.SpecialPointVO;
 import com.sist.vo.WatchingTrendVO;
 
 @Controller
@@ -26,7 +29,7 @@ public class MovieListController {
 
 	@RequestMapping("seriesSingle.do")
 	public String movie_series(int movie_id, Model model) {
-
+		
 		List<String> moviePictures = dao.getMoviePictures(movie_id);
 		List<String> movieUrl = dao.getMovieUrl(movie_id);
 		List<CelebVO> actorData = dao.getActorData(movie_id);
@@ -34,15 +37,13 @@ public class MovieListController {
 		CelebVO cvo = dao.getDirectorData(movie_id);
 		MovieDetailVO vo = dao.getMovieDetailData(movie_id);
 		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
+		AudienceEvaluationTrendVO avo=dao.getAudienceEvaluationTrend(movie_id);
+		NetizenEvaluationTrendVO nvo=dao.getNetizenEvaluationTrend(movie_id);
 	    List<MovieReviewVO> rlist=dao.movieReviewData(movie_id);
-		
-	    /*for(MovieReviewVO rvo : rlist){
-	    	String email=rvo.getEmail();
-	    	int idx = email.indexOf("@"); 
-			String id = email.substring(0, idx);
-			
-			rvo.setEmail(id);
-	    }*/
+	    int movieTotalReview=dao.movieTotalReview(movie_id);
+	    
+	    model.addAttribute("nvo",nvo);
+	    model.addAttribute("avo",avo);
 	    model.addAttribute("rlist",rlist);
 		model.addAttribute("genre", genre);
 		model.addAttribute("cvo", cvo);
@@ -51,7 +52,7 @@ public class MovieListController {
 		model.addAttribute("moviePictures", moviePictures);
 		model.addAttribute("vo", vo);
 		model.addAttribute("wvo", wvo);
-		
+		model.addAttribute("movieTotalReview",movieTotalReview);
 		return "project/movieList/seriesSingle";
 	}
 	
@@ -173,7 +174,7 @@ public class MovieListController {
 		
 		if(page==null)
 			page="1";
-		
+	
 		curPage= Integer.parseInt(page);
 		curRowSize = Integer.parseInt(rowSize);
 		
@@ -190,26 +191,20 @@ public class MovieListController {
 		map.put("start", start);
 		map.put("end", end);
 		
-		System.out.println("movieGride:"+genre);
-		System.out.println("movieGride:"+country);
-		System.out.println("movieGride:"+grade);
-		System.out.println("movieGride:"+range);
-		System.out.println("movieGride:"+curRowSize);
-		System.out.println("movieGride:"+start);
-		System.out.println("movieGride:"+end);
-		
-		
-		
+	
 		List<MovieDetailVO> list = dao.getMovieList(map);
 		totalPage= dao.getTotalPage(map);
 		
 		model.addAttribute("list", list);
 		model.addAttribute("totalPage", totalPage);
 		model.addAttribute("curPage", curPage);		
+		model.addAttribute("genre",genre);
+		model.addAttribute("country",country);
+		model.addAttribute("grade",grade);
+		model.addAttribute("range",range);
+		model.addAttribute("rowSize",rowSize);
 		
-		System.out.println(totalPage);	
-		System.out.println("listSize = "+list.size());
-		
+
 		return "project/result/movieGridResult";
 	}
 }

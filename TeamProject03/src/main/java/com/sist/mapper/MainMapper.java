@@ -1,13 +1,9 @@
 
 package com.sist.mapper;
 
-
-
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
-
-
 import com.sist.vo.*;
 
 import java.util.*;
@@ -28,7 +24,8 @@ public interface MainMapper {
 			@Result(property="net.evaluation_point",column="evaluation_point"),
 			@Result(property="net.movie_id",column="movie_id"),
 			@Result(property="gen.genre",column="genre"),
-			@Result(property="sps.score",column="score")
+			@Result(property="sps.score",column="score"),
+			@Result(property="sps.movie_id",column="movie_id")
 			
 		}) 
 		
@@ -80,20 +77,15 @@ public interface MainMapper {
 		
 		// 추천7) 전문가 평점 + 감상포인트
 		    @Select("SELECT * FROM "
-		    		+"(SELECT title, genre, opening_date, poster, ROUND(AVG(sps.score), 2) score "
+		    		+"(SELECT sps.movie_id, title, genre, opening_date, poster, ROUND(AVG(sps.score), 2) score "
 		    		+"FROM naver_re_movies nm, specialpoint sps " 
-		    		+"WHERE nm.movie_id=sps.movie_id AND genre LIKE '%'||#{user_genre}||'%' GROUP BY title, genre, opening_date, poster ORDER BY opening_date DESC) " 
+		    		+"WHERE nm.movie_id=sps.movie_id AND genre LIKE '%'||#{user_genre}||'%' GROUP BY sps.movie_id, title, genre, opening_date, poster ORDER BY opening_date DESC) " 
 		    		+"WHERE ROWNUM < 50 ")
 		    public List<MovieVO> specialRecomm(Map map); 
 		 
-		    
-		 //추천8) 
-		    
-		    
-		 
-		 
-	   
+
 
 	
 
 }
+
