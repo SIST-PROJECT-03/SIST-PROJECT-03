@@ -76,7 +76,7 @@ $(function(){
 				<!-- ====================================1 big slider start=========================================== -->	 
 				<c:forEach var="svo" items="${bigSliderList }">   	
 	    		<div class="movie-item">
-	    			<input type=hidden name=movie_id value="${svo.net.movie_id }" id="movie_id" >
+	    		
 	    			<div class="row">
 	    				<div class="col-md-8 col-sm-12 col-xs-12">
 	    					<div class="title-in">

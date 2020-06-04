@@ -5,6 +5,7 @@ public class MovieGenreVO {
 
 	private int movie_id;
 	private String genre;
+	
 	public int getMovie_id() {
 		return movie_id;
 	}
