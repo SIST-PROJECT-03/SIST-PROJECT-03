@@ -40,7 +40,7 @@ public class MovieDAO {
 	{
 		return mapper.getMovieUrl(movie_id);
 	}
-	public CelebVO getDirectorData(int movie_id){
+	public List<CelebVO> getDirectorData(int movie_id){
 		return mapper.getDirectorData(movie_id);
 	}
 	
@@ -90,5 +90,20 @@ public class MovieDAO {
 	public NetizenEvaluationTrendVO getNetizenEvaluationTrend(int movie_id)
 	{
 	   return mapper.getNetizenEvaluationTrend(movie_id);
+	}
+	
+	public List<MovieDetailVO> getSameDirector(int movie_id){
+		return mapper.getSameDirector(movie_id);
+	}
+	public List<CelebVO> getRelActor(int movie_id){
+		return mapper.getRelActor(movie_id);
+	}
+	
+	public List<Integer> getRelMovieId(int movie_id){
+		return mapper.getRelMovieId(movie_id);
+	}
+	
+	public int movieTotalSameDirector(int movie_id){
+		return mapper.movieTotalSameDirector(movie_id);
 	}
 }	
