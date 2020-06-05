@@ -22,6 +22,9 @@ public class MainController {
    @Autowired
    private MainDAO mDao;
    
+   @Autowired
+   private MovieDAO movieDao;
+   
    @RequestMapping("blockbuster.do")
    public String blockbuster_main()
    {
@@ -60,9 +63,6 @@ public class MainController {
 				      String user_nick=mvo.getNick();
 				      String user_point=mvo.getPoint();
 				      String user_gender=mvo.getGender();
-				      
-				      
-				      
 				      
 				      System.out.println("user_genre: "+ user_genre);
 				      System.out.println("user_nick: "+user_nick);
@@ -125,25 +125,35 @@ public class MainController {
 		             
 		              
 		              List<MovieVO> bigSliderList=mDao.bigSliderList();
-		    		  
-		    		  
 		    		  int movie_id;
 		    		 
+		    		  //<span class="blue"><a href="#">${svo.genre }</a></span>
 		    		  for(MovieVO vo:bigSliderList)
 		    		  {
 		    			movie_id=vo.getNet().getMovie_id();
 		    			System.out.println("con-movie_id: "+movie_id);
+		    			
+		    			List<MoviePicturesVO> movieUrl=mDao.getMovieUrl_home(movie_id);
+		    			String temp1="";
+		    			for(MoviePicturesVO pvo:movieUrl)
+		    			{
+		    				temp1=pvo.getUrl();
+		    				
+		    			}
+		    			vo.setUrl(temp1);
+		    			
 		    			List<MovieGenreVO> selGenreList=mDao.selectGenre(movie_id);
-		    			String temp="";
+		    			String temp="";    			
 		    			for(MovieGenreVO gvo:selGenreList)
 		    			{
-		    				temp+=gvo.getGenre()+"/";
+		    				temp+="<span class=\"blue\"><a href=\"#\">"+gvo.getGenre()+"</a></span>\n";
 		    			}
 		    			System.out.println(temp);
-		    			temp=temp.substring(0,temp.lastIndexOf("/"));
-		    			vo.setGenre(temp);
 		    			
+		    			vo.setGenre(temp);
+		    					    			    			
 		    		  }
+		    		  
 		    		  
 		    		   model.addAttribute("bigSliderList", bigSliderList);
 			           model.addAttribute("user_genre", user_genre);
