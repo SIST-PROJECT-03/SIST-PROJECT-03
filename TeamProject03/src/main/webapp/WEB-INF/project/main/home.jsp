@@ -76,7 +76,7 @@
 						<!-- ====================================1 big slider start=========================================== -->
 						<c:forEach var="svo" items="${bigSliderList }">
 							<div class="movie-item"">
-								
+
 								<div class="row">
 									<div class="col-md-8 col-sm-12 col-xs-12">
 										<div class="title-in">
@@ -118,13 +118,16 @@
 															pattern="yyyy/MM/dd" /></li>
 												</ul>
 											</div>
-											<div class="slider-btn-area" style="width:130px" data-movie_id="${svo.net.movie_id }">
+											<div class="slider-btn-area" style="width: 130px"
+												data-movie_id="${svo.net.movie_id }">
 												<div class="btn-transform transform-vertical">
 													<div>
-														<div class="slider-btn-wrapper item item-1 redbtn" data-movie_id="${svo.net.movie_id }">더보기</div>
+														<div class="slider-btn-wrapper item item-1 redbtn"
+															data-movie_id="${svo.net.movie_id }">더보기</div>
 													</div>
 													<div>
-														<div class="slider-btn-wrapper item item-2 redbtn hvrbtn" data-movie_id="${svo.net.movie_id }">더보기</div>
+														<div class="slider-btn-wrapper item item-2 redbtn hvrbtn"
+															data-movie_id="${svo.net.movie_id }">더보기</div>
 													</div>
 												</div>
 											</div>
@@ -145,6 +148,104 @@
 		</div>
 		<!-- ==============================main big slider total area end ================================= -->
 		<div class="movie-items full-width mainDetailinfo big-slider-info">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="mainInner">
+						<div class="title-hd">
+							<h2>오블리비언</h2>
+							<a class="viewall2">x</a>
+						</div>
+						<div class="mainInfo">
+							<div class="title-in">
+								<div class="mainInnerDetail">
+									<div class="movie-item col-md-8">
+										<p>관람객별점 8.8 | 기자/평론가 7.8 | 네티즌 7.7</p>
+										<p>
+											<b>외계인의 침공이 있었던 지구의 운명을 건 마지막 전쟁을 시작한다!</b>
+										</p>
+										<p>
+											<b>감독</b>&nbsp; 조지프 코신스키
+										</p>
+										<p>
+											<b>출연</b>&nbsp; 톰 크루즈, 모건 프리먼, 올가 쿠릴렌코
+										</p>
+										<p>
+											<b>개요</b>&nbsp; 15세 관람가 | 액션SF | 미국 | 2011년
+										</p>
+										<div class="social-btn">
+											<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+											<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+										</div>
+										<div class="btn-transform transform-vertical vertical-btn"
+											style="width: 1000px">
+											<a href="#" class="item item-1 redbtn">상세정보</a> <a href="#"
+												class="item item-2 redbtn hvrbtn">상세정보</a>
+										</div>
+									</div>
+									<div class="mainInnerVideoRight col-md-4" style="width: 300px">
+										<div class="mainInnerImg col-md-4"
+											style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
+										</div>
+									</div>
+									<div class="mainNav">
+										<ul class="menu">
+											<li class="info"><a>기본정보</a> <span class="ing"></span></li>
+											<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="movie-items  full-width mywrap">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="tabs">
+						<div class="tab-content"></div>
+					</div>
+					<!--===============================================================================================사용자 유사도==================================추천7 START-->
+					<div class="title-hd">
+						<h2>개발중 >>>>(${user_nick })님과 취향이 비슷한 친구</h2>
+						<a href="movieGrid.do" class="viewall">더보기 <i
+							class="ion-ios-arrow-right"></i></a>
+					</div>
+					<div class="tab-content">
+						<div id="tab1-h2" class="tab active">
+							<div class="row">
+								<div class="slick-multiItem2">
+									<c:forEach var="nvo" items="${ageList }">
+										<div class="slide-it">
+
+											<div class="slide-it">
+												<div class="movie-item">
+													<div class="mv-img">
+														<img src="${nvo.poster }" alt=""
+															style="width: 257px; height: 394.84px;">
+													</div>
+													<div class="hvr-inner" data="1" data_id="${nvo.movie_id}">
+														<a data="1" data_id="${avo.movie_id}" class=" myclclcl"> 상세보기 <i
+															class="ion-android-arrow-dropright" data="1" class=" myclclcl"></i>
+														</a>
+													</div>
+													<div class="title-in">
+														<h5>${nvo.title }</h5>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="movie-items full-width mainDetailinfo detail-slider" data="1">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="mainInner">
@@ -174,24 +275,20 @@
 														<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
 													</div>
 													<div class="btn-transform transform-vertical vertical-btn"
-													     style="width:1000px">
-														<a href="#"
-															class="item item-1 redbtn">상세정보</a> <a
-															href="#" 
-															class="item item-2 redbtn hvrbtn">상세정보</a>
+														style="width: 1000px">
+														<a href="#" class="item item-1 redbtn">상세정보</a> <a
+															href="#" class="item item-2 redbtn hvrbtn">상세정보</a>
 													</div>
 												</div>
 												<div class="mainInnerVideoRight col-md-4"
-												     style="width:300px">
+													style="width: 300px">
 													<div class="mainInnerImg col-md-4"
-														style="background-image: url('images/uploads/mv-it1.jpg');
-														width: 200px; height: 300px">
+														style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
 													</div>
 												</div>
 												<div class="mainNav">
 													<ul class="menu">
-														<li class="info"><a>기본정보</a> <span class="ing"></span>
-														</li>
+														<li class="info"><a>기본정보</a> <span class="ing"></span></li>
 														<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
 														</li>
 													</ul>
@@ -199,48 +296,6 @@
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-		<div class="movie-items  full-width">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="tabs">
-						<div class="tab-content"></div>
-					</div>
-					<!--===============================================================================================사용자 유사도==================================추천7 START-->
-					<div class="title-hd">
-						<h2>개발중 >>>>(${user_nick })님과 취향이 비슷한 친구</h2>
-						<a href="movieGrid.do" class="viewall">더보기 <i
-							class="ion-ios-arrow-right"></i></a>
-					</div>
-					<div class="tab-content">
-						<div id="tab1-h2" class="tab active">
-							<div class="row">
-								<div class="slick-multiItem2">
-									<c:forEach var="nvo" items="${ageList }">
-										<div class="slide-it">
-
-											<div class="slide-it">
-												<div class="movie-item">
-													<div class="mv-img">
-														<img src="${nvo.poster }" alt=""
-															style="width: 257px; height: 394.84px;">
-													</div>
-													<div class="hvr-inner">
-														<a href="mainDetail"> 상세보기 <i
-															class="ion-android-arrow-dropright"></i>
-														</a>
-													</div>
-													<div class="title-in">
-														<h5>${nvo.title }</h5>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</c:forEach>
 								</div>
 							</div>
 						</div>
@@ -265,9 +320,9 @@
 														<img src="${avo.poster }" alt=""
 															style="width: 257px; height: 394.84px;">
 													</div>
-													<div class="hvr-inner">
-														<a href="seriesSingle.do?movie_id=${avo.movie_id}">상세보기
-															<i class="ion-android-arrow-dropright"></i>
+													<div class="hvr-inner myclclcl" data="2" data_id="${avo.movie_id}">
+														<a data="2" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
 													<div class="title-in">
@@ -281,9 +336,8 @@
 							</div>
 						</div>
 					</div>
-					<!--============================================================================================================================================추천2 END-->
-					<!--=============================================================ajax start==============================================================================-->
-					<div class="movie-items full-width mainDetailinfo">
+
+					<div class="movie-items full-width mainDetailinfo detail-slider" data="2">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="mainInner">
@@ -312,54 +366,21 @@
 														<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
 														<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
 													</div>
-													<div class="btn-transform transform-vertical">
-														<a href="seriesSingle.do?movie_id=35901"
-															class="item item-1 redbtn">상세정보</a> <a
-															href="seriesSingle.do?movie_id=35901"
-															class="item item-2 redbtn hvrbtn">상세정보</a>
+													<div class="btn-transform transform-vertical vertical-btn"
+														style="width: 1000px">
+														<a class="item item-1 redbtn">상세정보</a> <a
+															 class="item item-2 redbtn hvrbtn">상세정보</a>
 													</div>
 												</div>
-												<div class="mainInnerVideoRight col-md-4">
+												<div class="mainInnerVideoRight col-md-4"
+													style="width: 300px">
 													<div class="mainInnerImg col-md-4"
-														style="background-image: url('images/uploads/mv-it1.jpg');">
-														<div class="videoPlayer">
-															<img src="images/uploads/mv-it1.jpg">
-														</div>
-														<div class="detailImg"></div>
+														style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
 													</div>
-												</div>
-												<div class="mainSim">
-
-													<div class=" movie-item col-md-3">
-														<div class="mainInnerVideoRight col-md-5">
-															<div class="videoPlayer">
-																<img src="images/uploads/mv-it1.jpg" />
-															</div>
-														</div>
-														<div class="mainInnerVideoRight col-md-7">
-															<!-- <p>관람객별점 | 기자/평론가 | 네티즌</p> -->
-															<p>제목</p>
-															<p>줄거리</p>
-															<p>감독</p>
-															<p>출연</p>
-															<p>장르 | 개봉연도</p>
-															<div class="social-btn">
-																<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
-																<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
-															</div>
-														</div>
-														<div class="btn-transform transform-vertical">
-															<a href="seriesSingle.do" class="item item-1 redbtn">상세정보</a>
-															<a href="seriesSingle.do"
-																class="item item-2 redbtn hvrbtn">상세정보</a>
-														</div>
-													</div>
-
 												</div>
 												<div class="mainNav">
 													<ul class="menu">
-														<li class="info"><a>기본정보</a> <span class="ing"></span>
-														</li>
+														<li class="info"><a>기본정보</a> <span class="ing"></span></li>
 														<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
 														</li>
 													</ul>
@@ -371,6 +392,10 @@
 							</div>
 						</div>
 					</div>
+
+					<!--============================================================================================================================================추천2 END-->
+					<!--=============================================================ajax start==============================================================================-->
+					
 					<!--================================================================================================================================ajax end  -->
 					<!--=========================================================성별 ==============================================================================추천3 START-->
 
@@ -391,9 +416,9 @@
 														<img src="${gvo.poster }" alt=""
 															style="width: 257px; height: 394.84px;">
 													</div>
-													<div class="hvr-inner">
-														<a href="seriesSingle.do?movie_id=${gvo.movie_id}">상세보기
-															<i class="ion-android-arrow-dropright"></i>
+													<div class="hvr-inner" data="3" data_id="${gvo.movie_id}">
+														<a data="3" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
 													<div class="title-in">
@@ -410,7 +435,61 @@
 					</div>
 					<!--============================================================================================================================================추천3 END-->
 
-
+					<div class="movie-items full-width mainDetailinfo detail-slider" data="3">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="mainInner">
+									<div class="title-hd">
+										<h2>오블리비언</h2>
+										<a class="viewall2">x</a>
+									</div>
+									<div class="mainInfo">
+										<div class="title-in">
+											<div class="mainInnerDetail">
+												<div class="movie-item col-md-8">
+													<p>관람객별점 8.8 | 기자/평론가 7.8 | 네티즌 7.7</p>
+													<p>
+														<b>외계인의 침공이 있었던 지구의 운명을 건 마지막 전쟁을 시작한다!</b>
+													</p>
+													<p>
+														<b>감독</b>&nbsp; 조지프 코신스키
+													</p>
+													<p>
+														<b>출연</b>&nbsp; 톰 크루즈, 모건 프리먼, 올가 쿠릴렌코
+													</p>
+													<p>
+														<b>개요</b>&nbsp; 15세 관람가 | 액션SF | 미국 | 2011년
+													</p>
+													<div class="social-btn">
+														<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+														<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+													</div>
+													<div class="btn-transform transform-vertical vertical-btn"
+														style="width: 1000px">
+														<a href="#" class="item item-1 redbtn">상세정보</a> <a
+															href="#" class="item item-2 redbtn hvrbtn">상세정보</a>
+													</div>
+												</div>
+												<div class="mainInnerVideoRight col-md-4"
+													style="width: 300px">
+													<div class="mainInnerImg col-md-4"
+														style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
+													</div>
+												</div>
+												<div class="mainNav">
+													<ul class="menu">
+														<li class="info"><a>기본정보</a> <span class="ing"></span></li>
+														<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<!--================================================= 장르 ====================================================================================추천4 START-->
 
@@ -431,9 +510,9 @@
 														<img src="${grvo.poster }" alt=""
 															style="width: 257px; height: 394.84px;">
 													</div>
-													<div class="hvr-inner">
-														<a href="seriesSingle.do?movie_id=${grvo.movie_id}">상세보기
-															<i class="ion-android-arrow-dropright"></i>
+													<div class="hvr-inner" data="4" data_id="${grvo.movie_id}">
+														<a data="4" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
 													<div class="title-in">
@@ -444,6 +523,62 @@
 											</div>
 										</div>
 									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="movie-items full-width mainDetailinfo detail-slider" data="4">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="mainInner">
+									<div class="title-hd">
+										<h2>오블리비언</h2>
+										<a class="viewall2">x</a>
+									</div>
+									<div class="mainInfo">
+										<div class="title-in">
+											<div class="mainInnerDetail">
+												<div class="movie-item col-md-8">
+													<p>관람객별점 8.8 | 기자/평론가 7.8 | 네티즌 7.7</p>
+													<p>
+														<b>외계인의 침공이 있었던 지구의 운명을 건 마지막 전쟁을 시작한다!</b>
+													</p>
+													<p>
+														<b>감독</b>&nbsp; 조지프 코신스키
+													</p>
+													<p>
+														<b>출연</b>&nbsp; 톰 크루즈, 모건 프리먼, 올가 쿠릴렌코
+													</p>
+													<p>
+														<b>개요</b>&nbsp; 15세 관람가 | 액션SF | 미국 | 2011년
+													</p>
+													<div class="social-btn">
+														<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+														<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+													</div>
+													<div class="btn-transform transform-vertical vertical-btn"
+														style="width: 1000px">
+														<a href="#" class="item item-1 redbtn">상세정보</a> <a
+															href="#" class="item item-2 redbtn hvrbtn">상세정보</a>
+													</div>
+												</div>
+												<div class="mainInnerVideoRight col-md-4"
+													style="width: 300px">
+													<div class="mainInnerImg col-md-4"
+														style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
+													</div>
+												</div>
+												<div class="mainNav">
+													<ul class="menu">
+														<li class="info"><a>기본정보</a> <span class="ing"></span></li>
+														<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -470,9 +605,9 @@
 														<img src="${ptvo.poster }" alt=""
 															style="width: 257px; height: 394.84px;">
 													</div>
-													<div class="hvr-inner">
-														<a href="seriesSingle.do?movie_id=${ptvo.movie_id}">상세보기
-															<i class="ion-android-arrow-dropright"></i>
+													<div class="hvr-inner" data="5" data_id="${ptvo.movie_id}">
+														<a data="5" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
 													<div class="title-in">
@@ -483,6 +618,62 @@
 											</div>
 										</div>
 									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="movie-items full-width mainDetailinfo detail-slider" data="5">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="mainInner">
+									<div class="title-hd">
+										<h2>오블리비언</h2>
+										<a class="viewall2">x</a>
+									</div>
+									<div class="mainInfo">
+										<div class="title-in">
+											<div class="mainInnerDetail">
+												<div class="movie-item col-md-8">
+													<p>관람객별점 8.8 | 기자/평론가 7.8 | 네티즌 7.7</p>
+													<p>
+														<b>외계인의 침공이 있었던 지구의 운명을 건 마지막 전쟁을 시작한다!</b>
+													</p>
+													<p>
+														<b>감독</b>&nbsp; 조지프 코신스키
+													</p>
+													<p>
+														<b>출연</b>&nbsp; 톰 크루즈, 모건 프리먼, 올가 쿠릴렌코
+													</p>
+													<p>
+														<b>개요</b>&nbsp; 15세 관람가 | 액션SF | 미국 | 2011년
+													</p>
+													<div class="social-btn">
+														<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+														<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+													</div>
+													<div class="btn-transform transform-vertical vertical-btn"
+														style="width: 1000px">
+														<a href="#" class="item item-1 redbtn">상세정보</a> <a
+															href="#" class="item item-2 redbtn hvrbtn">상세정보</a>
+													</div>
+												</div>
+												<div class="mainInnerVideoRight col-md-4"
+													style="width: 300px">
+													<div class="mainInnerImg col-md-4"
+														style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
+													</div>
+												</div>
+												<div class="mainNav">
+													<ul class="menu">
+														<li class="info"><a>기본정보</a> <span class="ing"></span></li>
+														<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -511,9 +702,9 @@
 														<img src="${lvo.poster }" alt=""
 															style="width: 257px; height: 394.84px;">
 													</div>
-													<div class="hvr-inner">
-														<a href="seriesSingle.do?movie_id=${lvo.movie_id}">상세보기
-															<i class="ion-android-arrow-dropright"></i>
+													<div class="hvr-inner" data="6" data_id="${lvo.movie_id}">
+														<a data="6" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
 													<div class="title-in">
@@ -524,6 +715,62 @@
 											</div>
 										</div>
 									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="movie-items full-width mainDetailinfo detail-slider" data="6">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="mainInner">
+									<div class="title-hd">
+										<h2>오블리비언</h2>
+										<a class="viewall2">x</a>
+									</div>
+									<div class="mainInfo">
+										<div class="title-in">
+											<div class="mainInnerDetail">
+												<div class="movie-item col-md-8">
+													<p>관람객별점 8.8 | 기자/평론가 7.8 | 네티즌 7.7</p>
+													<p>
+														<b>외계인의 침공이 있었던 지구의 운명을 건 마지막 전쟁을 시작한다!</b>
+													</p>
+													<p>
+														<b>감독</b>&nbsp; 조지프 코신스키
+													</p>
+													<p>
+														<b>출연</b>&nbsp; 톰 크루즈, 모건 프리먼, 올가 쿠릴렌코
+													</p>
+													<p>
+														<b>개요</b>&nbsp; 15세 관람가 | 액션SF | 미국 | 2011년
+													</p>
+													<div class="social-btn">
+														<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+														<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+													</div>
+													<div class="btn-transform transform-vertical vertical-btn"
+														style="width: 1000px">
+														<a href="#" class="item item-1 redbtn">상세정보</a> <a
+															href="#" class="item item-2 redbtn hvrbtn">상세정보</a>
+													</div>
+												</div>
+												<div class="mainInnerVideoRight col-md-4"
+													style="width: 300px">
+													<div class="mainInnerImg col-md-4"
+														style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
+													</div>
+												</div>
+												<div class="mainNav">
+													<ul class="menu">
+														<li class="info"><a>기본정보</a> <span class="ing"></span></li>
+														<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -565,6 +812,62 @@
 											</div>
 										</div>
 									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="movie-items full-width mainDetailinfo detail-slider" data="7">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="mainInner">
+									<div class="title-hd">
+										<h2>오블리비언</h2>
+										<a class="viewall2">x</a>
+									</div>
+									<div class="mainInfo">
+										<div class="title-in">
+											<div class="mainInnerDetail">
+												<div class="movie-item col-md-8">
+													<p>관람객별점 8.8 | 기자/평론가 7.8 | 네티즌 7.7</p>
+													<p>
+														<b>외계인의 침공이 있었던 지구의 운명을 건 마지막 전쟁을 시작한다!</b>
+													</p>
+													<p>
+														<b>감독</b>&nbsp; 조지프 코신스키
+													</p>
+													<p>
+														<b>출연</b>&nbsp; 톰 크루즈, 모건 프리먼, 올가 쿠릴렌코
+													</p>
+													<p>
+														<b>개요</b>&nbsp; 15세 관람가 | 액션SF | 미국 | 2011년
+													</p>
+													<div class="social-btn">
+														<a href="#" class="parent-btn"><i class="ion-play"></i>재생</a>
+														<a href="#" class="parent-btn"><i class="ion-heart"></i>즐겨찾기</a>
+													</div>
+													<div class="btn-transform transform-vertical vertical-btn"
+														style="width: 1000px">
+														<a href="#" class="item item-1 redbtn">상세정보</a> <a
+															href="#" class="item item-2 redbtn hvrbtn">상세정보</a>
+													</div>
+												</div>
+												<div class="mainInnerVideoRight col-md-4"
+													style="width: 300px">
+													<div class="mainInnerImg col-md-4"
+														style="background-image: url('images/uploads/mv-it1.jpg'); width: 200px; height: 300px">
+													</div>
+												</div>
+												<div class="mainNav">
+													<ul class="menu">
+														<li class="info"><a>기본정보</a> <span class="ing"></span></li>
+														<li class="similar"><a>비슷한 작품</a> <span class="ing2"></span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
