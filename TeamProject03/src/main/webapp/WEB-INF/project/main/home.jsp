@@ -43,7 +43,10 @@ $(function(){
       $('.ing').css('background-color','');
    });
 })
+
+
 </script>
+
 </head>
 <body>
 
@@ -76,7 +79,6 @@ $(function(){
 				<!-- ====================================1 big slider start=========================================== -->	 
 				<c:forEach var="svo" items="${bigSliderList }">   	
 	    		<div class="movie-item">
-
 	    			<div class="row">
 	    				<div class="col-md-8 col-sm-12 col-xs-12">
 	    					<div class="title-in">
@@ -87,9 +89,18 @@ $(function(){
 			    				</div>
 			    				<h1><a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
 								${svo.title }<span></span></a></h1>
-								<div class="social-btn">
-									<a href="#" class="parent-btn"><i class="ion-play"></i>예고편 보기</a>
-									<a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>
+								<div class="social-btn ">
+								
+									<a href="" class="parent-btn bigSliderBtn" id="videoLink"><i class="ion-play"></i>예고편 보기</a>
+									
+									<%-- <div id="popup" onclick="close()"  class="mfp-hide" style="position: relative; height:0; padding-bottom: 56.25%; margin: 40px 0px;" >
+										<iframe width="560" height="315" src="${svo.url }" 
+										frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
+										allowfullscreen style="position: absolute; width:100%; height:100%;"></iframe>
+									</div> --%>
+									
+																
+									<!-- <a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에 담기</a>
 									<div class="hover-bnt">
 										<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>공유</a>
 										<div class="hvr-item">
@@ -98,13 +109,13 @@ $(function(){
 											<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
 											<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
 										</div>
-									</div>		
+									</div>		 -->
 								</div>
 			    				<div class="mv-details">
 			    					<p><i class="ion-android-star"></i><span>${svo.net.evaluation_point }</span> /10</p>
 			    					<ul class="mv-infor">
-			    						<li>  상영시간: ${svo.running_time }분 </li>
-			    						<li>  상영등급: ${svo.grade }</li>
+			    						<li> 상영시간: ${svo.running_time }분 </li>
+			    						<li> 상영등급: ${svo.grade }</li>
 			    						<li> 개봉일:<fmt:formatDate value="${svo.opening_date }" pattern="yyyy/MM/dd"/></li>
 			    					</ul>
 			    				</div>
@@ -126,7 +137,10 @@ $(function(){
 	    </div>
 	</div>
 </div> 
+
+
 <!-- ==============================main big slider total area end ================================= -->
+
 <div class="movie-items  full-width">
    <div class="row">
       <div class="col-md-12">

@@ -28,7 +28,8 @@ public interface MainMapper {
 			@Result(property="gen.genre",column="genre"),
 			@Result(property="gen.movie_id",column="movie_id"),
 			@Result(property="sps.score",column="score"),
-			@Result(property="sps.movie_id",column="movie_id")
+			@Result(property="sps.movie_id",column="movie_id"),
+			@Result(property="pic.url", column="url")
 			
 		}) 
 		
@@ -94,7 +95,11 @@ public interface MainMapper {
 		    		+"WHERE nm.movie_id=gen.movie_id AND nm.movie_id=#{movie_id})")
 		    public List<MovieGenreVO> selectGenre(int movie_id);
 
-	
+		    //GETURL
+			@Select("SELECT url FROM movie_re_pictures WHERE movie_id=#{movie_id} AND url IS NOT NULL")   
+			public List<MoviePicturesVO> getMovieUrl_home(int movie_id);
+			
+		    
 
 }
 
