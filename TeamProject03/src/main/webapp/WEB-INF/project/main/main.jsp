@@ -56,6 +56,7 @@
 <script src="js/celeb.js"></script>
 <script src="js/movieList.js"></script>
 <script src="js/newsdetail.js"></script>
+<script src="js/slider-btn.js"></script>
 
 </body>
 </html>
