@@ -31,7 +31,7 @@
 <div class="page-single">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-9 col-sm-12 col-xs-12">
+			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="blog-detail-ct">
 					<h1>${vo.title }</h1>
 					<span class="author" style="color:white;">${vo.author }</span>
@@ -150,7 +150,7 @@
 					<!-- comment form -->
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-12 col-xs-12">
+			<!-- <div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="sb-search sb-it">
 						<h4 class="sb-title">뉴스 검색</h4>
@@ -194,7 +194,7 @@
 						<img src="../images/uploads/ads1.png" alt="">
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

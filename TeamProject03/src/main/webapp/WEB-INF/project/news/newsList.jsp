@@ -30,7 +30,7 @@
 <div class="page-single">
 	<div class="container">
 		<div class="row ipad-width2">
-			<div class="col-md-9 col-sm-12 col-xs-12">
+			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
 					<p class="totalnews">총 <span>${count } </span> 개의 뉴스</p>
 					<!-- <label>Sort by:</label> -->
@@ -68,12 +68,26 @@
             		<c:choose>
             			<c:when test="${totalpage<endblock }">
             				<c:forEach var="i" begin="${startblock }" end="${totalpage }">
-            					<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
+            					<c:choose>
+		            				<c:when test="${curpage==i }">
+		            					<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
+		            				</c:when>
+		            				<c:otherwise>
+		            					<li class="icon-next"><a href="newsList.do?page=${i }">${i }</a></li>
+		            				</c:otherwise>
+	            				</c:choose>
             				</c:forEach>
             			</c:when>
             			<c:otherwise>
             				<c:forEach var="i" begin="${startblock }" end="${endblock }">
-            					<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
+            					<c:choose>
+		            				<c:when test="${curpage==i }">
+		            					<li class="active"><a href="newsList.do?page=${i }">${i }</a></li>
+		            				</c:when>
+		            				<c:otherwise>
+		            					<li class="icon-next"><a href="newsList.do?page=${i }">${i }</a></li>
+		            				</c:otherwise>
+	            				</c:choose>
             				</c:forEach>
             			</c:otherwise>
             		</c:choose>
@@ -83,7 +97,7 @@
             		</c:if>
             	</ul>
 			</div>
-			<div class="col-md-3 col-sm-12 col-xs-12">
+			<!-- <div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
 					<div class="sb-search sb-it">
 						<h4 class="sb-title">뉴스 검색</h4>
@@ -127,7 +141,7 @@
 						<img src="../images/uploads/ads1.png" alt="">
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

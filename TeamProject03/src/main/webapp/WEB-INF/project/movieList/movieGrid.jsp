@@ -31,9 +31,9 @@
 				<div class="container">
 					<div class="row ipad-width">
 						<div class="topbar-filter">
-							<p class="pad-change celebPad">
+							<!-- <p class="pad-change celebPad">
 								'<span></span>'에 대한 <span></span>건의 검색 결과
-							</p>
+							</p> -->
 							<select class="selectRangeChange">
 								<option value="opening_date">최신순</option>
 								<option value="running_time">러닝타임순</option>

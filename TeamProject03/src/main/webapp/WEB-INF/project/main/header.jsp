@@ -358,7 +358,7 @@ $(function(){
 			<!-- /.navbar-collapse -->
 	    </nav>
 	    <!-- search form -->
-	    <div class="top-search">
+	    <!-- <div class="top-search">
 	    	<select>
 				<option value="movie_title">영화 제목</option>
 				<option value="saab">뉴스</option>
@@ -366,7 +366,7 @@ $(function(){
 				<option value="saab">장르</option>
 			</select>
 			<input type="text" placeholder="제목, 배우, 감독으로 검색">
-	    </div>
+	    </div> -->
 		</div>	
 </header>
 </c:if> 

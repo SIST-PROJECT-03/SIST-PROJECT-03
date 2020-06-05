@@ -134,7 +134,7 @@ public class NewsController {
 		for(NewsVO vo:list)
 		{
 			String temp=vo.getSubject();
-			temp=temp.substring(0, 37);
+			temp=temp.substring(0, 45);
 			
 			String temp2=vo.getTitle();
 			if(temp2.length()>15){

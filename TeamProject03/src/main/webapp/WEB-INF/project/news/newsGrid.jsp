@@ -31,7 +31,7 @@
 <div class="page-single">
 	<div class="container">
 		<div class="row ipad-width2">
-			<div class="col-md-9 col-sm-12 col-xs-12">
+			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
 					<p class="newsGridTotal">총 <span>${count } </span> 개의 뉴스</p>
 					<!-- <label>Sort by:</label> -->
@@ -74,15 +74,30 @@
             			<li class="icon-next"><a href="newsGrid.do?page=1"><i class="ion-ios-arrow-left"></i><i class="ion-ios-arrow-left"></i></a></li>
             			<li class="icon-prev"><a href="newsGrid.do?page=${startblock-1}"><i class="ion-ios-arrow-left"></i></a></li>
             		</c:if>
+            		
             		<c:choose>
             			<c:when test="${totalpage<endblock }">
             				<c:forEach var="i" begin="${startblock }" end="${totalpage }">
-            					<li class="active"><a href="newsGrid.do?page=${i }">${i }</a></li>
+            					<c:choose>
+	            					<c:when test="${curpage==i }">
+	            						<li class="active" style="color:white"><a href="newsGrid.do?page=${i }">${i }</a></li>
+	            					</c:when>
+	            					<c:otherwise>
+	            						<li class="active"><a href="newsGrid.do?page=${i }">${i }</a></li>
+	            					</c:otherwise>
+            					</c:choose>
             				</c:forEach>
             			</c:when>
             			<c:otherwise>
             				<c:forEach var="i" begin="${startblock }" end="${endblock }">
-            					<li class="active"><a href="newsGrid.do?page=${i }">${i }</a></li>
+            					<c:choose>
+		            				<c:when test="${curpage==i }">
+		            					<li class="active"><a href="newsGrid.do?page=${i }">${i }</a></li>
+		            				</c:when>
+		            				<c:otherwise>
+		            					<li class="active"><a href="newsGrid.do?page=${i }">${i }</a></li>
+		            				</c:otherwise>
+	            				</c:choose>
             				</c:forEach>
             			</c:otherwise>
             		</c:choose>
@@ -94,7 +109,7 @@
 			</div>
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="sidebar">
-					<div class="sb-search sb-it">
+					<!-- <div class="sb-search sb-it">
 						<h4 class="sb-title">뉴스 검색</h4>
 						<input type="text" placeholder="Enter keywords">
 					</div>
@@ -107,20 +122,18 @@
 							<li><a href="blogDetail.do">News (45)</a></li>
 							<li><a href="blogDetail.do">Global (06)</a></li>
 						</ul>
-					</div>
-					<div class="sb-recentpost sb-it">
+					</div> -->
+					<%-- <div class="sb-recentpost sb-it">
 						<h4 class="sb-title">인기 뉴스</h4>
-						<div class="recent-item">
-							<span>01</span><h6><a href="blogDetail.do">Korea Box Office: Beauty and the Beast Wins Fourth</a></h6>
-						</div>
-						<div class="recent-item">
-							<span>02</span><h6><a href="blogDetail.do">Homeland Finale Includes Shocking Death </a></h6>
-						</div>
-						<div class="recent-item">
-							<span>03</span><h6><a href="blogDetail.do">Fate of the Furious Reviews What the Critics Saying</a></h6>
-						</div>
-					</div>
-					<div class="sb-tags sb-it">
+						
+						<c:forEach var="vo" items="${list }">
+							<div class="recent-item">
+								<span>${vo.news_id}</span><h6><a href="newsDetail.do?no=${vo.news_id}">${vo.title }</a></h6>
+							</div>
+						</c:forEach>
+						
+					</div> --%>
+					<!-- <div class="sb-tags sb-it">
 						<h4 class="sb-title">태그</h4>
 						<ul class="tag-items">
 							<li><a href="#">Batman</a></li>
@@ -134,7 +147,7 @@
 					</div>
 					<div class="ads">
 						<img src="images/uploads/ads1.png" alt="">
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
