@@ -46,15 +46,9 @@ public class MainController {
 	      model.addAttribute("newsList",newsList);
 	      
 			 
-	   	  List<MovieVO> bigSliderList=mDao.bigSliderList();
-		  for(MovieVO svo:bigSliderList)
-		  {
-		 	//System.out.println(svo.getNet().getEvaluation_point());
-		  }
-		  model.addAttribute("bigSliderList", bigSliderList);
-		  
+	   	  	  
 		  String email=(String)session.getAttribute("email");
-		 
+		  
 	  
 		 try{
 			  if(email!=null ) {
@@ -130,12 +124,36 @@ public class MainController {
 		              model.addAttribute("specialList", specialList);
 		             
 		              
+		              List<MovieVO> bigSliderList=mDao.bigSliderList();
+		    		  
+		    		  
+		    		  int movie_id;
+		    		 
+		    		  for(MovieVO vo:bigSliderList)
+		    		  {
+		    			movie_id=vo.getNet().getMovie_id();
+		    			System.out.println("con-movie_id: "+movie_id);
+		    			List<MovieGenreVO> selGenreList=mDao.selectGenre(movie_id);
+		    			String temp="";
+		    			for(MovieGenreVO gvo:selGenreList)
+		    			{
+		    				temp+=gvo.getGenre()+"/";
+		    			}
+		    			System.out.println(temp);
+		    			temp=temp.substring(0,temp.lastIndexOf("/"));
+		    			vo.setGenre(temp);
+		    			
+		    		  }
+		    		  
+		    		   model.addAttribute("bigSliderList", bigSliderList);
 			           model.addAttribute("user_genre", user_genre);
 			           model.addAttribute("user_nick", user_nick); 
 			           model.addAttribute("user_age",user_age);
 			           model.addAttribute("user_gender",user_gender);
 			           model.addAttribute("user_point",user_point);
-			           model.addAttribute("user_loc",user_loc);    
+			           model.addAttribute("user_loc",user_loc);  
+			           
+			           
 			  }   
 		         
 		      }catch (NullPointerException ex) {
