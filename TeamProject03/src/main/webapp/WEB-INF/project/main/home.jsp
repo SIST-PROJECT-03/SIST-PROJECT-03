@@ -11,42 +11,6 @@
 <!-- react -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
-<<<<<<< HEAD
-$(function(){
-   $(document).ready(function(){
-      $('.mainDetailinfo').hide();   
-   })
-   /* 상세보기버튼 클릭이벤트 */
-   $('.hvr-inner').click(function(){
-      $('.mainDetailinfo').show();
-      $('.mainInnerDetail').show();
-      $('.mainNav').show();
-      $('.ing').css('background-color','#dd003f');
-      $('.ing2').css('background-color','');
-      $('.mainSim').hide();
-   });
-   /* x버튼 클릭이벤트 */
-   $('.viewall2').click(function(){
-      $('.mainDetailinfo').hide();
-   });
-   /* 기본정보버튼 클릭이벤트 */
-   $('.info').click(function(){
-      $('.mainInnerDetail').show();
-      $('.mainSim').hide();
-      $('.ing').css('background-color','#dd003f');
-      $('.ing2').css('background-color','');
-   });
-   /* 비슷한 작품버튼 클릭이벤트 */
-   $('.similar').click(function(){
-      $('.mainInnerDetail').hide();
-      $('.mainSim').show();
-      $('.ing2').css('background-color','#dd003f');
-      $('.ing').css('background-color','');
-   });
-})
-
-
-=======
 	$(function() {
 		$(document).ready(function() {
 			$('.mainDetailinfo').hide();
@@ -79,7 +43,6 @@ $(function(){
 			$('.ing').css('background-color', '');
 		});
 	})
->>>>>>> 072ff4315aebfa79fd3ed421e3117e5ab0d736d2
 </script>
 
 </head>

@@ -1,7 +1,9 @@
 
 package com.sist.spring;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,8 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.sist.dao.*;
-import com.sist.vo.*;
+
+import com.sist.dao.MainDAO;
+import com.sist.dao.MemberDAO;
+import com.sist.dao.MovieDAO;
+import com.sist.dao.NewsDAO;
+import com.sist.vo.MemberVO;
+import com.sist.vo.MovieGenreVO;
+import com.sist.vo.MoviePicturesVO;
+import com.sist.vo.MovieVO;
+import com.sist.vo.NewsVO;
 @Controller
 public class MainController {
    @Autowired
