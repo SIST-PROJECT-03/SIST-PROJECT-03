@@ -15,11 +15,29 @@ public class MovieVO {
 	private int audience_count;
 	private String story;
 	private String poster;
+	private String url;
 	private NetizenEvaluationTrendVO net = new NetizenEvaluationTrendVO();
 	private MovieGenreVO gen = new MovieGenreVO();
 	private SpecialPointVO sps=new SpecialPointVO();
+	private MoviePicturesVO pic=new MoviePicturesVO();
 	
 	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public MoviePicturesVO getPic() {
+		return pic;
+	}
+
+	public void setPic(MoviePicturesVO pic) {
+		this.pic = pic;
+	}
+
 	public int getMovie_id() {
 		return movie_id;
 	}

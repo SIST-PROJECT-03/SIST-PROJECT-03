@@ -190,5 +190,7 @@ class ChatForm extends React.Component {
 }
 ReactDOM.render(<App/>,document.getElementById('root'));
 </script>
+<script src="js/slider-btn.js"></script>
+<script src="js/detail-btn.js"></script>
 </body>
 </html>

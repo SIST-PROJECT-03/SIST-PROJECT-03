@@ -178,12 +178,12 @@ $(function(){
 	          		<option value="쿠바">쿠바</option>
 	          		<option value="브라질">브라질</option>
 	          		<option value="아르헨티나">아르헨티나</option>
-	          		<option value="베네수엘라">베네수엘라</option>
+	          		<!-- <option value="베네수엘라">베네수엘라</option> -->
 	          		<option value="칠레">칠레</option>
 	          		<option value="콜롬비아">콜롬비아</option>
 	          		<option value="나이지리아">나이지리아</option>
 	          		<option value="가나">가나</option>
-	          		<option value="호주">호주</option>
+	          		<!-- <option value="호주">호주</option> -->
 	          	</select>
             </div>
             <!-- <div class="row">

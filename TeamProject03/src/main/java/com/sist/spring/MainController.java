@@ -1,7 +1,9 @@
 
 package com.sist.spring;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,8 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.sist.dao.*;
-import com.sist.vo.*;
+
+import com.sist.dao.MainDAO;
+import com.sist.dao.MemberDAO;
+import com.sist.dao.MovieDAO;
+import com.sist.dao.NewsDAO;
+import com.sist.vo.MemberVO;
+import com.sist.vo.MovieGenreVO;
+import com.sist.vo.MoviePicturesVO;
+import com.sist.vo.MovieVO;
+import com.sist.vo.NewsVO;
 @Controller
 public class MainController {
    @Autowired
@@ -21,6 +31,9 @@ public class MainController {
    
    @Autowired
    private MainDAO mDao;
+   
+   @Autowired
+   private MovieDAO movieDao;
    
    @RequestMapping("blockbuster.do")
    public String blockbuster_main()
@@ -60,9 +73,6 @@ public class MainController {
 				      String user_nick=mvo.getNick();
 				      String user_point=mvo.getPoint();
 				      String user_gender=mvo.getGender();
-				      
-				      
-				      
 				      
 				      System.out.println("user_genre: "+ user_genre);
 				      System.out.println("user_nick: "+user_nick);
@@ -125,25 +135,35 @@ public class MainController {
 		             
 		              
 		              List<MovieVO> bigSliderList=mDao.bigSliderList();
-		    		  
-		    		  
 		    		  int movie_id;
 		    		 
+		    		  //<span class="blue"><a href="#">${svo.genre }</a></span>
 		    		  for(MovieVO vo:bigSliderList)
 		    		  {
 		    			movie_id=vo.getNet().getMovie_id();
 		    			System.out.println("con-movie_id: "+movie_id);
+		    			
+		    			List<MoviePicturesVO> movieUrl=mDao.getMovieUrl_home(movie_id);
+		    			String temp1="";
+		    			for(MoviePicturesVO pvo:movieUrl)
+		    			{
+		    				temp1=pvo.getUrl();
+		    				
+		    			}
+		    			vo.setUrl(temp1);
+		    			
 		    			List<MovieGenreVO> selGenreList=mDao.selectGenre(movie_id);
-		    			String temp="";
+		    			String temp="";    			
 		    			for(MovieGenreVO gvo:selGenreList)
 		    			{
-		    				temp+=gvo.getGenre()+"/";
+		    				temp+="<span class=\"blue\"><a href=\"#\">"+gvo.getGenre()+"</a></span>\n";
 		    			}
 		    			System.out.println(temp);
-		    			temp=temp.substring(0,temp.lastIndexOf("/"));
-		    			vo.setGenre(temp);
 		    			
+		    			vo.setGenre(temp);
+		    					    			    			
 		    		  }
+		    		  
 		    		  
 		    		   model.addAttribute("bigSliderList", bigSliderList);
 			           model.addAttribute("user_genre", user_genre);

@@ -152,20 +152,22 @@ $(document).ready(function(){
 				<div class="col-md-4 col-sm-12 col-xs-12">
 					<div class="movie-img sticky-sb">
 						<img src="${vo.poster }" alt="">
-						<div class="movie-btn">
-							<div class="btn-transform transform-vertical red">
-								<div>
-									<a href="${movieUrl }" class="item item-1 redbtn"> <i
-										class="ion-play"></i> 예고편 보기
-									</a>
-								</div>
-								<div>
-									<a href="${movieUrl }"
-										class="item item-2 redbtn fancybox-media hvr-grow"><i
-										class="ion-play"></i></a>
+						<c:if test="${movieUrl != '[]' }">
+							<div class="movie-btn">
+								<div class="btn-transform transform-vertical red">
+									<div>
+										<a href="${movieUrl }" class="item item-1 redbtn"> <i
+											class="ion-play"></i> 예고편 보기
+										</a>
+									</div>
+									<div>
+										<a href="${movieUrl }"
+											class="item item-2 redbtn fancybox-media hvr-grow"><i
+											class="ion-play"></i></a>
+									</div>
 								</div>
 							</div>
-						</div>
+						</c:if>
 					</div>
 				</div>
 				<div class="col-md-8 col-sm-12 col-xs-12">
@@ -231,7 +233,7 @@ $(document).ready(function(){
 													<div class="cast-it">
 														<div class="cast-left">
 															<img src="${actorData.thumbnail }" alt="" style="width:110px;height:140px"> <a
-																href="#">${actorData.name }</a>
+																href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${actorData.cast_id }" target="_blank"">${actorData.name }</a>
 														</div>
 														<p>${actorData.reward }</p>
 													</div>
@@ -287,14 +289,15 @@ $(document).ready(function(){
 												<div class="sb-it">
 													<h6>감독:</h6>
 													<p>
-														<a href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${cvo.cast_id }">${cvo.name }</a>
+													<c:forEach var ="cvo" items="${cvo }">
+														<a href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${cvo.cast_id }" target="_blank">${cvo.name }</a></c:forEach>
 													</p>
 												</div>
 												<div class="sb-it">
 													<h6>배우:</h6>
 													<p>
 													<c:forEach var="actorData" items="${actorData}">
-														<a href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${actorData.cast_id }">${actorData.name } | </a></c:forEach> 
+														<a href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${actorData.cast_id }" target="_blank">${actorData.name } | </a></c:forEach> 
 													</p>
 												</div>
 												<div class="sb-it">
@@ -317,7 +320,7 @@ $(document).ready(function(){
 													<h6>등급:</h6>
 													<p>${vo.grade }</p>
 												</div>
-												<div class="sb-it">
+												<!-- <div class="sb-it">
 													<h6>주요 키워드:</h6>
 													<p class="tags">
 														<span class="time"><a href="#">superhero</a></span> <span
@@ -326,7 +329,7 @@ $(document).ready(function(){
 															class="time"><a href="#">blockbuster</a></span> <span
 															class="time"><a href="#">final battle</a></span>
 													</p>
-												</div>
+												</div> -->
 											</div>
 										</div>
 									</div>
@@ -421,15 +424,16 @@ $(document).ready(function(){
 											<div class="title-hd-sm">
 												<h4>감독</h4>
 											</div>
+											<c:forEach var ="cvo" items="${cvo }">
 											<div class="mvcast-item">
 												<div class="cast-it">
 													<div class="cast-left">
 														<img src="${cvo.thumbnail }" alt=""> <a
-															href="#">${cvo.name }</a>
+															href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${cvo.cast_id }" target="_blank">${cvo.name }</a>
 													</div>
 													<p>${cvo.reward }</p>
 												</div>
-											</div>
+											</div></c:forEach>
 											<!-- //== -->
 											
 											<div class="title-hd-sm">
@@ -440,7 +444,7 @@ $(document).ready(function(){
 												<div class="cast-it">
 													<div class="cast-left">
 														<img src="${actorData.thumbnail }" alt="" style="width:40px;height:40px;"> <a
-															href="#">${actorData.name }</a>
+															href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${actorData.cast_id }" target="_blank">${actorData.name }</a>
 													</div>
 													<p>${actorData.reward }</p>
 												</div>
@@ -466,6 +470,7 @@ $(document).ready(function(){
 													영상 
 												</h4>
 											</div>
+											<c:if test="${movieUrl != '[]' }">
 											<div class="mvsingle-item media-item">
 
 												<div class="vd-item">
@@ -479,6 +484,7 @@ $(document).ready(function(){
 
 
 											</div>
+											</c:if>
 											<div class="title-hd-sm">
 												<h4>
 													포토 <span> (${fn:length(moviePictures)} )</span>
@@ -497,161 +503,52 @@ $(document).ready(function(){
 									<!-- ============================= MOVIE DETAIL -  RELATED MOVIE 관련영화 TAB START  ============================== -->
 									<div id="moviesrelated" class="tab">
 										<div class="row">
-											<!-- <h3>Related Movies To</h3>
-					       	 			<h2>Skyfall: Quantum of Spectre</h2> -->
 											<div class="topbar-filter">
 												<p class="pad-change">
-													'<span>해리포터</span>'와 관련된 영화 <span>50</span>건
+													'<span>${vo.title }</span>'와(과) 관련된 영화 <span>${movieTotalSameDirector }</span>건
 												</p>
 												<!-- <label>Sort by:</label> -->
-												<select>
+												<!-- <select>
 													<option value="ranking">랭킹순</option>
 													<option value="rating">평점순</option>
 													<option value="date">최신작품순</option>
 													<option value="date">Release date Ascending</option>
-												</select>
+												</select> -->
 											</div>
+											
+											<c:forEach var="dlist" items="${dlist }">
+											<c:if test="${vo.movie_id != dlist.movie_id }">
 											<div class="movie-item-style-2">
-												<img src="images/uploads/mv1.jpg" alt="">
+												<img src="${dlist.poster }" alt="">
 												<div class="mv-item-infor">
 													<h6>
-														<a href="#">oblivion <span>(2012)</span></a>
+														<a href="seriesSingle.do?movie_id=${dlist.movie_id }" target="_blank">${dlist.title } <span><fmt:formatDate value="${dlist.opening_date }" pattern="yyyy"/></span></a>
 													</h6>
-													<p class="rate">
+													<!-- <p class="rate">
 														<i class="ion-android-star"></i><span>8.1</span> /10
-													</p>
-													<p class="describe">Earth's mightiest heroes must come
-														together and learn to fight as a team if they are to stop
-														the mischievous Loki and his alien army from enslaving
-														humanity...</p>
+													</p> -->
+													<p class="describe">
+													<div class="box">
+													<p class="content">${dlist.story }</p>
+													</div>
+												 		<hr/>
 													<p class="run-time">
-														Run Time: 2h21’ . <span>MMPA: PG-13 </span> . <span>Release:
-															1 May 2015</span>
+														상영 시간: ${dlist.running_time } 분 . <span>${dlist.grade }</span> . <span>개봉일:
+															<fmt:formatDate value="${dlist.opening_date }" pattern="yyyy-MM-dd"/></span>
 													</p>
+													
 													<p>
-														Director: <a href="#">Joss Whedon</a>
+														감독: <c:forEach var ="cvo" items="${cvo }"><a href="https://movie.naver.com/movie/bi/pi/basic.nhn?code=${cvo.cast_id }" target="_blank">${cvo.name } | </a></c:forEach>
 													</p>
+													
 													<p>
-														Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris
-															Evans,</a> <a href="#"> Chris Hemsworth</a>
+													출연 배우: 
+														${dlist.name }	
 													</p>
 												</div>
-											</div>
-											<div class="movie-item-style-2">
-												<img src="images/uploads/mv2.jpg" alt="">
-												<div class="mv-item-infor">
-													<h6>
-														<a href="#">into the wild <span>(2014)</span></a>
-													</h6>
-													<p class="rate">
-														<i class="ion-android-star"></i><span>7.8</span> /10
-													</p>
-													<p class="describe">As Steve Rogers struggles to
-														embrace his role in the modern world, he teams up with a
-														fellow Avenger and S.H.I.E.L.D agent, Black Widow, to
-														battle a new threat...</p>
-													<p class="run-time">
-														Run Time: 2h21’ . <span>MMPA: PG-13 </span> . <span>Release:
-															1 May 2015</span>
-													</p>
-													<p>
-														Director: <a href="#">Anthony Russo,</a><a href="#">Joe
-															Russo</a>
-													</p>
-													<p>
-														Stars: <a href="#">Chris Evans,</a> <a href="#">Samuel
-															L. Jackson,</a> <a href="#"> Scarlett Johansson</a>
-													</p>
-												</div>
-											</div>
-											<div class="movie-item-style-2">
-												<img src="images/uploads/mv3.jpg" alt="">
-												<div class="mv-item-infor">
-													<h6>
-														<a href="#">blade runner <span>(2015)</span></a>
-													</h6>
-													<p class="rate">
-														<i class="ion-android-star"></i><span>7.3</span> /10
-													</p>
-													<p class="describe">Armed with a super-suit with the
-														astonishing ability to shrink in scale but increase in
-														strength, cat burglar Scott Lang must embrace his inner
-														hero and help...</p>
-													<p class="run-time">
-														Run Time: 2h21’ . <span>MMPA: PG-13 </span> . <span>Release:
-															1 May 2015</span>
-													</p>
-													<p>
-														Director: <a href="#">Peyton Reed</a>
-													</p>
-													<p>
-														Stars: <a href="#">Paul Rudd,</a> <a href="#"> Michael
-															Douglas</a>
-													</p>
-												</div>
-											</div>
-											<div class="movie-item-style-2">
-												<img src="images/uploads/mv4.jpg" alt="">
-												<div class="mv-item-infor">
-													<h6>
-														<a href="#">Mulholland pride<span> (2013) </span></a>
-													</h6>
-													<p class="rate">
-														<i class="ion-android-star"></i><span>7.2</span> /10
-													</p>
-													<p class="describe">When Tony Stark's world is torn
-														apart by a formidable terrorist called the Mandarin, he
-														starts an odyssey of rebuilding and retribution.</p>
-													<p class="run-time">
-														Run Time: 2h21’ . <span>MMPA: PG-13 </span> . <span>Release:
-															1 May 2015</span>
-													</p>
-													<p>
-														Director: <a href="#">Shane Black</a>
-													</p>
-													<p>
-														Stars: <a href="#">Robert Downey Jr., </a> <a href="#">
-															Guy Pearce,</a><a href="#">Don Cheadle</a>
-													</p>
-												</div>
-											</div>
-											<div class="movie-item-style-2">
-												<img src="images/uploads/mv5.jpg" alt="">
-												<div class="mv-item-infor">
-													<h6>
-														<a href="#">skyfall: evil of boss<span> (2013)
-														</span></a>
-													</h6>
-													<p class="rate">
-														<i class="ion-android-star"></i><span>7.0</span> /10
-													</p>
-													<p class="describe">When Tony Stark's world is torn
-														apart by a formidable terrorist called the Mandarin, he
-														starts an odyssey of rebuilding and retribution.</p>
-													<p class="run-time">
-														Run Time: 2h21’ . <span>MMPA: PG-13 </span> . <span>Release:
-															1 May 2015</span>
-													</p>
-													<p>
-														Director: <a href="#">Alan Taylor</a>
-													</p>
-													<p>
-														Stars: <a href="#">Chris Hemsworth, </a> <a href="#">
-															Natalie Portman,</a><a href="#">Tom Hiddleston</a>
-													</p>
-												</div>
-											</div>
-											<div class="topbar-filter">
-												<label>Movies per page:</label> <select>
-													<option value="range">5 Movies</option>
-													<option value="saab">10 Movies</option>
-												</select>
-												<div class="pagination2">
-													<span>Page 1 of 2:</span> <a class="active" href="#">1</a>
-													<a href="#">2</a> <a href="#"><i
-														class="ion-arrow-right-b"></i></a>
-												</div>
-											</div>
+											</div></c:if>
+											</c:forEach>
+											
 										</div>
 									</div>
 									<!-- ============================= MOVIE DETAIL -  RELATED MOVIE 관련영화 TAB END  ============================== -->

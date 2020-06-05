@@ -15,7 +15,16 @@ public class MovieDetailVO {
 	private	int audience_count;
 	private String story;
 	private String poster;
+	private String name;
 	
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	private WatchingTrendVO wvo = new WatchingTrendVO();
 	
 	

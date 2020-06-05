@@ -32,16 +32,35 @@ public class MovieListController {
 		
 		List<String> moviePictures = dao.getMoviePictures(movie_id);
 		List<String> movieUrl = dao.getMovieUrl(movie_id);
-		List<CelebVO> actorData = dao.getActorData(movie_id);
+		
 		List<String> genre = dao.getGenreData(movie_id);
-		CelebVO cvo = dao.getDirectorData(movie_id);
+		List<CelebVO> cvo = dao.getDirectorData(movie_id);
 		MovieDetailVO vo = dao.getMovieDetailData(movie_id);
 		WatchingTrendVO wvo = dao.getWatchingTrend(movie_id);
 		AudienceEvaluationTrendVO avo=dao.getAudienceEvaluationTrend(movie_id);
 		NetizenEvaluationTrendVO nvo=dao.getNetizenEvaluationTrend(movie_id);
 	    List<MovieReviewVO> rlist=dao.movieReviewData(movie_id);
 	    int movieTotalReview=dao.movieTotalReview(movie_id);
+	    List<MovieDetailVO> dlist=dao.getSameDirector(movie_id);
+	    int movieTotalSameDirector=dao.movieTotalSameDirector(movie_id);
 	    
+	    List<Integer> getRelMovieId=dao.getRelMovieId(movie_id);
+	    List<CelebVO> actorData = dao.getActorData(movie_id);
+	    int i=0;
+	    for(int relmovie:getRelMovieId){
+	    	
+	    	List<CelebVO>relactor=dao.getRelActor(relmovie);
+	    	String temp="";
+	    	for(CelebVO celebvo:relactor){
+	    		temp+="<a href=\"https://movie.naver.com/movie/bi/pi/basic.nhn?code="+celebvo.getCast_id()+"\"target=\"_blank\">"+celebvo.getName()+ " | </a>";
+	    		//<a href=\"https://movie.naver.com/movie/bi/pi/basic.nhn?code="+celebvo.getCast_id()+">"+celebvo.getName()+" | </a>
+	    	}
+	    	System.out.println("temp=" + temp);
+	    	dlist.get(i).setName(temp);
+	    	i++;
+	    }
+	    
+	    model.addAttribute("dlist",dlist);
 	    model.addAttribute("nvo",nvo);
 	    model.addAttribute("avo",avo);
 	    model.addAttribute("rlist",rlist);
@@ -53,6 +72,8 @@ public class MovieListController {
 		model.addAttribute("vo", vo);
 		model.addAttribute("wvo", wvo);
 		model.addAttribute("movieTotalReview",movieTotalReview);
+		model.addAttribute("movieTotalSameDirector",movieTotalSameDirector);
+		
 		return "project/movieList/seriesSingle";
 	}
 	

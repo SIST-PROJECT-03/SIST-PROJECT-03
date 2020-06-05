@@ -59,7 +59,7 @@ public interface MovieMapper {
 	public List<String> getMovieUrl(int movie_id);
 	
 	@Select("SELECT * FROM cast WHERE cast_id in (Select cast_id from naver_join WHERE movie_id=#{movie_id} and role = '감독')")
-	public CelebVO getDirectorData(int movie_id);
+	public List<CelebVO> getDirectorData(int movie_id);
 	
 	@Select("SELECT * FROM cast WHERE cast_id in (Select cast_id from naver_join WHERE movie_id=#{movie_id} and role = '배우')")
 	public List<CelebVO> getActorData(int movie_id);
@@ -67,7 +67,25 @@ public interface MovieMapper {
 	@Select("SELECT genre FROM movie_genre_mapper WHERE movie_id=#{movie_id}")
 	public List<String> getGenreData(int movie_id);
 	
-
+	@Select("select * from naver_re_movies where movie_id in "
+			+ "(select movie_id from naver_join where cast_id in"
+			+ "(SELECT cast_id FROM cast WHERE cast_id in "
+			+ "(Select cast_id from naver_join WHERE movie_id=#{movie_id} and role = '감독'))) order by movie_id asc")
+	public List<MovieDetailVO> getSameDirector(int movie_id);
+	
+	@Select("SELECT * FROM cast WHERE cast_id in (Select cast_id from naver_join WHERE movie_id=#{movie_id} and role = '배우')")
+	public List<CelebVO> getRelActor(int movie_id);
+	
+	@Select("select distinct  movie_id from naver_join where cast_id in(SELECT cast_id FROM cast WHERE cast_id in "
+			+ "(Select cast_id from naver_join WHERE movie_id=#{movie_id} and role = '감독'))  order by movie_id asc")
+	public List<Integer> getRelMovieId(int movie_id);
+	
+	@Select("select count(*)-1 from naver_re_movies where movie_id in "
+			+ "(select movie_id from naver_join where cast_id in "
+			+ "(SELECT cast_id FROM cast WHERE cast_id in "
+			+ "(Select cast_id from naver_join WHERE movie_id=#{movie_id} and role = '감독')))")
+	public int movieTotalSameDirector(int movie_id);
+	
 	@Select("SELECT CEIL(count(*)/${rowSize}) "
 			+"FROM(SELECT rownum as num, title, grade, genre, country, running_time, poster, evaluation_point FROM naver_re_movies,netizen_evaluation_trend "
 			+"WHERE netizen_evaluation_trend.movie_id=naver_re_movies.movie_id "

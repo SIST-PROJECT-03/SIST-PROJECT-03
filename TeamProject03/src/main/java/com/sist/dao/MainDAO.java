@@ -56,5 +56,10 @@ public class MainDAO {
 		  return mapper.selectGenre(movie_id);
 	  }
 	 
-	 
+	  public List<MoviePicturesVO> getMovieUrl_home(int movie_id)
+	  {
+		  return mapper.getMovieUrl_home(movie_id);
+	  }
+	  
+	  
 }
