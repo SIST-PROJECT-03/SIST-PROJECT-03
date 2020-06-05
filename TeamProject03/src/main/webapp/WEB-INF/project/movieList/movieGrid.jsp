@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -62,8 +63,7 @@
 									<div class="movie-item-style-2 movie-item-style-1">
 										<img src="${vo.poster }" alt="">
 										<div class="hvr-inner">
-											<a href="seriesSingle.do"> Read more <i
-												class="ion-android-arrow-dropright"></i>
+											<a href="seriesSingle.do?movie_id=${vo.movie_id}"> Read more <i class="ion-android-arrow-dropright"></i>
 											</a>
 										</div>
 										<div class="mv-item-infor">
@@ -77,15 +77,15 @@
 							</div>
 							<div class="topbar-filter">
 								<label>Movies per page:</label>
-								 <select class="rowSizeSelect">
-									<option value="range">20 Movies</option>
-									<option value="saab">10 Movies</option>
+								 <select class="selectRowSizeChange">
+									<option value="30">30 Movies</option>
+									<option value="60" selected="selected">60 Movies</option>
 								</select>
 								<div class="pagination2">
 
 									<span>Page</span><span class="totalPagePrint">
 										${totalPage }</span><span> of</span> <span>${curPage } :</span> <a
-										href="#"><i class="ion-arrow-left-b"></i><i
+										href="movieGrid.do"><i class="ion-arrow-left-b"></i><i
 										class="ion-arrow-left-b"></i></a>
 
 									<c:choose>
@@ -139,16 +139,9 @@
 										</c:otherwise>
 									</c:choose>
 
-									<a href="#"><i class="ion-arrow-right-b"></i><i
+									<a href="movieGrid.do?page=${totalPage}"><i class="ion-arrow-right-b"></i><i
 										class="ion-arrow-right-b"></i></a>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-12 col-xs-12">
-						<div class="sidebar">
-							<div class="ads">
-								<img src="images/uploads/ads1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -158,3 +151,4 @@
 	</div>
 </body>
 </html>
+

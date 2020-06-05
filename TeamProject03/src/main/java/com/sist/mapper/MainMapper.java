@@ -1,12 +1,10 @@
 
 package com.sist.mapper;
 
-
-
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
-
+import org.springframework.web.servlet.ModelAndViewDefiningException;
 
 import com.sist.vo.*;
 
@@ -28,7 +26,9 @@ public interface MainMapper {
 			@Result(property="net.evaluation_point",column="evaluation_point"),
 			@Result(property="net.movie_id",column="movie_id"),
 			@Result(property="gen.genre",column="genre"),
-			@Result(property="sps.score",column="score")
+			@Result(property="gen.movie_id",column="movie_id"),
+			@Result(property="sps.score",column="score"),
+			@Result(property="sps.movie_id",column="movie_id")
 			
 		}) 
 		
@@ -80,20 +80,21 @@ public interface MainMapper {
 		
 		// 추천7) 전문가 평점 + 감상포인트
 		    @Select("SELECT * FROM "
-		    		+"(SELECT title, genre, opening_date, poster, ROUND(AVG(sps.score), 2) score "
+		    		+"(SELECT sps.movie_id, title, genre, opening_date, poster, ROUND(AVG(sps.score), 2) score "
 		    		+"FROM naver_re_movies nm, specialpoint sps " 
-		    		+"WHERE nm.movie_id=sps.movie_id AND genre LIKE '%'||#{user_genre}||'%' GROUP BY title, genre, opening_date, poster ORDER BY opening_date DESC) " 
+		    		+"WHERE nm.movie_id=sps.movie_id AND genre LIKE '%'||#{user_genre}||'%' GROUP BY sps.movie_id, title, genre, opening_date, poster ORDER BY opening_date DESC) " 
 		    		+"WHERE ROWNUM < 50 ")
 		    public List<MovieVO> specialRecomm(Map map); 
-		 
+		
 		    
-		 //추천8) 
-		    
-		    
-		 
-		 
-	   
+		 //장르 선택
+		    @Select("SELECT * FROM "
+		    		+"(SELECT nm.movie_id as movie_id, gen.genre as genre "
+		    		+"FROM naver_re_movies nm, movie_genre_mapper gen "
+		    		+"WHERE nm.movie_id=gen.movie_id AND nm.movie_id=#{movie_id})")
+		    public List<MovieGenreVO> selectGenre(int movie_id);
 
 	
 
 }
+

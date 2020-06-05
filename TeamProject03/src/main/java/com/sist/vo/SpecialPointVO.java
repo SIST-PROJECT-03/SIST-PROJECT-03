@@ -1,18 +1,10 @@
 package com.sist.vo;
-/*
- * MOVIE_ID	NUMBER
-NAME	VARCHAR2(54 BYTE)
-SCORE	NUMBER
-CONTENT	CLOB
- * 
- */
-public class SpecialPointVO {
 
+public class SpecialPointVO {
 	private int movie_id;
 	private String name;
-	private int score;
+	private double score;
 	private String content;
-	
 	public int getMovie_id() {
 		return movie_id;
 	}
@@ -25,10 +17,10 @@ public class SpecialPointVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 	public String getContent() {
@@ -37,5 +29,5 @@ public class SpecialPointVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+
 }

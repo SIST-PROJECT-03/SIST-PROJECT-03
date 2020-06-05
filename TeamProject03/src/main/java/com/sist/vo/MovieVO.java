@@ -19,6 +19,7 @@ public class MovieVO {
 	private MovieGenreVO gen = new MovieGenreVO();
 	private SpecialPointVO sps=new SpecialPointVO();
 	
+	
 	public int getMovie_id() {
 		return movie_id;
 	}

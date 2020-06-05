@@ -172,23 +172,23 @@ $(document).ready(function(){
 					<div class="movie-single-ct main-content">
 						<h1 class="bd-hd">${vo.title }<span> </span>
 						</h1>
-						<div class="movie-rate">
-							<div class="rate">
+						<div class="movie-rate" >
+						<c:if test="${nvo.evaluation_point != null }">
+							<div class="rate"style="margin-right:10px;">
 								<i class="ion-android-star"></i>
-								<p>
-									<span>8</span><br>
+								<p><span>네티즌 평점 : ${nvo.evaluation_point }</span> /10.0<br>
+								
 								</p>
-								<p>
-									<span class="rv">56 리뷰</span>
+							</div></c:if>
+							<c:if test="${avo.evaluation_point != null }">
+							<div class="rate" style=" margin-right:5px;">
+								<i class="ion-android-star"></i>
+								<p><span>관람객 평점 : ${avo.evaluation_point }</span> /10.0<br>
 								</p>
-							</div>
-							<div class="rate-star">
-								<p>내 평점 등록:</p>
-								<i class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
-									class="ion-ios-star-outline"></i>
+							</div></c:if>
+							<div class="rate"style="border-left:1px solid white;">
+							
+								<p><span class="rv">총 ${movieTotalReview }개의 리뷰가 있습니다.</span></p>
 							</div>
 						</div>
 						<div class="movie-tabs">
@@ -252,26 +252,36 @@ $(document).ready(function(){
 												<!-- cast for문 -->
 												<div class="title-hd-sm">
 													<h4>관람객 리뷰</h4>
-													<a href="#" class="time">더보기 <i
-														class="ion-ios-arrow-right"></i></a>
 												</div>
 												<!-- movie user review -->
-												<div class="mv-user-review-item">
-													<h3>Best Marvel movie in my opinion</h3>
-													<div class="no-star">
-														<i class="ion-android-star"></i> <i
-															class="ion-android-star"></i> <i class="ion-android-star"></i>
-														<i class="ion-android-star"></i> <i
-															class="ion-android-star"></i> <i class="ion-android-star"></i>
-														<i class="ion-android-star"></i> <i
-															class="ion-android-star"></i> <i class="ion-android-star"></i>
-														<i class="ion-android-star last"></i>
+												<c:forEach var="rvo" items="${rlist }" begin="0" end="2">
+												<div class="blog-detail-ct">
+													<div class="cmt-item flex-it">
+														<div class="author-infor">
+															<div class="flex-it2">
+																<h6 style="color:white">${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+																<div class="reply">
+																</div>	
+															</div>
+															<p>${rvo.msg }</p>
+															<div id="u${rvo.no }" class="comment-form replyUpdate" style="display: none">
+																<form method="post" action="movieReviewUpdate.do">
+																	<div class="row">
+																		<div class="col-md-10">
+																			<textarea name="msg" placeholder="내용" style="height: 120px; width: 500px; margin-bottom: 0px">${rvo.msg }</textarea>
+																			<input type="hidden" name="no" value="${rvo.no }"/>
+																			<input type="hidden" name="movie_id" value="${rvo.movie_id }"/>
+																		</div>
+																		<div class="col-md-2">
+																			<input class="submit movieDetailSubmit reviewBtn" type="submit" placeholder="작성완료">
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
 													</div>
-													<p class="time">
-														17 December 2016 by <a href="#"> hawaiipierson</a>
-													</p>
-													<p>This is.</p>
 												</div>
+											</c:forEach>
 											</div>
 											<div class="col-md-4 col-xs-12 col-sm-12">
 												<div class="sb-it">
@@ -327,11 +337,10 @@ $(document).ready(function(){
 										<div class="row">
 											<div class="rv-hd">
 												<div class="div">
-													<h3>Related Movies To</h3>
 													<h2>${vo.title }</h2>
 												</div>
-												<span class="redbtn" id="review"
-													style="margin-right: 15px;">리뷰 작성</span>
+												<c:if test="${sessionScope.email !=null }"><span class="redbtn" id="review"
+													style="margin-right: 15px;">리뷰 작성</span></c:if>
 											</div>
 
 											<!--리뷰작성  -->
@@ -347,7 +356,7 @@ $(document).ready(function(){
 											</form>
 											<div class="topbar-filter">
 												<p>
-													Found <span>56 reviews</span> in total
+													총 <span>${movieTotalReview } 개의</span> 리뷰가 있습니다.
 												</p>
 												<label>Filter by:</label> <select>
 													<option value="range">-- Choose option --</option>
@@ -359,7 +368,7 @@ $(document).ready(function(){
 													<div class="cmt-item flex-it">
 														<div class="author-infor">
 															<div class="flex-it2">
-																<h6 style="color:white">${rvo.email },${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+																<h6 style="color:white">${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
 																<div class="reply">
 																	<c:if test="${sessionScope.email!=null&&sessionScope.email==rvo.email }">
 																		<h6 class="reply_btn"><span class="updateBtn" data-no="${rvo.no }">수정</span></h6> 
@@ -484,93 +493,6 @@ $(document).ready(function(){
 											</c:forEach>
 										</div>
 									</div>
-
-
-									<!-- ============================= MOVIE DETAIL - 시즌정보  탭 - 현재 미사용중 START  ============================== -->
-									<div id="season" class="tab">
-										<div class="row">
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="mvcast-item">
-												<div class="cast-it">
-													<div class="cast-left series-it">
-														<img src="images/uploads/season.jpg" alt="">
-														<div>
-															<a href="#">Season 10</a>
-															<p>21 Episodes</p>
-															<p>Season 10 of The Big Bang Theory premiered on
-																September 19, 2016.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- ============================= MOVIE DETAIL - 시즌정보  탭 - 현재 미사용중 END  ============================== -->
-
 
 									<!-- ============================= MOVIE DETAIL -  RELATED MOVIE 관련영화 TAB START  ============================== -->
 									<div id="moviesrelated" class="tab">
