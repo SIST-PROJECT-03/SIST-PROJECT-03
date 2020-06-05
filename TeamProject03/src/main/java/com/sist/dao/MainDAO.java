@@ -51,6 +51,10 @@ public class MainDAO {
 		 return mapper.specialRecomm(map);
 	 }
 	 
+	  public List<MovieGenreVO> selectGenre(int movie_id)
+	  {
+		  return mapper.selectGenre(movie_id);
+	  }
 	 
 	 
 }

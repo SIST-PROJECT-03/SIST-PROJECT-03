@@ -43,8 +43,6 @@ $(function(){
       $('.ing').css('background-color','');
    });
 })
-
-
 </script>
 </head>
 <body>
@@ -78,7 +76,7 @@ $(function(){
 				<!-- ====================================1 big slider start=========================================== -->	 
 				<c:forEach var="svo" items="${bigSliderList }">   	
 	    		<div class="movie-item">
-	    			<input type=hidden name=movie_id value="${svo.net.movie_id }" id="movie_id" >
+
 	    			<div class="row">
 	    				<div class="col-md-8 col-sm-12 col-xs-12">
 	    					<div class="title-in">
@@ -111,8 +109,8 @@ $(function(){
 			    					</ul>
 			    				</div>
 			    				<div class="btn-transform transform-vertical">
-									<div><a href="seriesSingle.do?movie_id=${svo.net.movie_id }" class="item item-1 redbtn">더보기</a></div>
-									<div><a href= "seriesSingle.do?movie_id=${svo.net.movie_id }" class="item item-2 redbtn hvrbtn">더보기</a></div>
+									<div><a href="#" class="item item-1 redbtn">더보기</a></div>
+									<div><a href= "#" class="item item-2 redbtn hvrbtn">더보기</a></div>
 								</div>		
 			    			</div>
 	    				</div>
@@ -135,11 +133,44 @@ $(function(){
          <div class="tabs">
              <div class="tab-content"></div>
 		 </div>
-         
+<!--===============================================================================================사용자 유사도==================================추천7 START-->
+         <div class="title-hd">
+               <h2>개발중 >>>>(${user_nick })님과 취향이 비슷한 친구</h2>
+               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+         </div>
+          <div class="tab-content">
+                 <div id="tab1-h2" class="tab active">
+                     <div class="row">
+                        <div class="slick-multiItem2">
+                          <c:forEach var="nvo" items="${ageList }">
+                           <div class="slide-it">
+               
+                              <div class="slide-it">
+                              <div class="movie-item">
+                                 <div class="mv-img">
+                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
+                                 </div>
+                                 <div class="hvr-inner">
+                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
+                                 </div>
+                                 <div class="title-in">
+                                    <h5>${nvo.title }</h5>
+                        
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </c:forEach>
+                        </div>
+                     </div>
+                 </div>
+         </div>
+<!--============================================================================================================================================추천7 END-->
+     
 <!--=========================================================== 연령대 =======================================================================추천2 START-->
          <div class="title-hd"> 
                <h2># ${age_tag}대 연령층 인기 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?range=${user_age}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -167,7 +198,6 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천2 END-->
-	
 <!--=============================================================ajax start==============================================================================-->
 <div class="movie-items full-width mainDetailinfo" >
    <div class="row">
@@ -254,7 +284,7 @@ $(function(){
 
          <div class="title-hd">
                <h2># ${gender_tag } 관객 높은 평점 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+                <a href="movieGrid.do?range=${user_gender}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -283,7 +313,9 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천3 END-->
-		
+
+
+
 <!--================================================= 장르 ====================================================================================추천4 START-->
 
          <div class="title-hd">
@@ -317,13 +349,12 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천4END-->
-		
 
 <!--=============================================================감상포인트============================================================추천5 START-->
 
          <div class="title-hd">
                <h2># ${point_tag}가 훌륭한 영화 </h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+                <a href="movieGrid.do?range=${user_point}">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -331,7 +362,7 @@ $(function(){
                         <div class="slick-multiItem2">
                           <c:forEach var="ptvo" items="${pointList}">
                            <div class="slide-it">
-               					<input type="hidden" value="${ptvo.net.movie_id}" name="movie_id" id="movie_id"/>        				
+               			
                               <div class="slide-it">
                               <div class="movie-item">
                                  <div class="mv-img">
@@ -353,13 +384,13 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천5END-->
-		
+
 
 <!--================================================= 선호 지역 영화 ====================================================================================추천6 START-->
 
          <div class="title-hd">
                <h2># 추천 ${user_loc} 영화</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?country=${user_loc}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -389,15 +420,15 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천6END-->
-		
 
 
 
-<!--==========================================전문가 추천===========================================================================추천7 START-->
+
+<!--=====================================================================================================================================추천7 START-->
 
          <div class="title-hd">
                <h2># 전문가 추천 ${user_genre} 영화</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
+               <a href="movieGrid.do?genre=${user_genre}" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
          </div>
           <div class="tab-content">
                  <div id="tab1-h2" class="tab active">
@@ -412,7 +443,7 @@ $(function(){
                                     <img src="${svo.poster }" alt="" style="width:257px;height:394.84px;">
                                  </div>
                                  <div class="hvr-inner">
-                       	     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> 
+                       <%-- mno확인     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> --%>
                                  </div>
                                  <div class="title-in">
                                     <h5>${svo.title }</h5>
@@ -427,87 +458,9 @@ $(function(){
                  </div>
          </div>
 <!--============================================================================================================================================추천7END-->
-		
+
         </div>     
        </div>
-
- <div class="row">
-      <div class="col-md-12">
-         <div class="mainInner" style="background-color:#020d18">
-
-
-<!--===============================================================================================사용자 유사도==================================추천7 START-->
-      <%--    <div class="title-hd">
-               <h2>(${user_nick })님과 취향이 비슷한 친구</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
-         </div>
-          <div class="tab-content">
-                 <div id="tab1-h2" class="tab active">
-                     <div class="row">
-                        <div class="slick-multiItem2">
-                          <c:forEach var="nvo" items="${ageList }">
-                           <div class="slide-it">
-               
-                              <div class="slide-it">
-                              <div class="movie-item">
-                                 <div class="mv-img">
-                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
-                                 </div>
-                                 <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-                                 </div>
-                                 <div class="title-in">
-                                    <h5>${nvo.title }</h5>
-                        
-                                 </div>
-                              </div>
-                           </div>
-                           </div>
-                           </c:forEach>
-                        </div>
-                     </div>
-                 </div>
-         </div> --%>
-<!--============================================================================================================================================추천7 END-->
-
-<!--=============================================================================================== 트위터 통계 분석=================================추천7 START-->
-
-         <div class="title-hd">
-               <h2>트위터 , 형태소 분석</h2>
-               <a href="movieGrid.do" class="viewall">더보기 <i class="ion-ios-arrow-right"></i></a>
-         </div>
-          <div class="tab-content">
-                 <div id="tab1-h2" class="tab active">
-                     <div class="row">
-                        <div class="slick-multiItem2">
-                          <c:forEach var="nvo" items="${ageList }">
-                           <div class="slide-it">
-               
-                              <div class="slide-it">
-                              <div class="movie-item">
-                                 <div class="mv-img">
-                                    <img src="${nvo.poster }" alt="" style="width:257px;height:394.84px;">
-                                 </div>
-                                 <div class="hvr-inner">
-                                    <a  href="mainDetail"> 상세보기 <i class="ion-android-arrow-dropright"></i> </a>
-                                 </div>
-                                 <div class="title-in">
-                                    <h5>${nvo.title }</h5>
-                        
-                                 </div>
-                              </div>
-                           </div>
-                           </div>
-                           </c:forEach>
-                        </div>
-                     </div>
-                 </div>
-         </div>
-
-<!--============================================================================================================================================추천7 END-->
-     </div>
-    </div>
-   </div>
  </div>
 <!-- =============================  LATEST NEWS AREA START  ============================== -->
 <div class="latestnew full-width">
@@ -531,23 +484,6 @@ $(function(){
                </c:forEach>
             </div>
          </div>
-         <!-- <div class="col-md-3">
-            <div class="sidebar">
-               <div class="sb-facebook sb-it">
-                  <h4 class="sb-title">Find us on Facebook</h4>
-                  <iframe src="#" data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftemplatespoint.net%2F%3Ffref%3Dts&tabs=timeline&width=340&height=315px&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId"  height="315" style="width:100%;border:none;overflow:hidden" ></iframe>
-               </div>
-               <div class="sb-twitter sb-it">
-                  <h4 class="sb-title">Tweet to us</h4>
-                  <div class="slick-tw">
-                     <div class="tweet item" id="">Put your twiter id here
-                     </div>
-                     <div class="tweet item" id="">Put your 2nd twiter account id here
-                     </div>
-                  </div>               
-               </div>
-            </div>
-         </div> -->
       </div>
  </div>
 </c:if>
@@ -555,3 +491,4 @@ $(function(){
 <!-- =============================  HOME END  ============================== -->
 </body>
 </html>
+

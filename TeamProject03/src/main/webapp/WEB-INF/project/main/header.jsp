@@ -244,7 +244,7 @@ $(function(){
 							</ul> -->
 						</li>	
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
+							<a class="btn btn-default dropdown-toggle lv1" href="movieGrid.do"">
 							영화탐색<!-- <i class="fa fa-angle-down" aria-hidden="true"></i> -->
 							</a>
 							<!-- <ul class="dropdown-menu level1">

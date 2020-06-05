@@ -172,7 +172,7 @@ public class MovieListController {
 		
 		if(page==null)
 			page="1";
-		
+	
 		curPage= Integer.parseInt(page);
 		curRowSize = Integer.parseInt(rowSize);
 		
@@ -189,26 +189,20 @@ public class MovieListController {
 		map.put("start", start);
 		map.put("end", end);
 		
-		System.out.println("movieGride:"+genre);
-		System.out.println("movieGride:"+country);
-		System.out.println("movieGride:"+grade);
-		System.out.println("movieGride:"+range);
-		System.out.println("movieGride:"+curRowSize);
-		System.out.println("movieGride:"+start);
-		System.out.println("movieGride:"+end);
-		
-		
-		
+	
 		List<MovieDetailVO> list = dao.getMovieList(map);
 		totalPage= dao.getTotalPage(map);
 		
 		model.addAttribute("list", list);
 		model.addAttribute("totalPage", totalPage);
 		model.addAttribute("curPage", curPage);		
+		model.addAttribute("genre",genre);
+		model.addAttribute("country",country);
+		model.addAttribute("grade",grade);
+		model.addAttribute("range",range);
+		model.addAttribute("rowSize",rowSize);
 		
-		System.out.println(totalPage);	
-		System.out.println("listSize = "+list.size());
-		
+
 		return "project/result/movieGridResult";
 	}
 }
