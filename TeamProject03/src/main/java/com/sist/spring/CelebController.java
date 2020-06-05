@@ -52,9 +52,6 @@ public class CelebController {
 		model.addAttribute("curPage",curPage);
 		model.addAttribute("list", list);
 		model.addAttribute("totalPage",totalPage);
-		model.addAttribute("start",start);
-		model.addAttribute("end",end);
-		
 		
 		return "project/celeb/celebGrid";
 	}

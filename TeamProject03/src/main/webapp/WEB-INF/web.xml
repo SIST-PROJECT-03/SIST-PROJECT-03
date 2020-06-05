@@ -3,6 +3,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	
+	<!-- <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>my-secure-app</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint> -->
+	
 	<!-- Controller 등록 (DispatcherServlet) -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>

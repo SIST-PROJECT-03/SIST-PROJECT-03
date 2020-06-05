@@ -1,5 +1,8 @@
 package com.sist.spring;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,42 @@ public class MyMovieController {
 	@Autowired
 	private MemberDAO dao;
 	
+	@RequestMapping("userProfile.do")
+	public String profile(Model model,HttpSession session)
+	{
+		String email=(String)session.getAttribute("email");
+		MemberVO vo=dao.profileData(email);
+		model.addAttribute("vo",vo);
+		return "project/myMovie/userProfile";
+	}
+	
+	@RequestMapping("profileUpdate.do")
+	public String profileUpdate(String nick,HttpSession session)
+	{
+		HashMap map=new HashMap();
+		
+		String email=(String)session.getAttribute("email");
+		map.put("email",email);
+		map.put("nick",nick);
+		
+		System.out.println("conte: "+email);
+		System.out.println("contn: "+nick);
+		
+		dao.profileUpdate(map);
+		
+		return "redirect:userProfile.do";
+	}
+	
+	@RequestMapping("userDelete.do")
+	public String userdelete(HttpSession session)
+	{
+		String email=(String)session.getAttribute("email");
+		//System.out.println("1. 회원탈퇴할 email: "+email);
+		dao.userDelete(email);
+		session.invalidate();
+		return "redirect:main.do";
+	}
+	
 	@RequestMapping("userFavoriteGrid.do")
 	public String user_favorite_grid()
 	{
@@ -27,19 +66,14 @@ public class MyMovieController {
 	{
 		return "project/myMovie/userFavoriteList";
 	}
-
-	@RequestMapping("userProfile.do")
-	public String profile(Model model,HttpSession session)
-	{
-		String email=(String)session.getAttribute("email");
-		MemberVO vo=dao.profileData(email);
-		model.addAttribute("vo",vo);
-		return "project/myMovie/userProfile";
-	}
 	
 	@RequestMapping("userRate.do")
 	public String user_favorite_Rate()
 	{
 		return "project/myMovie/userRate";
 	}
+	
+	
+	
+	
 }

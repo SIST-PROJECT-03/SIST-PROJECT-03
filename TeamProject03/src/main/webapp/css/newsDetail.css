@@ -16,3 +16,20 @@
     margin-left: 710px;
 }
 
+.reply{
+	margin-bottom: 0px;
+	position: absolute;
+    right: 40px;
+}
+.reply_btn{
+    color: white;
+    display: inline;
+	
+}
+
+.reviewBtn{
+	margin-left: 0px;
+  	margin-bottom: 0px;
+  	margin-top: 30px;
+  	margin-right: 20px;
+}
