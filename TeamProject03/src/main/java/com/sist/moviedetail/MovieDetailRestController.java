@@ -35,7 +35,7 @@ public class MovieDetailRestController {
 		
 		for(Naver_JoinVO tvo : jL){
 			CelebVO ccvo = new CelebVO();
-			//ccvo.setName(jdao.getCastByCastId(tvo.getCast_id()).getName());
+			ccvo.setName(jdao.getCastByCastId(tvo.getCast_id()).getName());
 			jList.add(ccvo);
 		}
 		String story = vo.getStory();
@@ -62,10 +62,10 @@ public class MovieDetailRestController {
 		JSONArray jarr = new JSONArray();
 		for(int i = 0; i < jList.size(); i++){
 			JSONObject tjobj = new JSONObject();
-		/*	tjobj.put("cast_id", jL.get(i).getCast_id());
+			tjobj.put("cast_id", jL.get(i).getCast_id());
 			tjobj.put("movie_id", jL.get(i).getMovie_id());
 			tjobj.put("role", jL.get(i).getRole());
-			tjobj.put("name", jList.get(i).getName());*/
+			tjobj.put("name", jList.get(i).getName());
 			jarr.add(tjobj);
 		}
 		obj.put("join", jarr);

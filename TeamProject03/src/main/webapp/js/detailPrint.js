@@ -1,11 +1,9 @@
 var globalTarget;
 
 var findId = (target)=>{
-	//var id = target.getAttribute("id");
-	id = 35901;
-	return id;
+	return target;
 }
-
+/*
 document.body.addEventListener('click',(e)=>{
 	if(e.target.className === 'mainDetail' || e.target.className === 'hvr-inner'){
 		var id = findId(e.target);
@@ -13,7 +11,7 @@ document.body.addEventListener('click',(e)=>{
 		ajaxFunc('movie-detail.do',getDetailData(id),printDetail);
 	}
 })
-
+*/
 var getDetailData = (id)=>{
 	var data = '';
 	data += 'movie_id=' + id;
@@ -45,3 +43,11 @@ var printDetail = (data)=>{
 	x.querySelector('.row .mainInnerDetail p:nth-child(3)').innerText = "배우 : " + actor;
 	
 }
+
+var verticalBtnOfSlider = document.querySelector('.big-slider-info .vertical-btn');
+verticalBtnOfSlider.addEventListener('click',(e)=>{
+	//1. id를 찾는다
+	var id = verticalBtnOfSlider.getAttribute('id');
+	//2. url 접근
+	location.href= "seriesSingle.do?movie_id=" + id;
+})
