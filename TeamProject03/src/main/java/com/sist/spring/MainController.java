@@ -128,7 +128,7 @@ public class MainController {
 		    		  
 		    		  
 		    		  int movie_id;
-		    		 
+		    		 //<span class="blue"><a href="#">${svo.genre }</a></span>
 		    		  for(MovieVO vo:bigSliderList)
 		    		  {
 		    			movie_id=vo.getNet().getMovie_id();
@@ -137,10 +137,10 @@ public class MainController {
 		    			String temp="";
 		    			for(MovieGenreVO gvo:selGenreList)
 		    			{
-		    				temp+=gvo.getGenre()+"/";
+		    				temp+="<span class=\"blue\"><a href=\"#\">"+gvo.getGenre()+"</a></span>\n";
 		    			}
 		    			System.out.println(temp);
-		    			temp=temp.substring(0,temp.lastIndexOf("/"));
+		    			
 		    			vo.setGenre(temp);
 		    			
 		    		  }

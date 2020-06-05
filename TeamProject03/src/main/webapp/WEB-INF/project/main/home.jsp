@@ -81,8 +81,8 @@ $(function(){
 	    				<div class="col-md-8 col-sm-12 col-xs-12">
 	    					<div class="title-in">
 			    				<div class="cate">
-			    					<span class="blue"><a href="#">${svo.genre }</a></span>
-			    					<span class="yell"><a href="#">${svo.country }</a></span>
+			    					${svo.genre }
+			    				<%-- 	<span class="yell"><a href="#">${svo.country }</a></span> --%>
 			    					<!-- <span class="orange"><a href="#">범죄</a></span> -->
 			    				</div>
 			    				<h1><a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
