@@ -62,11 +62,9 @@ public class MovieListController {
 	{
 		HttpSession session=request.getSession();
 		String email=(String)session.getAttribute("email");
-		String pwd=(String)session.getAttribute("email");
 		String nick=(String)session.getAttribute("nick");
 		vo.setNick(nick);
 		vo.setEmail(email);
-		vo.setPwd(pwd);
 		
 		dao.movieReviewInsert(vo);
 		return "redirect:seriesSingle.do?movie_id="+vo.getMovie_id();

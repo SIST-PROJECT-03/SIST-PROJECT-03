@@ -40,8 +40,10 @@ public class MemberController {
 			{
 				result="OK";
 				session.setAttribute("email", email);
-				/*MemberVO vo=dao.profileData(email);
-				System.out.println(vo.getNick());*/
+				MemberVO vo=dao.profileData(email);
+				session.setAttribute("nick",vo.getNick());
+				
+				//System.out.println(vo.getNick());
 				
 			/*	MemberVO vo=dao.profileData(email);
 	            session.setAttribute("nick",vo.getNick());

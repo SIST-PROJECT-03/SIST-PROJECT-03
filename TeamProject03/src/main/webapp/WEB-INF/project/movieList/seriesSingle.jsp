@@ -252,26 +252,36 @@ $(document).ready(function(){
 												<!-- cast for문 -->
 												<div class="title-hd-sm">
 													<h4>관람객 리뷰</h4>
-													<a href="#" class="time">더보기 <i
-														class="ion-ios-arrow-right"></i></a>
 												</div>
 												<!-- movie user review -->
-												<div class="mv-user-review-item">
-													<h3>Best Marvel movie in my opinion</h3>
-													<div class="no-star">
-														<i class="ion-android-star"></i> <i
-															class="ion-android-star"></i> <i class="ion-android-star"></i>
-														<i class="ion-android-star"></i> <i
-															class="ion-android-star"></i> <i class="ion-android-star"></i>
-														<i class="ion-android-star"></i> <i
-															class="ion-android-star"></i> <i class="ion-android-star"></i>
-														<i class="ion-android-star last"></i>
+												<c:forEach var="rvo" items="${rlist }" begin="0" end="2">
+												<div class="blog-detail-ct">
+													<div class="cmt-item flex-it">
+														<div class="author-infor">
+															<div class="flex-it2">
+																<h6 style="color:white">${rvo.nick }</h6> <span class="time"> - <fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
+																<div class="reply">
+																</div>	
+															</div>
+															<p>${rvo.msg }</p>
+															<div id="u${rvo.no }" class="comment-form replyUpdate" style="display: none">
+																<form method="post" action="movieReviewUpdate.do">
+																	<div class="row">
+																		<div class="col-md-10">
+																			<textarea name="msg" placeholder="내용" style="height: 120px; width: 500px; margin-bottom: 0px">${rvo.msg }</textarea>
+																			<input type="hidden" name="no" value="${rvo.no }"/>
+																			<input type="hidden" name="movie_id" value="${rvo.movie_id }"/>
+																		</div>
+																		<div class="col-md-2">
+																			<input class="submit movieDetailSubmit reviewBtn" type="submit" placeholder="작성완료">
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
 													</div>
-													<p class="time">
-														17 December 2016 by <a href="#"> hawaiipierson</a>
-													</p>
-													<p>This is.</p>
 												</div>
+											</c:forEach>
 											</div>
 											<div class="col-md-4 col-xs-12 col-sm-12">
 												<div class="sb-it">
