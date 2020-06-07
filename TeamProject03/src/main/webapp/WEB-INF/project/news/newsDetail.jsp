@@ -63,7 +63,7 @@
 											&nbsp;&nbsp;&nbsp;&nbsp;
 										</c:forEach>
 										<c:if test="${rvo.group_tab>0 }">
-											<img  src="images/arrow.PNG" width="50px" height="50px"/>
+											<img  src="images/arrow.png" width="15px" height="15px" style="margin-right:10px"/>
 										</c:if>
 										<h6 style="color: white;">${rvo.email }</h6> 
 										<span class="time"><fmt:formatDate value="${rvo.regdate }" pattern="yyyy-MM-dd"/></span>
