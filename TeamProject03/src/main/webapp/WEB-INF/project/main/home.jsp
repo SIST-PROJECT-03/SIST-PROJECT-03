@@ -226,7 +226,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="1" data_id="${nvo.movie_id}">
-														<a data="1" data_id="${avo.movie_id}" class=" myclclcl"> 상세보기 <i
+														<a data="1" data_id="${nvo.movie_id}" class=" myclclcl"> 상세보기 <i
 															class="ion-android-arrow-dropright" data="1" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -410,7 +410,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="3" data_id="${gvo.movie_id}">
-														<a data="3" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="3" data_id="${gvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -500,7 +500,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="4" data_id="${grvo.movie_id}">
-														<a data="4" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="4" data_id="${grvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -591,7 +591,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="5" data_id="${ptvo.movie_id}">
-														<a data="5" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="5" data_id="${ptvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -683,7 +683,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="6" data_id="${lvo.movie_id}">
-														<a data="6" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="6" data_id="${lvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>

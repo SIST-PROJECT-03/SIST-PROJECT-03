@@ -7,23 +7,23 @@ detailWrap.addEventListener('click',(e)=>{
 	// 데이터 가져오기
 	console.log(e.target);
 	if(e.target.className.indexOf('myclclcl') != -1){
-		//1. 해당하는 폼을 찾는다
+		// 1. 해당하는 폼을 찾는다
 		var detailFormArr = document.querySelectorAll('.detail-slider');
 		detailFormArr.forEach((v,i)=>{
 			if(v.getAttribute('data') === e.target.getAttribute('data')){
-				//찾았따!
+				// 찾았따!
 				targetDetailForm = v;
-				if(listData[i+1] === false){
-					listData[i+1] = true;
-				}else{
-					listData[i+1] = false;
+				if(listData[i] === false){
+					listData[i] = true;
+				} else {
+					var id = e.target.getAttribute('data_id');
+					var verticalBtnOfDetail = targetDetailForm.querySelector('.vertical-btn');
+					if((id === verticalBtnOfDetail.getAttribute('id'))){
+						listData[i] = false;
+					}
 				}
 			}
-			if(listData[i+1] === false){
-				v.style.display = 'none';
-			}else{
-				v.style.display = 'block';
-			}
+			
 		})
 		var x = document.querySelector('.big-slider-info');
 		if(sliderDetailLight === false){
@@ -38,14 +38,22 @@ detailWrap.addEventListener('click',(e)=>{
 		console.log('id : ' + id);
 		verticalBtnOfDetail = targetDetailForm.querySelector('.vertical-btn');
 		verticalBtnOfDetail.addEventListener('click',(e)=>{
-			console.log('ggggggggggg');
-			//1. id를 찾는다
+			// 1. id를 찾는다
 			var id = verticalBtnOfDetail.getAttribute('id');
-			//2. url 접근
+			// 2. url 접근
 			location.href= "seriesSingle.do?movie_id=" + id;
 		})
 		ajaxFunc('movie-detail.do',getDetailData(id),printDetailData);
 	}
+	var detailFormArr = document.querySelectorAll('.detail-slider');
+	detailFormArr.forEach((v,i)=>{
+		if(listData[i] === false){
+			v.style.display = 'none';
+		}else{
+			v.style.display = 'block';
+		}
+	})
+	
 })
 
 
