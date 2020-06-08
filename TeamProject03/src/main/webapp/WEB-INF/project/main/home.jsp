@@ -88,7 +88,7 @@
 												<a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
 													${svo.title }<span></span></a>
 											</h1>
-											<div class="social-btn">
+											<!-- <div class="social-btn">
 												<a href="#" class="parent-btn"><i class="ion-play"></i>예고편
 													보기</a> <a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에
 													담기</a>
@@ -104,7 +104,7 @@
 															class="hvr-grow"><i class="ion-social-youtube"></i></a>
 													</div>
 												</div>
-											</div>
+											</div> -->
 											<div class="mv-details">
 												<p>
 													<i class="ion-android-star"></i><span>${svo.net.evaluation_point }</span>
@@ -774,9 +774,21 @@
 														<img src="${svo.poster }" alt=""
 															style="width: 257px; height: 394.84px;">
 													</div>
-													<div class="hvr-inner">
-														<%-- mno확인     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> --%>
+													<div class="hvr-inner" data="7" data_id="${svo.movie_id}">
+														<a data="7" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
+														</a>
 													</div>
+													
+													<!-- 
+													
+													<div class="hvr-inner" data="6" data_id="${lvo.movie_id}">
+														<a data="6" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
+														</a>
+													</div>
+													
+													 -->
 													<div class="title-in">
 														<h5>${svo.title }</h5>
 													</div>
