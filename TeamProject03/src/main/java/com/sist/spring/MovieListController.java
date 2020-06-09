@@ -55,7 +55,6 @@ public class MovieListController {
 	    		temp+="<a href=\"https://movie.naver.com/movie/bi/pi/basic.nhn?code="+celebvo.getCast_id()+"\"target=\"_blank\">"+celebvo.getName()+ " | </a>";
 	    		//<a href=\"https://movie.naver.com/movie/bi/pi/basic.nhn?code="+celebvo.getCast_id()+">"+celebvo.getName()+" | </a>
 	    	}
-	    	System.out.println("temp=" + temp);
 	    	dlist.get(i).setName(temp);
 	    	i++;
 	    }

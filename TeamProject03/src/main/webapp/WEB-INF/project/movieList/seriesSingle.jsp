@@ -361,10 +361,6 @@ $(document).ready(function(){
 												<p>
 													총 <span>${movieTotalReview } 개의</span> 리뷰가 있습니다.
 												</p>
-												<label>Filter by:</label> <select>
-													<option value="range">-- Choose option --</option>
-													<option value="saab">-- Choose option 2--</option>
-												</select>
 											</div>
 											<c:forEach var="rvo" items="${rlist }">
 												<div class="blog-detail-ct">
@@ -398,18 +394,6 @@ $(document).ready(function(){
 													</div>
 												</div>
 											</c:forEach>
-											<div class="topbar-filter">
-												<label>Reviews per page:</label> <select>
-													<option value="range">5 Reviews</option>
-													<option value="saab">10 Reviews</option>
-												</select>
-												<div class="pagination2">
-													<span>Page 1 of 6:</span> <a class="active" href="#">1</a>
-													<a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a
-														href="#">5</a> <a href="#">6</a> <a href="#"><i
-														class="ion-arrow-right-b"></i></a>
-												</div>
-											</div>
 										</div>
 									</div>
 									<!-- ============================= MOVIE DETAIL - REVIEW리뷰 TAB END  ============================== -->
