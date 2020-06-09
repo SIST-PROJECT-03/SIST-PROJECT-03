@@ -7212,6 +7212,7 @@ p.ceb-single {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 15px;
+  margin-top: 20px;
 }
 .sliderv2 .movie-item .title-in .mv-details ul {
   list-style-type: inherit;
