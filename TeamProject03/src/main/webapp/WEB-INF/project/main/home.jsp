@@ -88,7 +88,7 @@
 												<a href="seriesSingle.do?movie_id=${svo.net.movie_id }"><br>
 													${svo.title }<span></span></a>
 											</h1>
-											<div class="social-btn">
+											<!-- <div class="social-btn">
 												<a href="#" class="parent-btn"><i class="ion-play"></i>예고편
 													보기</a> <a href="#" class="parent-btn"><i class="ion-heart"></i>리스트에
 													담기</a>
@@ -104,7 +104,7 @@
 															class="hvr-grow"><i class="ion-social-youtube"></i></a>
 													</div>
 												</div>
-											</div>
+											</div> -->
 											<div class="mv-details">
 												<p>
 													<i class="ion-android-star"></i><span>${svo.net.evaluation_point }</span>
@@ -207,7 +207,7 @@
 					<div class="tabs">
 						<div class="tab-content"></div>
 					</div>
-					<!--===============================================================================================사용자 유사도==================================추천7 START-->
+				<%-- 	<!--===============================================================================================사용자 유사도==================================추천7 START-->
 					<div class="title-hd">
 						<h2>개발중 >>>>(${user_nick })님과 취향이 비슷한 친구</h2>
 						<a href="movieGrid.do" class="viewall">더보기 <i
@@ -226,7 +226,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="1" data_id="${nvo.movie_id}">
-														<a data="1" data_id="${avo.movie_id}" class=" myclclcl"> 상세보기 <i
+														<a data="1" data_id="${nvo.movie_id}" class=" myclclcl"> 상세보기 <i
 															class="ion-android-arrow-dropright" data="1" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -296,7 +296,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> --%>
 					<!--============================================================================================================================================추천7 END-->
 					<!--=========================================================== 연령대 =======================================================================추천2 START-->
 					<div class="title-hd">
@@ -410,7 +410,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="3" data_id="${gvo.movie_id}">
-														<a data="3" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="3" data_id="${gvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -500,7 +500,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="4" data_id="${grvo.movie_id}">
-														<a data="4" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="4" data_id="${grvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -591,7 +591,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="5" data_id="${ptvo.movie_id}">
-														<a data="5" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="5" data_id="${ptvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -683,7 +683,7 @@
 															style="width: 257px; height: 394.84px;">
 													</div>
 													<div class="hvr-inner" data="6" data_id="${lvo.movie_id}">
-														<a data="6" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+														<a data="6" data_id="${lvo.movie_id}" class=" myclclcl">상세보기
 															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
 														</a>
 													</div>
@@ -774,9 +774,21 @@
 														<img src="${svo.poster }" alt=""
 															style="width: 257px; height: 394.84px;">
 													</div>
-													<div class="hvr-inner">
-														<%-- mno확인     <a href="seriesSingle.do?movie_id=${svo.movie_id}">상세보기 <i class="ion-android-arrow-dropright"></i></a> --%>
+													<div class="hvr-inner" data="7" data_id="${svo.movie_id}">
+														<a data="7" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
+														</a>
 													</div>
+													
+													<!-- 
+													
+													<div class="hvr-inner" data="6" data_id="${lvo.movie_id}">
+														<a data="6" data_id="${avo.movie_id}" class=" myclclcl">상세보기
+															<i class="ion-android-arrow-dropright" class=" myclclcl"></i>
+														</a>
+													</div>
+													
+													 -->
 													<div class="title-in">
 														<h5>${svo.title }</h5>
 													</div>
