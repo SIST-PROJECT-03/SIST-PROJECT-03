@@ -71,23 +71,6 @@ public class NewsController {
 		List<NewsReviewVO> rlist=dao.newsReviewData(no);
 		int newsReviewTotal=dao.newsTotalReview(no);
 		
-		/*HttpSession session=request.getSession();
-		if(session.getAttribute("email")!=null)
-		{
-			if(session.getAttribute("newsList")!=null){
-				List<NewsVO> newsList=(List<NewsVO>)session.getAttribute("newsList");
-				newsList.add(vo);
-				System.out.println(newsList.size());
-				session.setAttribute("newsList", newsList);
-			}
-			else
-			{
-				List<NewsVO> newsList=new ArrayList<NewsVO>();
-				newsList.add(vo);
-				session.setAttribute("newsList", newsList);
-			}
-		}*/
-		
 		StringTokenizer st=new StringTokenizer(vo.getContent(),".");
 		vo.setContent("<p>"+vo.getContent()+"</p>");
 		/*System.out.println(vo.getContent());*/
